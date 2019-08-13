@@ -40,7 +40,7 @@
             </div>
             <div id="slides">
                 <div class="slides-container">
-                    <img src="<?php echo base_url('resources/front-end/images/bg1-n1.jpg'); ?>"/>
+                    <img src="<?php echo base_url('storage/images/bg1-n1.jpg'); ?>"/>
                 </div>
             </div>
         </div>
@@ -50,20 +50,20 @@
     <!-- section2 -->
     <div id="section2" data-0="top:400px;opacity:1" data-1000="top:0px;" data-2000="top:0%;" data-11000="top:-1600px;opacity:1">
         <div class="bg-mobile visible-xs">
-            <div class="text" style="top:40%"><img src="<?php echo base_url('resources/front-end/images/text-home.png'); ?>" width="150"/>
+            <div class="text" style="top:40%"><img src="<?php echo base_url('storage/images/text-home.png'); ?>" width="150"/>
             </div>
         </div>
         <div class="hidden-xs bg"></div>
         <div class="warp hidden-xs">
             <div class="text-home">
-                <img src="<?php echo base_url('resources/front-end/images/text-home.png'); ?>" width="300"/>
+                <img src="<?php echo base_url('storage/images/text-home.png'); ?>" width="300"/>
             </div>
             <div class="arrow" data-0="opacity:0;" data-1300="opacity:0;" data-1600="opacity:1;">
-                <img src="<?php echo base_url('resources/front-end/images/arrow.png'); ?>"/>
+                <img src="<?php echo base_url('storage/images/arrow.png'); ?>"/>
             </div>
         </div>
         <div class="port-main" data-0="opacity:0;" data-1300="opacity:0;" data-1600="opacity:1;">
-            <div class="graphic"><img src="<?php echo base_url('resources/front-end/images/graphic1.png'); ?>"/></div>
+            <div class="graphic"><img src="<?php echo base_url('storage/images/graphic1.png'); ?>"/></div>
             <div class="warp-slide">
                 <div class="line-head"></div>
                 <h1>PORTFOLIOS</h1>
@@ -106,7 +106,7 @@
         <div class="bg2 hidden-xs" data-2000="opacity:1;"></div>
         <div class="text-main hidden-xs" data-0="opacity:0;" data-4000="opacity:0;" data-4200="opacity:1;"></div>
         <div class="warp" data-scroll-index="2">
-            <div class="graphic"><img src="<?php echo base_url('resources/front-end/images/graphic1.png'); ?>"/></div>
+            <div class="graphic"><img src="<?php echo base_url('storage/images/graphic1.png'); ?>"/></div>
             <div class="line-head"></div>
             <h1>PRODUCT</h1>
             <div class="clearfix"></div>
@@ -352,13 +352,13 @@
             </div>
         </div>
         <div class="warp" data-scroll-index="3">
-            <div class="graphic"><img src="<?php echo base_url('resources/front-end/images/graphic1.png'); ?>"/></div>
+            <div class="graphic"><img src="<?php echo base_url('storage/images/graphic1.png'); ?>"/></div>
             <div class="line-head"></div>
             <h1>TECHNOLOGY</h1>
             <div class="clearfix"></div>
             <div class="warp-slide">
-                <div id="arrow-techno-l-p1" class="arrow-left"><img src="<?php echo base_url('resources/front-end/images/arrow-left.png'); ?>"/></div>
-                <div id="arrow-techno-r-p1" class="arrow-right"><img src="<?php echo base_url('resources/front-end/images/arrow-right.png'); ?>"/></div>
+                <div id="arrow-techno-l-p1" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
+                <div id="arrow-techno-r-p1" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
                 <h2>PRESENTATION VDO วีดีโอแนะนำการใช้งาน</h2>
                 <div class="owl-techno1">
                     <div class="item vdo-lightbox" data-val="pZFeraPjm4s">
@@ -394,8 +394,8 @@
             <div class="see-more"><a href="https://www.aluinch.com/technology">SEE MORE</a></div>
             <div class="warp-slide">
 
-                <div id="arrow-techno-l-p2" class="arrow-left"><img src="<?php echo base_url('resources/front-end/images/arrow-left.png'); ?>"/></div>
-                <div id="arrow-techno-r-p2" class="arrow-right"><img src="<?php echo base_url('resources/front-end/images/arrow-right.png'); ?>"/></div>
+                <div id="arrow-techno-l-p2" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
+                <div id="arrow-techno-r-p2" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
 
                 <h2>TIPS AND TRICKS เกร็ดความรู้อลูมิเนียม</h2>
                 <div class="owl-techno2">
@@ -458,13 +458,13 @@
             </div>
         </div>
         <div class="warp" data-scroll-index="4">
-            <div class="graphic"><img src="<?php echo base_url('resources/front-end/images/graphic1.png'); ?>"/></div>
+            <div class="graphic"><img src="<?php echo base_url('storage/images/graphic1.png'); ?>"/></div>
             <div class="line-head"></div>
             <h1>PROJECT REFERENCE</h1>
             <div class="clearfix"></div>
             <div class="warp-slide">
-                <div id="arrow-project-l-p1" class="arrow-left"><img src="<?php echo base_url('resources/front-end/images/arrow-left.png'); ?>"/></div>
-                <div id="arrow-project-r-p1" class="arrow-right"><img src="<?php echo base_url('resources/front-end/images/arrow-right.png'); ?>"/></div>
+                <div id="arrow-project-l-p1" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
+                <div id="arrow-project-r-p1" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
 
                 <div class="owl-project">
                     <div class="item lb-detail-project" data-id="20" data-name=" OFFICE  อลูมิเนียมภายใน">
@@ -512,7 +512,7 @@
                     <div class="list-contact">
                         <div class="media">
                             <div class="media-left media-top">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c1.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c1.png'); ?>">
                             </div>
                             <div class="media-body">
                                 Alumination Ltd.<br/>
@@ -522,7 +522,7 @@
                         </div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c3.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c3.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 <a href="mailto:info@aluinch.com">info@aluinch.com</a>
@@ -531,7 +531,7 @@
                         <div class="contact-clear"></div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c5.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c5.png'); ?>">
                             </div>
                             <div class="media-body map" style="padding-top:5px;" data-toggle="modal" data-target="#map">
                                 VIEW COMPANY MAP
@@ -541,7 +541,7 @@
                     <div class="list-contact2">
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c2.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c2.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 <a href="tel:022863666"> 02 286 3666</a>
@@ -549,7 +549,7 @@
                         </div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c4.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c4.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 www.aluinch.com
@@ -567,7 +567,7 @@
                         Copyright © 2015 www.aluinch.com All Rights Reserved. Site by <a href="http://www.polardevgroup.com" target="_blank">Polardev</a>
                     </div>
                     <div class="copy-line desktop"></div>
-                    <div class="partner desktop">partnership by <img src="<?php echo base_url('resources/front-end/images/partner-logo.jpg'); ?>" width="100"/> Company</div>
+                    <div class="partner desktop">partnership by <img src="<?php echo base_url('storage/images/partner-logo.jpg'); ?>" width="100"/> Company</div>
                 </div>
 
                 <!-- contact -->
@@ -594,9 +594,9 @@
                     </form>
                     <div class="fb">
                         <a href="http://line.me/ti/p/~ALUINCH" target="_blank">
-                            <img src="<?php echo base_url('resources/front-end/images/line-icon.png'); ?>"/>
+                            <img src="<?php echo base_url('storage/images/line-icon.png'); ?>"/>
                         </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://www.facebook.com/ALUINCH" target="_blank"><img src="<?php echo base_url('resources/front-end/images/fb2.png'); ?>"/></a>
+                        <a href="https://www.facebook.com/ALUINCH" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>"/></a>
                     </div>
                     <div class="clearfix"></div>
                     <div class="copy mobile">
@@ -606,7 +606,7 @@
                     <div class="copy mobile">Copyright © 2015 www.aluinch.com All Rights Reserved. Site by <a href="http://www.polardevgroup.com" target="_blank">Polardev</a></div>
                     <div class="clearfix"></div>
                     <div class="copy-line mobile"></div>
-                    <div class="partner mobile">partnership by <img src="<?php echo base_url('resources/front-end/images/partner-logo.jpg'); ?>" width="100"/> Company</div>
+                    <div class="partner mobile">partnership by <img src="<?php echo base_url('storage/images/partner-logo.jpg'); ?>" width="100"/> Company</div>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -698,7 +698,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="<?php echo base_url('resources/front-end/images/viewmap.jpg'); ?>" class="img-responsive"/>
+                    <img src="<?php echo base_url('storage/images/viewmap.jpg'); ?>" class="img-responsive"/>
                 </div>
             </div>
         </div>
@@ -709,7 +709,7 @@
     <div class="warp-light-box">
         <div class="bg-black"></div>
         <div class="main-lb">
-            <div class="close-lb"><img src="<?php echo base_url('resources/front-end/images/product/close.png'); ?>"/></div>
+            <div class="close-lb"><img src="<?php echo base_url('storage/images/product/close.png'); ?>"/></div>
             <div id="ajax-result"></div>
         </div>
     </div>

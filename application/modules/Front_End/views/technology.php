@@ -3,7 +3,7 @@
         <div class="warp-slide">
             <div id="slides">
                 <div class="slides-container">
-                    <img src="<?php echo base_url('resources/front-end/images/bg1-n1.jpg'); ?>" />
+                    <img src="<?php echo base_url('storage/images/bg1-n1.jpg'); ?>" />
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
         }
     </style>
     <div id="contact">
-        <div class="graphic"><img src="<?php echo base_url('resources/front-end/images/product/graphic-footer.png'); ?>" class="img-responsive" /></div>
+        <div class="graphic"><img src="<?php echo base_url('storage/images/product/graphic-footer.png'); ?>" class="img-responsive" /></div>
         <div class="main-box-head">
             <div class="warp">
                 <div class="box-header">CONTACT<br />US</div>
@@ -102,7 +102,7 @@
                     <div class="list-contact">
                         <div class="media">
                             <div class="media-left media-top">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c1.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c1.png'); ?>">
                             </div>
                             <div class="media-body">
                                 Alumination Ltd.<br />
@@ -112,7 +112,7 @@
                         </div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c3.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c3.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 <a href="mailto:info@aluinch.com">info@aluinch.com</a>
@@ -121,7 +121,7 @@
                         <div class="contact-clear"></div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c5.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c5.png'); ?>">
                             </div>
                             <div class="media-body map" style="padding-top:5px;" data-toggle="modal" data-target="#map">
                                 VIEW COMPANY MAP
@@ -131,7 +131,7 @@
                     <div class="list-contact2">
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c2.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c2.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 <a href="tel:022863666"> 02 286 3666</a>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c4.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c4.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 www.aluinch.com
@@ -156,7 +156,7 @@
                     <div class="clearfix"></div>
                     <div class="copy desktop">Copyright © 2015 www.aluinch.com All Rights Reserved. SEO maintained by iSEO.in.th</div>
                     <div class="copy-line desktop"></div>
-                    <div class="partner desktop">partnership by <img src="<?php echo base_url('resources/front-end/images/partner-logo.jpg'); ?>" width="100" /> Company</div>
+                    <div class="partner desktop">partnership by <img src="<?php echo base_url('storage/images/partner-logo.jpg'); ?>" width="100" /> Company</div>
                 </div>
                 <div class="box-contact form-contact">
                     <form method="post" action="https://www.aluinch.com/sendemail_system.php">
@@ -170,9 +170,9 @@
                     </form>
                     <div class="fb">
                         <a href="http://line.me/ti/p/~ALUMINATION" target="_blank">
-                            <img src="<?php echo base_url('resources/front-end/images/line-icon.png'); ?>" />
+                            <img src="<?php echo base_url('storage/images/line-icon.png'); ?>" />
                         </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('resources/front-end/images/fb2.png'); ?>" /></a>
+                        <a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>" /></a>
                     </div>
                     <div class="clearfix"></div>
                     <div class="copy mobile">Sitemap | Terms and Conditions</div>
@@ -219,7 +219,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
-                    <img src="<?php echo base_url('resources/front-end/images/viewmap.jpg'); ?>" class="img-responsive" />
+                    <img src="<?php echo base_url('storage/images/viewmap.jpg'); ?>" class="img-responsive" />
                 </div>
             </div>
         </div>

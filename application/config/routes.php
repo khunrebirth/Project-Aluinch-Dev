@@ -83,4 +83,3 @@ $route['backoffice/logout'] = 'Back_End/Auth/Authentication/logout';
 
 // Dashboard
 $route['backoffice/dashboard'] = 'Back_End/Dashboard';
-

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>SSM &mdash; Backoffice (Login)</title>
+    <title>Aluinch &mdash; Backoffice (Login)</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -24,9 +24,9 @@
             <div class="col-lg-4 col-md-6 col-12 order-lg-1 order-2 bg-white my-auto">
                 <div class="p-5 m-3">
                     <div class="text-center">
-                        <img src="<?php echo base_url('resources/back-end/assets/img/smm/logo-smm.png'); ?>" alt="logo" width="120" class="shadow-light mb-5 mt-2">
+                        <img src="<?php echo base_url('storage/images/logo.png'); ?>" alt="logo" width="40%" class="shadow-light mb-5 mt-2" style="background-color: #000; padding: 12px;">
                     </div>
-                    <h4 class="text-dark font-weight-normal text-center">Welcome to <span class="font-weight-bold">SMM Backoffice</span></h4>
+                    <h4 class="text-dark font-weight-normal text-center">Welcome to <span class="font-weight-bold">Aluinch Backoffice</span></h4>
                     <form method="POST" action="<?php echo base_url('backoffice/login_process'); ?>"" class="needs-validation" novalidate="">
                         <div class="form-group">
                             <label for="">Username</label>
@@ -51,10 +51,6 @@
                                 Login
                             </button>
                         </div>
-
-                        <div class="mt-5 text-center">
-                            Back to Website <a href="<?php echo base_url('home') ?>" target="_blank">social.co.th</a>
-                        </div>
                     </form>
 
                     <div class="text-center mt-5 text-small">
@@ -67,14 +63,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="<?php echo base_url('resources/back-end/assets/img/unsplash/login-bg.jpg'); ?>">
+            <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="<?php echo base_url('storage/images/bg1-n1-bf.jpg'); ?>">
                 <div class="absolute-bottom-left index-2">
                     <div class="text-light p-5 pb-2">
                         <div class="mb-5 pb-3">
-                            <h1 class="mb-2 display-4 font-weight-bold">Good Mornig</h1>
-                            <h5 class="font-weight-normal text-muted-transparent">SMM, Backoffice</h5>
+                            <h1 class="mb-2 display-4 font-weight-bold"><?php echo get_time_of_day(); ?></h1>
+                            <h5 class="font-weight-normal text-muted-transparent">Aluinch, Backoffice</h5>
                         </div>
-                        Photo by <a class="text-light bb" target="_blank" href="https://unsplash.com/photos/a8lTjWJJgLA">Justin Kauffman</a> on <a class="text-light bb" target="_blank" href="https://unsplash.com">Unsplash</a>
+                        Back to Website <a href="<?php echo base_url('home') ?>" target="_blank">aluinch.com</a>
                     </div>
                 </div>
             </div>

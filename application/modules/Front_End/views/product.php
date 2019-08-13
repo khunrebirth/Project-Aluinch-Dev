@@ -3,7 +3,7 @@
         <div class="warp-slide">
             <div id="slides">
                 <div class="slides-container">
-                    <img src="<?php echo base_url('resources/front-end/images/bg1-n1.jpg'); ?>" />
+                    <img src="<?php echo base_url('storage/images/bg1-n1.jpg'); ?>" />
                 </div>
             </div>
         </div>
@@ -251,7 +251,7 @@
                                 <div class="box-des">HEADTRACK 20 mm. | กล่องเรียบ 20 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="411bcd7e18f28e93" data-val="18">
@@ -261,7 +261,7 @@
                                 <div class="box-des">MULLION 20 mm. | กล่องร่อง 20 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="4dd8cb9859310f54" data-val="19">
@@ -271,7 +271,7 @@
                                 <div class="box-des">SNAPING HEADTRACK | กล่องเรียบ 20 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="0f797e13cd79385e" data-val="21">
@@ -281,7 +281,7 @@
                                 <div class="box-des">GLAZING BAR 20 mm. | กล่องเปิด 20 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="a013fc7cf6d88222" data-val="22">
@@ -291,7 +291,7 @@
                                 <div class="box-des">GLAZING BEAD 20 mm. | ฝาปิด 20 มม. ใช้คู่กับ T-20.05</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="ea3ac40800f99455" data-val="20">
@@ -301,7 +301,7 @@
                                 <div class="box-des">MULLION 25 mm. | กล่องร่อง 25 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="32b82ce5300fdb81" data-val="23">
@@ -311,7 +311,7 @@
                                 <div class="box-des">SNAPING MULLION | ตบร่อง 25 มม. ใช้คู่กับ T-25.03</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="73be0c05f0fbd104" data-val="24">
@@ -321,7 +321,7 @@
                                 <div class="box-des">WIDE LINE TRANSOM FRAME | ซอยลูกฟัก 25 มม. แนวนอน</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="ff2de92d217305b0" data-val="25">
@@ -331,7 +331,7 @@
                                 <div class="box-des">TRANSOM BEAD 25 mm. | ฝาปิดตัวซอย 25 มม. ใช้คู่กับ T-25.07</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="4432f7fdf892c5ae" data-val="26">
@@ -341,7 +341,7 @@
                                 <div class="box-des">FLUSH STOP | ตบร่องเรียบ ร่องกระจก</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="b0ff378d18c18bf6" data-val="27">
@@ -351,7 +351,7 @@
                                 <div class="box-des">35 mm. DOOR STOP | บังใบสำหรับบาน 35 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="3936b160b7015b8f" data-val="28">
@@ -361,7 +361,7 @@
                                 <div class="box-des">45 mm. DOOR STOP | บังใบสำหรับบาน 45 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="19af30a149b75c9a" data-val="29">
@@ -371,7 +371,7 @@
                                 <div class="box-des">MULLION 25 mm. | กล่องร่องมีปีกข้าง 25 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="f98b24cc1a1d5642" data-val="30">
@@ -381,7 +381,7 @@
                                 <div class="box-des">FRONT LINE GAZING BAR | กล่องเปิดร่องข้าง 20 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="868c3180565641b6" data-val="31">
@@ -391,7 +391,7 @@
                                 <div class="box-des">FRONT LINE 20 mm. | กล่องร่องข้าง 20 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="fb3a472a67faeb4c" data-val="32">
@@ -401,7 +401,7 @@
                                 <div class="box-des">FRONT LINE 25 mm. | กล่องร่องข้าง 25 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="99443959d48d2cbe" data-val="33">
@@ -412,7 +412,7 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="9e016831942df992" data-val="34">
@@ -422,7 +422,7 @@
                                 <div class="box-des">FRONT LINE TRANSOM FRAME | ซอยลูกฟักร่องข้าง 25 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="b6819cf8397086de" data-val="35">
@@ -432,7 +432,7 @@
                                 <div class="box-des">TRANGLE BACK-2-BACK 100 mm. | เสาเหลี่ยม 100 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="f7c15bebbcde07e8" data-val="36">
@@ -442,7 +442,7 @@
                                 <div class="box-des">CONNER DOME SHAPE | เสาโค้ง 100 มม. ใช้คู่กับ T-01C</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                             <li class="lb-detail" data-code="45a10a2a30fcd0ec" data-val="37">
@@ -452,7 +452,7 @@
                                 <div class="box-des">T5 - ALU PENDANT | รางไฟ 100 มม. x 35 มม.</div>
                                 <div class="clearfix"></div>
                                 <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('resources/front-end/images/product/iconview.png'); ?>"/></div>
+                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
                                 </div>
                             </li>
                         </ul>
@@ -471,7 +471,7 @@
         <div id="product-des" class="main-bl-product">
             <div id="arrow-product-left" class="arrow-left"><i class="glyphicon glyphicon-menu-left"></i></div>
             <div id="arrow-product-right" class="arrow-right"><i class="glyphicon glyphicon-menu-right"></i></div>
-            <div class="close-lb"><img src="<?php echo base_url('resources/front-end/images/product/close.png'); ?>"/></div>
+            <div class="close-lb"><img src="<?php echo base_url('storage/images/product/close.png'); ?>"/></div>
             <div id="ajax-result"></div>
 
         </div>
@@ -480,11 +480,11 @@
     <div class="cad-lightbox warp-light-box">
         <div class="cad-lightbox bg-black"></div>
         <div id="product-cad" class="main-bl-product">
-            <div class="close-lb"><img src="<?php echo base_url('resources/front-end/images/product/close.png'); ?>"/></div>
+            <div class="close-lb"><img src="<?php echo base_url('storage/images/product/close.png'); ?>"/></div>
             <div class="warp-slide-product">
                 <a target="_blank" href="https://line.me/R/ti/p/%40arc6608f">
                     <div><h1>Please scan the QR code below to continue to download CAD.</h1></div>
-                    <div style="text-align: center;"><img width="50%" src="<?php echo base_url('resources/front-end/images/qr-code.jpg'); ?>"/></div>
+                    <div style="text-align: center;"><img width="50%" src="<?php echo base_url('storage/images/qr-code.jpg'); ?>"/></div>
                 </a>
             </div>
         </div>
@@ -504,7 +504,7 @@
         }
     </style>
     <div id="contact">
-        <div class="graphic"><img src="<?php echo base_url('resources/front-end/images/product/graphic-footer.png'); ?>" class="img-responsive"/></div>
+        <div class="graphic"><img src="<?php echo base_url('storage/images/product/graphic-footer.png'); ?>" class="img-responsive"/></div>
         <div class="main-box-head">
             <div class="warp">
                 <div class="box-header">CONTACT
@@ -522,7 +522,7 @@
                     <div class="list-contact">
                         <div class="media">
                             <div class="media-left media-top">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c1.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c1.png'); ?>">
                             </div>
                             <div class="media-body">
                                 Alumination Ltd.<br/>
@@ -532,7 +532,7 @@
                         </div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c3.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c3.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 <a href="mailto:info@aluinch.com">info@aluinch.com</a>
@@ -541,7 +541,7 @@
                         <div class="contact-clear"></div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c5.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c5.png'); ?>">
                             </div>
                             <div class="media-body map" style="padding-top:5px;" data-toggle="modal" data-target="#map">
                                 VIEW COMPANY MAP
@@ -551,7 +551,7 @@
                     <div class="list-contact2">
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c2.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c2.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 <a href="tel:022863666"> 02 286 3666</a>
@@ -559,7 +559,7 @@
                         </div>
                         <div class="media box-c">
                             <div class="media-left media-middle">
-                                <img class="media-object" src="<?php echo base_url('resources/front-end/images/c4.png'); ?>">
+                                <img class="media-object" src="<?php echo base_url('storage/images/c4.png'); ?>">
                             </div>
                             <div class="media-body" style="padding-top:5px;">
                                 www.aluinch.com
@@ -578,7 +578,7 @@
                         Copyright © 2015 www.aluinch.com All Rights Reserved. SEO maintained by iSEO.in.th
                     </div>
                     <div class="copy-line desktop"></div>
-                    <div class="partner desktop">partnership by <img src="<?php echo base_url('resources/front-end/images/partner-logo.jpg'); ?>" width="100"/>Company</div>
+                    <div class="partner desktop">partnership by <img src="<?php echo base_url('storage/images/partner-logo.jpg'); ?>" width="100"/>Company</div>
                 </div>
                 <div class="box-contact form-contact">
                     <form method="post" action="https://www.aluinch.com/sendemail_system.php">
@@ -592,9 +592,9 @@
                     </form>
                     <div class="fb">
                         <a href="http://line.me/ti/p/~ALUMINATION" target="_blank">
-                            <img src="<?php echo base_url('resources/front-end/images/line-icon.png'); ?>"/>
+                            <img src="<?php echo base_url('storage/images/line-icon.png'); ?>"/>
                         </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('resources/front-end/images/fb2.png'); ?>"/></a>
+                        <a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>"/></a>
                     </div>
                     <div class="clearfix"></div>
                     <div class="copy mobile">Sitemap | Terms and Conditions</div>
@@ -644,7 +644,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="<?php echo base_url('resources/front-end/images/viewmap.jpg'); ?>" class="img-responsive"/>
+                    <img src="<?php echo base_url('storage/images/viewmap.jpg'); ?>" class="img-responsive"/>
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@
             <div class="col-lg-4 col-md-6 col-12 order-lg-1 order-2 bg-white my-auto">
                 <div class="p-5 m-3">
                     <div class="text-center">
-                        <img src="<?php echo base_url('storage/images/logo.png'); ?>" alt="logo" width="40%" class="shadow-light mb-5 mt-2" style="background-color: #000; padding: 12px;">
+                        <img src="<?php echo base_url('storage/images/logo.png'); ?>" alt="logo" width="40%" class="shadow-light mb-5 mt-2" style="background-color: rgba(120, 120, 121, .9); padding: 12px;">
                     </div>
                     <h4 class="text-dark font-weight-normal text-center">Welcome to <span class="font-weight-bold">Aluinch Backoffice</span></h4>
                     <form method="POST" action="<?php echo base_url('backoffice/login_process'); ?>"" class="needs-validation" novalidate="">

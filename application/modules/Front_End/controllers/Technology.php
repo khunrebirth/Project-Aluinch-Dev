@@ -21,20 +21,30 @@ class Technology extends MX_Controller {
 	public function index()
 	{
 		$data['content'] = 'technology';
+        $data['page_slug'] = 'technology';
 
 		$this->load->view('app', $data);
 	}
 
-	public function technology_tips_and_tracks()
+	public function show($slug)
     {
-        $data['content'] = 'technology-tips-and-tracks';
+        $data['content'] = 'technology';
 
-        $this->load->view('app', $data);
-    }
+        switch ($slug) {
+            case 'tips-and-tracks':
+                $data['page_slug'] = 'tips-and-tracks';
+                // TODO:: Something
+                break;
 
-    public function technology_faq()
-    {
-        $data['content'] = 'technology-faq';
+            case 'faq':
+                $data['page_slug'] = 'faq';
+                // TODO:: Something
+                break;
+
+            default:
+                $data['page_slug'] = 'technology';
+                ;
+        }
 
         $this->load->view('app', $data);
     }

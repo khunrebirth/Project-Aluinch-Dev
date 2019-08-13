@@ -59,12 +59,12 @@ $route['translate_uri_dashes'] = FALSE;
 | -------------------------------------------------------------------------
 */
 
+$route[''] = 'Front_End/Home';
 $route['home'] = 'Front_End/Home';
 $route['product'] = 'Front_End/Product';
-$route['product/(:any)/(:any)'] = 'Front_End/Product/show/$1/$2';
+$route['product/(:any)/(:any)'] = 'Front_End/Product/show/$group_product/$category_group_product';
 $route['technology'] = 'Front_End/Technology';
-$route['technology-tips-and-tracks'] = 'Front_End/Technology/technology_tips_and_tracks';
-$route['technology-faq'] = 'Front_End/Technology/technology_faq';
+$route['technology/(:any)'] = 'Front_End/Technology/show/$page_slug';
 $route['project-references'] = 'Front_End/ProjectReferences';
 $route['contact-us'] = 'Front_End/Contact';
 

@@ -64,19 +64,19 @@
                             <div id="navi" class="collapse navbar-collapse">
                                 <ul>
                                     <!-- Desktop -->
-                                    <li class="<?php if ($this->uri->segment(1) == "" || $this->uri->segment(1) == 'home') { echo 'active'; } ?>">
+                                    <li class="home-nav <?php if ($this->uri->segment(1) == "" || $this->uri->segment(1) == 'home') { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('home'); ?>">HOME</a></div>
                                     </li>
-                                    <li class="<?php if ($this->uri->segment(1) == "product") { echo 'active'; } ?>">
+                                    <li class="product-nav <?php if ($this->uri->segment(1) == "product") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('product'); ?>">PRODUCTS</a></div>
                                     </li>
-                                    <li class="<?php if ($this->uri->segment(1) == "technology" || $this->uri->segment(1) == "technology-tips-and-tracks" || $this->uri->segment(1) == 'technology-faq') { echo 'active'; } ?>">
+                                    <li class="technology-nav <?php if ($this->uri->segment(1) == "technology" || $this->uri->segment(1) == "technology-tips-and-tracks" || $this->uri->segment(1) == 'technology-faq') { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('technology'); ?>">TECHNOLOGY</a></div>
                                     </li>
-                                    <li class="<?php if ($this->uri->segment(1) == "project-references") { echo 'active'; } ?>">
+                                    <li class="project-nav <?php if ($this->uri->segment(1) == "project-references") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('project-references'); ?>">PROJECT REFERENCES</a></div>
                                     </li>
-                                    <li class="<?php if ($this->uri->segment(1) == "contact-us") { echo 'active'; } ?>">
+                                    <li class="contact-nav <?php if ($this->uri->segment(1) == "contact-us") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('contact-us'); ?>">CONTACT US</a></div>
                                     </li>
                                     <!-- Moblie -->

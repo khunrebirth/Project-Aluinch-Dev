@@ -194,7 +194,7 @@
                     <a href="<?php echo base_url('backoffice/dashboard'); ?>">Aluinch Backoffice</a>
                 </div>
                 <div class="sidebar-brand sidebar-brand-sm">
-                    <a href="<?php echo base_url('backoffice/dashboard'); ?>">Aluinch</a>
+                    <a href="<?php echo base_url('backoffice/dashboard'); ?>">ALI</a>
                 </div>
                 <ul class="sidebar-menu">
                     <li class="menu-header">General</li>

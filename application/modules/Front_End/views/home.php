@@ -600,8 +600,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="copy mobile">
-                        <span class="term-lb" data-toggle="modal" data-target="#sitemap">Sitemap</span>
-                        | <span data-toggle="modal" class="term-lb" data-target="#term">Terms and Conditions</span>
+                        <span class="term-lb" data-toggle="modal" data-target="#sitemap">Sitemap</span> | <span data-toggle="modal" class="term-lb" data-target="#term">Terms and Conditions</span>
                     </div>
                     <div class="copy mobile">Copyright © 2015 www.aluinch.com All Rights Reserved. Site by <a href="http://www.polardevgroup.com" target="_blank">Polardev</a></div>
                     <div class="clearfix"></div>

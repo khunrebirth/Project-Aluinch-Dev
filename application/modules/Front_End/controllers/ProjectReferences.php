@@ -24,4 +24,6 @@ class ProjectReferences extends MX_Controller {
 
 		$this->load->view('app', $data);
 	}
+
+	public function ajax_get_project_by_id($id) {}
 }

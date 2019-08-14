@@ -61,11 +61,20 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['home'] = 'Front_End/Home';
 $route['product'] = 'Front_End/Product';
-$route['product/(:any)/(:any)'] = 'Front_End/Product/show/$group_product/$category_group_product';
+$route['product/(:any)/(:any)'] = "Front_End/Product/show/$group_product/$category_group_product";
 $route['technology'] = 'Front_End/Technology';
-$route['technology/(:any)'] = 'Front_End/Technology/show/$page_slug';
+$route['technology/(:any)'] = "Front_End/Technology/show/$page_slug";
 $route['project-references'] = 'Front_End/ProjectReferences';
 $route['contact-us'] = 'Front_End/Contact';
+
+    /*
+    | -------------------------------------------------------------------------
+    | AJAX
+    | -------------------------------------------------------------------------
+    */
+
+    $route['ajax/get/product/(:any)'] = 'Front_End/Product/ajax_get_product_by_id/$id';
+    $route['ajax/get/project-references/(:any)'] = 'Front_End/ProjectReferences/ajax_get_project_by_id/$id';
 
 
 /*

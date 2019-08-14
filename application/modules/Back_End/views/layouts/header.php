@@ -204,7 +204,7 @@
 
                     <li class="menu-header">Meta tags</li>
                     <li class="">
-                        <a class="nav-link" href="<?php echo base_url('backoffice/meta-tag'); ?>"><i class="fas fa-pencil-ruler"></i> <span>Manage Meta Tags</span></a>
+                        <a class="nav-link" href="<?php echo base_url('backoffice/meta-tag'); ?>"><i class="fas fa-pencil-ruler"></i> <span>Meta Tags</span></a>
                     </li>
 
                     <li class="menu-header">Pages</li>

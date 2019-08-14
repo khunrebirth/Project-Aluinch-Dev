@@ -198,26 +198,78 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="menu-header">General</li>
-                    <li class=""><a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-pencil-ruler"></i><span>Content (Text Edit)</span></a>
+                    <li class="">
+                        <a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
+                    </li>
+
+                    <li class="menu-header">Meta tags</li>
+                    <li class="">
+                        <a class="nav-link" href="<?php echo base_url('backoffice/meta-tag'); ?>"><i class="fas fa-pencil-ruler"></i> <span>Manage Meta Tags</span></a>
+                    </li>
+
+                    <li class="menu-header">Pages</li>
+                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "home") { echo 'active'; } ?>">
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-home"></i><span>Home</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="<?php echo base_url('backoffice/content/branner'); ?>">&#9679; Section Branner</a></li>
-                            <li><a class="nav-link" href="<?php echo base_url('backoffice/content/about'); ?>">&#9679; Section About</a></li>
-<!--                            <li><a class="nav-link" href="--><?php //echo base_url('backoffice/content/contact'); ?><!--">&#9679; Section Contact</a></li>-->
+                            <li class="<?php if ($this->uri->segment(3) == "home" && $this->uri->segment(4) == "content"){ echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Content Page</a>
+                            </li>
+                            <li class="active">
+                                <a class="nav-link" href="#">&#9679; Title 1</a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "manage-item") { echo 'active'; } ?>" <?php echo $this->uri->segment(1); ?>>
-                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Manage Item</span></a>
+                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "product") { echo 'active'; } ?>">
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-gopuram"></i><span>Products</span></a>
                         <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "services"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services'); ?>">&#9679; Serivces</a></li>
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "services2"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/services2'); ?>">&#9679; Serivces Type 2</a></li>
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "clients"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/clients'); ?>">&#9679; Clients</a></li>
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "blogs"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/blogs'); ?>">&#9679; Blogs</a></li>
-                            <li class="<?php if ($this->uri->segment(2) == "manage-item" && $this->uri->segment(3) == "teams"){ echo 'active'; } ?>"><a class="nav-link" href="<?php echo base_url('backoffice/manage-item/teams'); ?>">&#9679; Teams</a></li>
+                            <li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Content Page</a>
+                            </li>
+                            <li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "group") { echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Group Product</a>
+                            </li>
+                            <li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "category") { echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Category Product</a>
+                            </li>
+                            <li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "list-products") { echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Products</a>
+                            </li>
                         </ul>
                     </li>
-                    <li><a class="nav-link" href="<?php echo base_url('backoffice/settings'); ?>"><i class="fas fa-ellipsis-h"></i> <span>Settings</span></a></li>
+                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "technology") { echo 'active'; } ?>">
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-microchip"></i><span>Technology</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="<?php if ($this->uri->segment(3) == "technology" && $this->uri->segment(4) == "content"){ echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Content Page</a>
+                            </li>
+                            <li class="<?php if ($this->uri->segment(3) == "technology" && $this->uri->segment(4) == "category"){ echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Category Technology</a>
+                            </li>
+                            <li class="<?php if ($this->uri->segment(3) == "technology" && $this->uri->segment(4) == "faq"){ echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Technology FAQ</a>
+                            </li>
+                            <li class="<?php if ($this->uri->segment(3) == "technology" && $this->uri->segment(4) == "list-technologies"){ echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Technologies</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "project") { echo 'active'; } ?>">
+                        <a href="#" class="nav-link has-dropdown"><i class="fas fa-project-diagram"></i><span>Project References</span></a>
+                        <ul class="dropdown-menu">
+                            <li class="<?php if ($this->uri->segment(3) == "project" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Content Page</a>
+                            </li>
+                            <li class="<?php if ($this->uri->segment(3) == "project" && $this->uri->segment(4) == "list-projects") { echo 'active'; } ?>">
+                                <a class="nav-link" href="#">&#9679; Projects</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link" href="#"><i class="far fa-file-alt"></i> <span>Contact</span></a></li>
+
+                    <li class="menu-header">Settings</li>
+                    <li>
+                        <a class="nav-link" href="<?php echo base_url('backoffice/settings'); ?>"><i class="fas fa-ellipsis-h"></i> <span>Settings</span></a>
+                    </li>
                 </ul>
 
                 <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

@@ -89,10 +89,10 @@ $route['contact-us'] = 'Front_End/Contact';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice'] = 'Back_End/Auth/Authentication';
-    $route['backoffice/login'] = 'Back_End/Auth/Authentication';
-    $route['backoffice/login_process'] = 'Back_End/Auth/Authentication/login_process';
-    $route['backoffice/logout'] = 'Back_End/Auth/Authentication/logout';
+    $route['backoffice'] = 'back_end/auth/authentication';
+    $route['backoffice/login'] = 'back_end/auth/authentication';
+    $route['backoffice/login_process'] = 'back_end/auth/authentication/login_process';
+    $route['backoffice/logout'] = 'back_end/auth/authentication/logout';
 
     /*
     | -------------------------------------------------------------------------
@@ -100,7 +100,7 @@ $route['contact-us'] = 'Front_End/Contact';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice/dashboard'] = 'Back_End/Dashboard';
+    $route['backoffice/dashboard'] = 'back_end/dashboard';
 
     /*
     | -------------------------------------------------------------------------
@@ -108,7 +108,7 @@ $route['contact-us'] = 'Front_End/Contact';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice/mete-tag'] = 'Back_End/MetaTag';
+    $route['backoffice/mete-tag'] = 'back_end/meta_tag';
 
     /*
     | -------------------------------------------------------------------------
@@ -122,8 +122,8 @@ $route['contact-us'] = 'Front_End/Contact';
         | -------------------------------------------------------------------------
         */
 
-        $route['backoffice/page/home'] = 'Back_End/home';
-        $route['backoffice/page/home/content'] = 'Back_End/home/content';
+        $route['backoffice/page/home'] = 'back_end/home';
+        $route['backoffice/page/home/content'] = 'back_end/home/content';
 
         /*
         | -------------------------------------------------------------------------
@@ -131,28 +131,27 @@ $route['contact-us'] = 'Front_End/Contact';
         | -------------------------------------------------------------------------
         */
 
-        // Category
-        $route['backoffice/page/product/group'] = 'Back_End/product_group';
-        $route['backoffice/page/product/group/store'] = 'Back_End/product_group/store';
-        $route['backoffice/page/product/group/edit/(:any)'] = "Back_End/product_group/edit/$1";
-        $route['backoffice/page/product/group/update/(:any)'] = "Back_End/product_group/update/$1";
-        $route['backoffice/page/product/group/destroy/(:any)'] = "Back_End/product_group/destroy/$1";
-
         // Groups
-        $route['backoffice/page/product/category'] = 'Back_End/product_category';
-        $route['backoffice/page/product/category/store'] = 'Back_End/product_category/store';
-        $route['backoffice/page/product/category/edit/(:any)'] = "Back_End/product_category/edit/$1";
-        $route['backoffice/page/product/category/update/(:any)'] = "Back_End/product_category/update/$1";
-        $route['backoffice/page/product/category/destroy/(:any)'] = "Back_End/product_category/destroy/$1";
+        $route['backoffice/page/product/group'] = 'back_end/group_product';
+        $route['backoffice/page/product/group/store'] = 'back_end/group_product/store';
+        $route['backoffice/page/product/group/edit/(:any)'] = "back_end/group_product/edit/$1";
+        $route['backoffice/page/product/group/update/(:any)'] = "back_end/group_product/update/$1";
+        $route['backoffice/page/product/group/destroy/(:any)'] = "back_end/group_product/destroy/$1";
+
+        // Category
+        $route['backoffice/page/product/category'] = 'back_end/category_product';
+        $route['backoffice/page/product/category/store'] = 'back_end/category_product/store';
+        $route['backoffice/page/product/category/edit/(:any)'] = "back_end/category_product/edit/$1";
+        $route['backoffice/page/product/category/update/(:any)'] = "back_end/category_product/update/$1";
+        $route['backoffice/page/product/category/destroy/(:any)'] = "back_end/category_product/destroy/$1";
 
         // Products
-        $route['backoffice/page/product'] = 'Back_End/product';
-        $route['backoffice/page/product/list-products'] = 'Back_End/product';
-        $route['backoffice/page/product/products/store'] = 'Back_End/product/store';
-        $route['backoffice/page/product/products/edit/(:any)'] = "Back_End/product/edit/$1";
-        $route['backoffice/page/product/products/update/(:any)'] = "Back_End/product/update/$1";
-        $route['backoffice/page/product/products/destroy/(:any)'] = "Back_End/product/destroy/$1";
-        $route['backoffice/page/product/content'] = 'Back_End/product/content';
+        $route['backoffice/page/product/list-products'] = 'back_end/product';
+        $route['backoffice/page/product/products/store'] = 'back_end/product/store';
+        $route['backoffice/page/product/products/edit/(:any)'] = "back_end/product/edit/$1";
+        $route['backoffice/page/product/products/update/(:any)'] = "back_end/product/update/$1";
+        $route['backoffice/page/product/products/destroy/(:any)'] = "back_end/product/destroy/$1";
+        $route['backoffice/page/product/content'] = 'back_end/product/content';
 
         /*
         | -------------------------------------------------------------------------
@@ -161,20 +160,20 @@ $route['contact-us'] = 'Front_End/Contact';
         */
 
         // Category
-        $route['backoffice/page/technology/category'] = 'Back_End/technology_category';
-        $route['backoffice/page/technology/category/store'] = 'Back_End/product_category/store';
-        $route['backoffice/page/technology/category/edit/(:any)'] = "Back_End/product_category/edit/$1";
-        $route['backoffice/page/technology/category/update/(:any)'] = "Back_End/product_category/update/$1";
-        $route['backoffice/page/technology/category/destroy/(:any)'] = "Back_End/product_category/destroy/$1";
+        $route['backoffice/page/technology/category'] = 'back_end/technology_category';
+        $route['backoffice/page/technology/category/store'] = 'back_end/product_category/store';
+        $route['backoffice/page/technology/category/edit/(:any)'] = "back_end/product_category/edit/$1";
+        $route['backoffice/page/technology/category/update/(:any)'] = "back_end/product_category/update/$1";
+        $route['backoffice/page/technology/category/destroy/(:any)'] = "back_end/product_category/destroy/$1";
 
         // Technologies
-        $route['backoffice/page/technology'] = 'Back_End/technology';
-        $route['backoffice/page/technology/list-technologies'] = 'Back_End/technology';
-        $route['backoffice/page/technology/technologies/store'] = 'Back_End/technology/store';
-        $route['backoffice/page/technology/technologies/edit/(:any)'] = "Back_End/technology/edit/$1";
-        $route['backoffice/page/technology/technologies/update/(:any)'] = "Back_End/technology/update/$1";
-        $route['backoffice/page/technology/technologies/destroy/(:any)'] = "Back_End/technology/destroy/$1";
-        $route['backoffice/page/technology/content'] = 'Back_End/technology/content';
+        $route['backoffice/page/technology'] = 'back_end/technology';
+        $route['backoffice/page/technology/list-technologies'] = 'back_end/technology';
+        $route['backoffice/page/technology/technologies/store'] = 'back_end/technology/store';
+        $route['backoffice/page/technology/technologies/edit/(:any)'] = "back_end/technology/edit/$1";
+        $route['backoffice/page/technology/technologies/update/(:any)'] = "back_end/technology/update/$1";
+        $route['backoffice/page/technology/technologies/destroy/(:any)'] = "back_end/technology/destroy/$1";
+        $route['backoffice/page/technology/content'] = 'back_end/technology/content';
 
         /*
         | -------------------------------------------------------------------------
@@ -183,20 +182,20 @@ $route['contact-us'] = 'Front_End/Contact';
         */
 
         // Category
-        $route['backoffice/page/project/category'] = 'Back_End/project_category';
-        $route['backoffice/page/project/category/store'] = 'Back_End/project_category/store';
-        $route['backoffice/page/project/category/edit/(:any)'] = "Back_End/project_category/edit/$1";
-        $route['backoffice/page/project/category/update/(:any)'] = "Back_End/project_category/update/$1";
-        $route['backoffice/page/project/category/destroy/(:any)'] = "Back_End/project_category/destroy/$1";
+        $route['backoffice/page/project/category'] = 'back_end/project_category';
+        $route['backoffice/page/project/category/store'] = 'back_end/project_category/store';
+        $route['backoffice/page/project/category/edit/(:any)'] = "back_end/project_category/edit/$1";
+        $route['backoffice/page/project/category/update/(:any)'] = "back_end/project_category/update/$1";
+        $route['backoffice/page/project/category/destroy/(:any)'] = "back_end/project_category/destroy/$1";
 
         // Projects
-        $route['backoffice/page/project'] = 'Back_End/project';
-        $route['backoffice/page/project/list-projects'] = 'Back_End/project';
-        $route['backoffice/page/project/projects/store'] = 'Back_End/project/store';
-        $route['backoffice/page/project/projects/edit/(:any)'] = "Back_End/project/edit/$1";
-        $route['backoffice/page/project/projects/update/(:any)'] = "Back_End/project/update/$1";
-        $route['backoffice/page/project/projects/destroy/(:any)'] = "Back_End/project/destroy/$1";
-        $route['backoffice/page/project/content'] = 'Back_End/project/content';
+        $route['backoffice/page/project'] = 'back_end/project';
+        $route['backoffice/page/project/list-projects'] = 'back_end/project';
+        $route['backoffice/page/project/projects/store'] = 'back_end/project/store';
+        $route['backoffice/page/project/projects/edit/(:any)'] = "back_end/project/edit/$1";
+        $route['backoffice/page/project/projects/update/(:any)'] = "back_end/project/update/$1";
+        $route['backoffice/page/project/projects/destroy/(:any)'] = "back_end/project/destroy/$1";
+        $route['backoffice/page/project/content'] = 'back_end/project/content';
 
     /*
     | -------------------------------------------------------------------------
@@ -204,7 +203,7 @@ $route['contact-us'] = 'Front_End/Contact';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice/page/contact'] = 'Back_End/contact';
+    $route['backoffice/page/contact'] = 'back_end/contact';
 
     /*
     | -------------------------------------------------------------------------
@@ -212,4 +211,4 @@ $route['contact-us'] = 'Front_End/Contact';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice/setting'] = 'Back_End/setting';
+    $route['backoffice/setting'] = 'back_end/setting';

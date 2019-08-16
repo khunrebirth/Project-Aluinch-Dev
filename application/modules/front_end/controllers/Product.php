@@ -18,9 +18,25 @@ class Product extends MX_Controller {
 	 * map to /home.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function index()
 	{
-		$data['content'] = 'product';
+        // Set Model
+        $this->load->model('user_model');
+        $this->load->model('group_product_model');
+        $this->load->model('category_product_model');
+        $this->load->model('product_model');
+
+        // Variables
+        $category_product_id = 1;
+
+        // Set Data
+        $data['title'] = 'Product Category';
+        $data['content'] = 'product';
+        $data['products'] = $this->filter_data_products(
+            $this->group_product_model->get_group_product_all(),
+            $category_product_id
+        );
 
 		$this->load->view('app', $data);
 	}
@@ -33,4 +49,36 @@ class Product extends MX_Controller {
     }
 
     public function ajax_get_product_by_id($id) {}
+
+    private function filter_data_products($group_products, $category_product_id)
+    {
+        $data = [];
+
+        foreach ($group_products as $key_group_product => $group_product) {
+
+            $category_products = $this->category_product_model->get_category_product_by_group_product_id($group_product->id);
+
+            $data[$key_group_product]['group_product_name'] = $group_product->title;
+            $data[$key_group_product]['category_products'] = [];
+
+            if (count($category_products) > 0) {
+
+                foreach ($category_products as $key_category_product => $category_product) {
+
+                    $data[$key_group_product]['category_products'][$key_category_product]['category_product_name'] = $category_product->title;
+                    $data[$key_group_product]['category_products'][$key_category_product]['products'] = [];
+
+                    $products = $this->product_model->get_product_by_custom($group_product->id, $category_product->id);
+
+                    if (count($products) > 0) {
+                        foreach ($products as $key_product => $product) {
+                            $data[$key_group_product]['category_products'][$key_category_product]['products'][$key_product][] = $product;
+                        }
+                    }
+                }
+            }
+        }
+
+        return $data;
+    }
 }

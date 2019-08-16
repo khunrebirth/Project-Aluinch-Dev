@@ -24,6 +24,13 @@ class Category_product_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
+    public function get_category_product_by_group_product_id($id)
+    {
+        $query = $this->db->where('group_product_id', $id)->get('category_products');
+
+        return $query->num_rows() > 0 ? $query->result() : false;
+    }
+
     public function insert_category_product($data)
     {
         $this->db->insert('category_products', $data);

@@ -1,5 +1,4 @@
     <div id="section1">
-
         <div class="warp-slide">
             <div id="slides">
                 <div class="slides-container">
@@ -7,7 +6,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -20,7 +18,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <section id="slogan-web" class="main-section">
@@ -55,171 +52,21 @@
             <div class="row">
                 <div class="col-md-3">
                     <ul class="list-item">
+                        <?php foreach ($list_products as $products) { ?>
                         <li class="product-list active">
-                            <a href="https://www.aluinch.com/aluminium--อลูมิเนียมโปรไ">ALUMINIUM อลูมิเนียมโปรไฟล์</a>
+                            <a><?php echo $products['group_product_name']; ?></a>
                             <ul class="sub-list-item">
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/t-series">
-                                        T-SERIES
-                                        <p>ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm. </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/f-series">
-                                        F-SERIES
-                                        <p>ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm. </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/v-series">
-                                        V-SERIES
-                                        <p>ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm. </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/d-series">
-                                        D-SERIES
-                                        <p>ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm. </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/s-series">
-                                        S-SERIES
-                                        <p>ระบบอลูมิเนียมขัวเชิงผนัง แบบเรียบและสกรู ออน </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/x-series">
-                                        X-SERIES
-                                        <p>ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง ขนาด 16 x 35 mm. </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/m-series">
-                                        M-SERIES
-                                        <p>ระบบอลูมิเนียมประตู บานเลื่อนและบานสวิง ขนาด 9 x 35 mm. </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/e-series">
-                                        E-SERIES
-                                        <p>ระบบอลูมิเนียมบานเลื่อนประตูหน้าต่าง ( กันน้ำ ) </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/c-series">
-                                        C-SERIES
-                                        <p>ระบบอลูมิเนียมหน้าต่างบานกระทุ้ง ( กันน้ำ ) </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/b-series">
-                                        B-SERIES <p>
-                                            ระบบอลูมิเนียมบานเฟี้ยมประตูและหน้าต่าง ( กันน้ำ ) </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/i-series">
-                                        i-SERIES
-                                        <p>ระบบอลูมิเนียมบานหน้าตู้ บานเลื่อนและบานเปิด </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/j-series">
-                                        J-SERIES
-                                        <p>ระบบอลูมิเนียมใช้ตกแต่งประตูหรือผนัง </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/l-series">
-                                        L-SERIES
-                                        <p>ระบบอลูมิเนียมบานเกร็ดสำหรับบังลมและรับลม </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/accessories">
-                                        ACCESSORIES
-                                        <p>ยางอัด ยางหุ้ม ยางปิดร่อง ยางสันบานประตูและขนสักหลาด </p>
-                                    </a>
-                                </li>
+                                <?php foreach ($products['category_products'] as $category_product) { ?>
+                                    <li class="active">
+                                        <a href="<?php echo base_url('product/' . $products['group_product_slug'] . '/' . $category_product['category_product_slug'] . '/' . $category_product['category_product_id']); ?>">
+                                            <?php echo $category_product['category_product_name']; ?>
+                                            <p><?php echo $category_product['category_product_desc']; ?></p>
+                                        </a>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </li>
-                        <li class="product-list ">
-                            <a href="https://www.aluinch.com/hardware-อุปกรณ๜ประตูหน้าต่าง">HARDWARE อุปกรณ์ประตูหน้าต่าง</a>
-                            <ul class="sub-list-item">
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/lever-handle">
-                                        Lever Handle
-                                        <p>มือจับก้านโยกสำหรับประตูไม้และอลูมิเนียม </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/pull-handle-with-lock">
-                                        Pull Handle with Lock
-                                        <p>มือจับกระบองยาวมีล็อคในตัว </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/pull-handle">
-                                        Pull Handle
-                                        <p>มือจับกระบองใช้สำหรับประตูทุกชนิด </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/flush-handle">
-                                        Flush Handle
-                                        <p>มือจับแบบฝังใช้กับประตูบานไม้และอลูมิเนียม </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/mortise-lock">
-                                        Mortise Lock
-                                        <p>เสื้อกุญแจสำหรับประตูบานไม้และอลูมิเนียม </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/knob-cylinder">
-                                        Knob Cylinder
-                                        <p>ไส้กุญแจสำหรับประตูทุกชนิด </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/door-closer">
-                                        Door Closer
-                                        <p>โช้คอัพประตูใช้ได้กับประตูทุกชนิด </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/patch-fitting">
-                                        Patch Fitting
-                                        <p>อุปกรณ์สำหรับประตูกระจกบานเปลือย </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/rolling-set">
-                                        Rolling Set
-                                        <p>รางเลื่อนและล้อเลื่อนใช้กับประตูทุกชนิด </p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="product-list ">
-                            <a href="https://www.aluinch.com/collor-chart-สีอลูมิเนียมของเรา">COLLOR CHART สีอลูมิเนียมของเรา</a>
-                            <ul class="sub-list-item">
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/anodized">
-                                        ANODIZED
-                                        <p>สีชุบเน้นความสวยงามของเฟรม </p>
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <a href="https://www.aluinch.com/powder-coated">
-                                        POWDER COATED
-                                        <p>สีพ่น ทนการขีดข่วนสีคงทนตามการใช้งาน </p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="col-md-9">

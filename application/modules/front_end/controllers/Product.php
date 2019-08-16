@@ -33,10 +33,8 @@ class Product extends MX_Controller {
         // Set Data
         $data['title'] = 'Product Category';
         $data['content'] = 'product';
-        $data['products'] = $this->filter_data_products(
-            $this->group_product_model->get_group_product_all(),
-            $category_product_id
-        );
+        $data['list_products'] = $this->filter_data_products($this->group_product_model->get_group_product_all());
+        $data['list_products_specific'] = $this->filter_data_products_specific(1, 1);
 
 		$this->load->view('app', $data);
 	}
@@ -50,7 +48,7 @@ class Product extends MX_Controller {
 
     public function ajax_get_product_by_id($id) {}
 
-    private function filter_data_products($group_products, $category_product_id)
+    private function filter_data_products($group_products)
     {
         $data = [];
 
@@ -59,13 +57,17 @@ class Product extends MX_Controller {
             $category_products = $this->category_product_model->get_category_product_by_group_product_id($group_product->id);
 
             $data[$key_group_product]['group_product_name'] = $group_product->title;
+            $data[$key_group_product]['group_product_slug'] = $group_product->slug;
             $data[$key_group_product]['category_products'] = [];
 
             if (count($category_products) > 0) {
 
                 foreach ($category_products as $key_category_product => $category_product) {
 
+                    $data[$key_group_product]['category_products'][$key_category_product]['category_product_id'] = $category_product->id;
                     $data[$key_group_product]['category_products'][$key_category_product]['category_product_name'] = $category_product->title;
+                    $data[$key_group_product]['category_products'][$key_category_product]['category_product_slug'] = $category_product->slug;
+                    $data[$key_group_product]['category_products'][$key_category_product]['category_product_desc'] = $category_product->desc;
                     $data[$key_group_product]['category_products'][$key_category_product]['products'] = [];
 
                     $products = $this->product_model->get_product_by_custom($group_product->id, $category_product->id);
@@ -78,6 +80,37 @@ class Product extends MX_Controller {
                 }
             }
         }
+
+        return $data;
+    }
+
+    private function filter_data_products_specific($group_product_id, $category_product_id)
+    {
+        $data = [];
+
+        $group_product = $this->group_product_model->get_group_product_by_id($group_product_id);
+        $category_products = $this->category_product_model->get_category_product_by_custom($group_product->id, $category_product_id);
+
+        $data['group_product_name'] = $group_product->title;
+        $data['category_products'] = [];
+
+//        if (count($category_products) > 0) {
+//
+//            foreach ($category_products as $key_category_product => $category_product) {
+//
+//                $data[$key_group_product]['category_products'][$key_category_product]['category_product_name'] = $category_product->title;
+//                $data[$key_group_product]['category_products'][$key_category_product]['category_product_desc'] = $category_product->desc;
+//                $data[$key_group_product]['category_products'][$key_category_product]['products'] = [];
+//
+//                $products = $this->product_model->get_product_by_custom($group_product->id, $category_product->id);
+//
+//                if (count($products) > 0) {
+//                    foreach ($products as $key_product => $product) {
+//                        $data[$key_group_product]['category_products'][$key_category_product]['products'][$key_product][] = $product;
+//                    }
+//                }
+//            }
+//        }
 
         return $data;
     }

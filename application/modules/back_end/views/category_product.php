@@ -84,18 +84,62 @@
                 </div>
                 <form id="addEditCategoryProductForm">
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label>Title</label>
-                            <input type="hidden" value="" id="id">
-                            <input type="text" class="form-control" name="title" id="title" required="required">
+                        <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Meta Tag</h6></div>
+                        <hr>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Title</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="meta_tag_title" id="metaTagTitle">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Group</label>
-                            <select class="form-control" id="groupProductId" name="group_product_id">
-                                <?php foreach ($group_products as $group_product) { ?>
-                                    <option value="<?php echo $group_product->id; ?>"><?php echo $group_product->title; ?></option>
-                                <?php } ?>
-                            </select>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Description</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="meta_tag_description" id="metaTagDescription">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Keywords</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="meta_tag_keywords" id="metaTagKeywords">
+                            </div>
+                        </div>
+                        <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
+                        <hr>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">* Title Category</label>
+                            <input type="hidden" value="" id="id">
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="title" id="title" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">* Group</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="groupProductId" name="group_product_id" required="required">
+                                    <?php foreach ($group_products as $group_product) { ?>
+                                        <option value="<?php echo $group_product->id; ?>"><?php echo $group_product->title; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Preview</label>
+                            <div class="col-sm-9">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Image</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" name="file" id="file">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Image Title & Alt</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="image_title_alt" id="imageTitleAlt">
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -148,7 +192,7 @@
 
                 $('#modalAddEditCategoryProduct').modal('show')
 
-                $('#modalTitle').html('Edit')
+                $('#modalTitle').html('Edit: ' + categoryProduct.title)
                 $('#id').val(categoryProduct.id).attr('data-link-to-update', url.replace('edit', 'update'))
                 $('#title').val(categoryProduct.title)
                 $('#groupProductId').val(categoryProduct.group_product_id)

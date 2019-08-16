@@ -134,7 +134,7 @@
 
                 $('#modalAddEditGroupProduct').modal('show')
 
-                $('#modalTitle').html('Edit')
+                $('#modalTitle').html('Edit: ' + groupProduct.title)
                 $('#id').val(groupProduct.id).attr('data-link-to-update', url.replace('edit', 'update'))
                 $('#title').val(groupProduct.title)
             },

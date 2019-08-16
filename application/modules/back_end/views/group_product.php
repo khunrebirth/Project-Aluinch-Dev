@@ -20,7 +20,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Group Product</h4>
+                            <h4>List of Product Group</h4>
                             <div class="card-header-action">
                                 <a href="#modalAddEditGroupProduct" class="btn btn-primary" onclick="addGroupProduct()" data-toggle="modal">
                                     <i class="fas fa-plus"></i> Add

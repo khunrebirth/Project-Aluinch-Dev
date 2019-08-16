@@ -31,16 +31,20 @@ class Product extends MX_Controller
 
         // Set Model
         $this->load->model('user_model');
-        $this->load->model('Team_model');
+        $this->load->model('group_product_model');
+        $this->load->model('category_product_model');
+        $this->load->model('product_model');
 
-        $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
+        $this->data['user'] = $this->user_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
     public function index()
     {
-        $this->data['title'] = 'Manage Item: Teams';
-        $this->data['content'] = 'team';
-        $this->data['teams'] = $this->Team_model->get_team_all();
+        $this->data['title'] = 'Manage Item: products';
+        $this->data['content'] = 'product';
+        $this->data['group_products'] = $this->group_product_model->get_group_product_all();
+        $this->data['category_products'] = $this->category_product_model->get_category_product_all();
+        $this->data['products'] = $this->product_model->get_product_all();
 
         $this->load->view('app', $this->data);
     }
@@ -52,7 +56,7 @@ class Product extends MX_Controller
 
         // TODO:: Validate
 
-        $config['upload_path'] = './storage/images/teams';
+        $config['upload_path'] = './storage/images/products';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
 
@@ -66,14 +70,14 @@ class Product extends MX_Controller
         } else {
             $data = array('upload_data' => $this->upload->data());
 
-            $team = $this->Team_model->insert_team(array(
+            $product = $this->product_model->insert_team(array(
                 'title' => $this->input->post('title'),
                 'body' => $this->input->post('body'),
                 'image' => $data['upload_data']['file_name'],
                 'created_at' => date('Y-m-d H:i:s')
             ));
 
-            if ($team != false) {
+            if ($product != false) {
                 $status = 200;
                 $response['success'] = 1;
             }
@@ -92,11 +96,11 @@ class Product extends MX_Controller
         $status = 500;
         $response['success'] = 0;
 
-        $team = $this->Team_model->get_team_by_id($id);
+        $product = $this->product_model->get_product_by_id($id);
 
-        if ($team != false) {
+        if ($product != false) {
             $status = 200;
-            $response['data'] = $team;
+            $response['data'] = $product;
             $response['success'] = 1;
         }
 
@@ -111,13 +115,13 @@ class Product extends MX_Controller
 
         // TODO:: Validate
 
-        $config['upload_path'] = './storage/images/teams';
+        $config['upload_path'] = './storage/images/products';
         $config['allowed_types'] = 'gif|jpg|png';
         $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
 
         $status = 500;
         $response['success'] = 0;
-        $team = false;
+        $product = false;
 
         $this->load->library('upload', $config);
 
@@ -125,7 +129,7 @@ class Product extends MX_Controller
         if (!$this->upload->do_upload('file')) {
             $error = array('error' => $this->upload->display_errors());
 
-            $team = $this->Team_model->update_team_by_id($id, array(
+            $product = $this->product_model->update_product_by_id($id, array(
                 'title' => $this->input->post('title'),
                 'body' => $this->input->post('body'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -136,7 +140,7 @@ class Product extends MX_Controller
         else {
             $data = array('upload_data' => $this->upload->data());
 
-            $team = $this->Team_model->update_team_by_id($id, array(
+            $product = $this->product_model->update_product_by_id($id, array(
                 'title' => $this->input->post('title'),
                 'body' => $this->input->post('body'),
                 'image' => $data['upload_data']['file_name'],
@@ -145,7 +149,7 @@ class Product extends MX_Controller
         }
 
         // Set Status
-        if ($team != false) {
+        if ($product != false) {
             $status = 200;
             $response['success'] = 1;
         }
@@ -161,9 +165,9 @@ class Product extends MX_Controller
         $status = 500;
         $response['success'] = 0;
 
-        $team = $this->Team_model->delete_team_by_id($id);
+        $product = $this->product_model->delete_product_by_id($id);
 
-        if ($team != false) {
+        if ($product != false) {
             $status = 200;
             $response['success'] = 1;
         }

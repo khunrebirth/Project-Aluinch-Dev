@@ -5,7 +5,16 @@ class Product_model extends CI_Model {
 
     public function get_product_all()
     {
-        $query = $this->db->get('products');
+        $this->db->select('
+            products.*,
+            group_products.title as group_product_name,
+            category_products.title as category_product_name
+        ');
+        $this->db->from('products');
+        $this->db->join('group_products', 'group_products.id = products.group_product_id');
+        $this->db->join('category_products', 'category_products.id = products.category_product_id');
+
+        $query = $this->db->get();
 
         return $query->num_rows() > 0 ? $query->result() : false;
     }

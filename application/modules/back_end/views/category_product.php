@@ -130,7 +130,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Image</label>
+                            <label class="col-sm-3 col-form-label">Image Cover</label>
                             <div class="col-sm-9">
                                 <input type="file" class="form-control" name="file" id="file">
                             </div>

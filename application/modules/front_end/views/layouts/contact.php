@@ -72,13 +72,13 @@
                 <div class="partner desktop">partnership by <img src="<?php echo base_url('storage/images/partner-logo.jpg'); ?>" width="100" /> Company</div>
             </div>
             <div class="box-contact form-contact">
-                <form method="post" action="https://www.aluinch.com/sendemail_system.php">
+                <form action="<?php echo base_url('contact-us/send'); ?>" method="POST">
                     <input type="text" name="name" placeholder="Name:" required />
                     <input type="text" name="email" placeholder="Email:" required />
                     <input type="text" name="company" placeholder="Company:" />
                     <input type="text" name="tel" placeholder="Phone:" />
                     <textarea name="detail" placeholder="Message:" required ></textarea>
-                    <div style="padding-bottom: 20px;" data-callback="check-captcha" class="g-recaptcha" data-sitekey="6LcVeUYUAAAAADtuawZIutfIUO5U8badCga1I5yL"></div>
+                    <div style="padding-bottom: 20px;" class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
                     <input type="submit" id="btn-footer-submit" value="Send Message" style="margin-top: 0px;" />
                 </form>
                 <div class="fb">

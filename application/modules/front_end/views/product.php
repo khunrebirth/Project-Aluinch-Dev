@@ -71,18 +71,18 @@
                 </div>
                 <div class="col-md-9">
                     <div class="product-main">
-                        <div class="head-item">ALUMINIUM อลูมิเนียมโปรไฟล์</div>
-                        <h4>T-SERIES : ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm. </h4>
+                        <div class="head-item"><?php echo $list_products_specific['group_product_name']; ?></div>
+                        <h4><?php echo $list_products_specific['category_product_name'] . ':' . $list_products_specific['category_product_desc']; ?></h4>
                         <div class="main-pic">
-                            <img src="https://www.aluinch.com/minerva/upload/0121df.jpg" class="img-responsive"/>
+                            <img src="<?php echo base_url('storage/uploads/products/' . $list_products_specific['category_product_image_cover']); ?>" class="img-responsive"/>
                         </div>
                         <div class="list-pdf">
                             <ul>
                                 <li>
-                                    <div><a onClick="ga('send', 'event', 'Downloads', 'Click', 'Catalog', '100');" href="https://www.aluinch.com/minerva/upload/6acf01.pdf" target="_blank">Download Catalog</a></div>
+                                    <div><a onClick="ga('send', 'event', 'Downloads', 'Click', 'Catalog', '100');" href="#" target="_blank">Download Catalog</a></div>
                                 </li>
                                 <li>
-                                    <div><a href="https://www.aluinch.com/minerva/upload/b34d43.pdf" target="_blank">Download Price</a></div>
+                                    <div><a href="#" target="_blank">Download Price</a></div>
                                 </li>
                                 <li>
                                     <div id="cad-form">Download Cad</div>
@@ -91,217 +91,18 @@
                         </div>
                         <div class="clearfix"></div>
                         <ul id="list-loadmore" class="listing">
-                            <li class="lb-detail" data-code="742b87ca36c501ce" data-val="2">
-                                <img src="https://www.aluinch.com/minerva/upload/89cecd.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-20.01</div>
-                                <div class="box-des">HEADTRACK 20 mm. | กล่องเรียบ 20 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="411bcd7e18f28e93" data-val="18">
-                                <img src="https://www.aluinch.com/minerva/upload/b3f154.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-20.02</div>
-                                <div class="box-des">MULLION 20 mm. | กล่องร่อง 20 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="4dd8cb9859310f54" data-val="19">
-                                <img src="https://www.aluinch.com/minerva/upload/38ff6c.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-20.03</div>
-                                <div class="box-des">SNAPING HEADTRACK | กล่องเรียบ 20 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="0f797e13cd79385e" data-val="21">
-                                <img src="https://www.aluinch.com/minerva/upload/33a234.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-20.05</div>
-                                <div class="box-des">GLAZING BAR 20 mm. | กล่องเปิด 20 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="a013fc7cf6d88222" data-val="22">
-                                <img src="https://www.aluinch.com/minerva/upload/6fb176.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-20.06</div>
-                                <div class="box-des">GLAZING BEAD 20 mm. | ฝาปิด 20 มม. ใช้คู่กับ T-20.05</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="ea3ac40800f99455" data-val="20">
-                                <img src="https://www.aluinch.com/minerva/upload/106d27.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-25.03</div>
-                                <div class="box-des">MULLION 25 mm. | กล่องร่อง 25 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="32b82ce5300fdb81" data-val="23">
-                                <img src="https://www.aluinch.com/minerva/upload/433828.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-25.04</div>
-                                <div class="box-des">SNAPING MULLION | ตบร่อง 25 มม. ใช้คู่กับ T-25.03</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="73be0c05f0fbd104" data-val="24">
-                                <img src="https://www.aluinch.com/minerva/upload/d47562.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-25.07</div>
-                                <div class="box-des">WIDE LINE TRANSOM FRAME | ซอยลูกฟัก 25 มม. แนวนอน</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="ff2de92d217305b0" data-val="25">
-                                <img src="https://www.aluinch.com/minerva/upload/d55b26.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-25.08</div>
-                                <div class="box-des">TRANSOM BEAD 25 mm. | ฝาปิดตัวซอย 25 มม. ใช้คู่กับ T-25.07</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="4432f7fdf892c5ae" data-val="26">
-                                <img src="https://www.aluinch.com/minerva/upload/4795f8.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-10</div>
-                                <div class="box-des">FLUSH STOP | ตบร่องเรียบ ร่องกระจก</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="b0ff378d18c18bf6" data-val="27">
-                                <img src="https://www.aluinch.com/minerva/upload/6ed14b.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-35</div>
-                                <div class="box-des">35 mm. DOOR STOP | บังใบสำหรับบาน 35 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="3936b160b7015b8f" data-val="28">
-                                <img src="https://www.aluinch.com/minerva/upload/d7d7b8.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T- 45</div>
-                                <div class="box-des">45 mm. DOOR STOP | บังใบสำหรับบาน 45 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="19af30a149b75c9a" data-val="29">
-                                <img src="https://www.aluinch.com/minerva/upload/b34757.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-25.03P</div>
-                                <div class="box-des">MULLION 25 mm. | กล่องร่องมีปีกข้าง 25 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="f98b24cc1a1d5642" data-val="30">
-                                <img src="https://www.aluinch.com/minerva/upload/27bc8e.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-20.09</div>
-                                <div class="box-des">FRONT LINE GAZING BAR | กล่องเปิดร่องข้าง 20 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="868c3180565641b6" data-val="31">
-                                <img src="https://www.aluinch.com/minerva/upload/715dc2.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-20.10</div>
-                                <div class="box-des">FRONT LINE 20 mm. | กล่องร่องข้าง 20 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="fb3a472a67faeb4c" data-val="32">
-                                <img src="https://www.aluinch.com/minerva/upload/8ccb68.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-25.13</div>
-                                <div class="box-des">FRONT LINE 25 mm. | กล่องร่องข้าง 25 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="99443959d48d2cbe" data-val="33">
-                                <img src="https://www.aluinch.com/minerva/upload/c9c017.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-25.14</div>
-                                <div class="box-des">FRONT LINE SNAPING MULLION | ตบกล่องร่องข้าง 25 มม. ใช้คู่กับ T-25.13
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="9e016831942df992" data-val="34">
-                                <img src="https://www.aluinch.com/minerva/upload/9eeb20.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-25.17</div>
-                                <div class="box-des">FRONT LINE TRANSOM FRAME | ซอยลูกฟักร่องข้าง 25 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="b6819cf8397086de" data-val="35">
-                                <img src="https://www.aluinch.com/minerva/upload/de389b.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-01C</div>
-                                <div class="box-des">TRANGLE BACK-2-BACK 100 mm. | เสาเหลี่ยม 100 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="f7c15bebbcde07e8" data-val="36">
-                                <img src="https://www.aluinch.com/minerva/upload/edac02.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH T-02C</div>
-                                <div class="box-des">CONNER DOME SHAPE | เสาโค้ง 100 มม. ใช้คู่กับ T-01C</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
-                            <li class="lb-detail" data-code="45a10a2a30fcd0ec" data-val="37">
-                                <img src="https://www.aluinch.com/minerva/upload/44b92c.jpg" class="img-responsive img-center"/>
-                                <div class="clearfix"></div>
-                                <div class="box-topic">ALUINCH P-03</div>
-                                <div class="box-des">T5 - ALU PENDANT | รางไฟ 100 มม. x 35 มม.</div>
-                                <div class="clearfix"></div>
-                                <div class="viewdetail">VIEW DETAIL
-                                    <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
-                                </div>
-                            </li>
+                            <?php foreach ($list_products_specific['products'] as $product) { ?>
+                                <li class="lb-detail" data-code="<?php echo $product->id . '-code'; ?>" data-val="<?php echo $product->id; ?>">
+                                    <img src="<?php echo base_url('storage/uploads/products/' . $product->image); ?>" class="img-responsive img-center"/>
+                                    <div class="clearfix"></div>
+                                    <div class="box-topic"><?php echo $product->title; ?></div>
+                                    <div class="box-des"><?php echo $product->description_en . ' | ' . $product->description_th; ?></div>
+                                    <div class="clearfix"></div>
+                                    <div class="viewdetail">
+                                        VIEW DETAIL <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
+                                    </div>
+                                </li>
+                            <?php } ?>
                         </ul>
                         <div class="clearfix"></div>
                         <div align="center">
@@ -320,7 +121,6 @@
             <div id="arrow-product-right" class="arrow-right"><i class="glyphicon glyphicon-menu-right"></i></div>
             <div class="close-lb"><img src="<?php echo base_url('storage/images/product/close.png'); ?>"/></div>
             <div id="ajax-result"></div>
-
         </div>
     </div>
 

@@ -61,7 +61,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['home'] = 'Front_End/Home';
 $route['product'] = 'Front_End/Product';
-$route['product/(:any)/(:any)'] = 'Front_End/Product/show/$group_product/$category_group_product';
+$route['product/(:any)/(:any)/(:any)'] = "Front_End/Product/show/$1/$2/$3";
 $route['technology'] = 'Front_End/Technology';
 $route['technology/(:any)'] = 'Front_End/Technology/show/$page_slug';
 $route['project-references'] = 'Front_End/ProjectReferences';

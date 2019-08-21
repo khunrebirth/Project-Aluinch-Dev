@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 15, 2019 at 11:01 AM
+-- Generation Time: Aug 16, 2019 at 11:06 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -29,12 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `category_products` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
+  `slug` text NOT NULL,
   `desc` text NOT NULL,
   `image_cover` text NOT NULL,
+  `image_title_alt` text NOT NULL,
   `group_product_id` int(11) NOT NULL,
   `file_catalog` text NOT NULL,
   `file_price` text NOT NULL,
   `file_cad` text NOT NULL,
+  `meta_tag_title` text NOT NULL,
+  `meta_tag_description` text NOT NULL,
+  `meta_tag_keywords` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -44,33 +49,32 @@ CREATE TABLE `category_products` (
 -- Dumping data for table `category_products`
 --
 
-INSERT INTO `category_products` (`id`, `title`, `desc`, `image_cover`, `group_product_id`, `file_catalog`, `file_price`, `file_cad`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'T-SERIES', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.', '0121df.jpg', 1, '', '', '', '2019-08-14 10:29:14', NULL, NULL),
-(2, 'F-SERIES', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm.', 'a24779.jpg', 1, '', '', '', '2019-08-14 10:29:14', NULL, NULL),
-(3, 'V-SERIES', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm.', '471fcb.jpg', 1, '', '', '', '2019-08-14 10:29:46', NULL, NULL),
-(4, 'D-SERIES', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm.', 'ff80c3.jpg', 1, '', '', '', '2019-08-14 10:31:56', NULL, NULL),
-(5, 'S-SERIES', 'ระบบอลูมิเนียมขัวเชิงผนัง แบบเรียบและสกรู ออน', '8ce542.jpg', 1, '', '', '', '2019-08-14 10:33:07', '2019-08-15 10:27:38', NULL),
-(6, 'X-SERIES', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง ขนาด 16 x 35 mm.', '45c20e.jpg', 1, '', '', '', '2019-08-14 10:33:07', NULL, NULL),
-(7, 'M-SERIES', 'ระบบอลูมิเนียมประตู บานเลื่อนและบานสวิง ขนาด 9 x 35 mm.', '6b7b90.jpg', 1, '', '', '', '2019-08-14 10:34:09', NULL, NULL),
-(8, 'E-SERIES', 'ระบบอลูมิเนียมบานเลื่อนประตูหน้าต่าง ( กันน้ำ )', 'de801d.jpg', 1, '', '', '', '2019-08-14 10:34:09', NULL, NULL),
-(9, 'C-SERIES', 'ระบบอลูมิเนียมหน้าต่างบานกระทุ้ง ( กันน้ำ )', 'a7b71e.jpg', 1, '', '', '', '2019-08-14 10:35:17', NULL, NULL),
-(10, 'B-SERIES', 'ระบบอลูมิเนียมบานเฟี้ยมประตูและหน้าต่าง ( กันน้ำ )', 'ae7132.jpg', 1, '', '', '', '2019-08-14 10:35:17', NULL, NULL),
-(11, 'i-SERIES', 'ระบบอลูมิเนียมบานหน้าตู้ บานเลื่อนและบานเปิด', '91af97.jpg', 1, '', '', '', '2019-08-14 10:36:17', NULL, NULL),
-(12, 'J-SERIES', 'ระบบอลูมิเนียมใช้ตกแต่งประตูหรือผนัง', 'b9c5bc.jpg', 1, '', '', '', '2019-08-14 10:36:17', NULL, NULL),
-(13, 'L-SERIES', 'ระบบอลูมิเนียมบานเกร็ดสำหรับบังลมและรับลม', '780c33.jpg', 0, '', '', '', '2019-08-14 10:37:39', NULL, NULL),
-(14, 'ACCESSORIES', 'ยางอัด ยางหุ้ม ยางปิดร่อง ยางสันบานประตูและขนสักหลาด', 'af734c.jpg', 1, '', '', '', '2019-08-14 10:37:39', NULL, NULL),
-(15, 'Lever Handle', 'มือจับก้านโยกสำหรับประตูไม้และอลูมิเนียม', '6cab71.jpg', 2, '', '', '', '2019-08-14 10:40:08', NULL, NULL),
-(16, 'Pull Handle with Lock', 'มือจับกระบองยาวมีล็อคในตัว', '71cd55.jpg', 2, '', '', '', '2019-08-14 10:40:08', NULL, NULL),
-(17, 'Pull Handle', 'มือจับกระบองใช้สำหรับประตูทุกชนิด', '698931.jpg', 0, '', '', '', '2019-08-14 10:42:10', NULL, NULL),
-(18, 'Pull Handle', 'มือจับกระบองใช้สำหรับประตูทุกชนิด', '698931.jpg', 2, '', '', '', '2019-08-14 10:45:11', NULL, NULL),
-(19, 'Flush Handle', 'มือจับแบบฝังใช้กับประตูบานไม้และอลูมิเนียม', '4096f9.jpg', 2, '', '', '', '2019-08-14 10:46:28', NULL, NULL),
-(20, 'Mortise Lock', 'เสื้อกุญแจสำหรับประตูบานไม้และอลูมิเนียม', '29bcf9.jpg', 2, '', '', '', '2019-08-14 10:46:28', NULL, NULL),
-(21, 'Knob Cylinder', 'ไส้กุญแจสำหรับประตูทุกชนิด', '35deea.jpg', 2, '', '', '', '2019-08-14 10:47:25', NULL, NULL),
-(22, 'Door Closer', 'โช้คอัพประตูใช้ได้กับประตูทุกชนิด', '92a66f.jpg', 2, '', '', '', '2019-08-14 10:47:25', NULL, NULL),
-(23, 'Patch Fitting', 'อุปกรณ์สำหรับประตูกระจกบานเปลือย', 'ea2aab.jpg', 2, '', '', '', '2019-08-14 10:47:53', NULL, NULL),
-(24, 'Rolling Set', 'รางเลื่อนและล้อเลื่อนใช้กับประตูทุกชนิด', 'ef0b60.jpg', 2, '', '', '', '2019-08-14 10:48:20', NULL, NULL),
-(25, 'ANODIZED', 'สีชุบเน้นความสวยงามของเฟรม', '0acae9.jpg', 3, '', '', '', '2019-08-14 10:49:24', NULL, NULL),
-(26, 'POWDER COATED', 'สีพ่น ทนการขีดข่วนสีคงทนตามการใช้งาน', '688945.jpg', 3, '', '', '', '2019-08-14 10:49:24', NULL, NULL);
+INSERT INTO `category_products` (`id`, `title`, `slug`, `desc`, `image_cover`, `image_title_alt`, `group_product_id`, `file_catalog`, `file_price`, `file_cad`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'T-SERIES', 't-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.', '0121df.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
+(2, 'F-SERIES', '', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm.', 'a24779.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
+(3, 'V-SERIES', '', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm.', '471fcb.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:46', NULL, NULL),
+(4, 'D-SERIES', '', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm.', 'ff80c3.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:31:56', NULL, NULL),
+(5, 'S-SERIES', '', 'ระบบอลูมิเนียมขัวเชิงผนัง แบบเรียบและสกรู ออน', '8ce542.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:33:07', '2019-08-15 10:27:38', NULL),
+(6, 'X-SERIES', '', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง ขนาด 16 x 35 mm.', '45c20e.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:33:07', NULL, NULL),
+(7, 'M-SERIES', '', 'ระบบอลูมิเนียมประตู บานเลื่อนและบานสวิง ขนาด 9 x 35 mm.', '6b7b90.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
+(8, 'E-SERIES', '', 'ระบบอลูมิเนียมบานเลื่อนประตูหน้าต่าง ( กันน้ำ )', 'de801d.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
+(9, 'C-SERIES', '', 'ระบบอลูมิเนียมหน้าต่างบานกระทุ้ง ( กันน้ำ )', 'a7b71e.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
+(10, 'B-SERIES', '', 'ระบบอลูมิเนียมบานเฟี้ยมประตูและหน้าต่าง ( กันน้ำ )', 'ae7132.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
+(11, 'i-SERIES', '', 'ระบบอลูมิเนียมบานหน้าตู้ บานเลื่อนและบานเปิด', '91af97.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
+(12, 'J-SERIES', '', 'ระบบอลูมิเนียมใช้ตกแต่งประตูหรือผนัง', 'b9c5bc.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
+(13, 'L-SERIES', '', 'ระบบอลูมิเนียมบานเกร็ดสำหรับบังลมและรับลม', '780c33.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
+(14, 'ACCESSORIES', '', 'ยางอัด ยางหุ้ม ยางปิดร่อง ยางสันบานประตูและขนสักหลาด', 'af734c.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
+(15, 'Lever Handle', '', 'มือจับก้านโยกสำหรับประตูไม้และอลูมิเนียม', '6cab71.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
+(16, 'Pull Handle with Lock', '', 'มือจับกระบองยาวมีล็อคในตัว', '71cd55.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
+(18, 'Pull Handle', '', 'มือจับกระบองใช้สำหรับประตูทุกชนิด', '698931.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:45:11', NULL, NULL),
+(19, 'Flush Handle', '', 'มือจับแบบฝังใช้กับประตูบานไม้และอลูมิเนียม', '4096f9.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
+(20, 'Mortise Lock', '', 'เสื้อกุญแจสำหรับประตูบานไม้และอลูมิเนียม', '29bcf9.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
+(21, 'Knob Cylinder', '', 'ไส้กุญแจสำหรับประตูทุกชนิด', '35deea.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
+(22, 'Door Closer', '', 'โช้คอัพประตูใช้ได้กับประตูทุกชนิด', '92a66f.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
+(23, 'Patch Fitting', '', 'อุปกรณ์สำหรับประตูกระจกบานเปลือย', 'ea2aab.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:53', NULL, NULL),
+(24, 'Rolling Set', '', 'รางเลื่อนและล้อเลื่อนใช้กับประตูทุกชนิด', 'ef0b60.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:48:20', NULL, NULL),
+(25, 'ANODIZED', '', 'สีชุบเน้นความสวยงามของเฟรม', '0acae9.jpg', '', 3, '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL),
+(26, 'POWDER COATED', '', 'สีพ่น ทนการขีดข่วนสีคงทนตามการใช้งาน', '688945.jpg', '', 3, '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -129,6 +133,7 @@ INSERT INTO `faq_technologies` (`id`, `ask`, `ans`, `category_technology_id`, `c
 CREATE TABLE `group_products` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
+  `slug` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -138,10 +143,10 @@ CREATE TABLE `group_products` (
 -- Dumping data for table `group_products`
 --
 
-INSERT INTO `group_products` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'ALUMINIUM อลูมิเนียมโปรไฟล์', '2019-08-14 10:23:28', NULL, NULL),
-(2, 'HARDWARE อุปกรณ์ประตูหน้าต่าง', '2019-08-14 10:23:28', NULL, NULL),
-(3, 'COLLOR CHART สีอลูมิเนียมของเรา', '2019-08-14 10:23:39', NULL, NULL);
+INSERT INTO `group_products` (`id`, `title`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'ALUMINIUM อลูมิเนียมโปรไฟล์', 'aluminium-อลูมิเนียมโปรไฟล์', '2019-08-14 10:23:28', NULL, NULL),
+(2, 'HARDWARE อุปกรณ์ประตูหน้าต่าง', 'hardware-อุปกรณ์ประตูหน้าต่าง', '2019-08-14 10:23:28', NULL, NULL),
+(3, 'COLLOR CHART สีอลูมิเนียมของเรา', 'collor-chart-สีอลูมิเนียมของเรา', '2019-08-14 10:23:39', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -244,8 +249,9 @@ CREATE TABLE `products` (
   `description_en` text NOT NULL,
   `description_th` text NOT NULL,
   `image` text NOT NULL,
-  `product_group_id` int(11) NOT NULL,
-  `product_category_id` int(11) NOT NULL,
+  `image_title_alt` text NOT NULL,
+  `group_product_id` int(11) NOT NULL,
+  `category_product_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -255,8 +261,8 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `title`, `description_en`, `description_th`, `image`, `product_group_id`, `product_category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'ALUINCH T-20.01', 'HEADTRACK 20 mm.', 'กล่องเรียบ 20 มม.', '5875ebc1dfdd4.jpg', 1, 1, '2019-08-15 02:39:00', NULL, NULL);
+INSERT INTO `products` (`id`, `title`, `description_en`, `description_th`, `image`, `image_title_alt`, `group_product_id`, `category_product_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'ALUINCH T-20.01', 'HEADTRACK 20 mm.', 'กล่องเรียบ 20 มม.', '5875ebc1dfdd4.jpg', '', 1, 1, '2019-08-15 02:39:00', NULL, NULL);
 
 -- --------------------------------------------------------
 

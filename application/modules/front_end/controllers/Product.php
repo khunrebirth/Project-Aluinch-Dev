@@ -26,9 +26,6 @@ class Product extends MX_Controller {
         $this->load->model('category_product_model');
         $this->load->model('product_model');
 
-        // Variables
-        $category_product_id = 1;
-
         // Set Data
         $data['title'] = 'Product Category';
         $data['content'] = 'product';

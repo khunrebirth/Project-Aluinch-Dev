@@ -1,5 +1,5 @@
+    <!-- Main Content -->
     <div id="section1">
-
         <div class="warp-slide">
             <div id="slides">
                 <div class="slides-container">
@@ -7,7 +7,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -20,7 +19,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <section id="slogan-web" class="main-section">
@@ -177,9 +175,3 @@
 
     <div class="graphic-contact"><img src="<?php echo base_url('storage/images/contact/graphic.png'); ?>" class="img-responsive"/></div>
 
-    <!-- Push Custom Scripts -->
-    <script>
-        $(function () {
-            $("#navi ul li.contact-nav").addClass("active");
-        });
-    </script>

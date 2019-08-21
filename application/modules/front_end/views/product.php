@@ -1,3 +1,4 @@
+    <!-- Main Content -->
     <div id="section1">
         <div class="warp-slide">
             <div id="slides">
@@ -53,7 +54,7 @@
                 <div class="col-md-3">
                     <ul class="list-item">
                         <?php foreach ($list_products as $products) { ?>
-                        <li class="product-list <?php if (rawurldecode($this->uri->segment(2)) == $products['group_product_slug']) { echo 'active'; } ?>">
+                        <li class="product-list <?php if (rawurldecode($this->uri->segment(1)) == 'product' && rawurldecode($this->uri->segment(2)) == $products['group_product_slug']) { echo 'active'; } ?>">
                             <a><?php echo $products['group_product_name']; ?></a>
                             <ul class="sub-list-item">
                                 <?php foreach ($products['category_products'] as $category_product) { ?>
@@ -258,6 +259,10 @@
         <div id="map-canvas" class="map-google"></div>
     </div>
     <!-- end contact -->
+
+    <!-- JS Libraies -->
+
+    <!-- Page Specific JS File -->
 
     <!-- Push Custom Scripts -->
     <script>

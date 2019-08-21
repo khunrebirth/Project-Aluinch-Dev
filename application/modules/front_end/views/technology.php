@@ -59,7 +59,7 @@
                 <div class="col-md-3">
                     <ul class="list-item">
                         <?php foreach ($category_technologies as $category_technology) { ?>
-                            <li class="<?php if ($this->uri->segment(1) == 'technology' && $this->uri->segment(2) == $category_technology->slug) { echo 'active'; } ?>">
+                            <li class="<?php if (rawurldecode($this->uri->segment(1)) == 'technology' && rawurldecode($this->uri->segment(2)) == $category_technology->slug) { echo 'active'; } ?>">
                                 <a href="<?php echo base_url('technology/' . $category_technology->slug . '/' . $category_technology->id); ?>"><?php echo $category_technology->title; ?></a>
                             </li>
                         <?php } ?>

@@ -33,6 +33,7 @@
     <!-- JS Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=th'></script>
     <script src="<?php echo base_url('resources/front_end/js/jquery.superslides.min.js'); ?>"></script>
     <script src="<?php echo base_url('resources/front_end/js/google-maker.js'); ?>"></script>
     <script src="<?php echo base_url('resources/front_end/js/google-place.js'); ?>"></script>

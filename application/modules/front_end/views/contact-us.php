@@ -40,17 +40,6 @@
         </div>
     </section>
 
-    <script src='https://www.google.com/recaptcha/api.js?hl=th'></script>
-    <script>
-        function makeaction() {
-            document.getElementById('btn_submit').disabled = false;
-        }
-    </script>
-    <style type="text/css">
-        button[disabled], html input[disabled] {
-            opacity: 0.5;
-        }
-    </style>
     <section id="technology" class="main-section">
         <div class="container">
             <div class="row">
@@ -64,14 +53,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="contact-main">
-                        <form method="post" action="https://www.aluinch.com/sendemail_system.php">
+                        <form action="<?php echo base_url('contact-us/send'); ?>" method="POST">
                             <input type="text" name="name" placeholder="Name:" required/>
                             <input type="text" name="email" placeholder="Email:" required/>
                             <input type="text" name="phone" placeholder="Phone:"/>
                             <input type="text" name="company" placeholder="Company:"/>
                             <textarea name="detail" placeholder="Message:" required></textarea>
-                            <div style="padding-bottom: 20px;" data-callback="makeaction" class="g-recaptcha" data-sitekey="6LcVeUYUAAAAADtuawZIutfIUO5U8badCga1I5yL"></div>
-                            <input type="submit" id="btn_submit" disabled="disabled" value="SUBMIT"/>
+                            <div style="padding-bottom: 20px;" class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
+                            <input type="submit" value="SUBMIT"/>
                         </form>
                     </div>
                     <div class="contact-main">

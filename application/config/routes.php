@@ -66,6 +66,7 @@ $route['technology'] = 'Front_End/Technology';
 $route['technology/(:any)/(:any)'] = "Front_End/Technology/show/$1/$2";
 $route['project-references'] = 'Front_End/ProjectReferences';
 $route['contact-us'] = 'Front_End/Contact';
+$route['contact-us/send']['post'] = 'Front_End/Contact/send';
 
     /*
     | -------------------------------------------------------------------------

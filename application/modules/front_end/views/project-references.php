@@ -1,5 +1,4 @@
     <div id="section1">
-
         <div class="warp-slide">
             <div id="slides">
                 <div class="slides-container">
@@ -7,7 +6,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -17,7 +15,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <section id="slogan-web" class="main-section">
@@ -55,42 +52,17 @@
                         <div class="clearfix"></div>
                         <div class="main-carousel">
                             <ul class="project-ref">
-                                <li class="lb-detail-project" data-id="20" data-name=" OFFICE  อลูมิเนียมภายใน" data-des="อลูมิเนียมสำหรับงานตกแต่งภายในสำนักงาน">
-                                    <figure>
-                                        <div class="main-img">
-                                            <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>
-                                            <img src="https://www.aluinch.com/minerva/upload/e06485.jpg" class="img-responsive img-center" />
-                                        </div>
-                                        <figcaption> OFFICE  อลูมิเนียมภายใน</figcaption>
-                                    </figure>
-                                </li>
-                                <li class="lb-detail-project" data-id="24" data-name="Home อลูมิเนียมภายในและภายนอก" data-des="อลูมิเนียมสำหรับงานภายใน  และภายนอกบ้าน">
-                                    <figure>
-                                        <div class="main-img">
-                                            <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>
-                                            <img src="https://www.aluinch.com/minerva/upload/2d24b1.jpg" class="img-responsive img-center" />
-                                        </div>
-                                        <figcaption>Home อลูมิเนียมภายในและภายนอก</figcaption>
-                                    </figure>
-                                </li>
-                                <li class="lb-detail-project" data-id="25" data-name="COMMERCIAL อลูมิเนียมภายใน" data-des="อลูมิเนียมสำหรับโรงแรม โรงพยาบาล  หรือหน่วยงานต่างๆ">
-                                    <figure>
-                                        <div class="main-img">
-                                            <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>
-                                            <img src="https://www.aluinch.com/minerva/upload/6dd922.jpg" class="img-responsive img-center" />
-                                        </div>
-                                        <figcaption>COMMERCIAL อลูมิเนียมภายใน</figcaption>
-                                    </figure>
-                                </li>
-                                <li class="lb-detail-project" data-id="22" data-name="CONDOMINUM อลูมิเนียมภายใน" data-des="อลูมิเนียมสำหรับงานภายใน  ">
-                                    <figure>
-                                        <div class="main-img">
-                                            <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>
-                                            <img src="https://www.aluinch.com/minerva/upload/5a469d.jpg" class="img-responsive img-center" />
-                                        </div>
-                                        <figcaption>CONDOMINUM อลูมิเนียมภายใน</figcaption>
-                                    </figure>
-                                </li>
+                                <?php foreach ($projects as $project) { ?>
+                                    <li class="lb-detail-project" data-id="<?php echo $project->id; ?>" data-name="<?php echo $project->title; ?>" data-des="<?php echo $project->desc; ?>">
+                                        <figure>
+                                            <div class="main-img">
+                                                <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>
+                                                <img src="<?php echo base_url('storage/uploads/projects/' . $project->image_cover); ?>" class="img-responsive img-center" />
+                                            </div>
+                                            <figcaption> <?php echo $project->title; ?></figcaption>
+                                        </figure>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>
@@ -223,8 +195,4 @@
     <!-- end contact -->
 
     <!-- Push Custom Scripts -->
-    <script>
-        $(function () {
-            $("#navi ul li.contact-nav").addClass("active");
-        });
-    </script>
+    <script></script>

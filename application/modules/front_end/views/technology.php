@@ -1,5 +1,14 @@
-    <div id="section1">
+    <!-- CSS Libraries -->
 
+    <!-- Push Custom CSS -->
+    <style>
+        .main-section ul.list-item>li:before {
+            content: none !important;
+        }
+    </style>
+
+    <!-- Main Content -->
+    <div id="section1">
         <div class="warp-slide">
             <div id="slides">
                 <div class="slides-container">
@@ -7,7 +16,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -17,7 +25,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <section id="slogan-web" class="main-section">
@@ -51,70 +58,43 @@
             <div class="row">
                 <div class="col-md-3">
                     <ul class="list-item">
-                        <li class="<?php if ($this->uri->segment(1) == 'technology' && $this->uri->segment(2) == '') { echo 'active'; } ?>">
-                            <a href="<?php echo base_url('technology'); ?>">PRESENTATION VDO วีดีโอแนะนำการใช้งาน</a>
-                        </li>
-                        <li class="<?php if ($this->uri->segment(1) == 'technology' && $this->uri->segment(2) == 'tips-and-tracks') { echo 'active'; } ?>">
-                            <a href="<?php echo base_url('technology/tips-and-tracks'); ?>">TIPS AND TRICKS  เกร็ดความรู้อลูมิเนียม</a>
-                        </li>
-                        <li class="<?php if ($this->uri->segment(1) == 'technology' && $this->uri->segment(2) == 'faq') { echo 'active'; } ?>">
-                            <a href="<?php echo base_url('technology/faq'); ?>">FAQ คำถามที่พบบอย</a>
-                        </li>
+                        <?php foreach ($category_technologies as $category_technology) { ?>
+                            <li class="<?php if ($this->uri->segment(1) == 'technology' && $this->uri->segment(2) == $category_technology->slug) { echo 'active'; } ?>">
+                                <a href="<?php echo base_url('technology/' . $category_technology->slug . '/' . $category_technology->id); ?>"><?php echo $category_technology->title; ?></a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="col-md-9">
                     <div class="product-main">
 
-                        <?php if ($page_slug == 'technology') { ?>
+                        <?php if ($technology_specific_category_slug != 'faq-คำถามที่พบบอย') { ?>
 
                             <div class="head-item">
-                                PRESENTATION VDO วีดีโอแนะนำการใช้งาน
+                                <?php echo $technology_specific->category_technology_name; ?>
                             </div>
                             <div id="show-vdo" class="main-pic">
-                                <iframe width="100%" height="400" src="https://www.youtube.com/embed/pZFeraPjm4s" frameborder="0" allowfullscreen></iframe>
-                                <h1>ระบบอลูมิเนียมประตูหน้าต่าง  B-SERIES</h1>
-                                <p></p>
+                                <?php echo $technology_specific->src; ?>
+                                <h1><?php echo $technology_specific->title; ?></h1>
+                                <p><?php echo $technology_specific->body; ?></p>
                             </div>
                             <div class="clearfix"></div>
 
-                        <?php } else if ($page_slug == 'tips-and-tracks') { ?>
+                        <?php } else if ($technology_specific_category_slug == 'faq-คำถามที่พบบอย') { ?>
 
-                            <div class="head-item">
-                                TIPS AND TRICKS  เกร็ดความรู้อลูมิเนียม
-                            </div>
-                            <div id="show-vdo" class="main-pic">
-                                <iframe width="100%" height="400" src="https://www.youtube.com/embed/swT-nMNmmz4" frameborder="0" allowfullscreen></iframe>
-                                <h1>เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม  Aluminium Profile Copy Router</h1>
-                                <p>
-                                <p>สามารถลดเวลาการทำงานเจาะรูกุญแกได้ 2 เท่า เพราะสามารถเร้าเตอร์ได้ทั้ง 2ฝั่งในเวลาเดียวกัน</p><p><br></p><p>Credit by&nbsp; :&nbsp; &nbsp;<span style=\"\\&quot;color:\" rgb(0,=\"\" 0,=\"\" 0);=\"\" font-family:=\"\" arial;=\"\" font-size:=\"\" 13px;=\"\" white-space:=\"\" pre-wrap;\\\"=\"\">&nbsp; </span><span style=\"\\&quot;color:\" rgb(0,=\"\" 102,=\"\" 33);=\"\" font-family:=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" white-space:=\"\" nowrap;\\\"=\"\"><br></span>www.ozgencmachine.com<span style=\"\\&quot;color:\" rgb(0,=\"\" 102,=\"\" 33);=\"\" font-family:=\"\" arial,=\"\" sans-serif;=\"\" font-size:=\"\" 14px;=\"\" white-space:=\"\" nowrap;\\\"=\"\"><br></span></p>                        </p>
-                            </div>
-                            <div class="clearfix"></div>
-
-                        <?php } else if ($page_slug == 'faq') { ?>
-
-                            <div class="head-item">FAQ คำถามที่พบบอย</div>
+                            <div class="head-item"><?php echo $technology_specific['category_technology_name']; ?></div>
                             <div class="clearfix"></div>
                             <div class="main-carousel">
                                 <div class="faq-main">
                                     <ul class="load-ul">
-                                        <li>
-                                            <div class="faq-main-box" data-val="toggle-29">
-                                                ความแต่งต่างระหว่างอลูมิเนียมทั่วไปกับอลูมิเนียมจาก ALUINCH  คือ <i class="glyphicon glyphicon-triangle-right"></i>
-                                            </div>
-                                            <p class="toggle-29">อลูมิเนียมทั่วไปตามท้องตลาดมีความหนาประมาณ 5 cm.เวลาติดตั้งเสร็จจะดูใหญ่และไม่สวยงามแต่อลูมิเนียมของ ALUINCH จะมีความหนาพียง  2 cm. เวลาติดตั้งเสร็จแล้วดูสวยงามลงตัวกับ design ของบ้านหรือ office</p>
-                                        </li>
-                                        <li>
-                                            <div class="faq-main-box" data-val="toggle-30">
-                                                อยากใช้อลูมิเนียม ALUINCH แต่ไม่รู้จะเริ่มตรงไหนดี <i class="glyphicon glyphicon-triangle-right"></i>
-                                            </div>
-                                            <p class="toggle-30">เรามี Team Sales Support คอยดูแลลูกค้า เพียงโทรหาเราหรือเข้ามาปรึกษาเรา เรายินดีให้คำแนะนำ เสนอราคา ถอดแบบ งานติดตั้งให้กับท่าน</p>
-                                        </li>
-                                        <li>
-                                            <div class="faq-main-box" data-val="toggle-116">
-                                                อลูมิเนียม ALUINCH ใช้ได้กับภายนอกหรือภายในอาคาร <i class="glyphicon glyphicon-triangle-right"></i>
-                                            </div>
-                                            <p class="toggle-116">อลูมิเนียมของ ALUINCH สามารถใช้ได้ทั้งภายในและภายนอกอาคาร บ้านเรือน แล้วแต่ลูกค้าต้องการ ไม่ว่าจะเป็น บานเลื่อน บานเปิด บานสวิง เป็นต้น</p>
-                                        </li>
+                                        <?php foreach ($technology_specific['faqs'] as $faq) { ?>
+                                            <li>
+                                                <div class="faq-main-box" data-val="toggle-<?php echo $faq->id; ?>">
+                                                    <?php echo $faq->ask; ?> <i class="glyphicon glyphicon-triangle-right"></i>
+                                                </div>
+                                                <p class="toggle-<?php echo $faq->id; ?>"><?php echo $faq->ans; ?></p>
+                                            </li>
+                                        <?php } ?>
                                     </ul>
                                     <div id="loadMore" class="see-more">SEE MORE</div>
                                 </div>
@@ -242,6 +222,10 @@
         <div id="map-canvas" class="map-google"></div>
     </div>
     <!-- end contact -->
+
+    <!-- JS Libraies -->
+
+    <!-- Page Specific JS File -->
 
     <!-- Push Custom Scripts -->
     <script>

@@ -18,9 +18,21 @@ class ProjectReferences extends MX_Controller {
 	 * map to /home.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        // Set Model
+        $this->load->model('project_model');
+    }
+
+
+    public function index()
 	{
+	    // Set Data
 		$data['content'] = 'project-references';
+        $data['projects'] = $this->project_model->get_project_all();
 
 		$this->load->view('app', $data);
 	}

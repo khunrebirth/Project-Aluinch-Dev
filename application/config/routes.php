@@ -63,7 +63,7 @@ $route['home'] = 'Front_End/Home';
 $route['product'] = 'Front_End/Product';
 $route['product/(:any)/(:any)/(:any)'] = "Front_End/Product/show/$1/$2/$3";
 $route['technology'] = 'Front_End/Technology';
-$route['technology/(:any)'] = 'Front_End/Technology/show/$page_slug';
+$route['technology/(:any)/(:any)'] = "Front_End/Technology/show/$1/$2";
 $route['project-references'] = 'Front_End/ProjectReferences';
 $route['contact-us'] = 'Front_End/Contact';
 

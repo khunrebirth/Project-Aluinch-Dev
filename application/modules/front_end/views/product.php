@@ -53,7 +53,7 @@
                 <div class="col-md-3">
                     <ul class="list-item">
                         <?php foreach ($list_products as $products) { ?>
-                        <li class="product-list active">
+                        <li class="product-list <?php if (rawurldecode($this->uri->segment(2)) == $products['group_product_slug']) { echo 'active'; } ?>">
                             <a><?php echo $products['group_product_name']; ?></a>
                             <ul class="sub-list-item">
                                 <?php foreach ($products['category_products'] as $category_product) { ?>

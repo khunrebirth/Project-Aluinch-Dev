@@ -19,13 +19,18 @@ class Product extends MX_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
-	public function index()
-	{
+    public function __construct()
+    {
+        parent::__construct();
+
         // Set Model
         $this->load->model('group_product_model');
         $this->load->model('category_product_model');
         $this->load->model('product_model');
+    }
 
+	public function index()
+	{
         // Set Data
         $data['title'] = 'Product Category';
         $data['content'] = 'product';
@@ -37,11 +42,6 @@ class Product extends MX_Controller {
 
     public function show($group_product_slug, $category_product_slug, $category_product_id)
     {
-        // Set Model
-        $this->load->model('group_product_model');
-        $this->load->model('category_product_model');
-        $this->load->model('product_model');
-
         // Process
         $category_product = $this->category_product_model->get_category_product_by_id($category_product_id);
 

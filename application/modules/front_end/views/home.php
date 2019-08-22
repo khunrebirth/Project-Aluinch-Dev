@@ -72,22 +72,22 @@
                 <div class="main-slide">
                     <div id="slide1" class="slide-crop">
                         <div class="owl-gallery">
-                            <div class="item" data-hash="port1"><img src="https://www.aluinch.com/minerva/upload/f3bdc0.jpg" class="img-responsive"/></div>
-                            <div class="item" data-hash="port2"><img src="https://www.aluinch.com/minerva/upload/77af11.jpg" class="img-responsive"/></div>
-                            <div class="item" data-hash="port3"><img src="https://www.aluinch.com/minerva/upload/e44907.jpg" class="img-responsive"/></div>
-                            <div class="item" data-hash="port4"><img src="https://www.aluinch.com/minerva/upload/5c4262.jpg" class="img-responsive"/></div>
-                            <div class="item" data-hash="port5"><img src="https://www.aluinch.com/minerva/upload/b69890.jpg" class="img-responsive"/></div>
+                            <?php foreach ($portfolios as $portfolio) { ?>
+                                <div class="item" data-hash="port<?php echo $portfolio->id; ?>">
+                                    <img src="<?php echo base_url('storage/uploads/images/portfolios/' . $portfolio->img); ?>" class="img-responsive" atl="<?php echo $portfolio->img_title_alt; ?>"/>
+                                </div>
+                            <?php } ?>
                         </div>
                         <div class="main-thumb">
                             <div id="arrow-port-left" class="arrow-left"><i class="glyphicon glyphicon-menu-left"></i></div>
                             <div id="arrow-port-right" class="arrow-right"><i class="glyphicon glyphicon-menu-right"></i></div>
                             <div class="space" align="center">Image Gallery</div>
                             <div class="owl-gallery-thumb">
-                                <div class="item" data-hash="port1"><img src="https://www.aluinch.com/minerva/upload/f3bdc0.jpg" class="img-responsive"/></div>
-                                <div class="item" data-hash="port2"><img src="https://www.aluinch.com/minerva/upload/77af11.jpg" class="img-responsive"/></div>
-                                <div class="item" data-hash="port3"><img src="https://www.aluinch.com/minerva/upload/e44907.jpg" class="img-responsive"/></div>
-                                <div class="item" data-hash="port4"><img src="https://www.aluinch.com/minerva/upload/5c4262.jpg" class="img-responsive"/></div>
-                                <div class="item" data-hash="port5"><img src="https://www.aluinch.com/minerva/upload/b69890.jpg" class="img-responsive"/></div>
+                                <?php foreach ($portfolios as $portfolio) { ?>
+                                    <div class="item" data-hash="port<?php echo $portfolio->id; ?>">
+                                        <img src="<?php echo base_url('storage/uploads/images/portfolios/' . $portfolio->img); ?>" class="img-responsive" atl="<?php echo $portfolio->img_title_alt; ?>"/>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
     </div>
     <!-- end section2 -->
 
-    <!-- section3 -->
+    <!-- section3: Products -->
     <div id="section3" data-2000="top:500px;opacity:0;" data-3000="opacity:1; top:-200px;" data-5000="opacity:1; top:-400px;" data-6000="top:-1000px;opacity:1;" data-8000="top:-2800px;">
         <div class="bg-mobile visible-xs">
             <div class="text" style="top:45%"></div>
@@ -113,227 +113,40 @@
             <div class="warp-slide">
                 <h2>ALUMINIUM อลูมิเนียมโปรไฟล์</h2>
                 <div class="owl-product1">
-                    <div class="item">
-                        <a href="https://www.aluinch.com/t-series">
-                            <img src="https://www.aluinch.com/minerva/upload/02af9a.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>T-SERIES</h3>
-                                <p>ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/f-series">
-                            <img src="https://www.aluinch.com/minerva/upload/282986.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>F-SERIES</h3>
-                                <p>ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/v-series">
-                            <img src="https://www.aluinch.com/minerva/upload/c4093f.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>V-SERIES</h3>
-                                <p>ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/d-series">
-                            <img src="https://www.aluinch.com/minerva/upload/6d2aff.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>D-SERIES</h3>
-                                <p>ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/s-series">
-                            <img src="https://www.aluinch.com/minerva/upload/afa0b4.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>S-SERIES</h3>
-                                <p>ระบบอลูมิเนียมขัวเชิงผนัง แบบเรียบและสกรู ออน</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/x-series">
-                            <img src="https://www.aluinch.com/minerva/upload/a3d16b.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>X-SERIES</h3>
-                                <p>ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง ขนาด 16 x 35 mm.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/m-series">
-                            <img src="https://www.aluinch.com/minerva/upload/2e5912.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>M-SERIES</h3>
-                                <p>ระบบอลูมิเนียมประตู บานเลื่อนและบานสวิง ขนาด 9 x 35 mm.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/e-series">
-                            <img src="https://www.aluinch.com/minerva/upload/73bc43.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>E-SERIES</h3>
-                                <p>ระบบอลูมิเนียมบานเลื่อนประตูหน้าต่าง ( กันน้ำ )</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/c-series">
-                            <img src="https://www.aluinch.com/minerva/upload/b2b5d4.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>C-SERIES</h3>
-                                <p>ระบบอลูมิเนียมหน้าต่างบานกระทุ้ง ( กันน้ำ )</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/b-series">
-                            <img src="https://www.aluinch.com/minerva/upload/d29bbd.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>B-SERIES</h3>
-                                <p>ระบบอลูมิเนียมบานเฟี้ยมประตูและหน้าต่าง ( กันน้ำ )</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/i-series">
-                            <img src="https://www.aluinch.com/minerva/upload/fca265.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>i-SERIES</h3>
-                                <p>ระบบอลูมิเนียมบานหน้าตู้ บานเลื่อนและบานเปิด </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/j-series">
-                            <img src="https://www.aluinch.com/minerva/upload/a7dda4.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>J-SERIES</h3>
-                                <p>ระบบอลูมิเนียมใช้ตกแต่งประตูหรือผนัง </p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/l-series">
-                            <img src="https://www.aluinch.com/minerva/upload/82f2f2.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>L-SERIES</h3>
-                                <p>ระบบอลูมิเนียมบานเกร็ดสำหรับบังลมและรับลม</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/accessories">
-                            <img src="https://www.aluinch.com/minerva/upload/99976e.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>ACCESSORIES</h3>
-                                <p>ยางอัด ยางหุ้ม ยางปิดร่อง ยางสันบานประตูและขนสักหลาด</p>
-                            </div>
-                        </a>
-                    </div>
+                    <?php foreach ($products['aluminiums'] as $product) { ?>
+                        <div class="item">
+                            <a href="<?php echo base_url('product/' . $product->group_product_slug . '/' . $product->slug . '/' . hashids_encrypt($product->id)); ?>">
+                                <img src="<?php echo base_url('storage/uploads/images/products/' . $product->img_cover_home) ?>" class="img-responsive" alt="<?php echo $product->img_title_alt; ?>"/>
+                                <div class="product-box">
+                                    <h3><?php echo $product->title; ?></h3>
+                                    <p><?php echo $product->description; ?></p>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
-            <!--<div class="see-more"><a href="https://www.aluinch.com/aluminium--อลูมิเนียมโปรไ">SEE MORE</a></div>-->
             <div class="warp-slide">
                 <h2>HARDWARE อุปกรณ์ประตูหน้าต่าง</h2>
                 <div class="owl-product2">
-                    <div class="item">
-                        <a href="https://www.aluinch.com/lever-handle">
-                            <img src="https://www.aluinch.com/minerva/upload/ce998a.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Lever Handle</h3>
-                                <p>มือจับก้านโยกสำหรับประตูไม้และอลูมิเนียม</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/pull-handle-with-lock">
-                            <img src="https://www.aluinch.com/minerva/upload/949bfd.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Pull Handle with Lock</h3>
-                                <p>มือจับกระบองยาวมีล็อคในตัว</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/pull-handle">
-                            <img src="https://www.aluinch.com/minerva/upload/348b23.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Pull Handle</h3>
-                                <p>มือจับกระบองใช้สำหรับประตูทุกชนิด</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/flush-handle">
-                            <img src="https://www.aluinch.com/minerva/upload/ce265b.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Flush Handle</h3>
-                                <p>มือจับแบบฝังใช้กับประตูบานไม้และอลูมิเนียม</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/mortise-lock">
-                            <img src="https://www.aluinch.com/minerva/upload/45b0f6.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Mortise Lock</h3>
-                                <p>เสื้อกุญแจสำหรับประตูบานไม้และอลูมิเนียม</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/knob-cylinder">
-                            <img src="https://www.aluinch.com/minerva/upload/64aae3.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Knob Cylinder</h3>
-                                <p>ไส้กุญแจสำหรับประตูทุกชนิด</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/door-closer">
-                            <img src="https://www.aluinch.com/minerva/upload/b9cde9.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Door Closer</h3>
-                                <p>โช้คอัพประตูใช้ได้กับประตูทุกชนิด</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/patch-fitting">
-                            <img src="https://www.aluinch.com/minerva/upload/9a8f54.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Patch Fitting</h3>
-                                <p>อุปกรณ์สำหรับประตูกระจกบานเปลือย</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <a href="https://www.aluinch.com/rolling-set">
-                            <img src="https://www.aluinch.com/minerva/upload/ef0a97.jpg" class="img-responsive"/>
-                            <div class="product-box">
-                                <h3>Rolling Set</h3>
-                                <p>รางเลื่อนและล้อเลื่อนใช้กับประตูทุกชนิด</p>
-                            </div>
-                        </a>
-                    </div>
+                    <?php foreach ($products['hardwares'] as $product) { ?>
+                        <div class="item">
+                            <a href="<?php echo base_url('product/' . $product->group_product_slug . '/' . $product->slug . '/' . hashids_encrypt($product->id)); ?>">
+                                <img src="<?php echo base_url('storage/uploads/images/products/' . $product->img_cover_home) ?>" class="img-responsive" alt="<?php echo $product->img_title_alt; ?>"/>
+                                <div class="product-box">
+                                    <h3><?php echo $product->title; ?></h3>
+                                    <p><?php echo $product->description; ?></p>
+                                </div>
+                            </a>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
-            <!--<div class="see-more"><a href="https://www.aluinch.com/hardware-อุปกรณ๜ประตูหน้าต่าง">SEE MORE</a></div>-->
         </div>
     </div>
     <!-- end section3 -->
 
-    <!-- section4 -->
+    <!-- section4: Technology -->
     <div id="section4" data-0="top:500px;opacity:0;" data-6000="opacity:0;" data-9000="top:-300px;opacity:1;" data-14000="top:-3500px;opacity:1;">
         <div class="bg hidden-xs" data-2000="opacity:1;"></div>
         <div class="bg2 hidden-xs" data-2000="opacity:1;"></div>
@@ -356,92 +169,64 @@
             <div class="line-head"></div>
             <h1>TECHNOLOGY</h1>
             <div class="clearfix"></div>
+
             <div class="warp-slide">
                 <div id="arrow-techno-l-p1" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
                 <div id="arrow-techno-r-p1" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
                 <h2>PRESENTATION VDO วีดีโอแนะนำการใช้งาน</h2>
                 <div class="owl-techno1">
-                    <div class="item vdo-lightbox" data-val="pZFeraPjm4s">
-                        <img src="https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg"/>
-                        <div class="vdo-box">
-                            <h3>ระบบอลูมิเนียมประตูหน้าต่าง B-SERIES</h3>
-                            <p>ระบบอลูมิเนียมประตูหน้าต่างบานเฟี้ยม </p>
+                    <?php foreach ($technologies['vdos'] as $vdo) {?>
+                        <div class="item vdo-lightbox" data-val="pZFeraPjm4s">
+                            <img src="<?php echo $vdo->img_cover; ?>" alt="<?php echo $vdo->img_title_alt; ?>"/>
+<!--                            <img src="--><?php //echo base_url('storage/uploads/images/technology' . $vdo->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
+                            <div class="vdo-box">
+                                <h3><?php echo $vdo->title; ?></h3>
+                                <p><?php echo $vdo->description; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item vdo-lightbox" data-val="hd3MghzSIRs">
-                        <img src="https://img.youtube.com/vi/hd3MghzSIRs/mqdefault.jpg"/>
-                        <div class="vdo-box">
-                            <h3>ระบบอลูมิเนียมประตูหน้าต่าง X-SERIES</h3>
-                            <p>ระบบอลูมิเนียมประตู SLIM DESIGN </p>
-                        </div>
-                    </div>
-                    <div class="item vdo-lightbox" data-val="Qs4bW40XLwk">
-                        <img src="https://img.youtube.com/vi/Qs4bW40XLwk/mqdefault.jpg"/>
-                        <div class="vdo-box">
-                            <h3>ระบบอลูมิเนียมประตูหน้าต่าง E-SERIES</h3>
-                            <p>ระบบอลูมิเนียมประตูหน้าต่างบานเลิ่อน </p>
-                        </div>
-                    </div>
-                    <div class="item vdo-lightbox" data-val="IqDe4FbX67w">
-                        <img src="https://img.youtube.com/vi/IqDe4FbX67w/mqdefault.jpg"/>
-                        <div class="vdo-box">
-                            <h3>ระบบอลูมิเนียมประตูหน้าต่าง C-SERIES</h3>
-                            <p>ระบบอลูมิเนียมประตูหน้าต่างบานกระทุ้ง </p>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
-            </div>
-            <div class="see-more"><a href="https://www.aluinch.com/technology">SEE MORE</a></div>
-            <div class="warp-slide">
 
+                <div class="see-more"><a href="<?php echo base_url('technology'); ?>">SEE MORE</a></div>
+            </div>
+
+            <div class="warp-slide">
                 <div id="arrow-techno-l-p2" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
                 <div id="arrow-techno-r-p2" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
-
                 <h2>TIPS AND TRICKS เกร็ดความรู้อลูมิเนียม</h2>
                 <div class="owl-techno2">
-                    <div class="item vdo-lightbox" data-val="swT-nMNmmz4">
-                        <img src="https://img.youtube.com/vi/swT-nMNmmz4/mqdefault.jpg"/>
-                        <div class="vdo-box">
-                            <h3>เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม Aluminium Profile Copy Router</h3>
-                            <p>เทคโนโลยียุคใหม่ของการทำงานอลูมิเนียมให้เป็นเรื่องง่าย </p>
+                    <?php foreach ($technologies['tips'] as $tip) {?>
+                        <div class="item vdo-lightbox" data-val="pZFeraPjm4s">
+                            <img src="<?php echo $tip->img_cover; ?>" alt="<?php echo $tip->img_title_alt; ?>"/>
+                            <!--                            <img src="--><?php //echo base_url('storage/uploads/images/technology' . $tip->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
+                            <div class="vdo-box">
+                                <h3><?php echo $tip->title; ?></h3>
+                                <p><?php echo $tip->description; ?></p>
+                            </div>
                         </div>
-                    </div>
+                    <?php } ?>
                 </div>
+
+                <div class="see-more"><a href="<?php echo base_url('technology'); ?>">SEE MORE</a></div>
             </div>
-            <div class="see-more"><a href="https://www.aluinch.com/tips-and-tracks">SEE MORE</a></div>
 
             <div class="warp-slide faq-main">
                 <h2>FAQ</h2>
-                <div class="faq-main-box" data-val="toggle-29">
-                    ความแต่งต่างระหว่างอลูมิเนียมทั่วไปกับอลูมิเนียมจาก ALUINCH คือ <i class="glyphicon glyphicon-triangle-right"></i>
-                </div>
-                <p class="toggle-29">
-                    อลูมิเนียมทั่วไปตามท้องตลาดมีความหนาประมาณ 5 cm.เวลาติดตั้งเสร็จจะดูใหญ่และไม่สวยงามแต่อลูมิเนียมของ
-                    ALUINCH จะมีความหนาพียง 2 cm. เวลาติดตั้งเสร็จแล้วดูสวยงามลงตัวกับ design ของบ้านหรือ office
-                </p>
-                <div class="faq-main-box" data-val="toggle-30">
-                    อยากใช้อลูมิเนียม ALUINCH แต่ไม่รู้จะเริ่มตรงไหนดี <i class="glyphicon glyphicon-triangle-right"></i>
-                </div>
-                <p class="toggle-30">
-                    เรามี Team Sales Support คอยดูแลลูกค้า เพียงโทรหาเราหรือเข้ามาปรึกษาเรา เรายินดีให้คำแนะนำ เสนอราคา
-                    ถอดแบบ งานติดตั้งให้กับท่าน
-                </p>
-                <div class="faq-main-box" data-val="toggle-116">
-                    อลูมิเนียม ALUINCH ใช้ได้กับภายนอกหรือภายในอาคาร <i class="glyphicon glyphicon-triangle-right"></i>
-                </div>
-                <p class="toggle-116">
-                    อลูมิเนียมของ ALUINCH สามารถใช้ได้ทั้งภายในและภายนอกอาคาร บ้านเรือน แล้วแต่ลูกค้าต้องการ ไม่ว่าจะเป็น
-                    บานเลื่อน บานเปิด บานสวิง เป็นต้น
-                </p>
-                <div class="see-more"><a href="https://www.aluinch.com/faq">SEE MORE</a></div>
+                <?php foreach ($technologies['faqs'] as $faq) {?>
+                    <div class="faq-main-box" data-val="toggle-<?php echo $faq->id; ?>">
+                        <?php echo $faq->ask; ?> <i class="glyphicon glyphicon-triangle-right"></i>
+                    </div>
+                    <p class="toggle-<?php echo $faq->id; ?>">
+                        <?php echo $faq->ans; ?>
+                    </p>
+                <?php } ?>
+                <div class="see-more"><a href="<?php echo base_url('technology'); ?>">SEE MORE</a></div>
             </div>
-
-            <!-- faq-main -->
         </div>
     </div>
     <!-- end section4 -->
 
-    <!-- section5 -->
+    <!-- section5: Project Ref -->
     <div id="section5" data-0="top:500px;pacity:1;" data-12000="opacity:0;" data-14000="opacity:1;top:-450px;" data-17000="top:-2200px;">
         <div class="bg hidden-xs" data-2000="opacity:1;"></div>
         <div class="bg2 hidden-xs" data-2000="opacity:1;"></div>
@@ -465,32 +250,15 @@
             <div class="warp-slide">
                 <div id="arrow-project-l-p1" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
                 <div id="arrow-project-r-p1" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
-
                 <div class="owl-project">
-                    <div class="item lb-detail-project" data-id="20" data-name=" OFFICE  อลูมิเนียมภายใน">
-                        <img src="https://www.aluinch.com/minerva/upload/e06485.jpg"/>
-                        <div class="vdo-box">
-                            <h3 class="text-center"> OFFICE อลูมิเนียมภายใน</h3>
+                    <?php foreach ($projects as $project) { ?>
+                        <div class="item lb-detail-project" data-id="<?php echo hashids_encrypt($project->id); ?>" data-name="<?php echo $project->title; ?>">
+                            <img src="<?php echo base_url('storage/uploads/images/projects/' . $project->img_cover); ?>" class="img-responsive img-center" alt="<?php echo $project->img_title_alt; ?>"/>
+                            <div class="vdo-box">
+                                <h3 class="text-center"><?php echo $project->title; ?></h3>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item lb-detail-project" data-id="24" data-name="Home อลูมิเนียมภายในและภายนอก">
-                        <img src="https://www.aluinch.com/minerva/upload/2d24b1.jpg"/>
-                        <div class="vdo-box">
-                            <h3 class="text-center">Home อลูมิเนียมภายในและภายนอก</h3>
-                        </div>
-                    </div>
-                    <div class="item lb-detail-project" data-id="25" data-name="COMMERCIAL อลูมิเนียมภายใน">
-                        <img src="https://www.aluinch.com/minerva/upload/6dd922.jpg"/>
-                        <div class="vdo-box">
-                            <h3 class="text-center">COMMERCIAL อลูมิเนียมภายใน</h3>
-                        </div>
-                    </div>
-                    <div class="item lb-detail-project" data-id="22" data-name="CONDOMINUM อลูมิเนียมภายใน">
-                        <img src="https://www.aluinch.com/minerva/upload/5a469d.jpg"/>
-                        <div class="vdo-box">
-                            <h3 class="text-center">CONDOMINUM อลูมิเนียมภายใน</h3>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
             <div class="see-more"><a href="https://www.aluinch.com/project-references">SEE MORE</a></div>
@@ -498,7 +266,7 @@
     </div>
     <!-- end section5 -->
 
-    <!-- section6 -->
+    <!-- section6: Contact -->
     <div id="section6" data-0="top:50%;opacity:0;" data-14000="opacity:0;top:500px;" data-14500="opacity:1;" data-16000="top:10%;" data-18000="top:-50%;">
         <div class="bg" data-2000="opacity:1;"></div>
         <div class="bg-orange">
@@ -579,7 +347,7 @@
                         <input type="text" name="tel" placeholder="Phone:" />
                         <textarea name="detail" placeholder="Message:" required ></textarea>
                         <div style="padding-bottom: 20px;" class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
-                        <input type="submit" id="btn-footer-submit" value="Send Message" style="margin-top: 0px;" />
+                        <input type="submit" value="Send Message" style="margin-top: 0px;" />
                     </form>
                     <div class="fb">
                         <a href="http://line.me/ti/p/~ALUMINATION" target="_blank">
@@ -711,6 +479,10 @@
     <script type="text/javascript">
         $(function () {
 
+            /**********
+             * Init
+             * **/
+
             if (!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)) {
 
                 // initialize skrollr if the window width is large enough
@@ -737,6 +509,31 @@
                 skrollr.init().destroy();
 
             }
+
+            /**********
+             * Event
+             * **/
+
+            $(".lb-detail-project").on('click', function() {
+
+                let urlGetProjectRef = "<?php echo base_url('ajax/get/project-references'); ?>"
+                let $id = $(this).data("id")
+
+                $(".warp-light-box").addClass("show-black")
+                $(".bg-black").addClass("show-black")
+                $("body,html").addClass("overflow-hidden")
+
+                $.ajax({
+                    type: 'GET',
+                    url: urlGetProjectRef + '/' + $id + '/' + 'home',
+                    success: function (res) {
+                        $('#ajax-result').html(res.data);
+                    },
+                    error: function (data) {
+                        console.log("error");
+                    }
+                })
+            })
 
         });
     </script>

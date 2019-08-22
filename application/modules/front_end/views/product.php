@@ -75,7 +75,7 @@
                         <div class="head-item"><?php echo $list_products_specific['group_product_name']; ?></div>
                         <h4><?php echo $list_products_specific['category_product_name'] . ':' . $list_products_specific['category_product_description']; ?></h4>
                         <div class="main-pic">
-                            <img src="<?php echo base_url('storage/uploads/images/products/' . $list_products_specific['category_product_img_cover']); ?>" class="img-responsive"/>
+                            <img src="<?php echo base_url('storage/uploads/images/products/' . $list_products_specific['category_product_img_cover']); ?>" class="img-responsive" alt="<?php echo $list_products_specific['category_product_img_title_alt']; ?>" />
                         </div>
                         <div class="list-pdf">
                             <ul>
@@ -94,7 +94,7 @@
                         <ul id="list-loadmore" class="listing">
                             <?php foreach ($list_products_specific['products'] as $product) { ?>
                                 <li class="lb-detail" data-code="<?php echo hashids_encrypt($product->id) . '-code'; ?>" data-val="<?php echo hashids_encrypt($product->id); ?>">
-                                    <img src="<?php echo base_url('storage/uploads/images/products/' . $product->img); ?>" class="img-responsive img-center"/>
+                                    <img src="<?php echo base_url('storage/uploads/images/products/' . $product->img); ?>" class="img-responsive img-center" alt="<?php echo $product->img_title_alt; ?>"/>
                                     <div class="clearfix"></div>
                                     <div class="box-topic"><?php echo $product->title; ?></div>
                                     <div class="box-des"><?php echo $product->description_en . ' | ' . $product->description_th; ?></div>

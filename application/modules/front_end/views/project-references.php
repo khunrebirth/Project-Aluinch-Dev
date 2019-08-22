@@ -58,9 +58,9 @@
                                         <figure>
                                             <div class="main-img">
                                                 <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>
-                                                <img src="<?php echo base_url('storage/uploads/images/projects/' . $project->img_cover); ?>" class="img-responsive img-center" />
+                                                <img src="<?php echo base_url('storage/uploads/images/projects/' . $project->img_cover); ?>" class="img-responsive img-center" alt="<?php echo $project->img_title_alt; ?>"/>
                                             </div>
-                                            <figcaption> <?php echo $project->title; ?></figcaption>
+                                            <figcaption><?php echo $project->title; ?></figcaption>
                                         </figure>
                                     </li>
                                 <?php } ?>

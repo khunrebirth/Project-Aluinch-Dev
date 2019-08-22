@@ -6,7 +6,8 @@ class Category_product_model extends CI_Model {
     {
         $this->db->select('
             category_products.*,
-            group_products.title as group_product_name
+            group_products.title as group_product_name,
+            group_products.slug as group_product_slug
         ');
         $this->db->from('category_products');
         $this->db->join('group_products', 'group_products.id = category_products.group_product_id');
@@ -25,7 +26,16 @@ class Category_product_model extends CI_Model {
 
     public function get_category_product_by_group_product_id($id)
     {
-        $query = $this->db->where('group_product_id', $id)->get('category_products');
+        $this->db->select('
+            category_products.*,
+            group_products.title as group_product_name,
+            group_products.slug as group_product_slug
+        ');
+        $this->db->from('category_products');
+        $this->db->join('group_products', 'group_products.id = category_products.group_product_id');
+        $this->db->where('category_products.group_product_id', $id);
+
+        $query = $this->db->get();
 
         return $query->num_rows() > 0 ? $query->result() : false;
     }

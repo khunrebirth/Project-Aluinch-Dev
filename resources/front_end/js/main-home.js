@@ -584,29 +584,29 @@ $(function () {
     });
 
     ////////////// ajax lightbox //////////////////
-    $(".lb-detail-project").click(function () {
-
-        $(".warp-light-box").addClass("show-black");
-        $(".bg-black").addClass("show-black");
-        $("body,html").addClass("overflow-hidden");
-        var val = $(this).data("id");
-        var name = $(this).data("name");
-        $.ajax({
-            type: 'POST',
-            url: "ajax-project-home.php",
-            data: 'id=' + val + '&name=' + name,
-            success: function (data) {
-                // console.log("success");
-                // console.log(data);
-                // $('#myform').trigger("reset");
-                $('#ajax-result').html(data);
-            },
-            error: function (data) {
-                console.log("error");
-                console.log(data);
-            }
-        });
-    });
+    // $(".lb-detail-project").click(function () {
+    //
+    //     $(".warp-light-box").addClass("show-black");
+    //     $(".bg-black").addClass("show-black");
+    //     $("body,html").addClass("overflow-hidden");
+    //     var val = $(this).data("id");
+    //     var name = $(this).data("name");
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: "ajax-project-home.php",
+    //         data: 'id=' + val + '&name=' + name,
+    //         success: function (data) {
+    //             // console.log("success");
+    //             // console.log(data);
+    //             // $('#myform').trigger("reset");
+    //             $('#ajax-result').html(data);
+    //         },
+    //         error: function (data) {
+    //             console.log("error");
+    //             console.log(data);
+    //         }
+    //     });
+    // });
 
     $(".vdo-lightbox").click(function () {
 

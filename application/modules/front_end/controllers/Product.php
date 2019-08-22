@@ -157,6 +157,7 @@ class Product extends MX_Controller {
         $data['category_product_name'] = $category_product->title;
         $data['category_product_description'] = $category_product->description;
         $data['category_product_img_cover'] = $category_product->img_cover;
+        $data['category_product_img_title_alt'] = $category_product->img_title_alt;
         $data['products'] = [];
 
         if (count($products) > 0) {

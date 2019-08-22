@@ -38,7 +38,7 @@ class ProjectReferences extends MX_Controller {
 		$this->load->view('app', $data);
 	}
 
-	public function ajax_get_project_by_id($id)
+	public function ajax_get_project_by_id($id, $page = null)
     {
         $status = 500;
         $response['success'] = 0;
@@ -84,8 +84,56 @@ class ProjectReferences extends MX_Controller {
                  </div>
             ';
 
-            $js_template = '
-                <script>
+            if ($page == 'home') {
+                $js_template = '
+                    <script>
+                        var $sync1 = $(".sync1"),
+                            $sync2 = $(".sync2"),
+                            flag = false,
+                            duration = 300;
+                        
+                        $sync1.owlCarousel({
+                            items: 1,
+                            margin: 10,
+                            nav: false,
+                            dots: false
+                        }).on(\'change.owl.carousel\', function (e) { 
+                            if (e.namespace && e.property.name === \'items\' && !flag) {
+                                flag = true;
+                                $sync2.trigger(\'to.owl.carousel\', [e.item.index, duration, true]);
+                                flag = false;
+                            }
+                        });
+                        $sync2.owlCarousel({
+                            items: 4,
+                            margin: 10,
+                            nav: false
+                        }).on(\'click\', \'.owl-item\', function () {
+                            $sync1.trigger(\'to.owl.carousel\', [$(this).index(), duration, true]);
+                        }).on(\'change.owl.carousel\', function (e) {
+                            if (e.namespace && e.property.name === \'items\' && !flag) {
+                                flag = true;        
+                                $sync1.trigger(\'to.owl.carousel\', [e.item.index, duration, true]);
+                                flag = false;
+                            }
+                        });
+    
+                        var owl_port = $(\'.sync2\');
+                        // Go to the next item
+                        $(\'.arrow-right-project\').click(function() {
+                            owl_port.trigger(\'next.owl.carousel\', [300]);
+                        })
+                        // Go to the previous item
+                        $(\'.arrow-left-project\').click(function() {
+                            // With optional speed parameter
+                            // Parameters has to be in square bracket \'[]\'
+                            owl_port.trigger(\'prev.owl.carousel\', [300]);
+                        })
+                    </script>
+                ';
+            } else {
+                $js_template = '
+                    <script>
                     $(document).ready(function() {
                         
                         var sync1 = $(".sync1")
@@ -183,7 +231,9 @@ class ProjectReferences extends MX_Controller {
                         owl_sync2.trigger(\'owl.prev\')
                     })
                 </script>
-            ';
+                ';
+            }
+
 
             $response['data'] = $html_template . $js_template;
         }

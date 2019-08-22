@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 16, 2019 at 11:06 AM
+-- Generation Time: Aug 22, 2019 at 09:22 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -30,9 +30,10 @@ CREATE TABLE `category_products` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
   `slug` text NOT NULL,
-  `desc` text NOT NULL,
-  `image_cover` text NOT NULL,
-  `image_title_alt` text NOT NULL,
+  `description` text NOT NULL,
+  `img_cover_home` text NOT NULL,
+  `img_cover` text NOT NULL,
+  `img_title_alt` text NOT NULL,
   `group_product_id` int(11) NOT NULL,
   `file_catalog` text NOT NULL,
   `file_price` text NOT NULL,
@@ -49,32 +50,32 @@ CREATE TABLE `category_products` (
 -- Dumping data for table `category_products`
 --
 
-INSERT INTO `category_products` (`id`, `title`, `slug`, `desc`, `image_cover`, `image_title_alt`, `group_product_id`, `file_catalog`, `file_price`, `file_cad`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'T-SERIES', 't-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.', '0121df.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
-(2, 'F-SERIES', '', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm.', 'a24779.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
-(3, 'V-SERIES', '', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm.', '471fcb.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:46', NULL, NULL),
-(4, 'D-SERIES', '', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm.', 'ff80c3.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:31:56', NULL, NULL),
-(5, 'S-SERIES', '', 'ระบบอลูมิเนียมขัวเชิงผนัง แบบเรียบและสกรู ออน', '8ce542.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:33:07', '2019-08-15 10:27:38', NULL),
-(6, 'X-SERIES', '', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง ขนาด 16 x 35 mm.', '45c20e.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:33:07', NULL, NULL),
-(7, 'M-SERIES', '', 'ระบบอลูมิเนียมประตู บานเลื่อนและบานสวิง ขนาด 9 x 35 mm.', '6b7b90.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
-(8, 'E-SERIES', '', 'ระบบอลูมิเนียมบานเลื่อนประตูหน้าต่าง ( กันน้ำ )', 'de801d.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
-(9, 'C-SERIES', '', 'ระบบอลูมิเนียมหน้าต่างบานกระทุ้ง ( กันน้ำ )', 'a7b71e.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
-(10, 'B-SERIES', '', 'ระบบอลูมิเนียมบานเฟี้ยมประตูและหน้าต่าง ( กันน้ำ )', 'ae7132.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
-(11, 'i-SERIES', '', 'ระบบอลูมิเนียมบานหน้าตู้ บานเลื่อนและบานเปิด', '91af97.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
-(12, 'J-SERIES', '', 'ระบบอลูมิเนียมใช้ตกแต่งประตูหรือผนัง', 'b9c5bc.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
-(13, 'L-SERIES', '', 'ระบบอลูมิเนียมบานเกร็ดสำหรับบังลมและรับลม', '780c33.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
-(14, 'ACCESSORIES', '', 'ยางอัด ยางหุ้ม ยางปิดร่อง ยางสันบานประตูและขนสักหลาด', 'af734c.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
-(15, 'Lever Handle', '', 'มือจับก้านโยกสำหรับประตูไม้และอลูมิเนียม', '6cab71.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
-(16, 'Pull Handle with Lock', '', 'มือจับกระบองยาวมีล็อคในตัว', '71cd55.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
-(18, 'Pull Handle', '', 'มือจับกระบองใช้สำหรับประตูทุกชนิด', '698931.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:45:11', NULL, NULL),
-(19, 'Flush Handle', '', 'มือจับแบบฝังใช้กับประตูบานไม้และอลูมิเนียม', '4096f9.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
-(20, 'Mortise Lock', '', 'เสื้อกุญแจสำหรับประตูบานไม้และอลูมิเนียม', '29bcf9.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
-(21, 'Knob Cylinder', '', 'ไส้กุญแจสำหรับประตูทุกชนิด', '35deea.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
-(22, 'Door Closer', '', 'โช้คอัพประตูใช้ได้กับประตูทุกชนิด', '92a66f.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
-(23, 'Patch Fitting', '', 'อุปกรณ์สำหรับประตูกระจกบานเปลือย', 'ea2aab.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:53', NULL, NULL),
-(24, 'Rolling Set', '', 'รางเลื่อนและล้อเลื่อนใช้กับประตูทุกชนิด', 'ef0b60.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:48:20', NULL, NULL),
-(25, 'ANODIZED', '', 'สีชุบเน้นความสวยงามของเฟรม', '0acae9.jpg', '', 3, '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL),
-(26, 'POWDER COATED', '', 'สีพ่น ทนการขีดข่วนสีคงทนตามการใช้งาน', '688945.jpg', '', 3, '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL);
+INSERT INTO `category_products` (`id`, `title`, `slug`, `description`, `img_cover_home`, `img_cover`, `img_title_alt`, `group_product_id`, `file_catalog`, `file_price`, `file_cad`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'T-SERIES', 't-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.', '02af9a.jpg', '0121df.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
+(2, 'F-SERIES', 'f-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm.', '282986.jpg', 'a24779.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
+(3, 'V-SERIES', 'v-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm.', 'c4093f.jpg', '471fcb.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:46', NULL, NULL),
+(4, 'D-SERIES', 'd-series', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm.', '6d2aff.jpg', 'ff80c3.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:31:56', NULL, NULL),
+(5, 'S-SERIES', 's-series', 'ระบบอลูมิเนียมขัวเชิงผนัง แบบเรียบและสกรู ออน', '', '8ce542.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:33:07', '2019-08-15 10:27:38', NULL),
+(6, 'X-SERIES', 'x-series', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง ขนาด 16 x 35 mm.', '', '45c20e.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:33:07', NULL, NULL),
+(7, 'M-SERIES', 'm-series', 'ระบบอลูมิเนียมประตู บานเลื่อนและบานสวิง ขนาด 9 x 35 mm.', '', '6b7b90.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
+(8, 'E-SERIES', 'e-series', 'ระบบอลูมิเนียมบานเลื่อนประตูหน้าต่าง ( กันน้ำ )', '', 'de801d.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
+(9, 'C-SERIES', 'c-series', 'ระบบอลูมิเนียมหน้าต่างบานกระทุ้ง ( กันน้ำ )', '', 'a7b71e.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
+(10, 'B-SERIES', 'b-series', 'ระบบอลูมิเนียมบานเฟี้ยมประตูและหน้าต่าง ( กันน้ำ )', '', 'ae7132.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
+(11, 'I-SERIES', 'i-series', 'ระบบอลูมิเนียมบานหน้าตู้ บานเลื่อนและบานเปิด', '', '91af97.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
+(12, 'J-SERIES', 'j-series', 'ระบบอลูมิเนียมใช้ตกแต่งประตูหรือผนัง', '', 'b9c5bc.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
+(13, 'L-SERIES', 'l-series', 'ระบบอลูมิเนียมบานเกร็ดสำหรับบังลมและรับลม', '', '780c33.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
+(14, 'ACCESSORIES', 'accessories', 'ยางอัด ยางหุ้ม ยางปิดร่อง ยางสันบานประตูและขนสักหลาด', '', 'af734c.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
+(15, 'Lever Handle', 'lever-handle', 'มือจับก้านโยกสำหรับประตูไม้และอลูมิเนียม', 'ce998a.jpg', '6cab71.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
+(16, 'Pull Handle with Lock', 'pull-handle-with-lock', 'มือจับกระบองยาวมีล็อคในตัว', '949bfd.jpg', '71cd55.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
+(18, 'Pull Handle', 'pull-handle', 'มือจับกระบองใช้สำหรับประตูทุกชนิด', '', '698931.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:45:11', NULL, NULL),
+(19, 'Flush Handle', 'flush-handle', 'มือจับแบบฝังใช้กับประตูบานไม้และอลูมิเนียม', 'ce265b.jpg', '4096f9.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
+(20, 'Mortise Lock', 'mortise-lock', 'เสื้อกุญแจสำหรับประตูบานไม้และอลูมิเนียม', '', '29bcf9.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
+(21, 'Knob Cylinder', 'knob-cylinder', 'ไส้กุญแจสำหรับประตูทุกชนิด', '', '35deea.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
+(22, 'Door Closer', 'door-closer', 'โช้คอัพประตูใช้ได้กับประตูทุกชนิด', '', '92a66f.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
+(23, 'Patch Fitting', 'patch-fitting', 'อุปกรณ์สำหรับประตูกระจกบานเปลือย', '', 'ea2aab.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:53', NULL, NULL),
+(24, 'Rolling Set', 'rolling-set', 'รางเลื่อนและล้อเลื่อนใช้กับประตูทุกชนิด', '', 'ef0b60.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:48:20', NULL, NULL),
+(25, 'ANODIZED', 'anodized', 'สีชุบเน้นความสวยงามของเฟรม', '', '0acae9.jpg', '', 3, '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL),
+(26, 'POWDER COATED', 'powder-coated', 'สีพ่น ทนการขีดข่วนสีคงทนตามการใช้งาน', '', '688945.jpg', '', 3, '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -85,6 +86,7 @@ INSERT INTO `category_products` (`id`, `title`, `slug`, `desc`, `image_cover`, `
 CREATE TABLE `category_technologies` (
   `id` int(11) NOT NULL,
   `title` text NOT NULL,
+  `slug` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -94,10 +96,10 @@ CREATE TABLE `category_technologies` (
 -- Dumping data for table `category_technologies`
 --
 
-INSERT INTO `category_technologies` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'PRESENTATION VDO วีดีโอแนะนำการใช้งาน', '2019-08-15 02:39:51', NULL, NULL),
-(2, 'TIPS AND TRICKS เกร็ดความรู้อลูมิเนียม', '2019-08-15 02:39:51', NULL, NULL),
-(3, 'FAQ คำถามที่พบบอย', '2019-08-15 02:40:01', NULL, NULL);
+INSERT INTO `category_technologies` (`id`, `title`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'PRESENTATION VDO วีดีโอแนะนำการใช้งาน', 'presentation-vdo-วีดีโอแนะนำการใช้งาน', '2019-08-15 02:39:51', NULL, NULL),
+(2, 'TIPS AND TRICKS เกร็ดความรู้อลูมิเนียม', 'tips-and-tricks-เกร็ดความรู้อลูมิเนียม', '2019-08-15 02:39:51', NULL, NULL),
+(3, 'FAQ คำถามที่พบบอย', 'faq-คำถามที่พบบอย', '2019-08-15 02:40:01', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -240,6 +242,31 @@ CREATE TABLE `page_meta_tags` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `portfolios`
+--
+
+CREATE TABLE `portfolios` (
+  `id` int(11) NOT NULL,
+  `img` text NOT NULL,
+  `img_title_alt` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `portfolios`
+--
+
+INSERT INTO `portfolios` (`id`, `img`, `img_title_alt`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'f3bdc0.jpg', '', '2019-08-22 09:13:06', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, '77af11.jpg', '', '2019-08-22 09:13:06', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'e44907.jpg', '', '2019-08-22 09:13:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, '5c4262.jpg', '', '2019-08-22 09:13:23', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -248,8 +275,8 @@ CREATE TABLE `products` (
   `title` varchar(40) NOT NULL,
   `description_en` text NOT NULL,
   `description_th` text NOT NULL,
-  `image` text NOT NULL,
-  `image_title_alt` text NOT NULL,
+  `img` text NOT NULL,
+  `img_title_alt` text NOT NULL,
   `group_product_id` int(11) NOT NULL,
   `category_product_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -261,7 +288,7 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `title`, `description_en`, `description_th`, `image`, `image_title_alt`, `group_product_id`, `category_product_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+INSERT INTO `products` (`id`, `title`, `description_en`, `description_th`, `img`, `img_title_alt`, `group_product_id`, `category_product_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'ALUINCH T-20.01', 'HEADTRACK 20 mm.', 'กล่องเรียบ 20 มม.', '5875ebc1dfdd4.jpg', '', 1, 1, '2019-08-15 02:39:00', NULL, NULL);
 
 -- --------------------------------------------------------
@@ -273,8 +300,9 @@ INSERT INTO `products` (`id`, `title`, `description_en`, `description_th`, `imag
 CREATE TABLE `projects` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
-  `desc` text NOT NULL,
-  `image_cover` text NOT NULL,
+  `description` text NOT NULL,
+  `img_cover` text NOT NULL,
+  `img_title_alt` text NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -284,11 +312,11 @@ CREATE TABLE `projects` (
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`id`, `title`, `desc`, `image_cover`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'OFFICE อลูมิเนียมภายใน', 'อลูมิเนียมสำหรับงานตกแต่งภายในสำนักงาน', 'e06485.jpg', '2019-08-15 02:41:29', NULL, NULL),
-(2, 'HOME อลูมิเนียมภายในและภายนอก', 'อลูมิเนียมสำหรับงานภายใน และภายนอกบ้าน', '2d24b1.jpg', '2019-08-15 02:41:39', NULL, NULL),
-(3, 'COMMERCIAL อลูมิเนียมภายใน', 'อลูมิเนียมสำหรับโรงแรม โรงพยาบาล หรือหน่วยงานต่างๆ', '6dd922.jpg', '2019-08-15 02:41:48', NULL, NULL),
-(4, 'CONDOMINUM อลูมิเนียมภายใน', 'อลูมิเนียมสำหรับงานภายใน', '5a469d.jpg', '2019-08-15 02:42:01', NULL, NULL);
+INSERT INTO `projects` (`id`, `title`, `description`, `img_cover`, `img_title_alt`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'OFFICE อลูมิเนียมภายใน', 'อลูมิเนียมสำหรับงานตกแต่งภายในสำนักงาน', 'e06485.jpg', '', '2019-08-15 02:41:29', NULL, NULL),
+(2, 'HOME อลูมิเนียมภายในและภายนอก', 'อลูมิเนียมสำหรับงานภายใน และภายนอกบ้าน', '2d24b1.jpg', '', '2019-08-15 02:41:39', NULL, NULL),
+(3, 'COMMERCIAL อลูมิเนียมภายใน', 'อลูมิเนียมสำหรับโรงแรม โรงพยาบาล หรือหน่วยงานต่างๆ', '6dd922.jpg', '', '2019-08-15 02:41:48', NULL, NULL),
+(4, 'CONDOMINUM อลูมิเนียมภายใน', 'อลูมิเนียมสำหรับงานภายใน', '5a469d.jpg', '', '2019-08-15 02:42:01', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -312,14 +340,30 @@ CREATE TABLE `roles` (
 
 CREATE TABLE `technology_videos` (
   `id` int(11) NOT NULL,
-  `title` varchar(40) NOT NULL,
+  `title` text NOT NULL,
+  `slug` text NOT NULL,
   `body` text NOT NULL,
+  `description` text NOT NULL,
   `src` text NOT NULL,
+  `short_src` text NOT NULL,
+  `img_cover` text NOT NULL,
+  `img_title_alt` text NOT NULL,
   `category_technology_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `technology_videos`
+--
+
+INSERT INTO `technology_videos` (`id`, `title`, `slug`, `body`, `description`, `src`, `short_src`, `img_cover`, `img_title_alt`, `category_technology_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'ระบบอลูมิเนียมประตูหน้าต่าง B-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-b-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานเฟี้ยม', '<iframe width=\"100%\" height=\"400\" src=\"https://www.youtube.com/embed/pZFeraPjm4s\" frameborder=\"0\" allowfullscreen></iframe>', 'pZFeraPjm4s', 'https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg', '', 1, '2019-08-21 08:40:26', NULL, NULL),
+(2, 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม  Aluminium Profile Copy Router', 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม-aluminium-profile-copy-router', '<p>สามารถลดเวลาการทำงานเจาะรูกุญแกได้ 2 เท่า เพราะสามารถเร้าเตอร์ได้ทั้ง 2ฝั่งในเวลาเดียวกัน</p><p><br></p><p>Credit by&nbsp; :&nbsp; &nbsp;<span style=\\\"\\\\&quot;color:\\\" rgb(0,=\\\"\\\" 0,=\\\"\\\" 0);=\\\"\\\" font-family:=\\\"\\\" arial;=\\\"\\\" font-size:=\\\"\\\" 13px;=\\\"\\\" white-space:=\\\"\\\" pre-wrap;\\\\\\\"=\\\"\\\">&nbsp; </span><span style=\\\"\\\\&quot;color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span>www.ozgencmachine.com<span style=\\\"\\\\&quot;color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span></p>                        </p>', 'เทคโนโลยียุคใหม่ของการทำงานอลูมิเนียมให้เป็นเรื่องง่าย', '<iframe width=\"100%\" height=\"400\" src=\"https://www.youtube.com/embed/swT-nMNmmz4\" frameborder=\"0\" allowfullscreen></iframe>', 'swT-nMNmmz4', 'https://img.youtube.com/vi/swT-nMNmmz4/mqdefault.jpg', '', 2, '2019-08-21 08:41:34', NULL, NULL),
+(3, 'ระบบอลูมิเนียมประตูหน้าต่าง  X-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-x-series', '', 'ระบบอลูมิเนียมประตู SLIM DESIGN', '', 'hd3MghzSIRs', 'https://img.youtube.com/vi/hd3MghzSIRs/mqdefault.jpg', '', 1, '2019-08-22 03:28:20', NULL, NULL),
+(4, 'ระบบอลูมิเนียมประตูหน้าต่าง  E-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-e-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานเลิ่อน', '', 'Qs4bW40XLwk', 'https://img.youtube.com/vi/Qs4bW40XLwk/mqdefault.jpg', '', 1, '2019-08-22 03:32:27', NULL, NULL),
+(5, 'ระบบอลูมิเนียมประตูหน้าต่าง C-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานกระทุ้ง', '', 'IqDe4FbX67w', 'https://img.youtube.com/vi/IqDe4FbX67w/mqdefault.jpg', '', 1, '2019-08-22 03:32:27', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -388,6 +432,12 @@ ALTER TABLE `pages`
 -- Indexes for table `page_meta_tags`
 --
 ALTER TABLE `page_meta_tags`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `portfolios`
+--
+ALTER TABLE `portfolios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -460,6 +510,11 @@ ALTER TABLE `pages`
 ALTER TABLE `page_meta_tags`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `portfolios`
+--
+ALTER TABLE `portfolios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
@@ -478,7 +533,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `technology_videos`
 --
 ALTER TABLE `technology_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `users`
 --

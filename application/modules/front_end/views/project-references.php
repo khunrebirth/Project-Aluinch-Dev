@@ -80,6 +80,5 @@
         </div>
     </div>
 
-    <!-- contact -->
     <?php include 'layouts/contact.php'; ?>
-    <!-- end contact -->
+

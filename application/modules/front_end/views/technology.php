@@ -1,6 +1,6 @@
     <!-- Push Custom CSS -->
     <style>
-        .main-section ul.list-item>li:before {
+        .main-section ul.list-item > li:before {
             content: none !important;
         }
     </style>
@@ -10,7 +10,7 @@
         <div class="warp-slide">
             <div id="slides">
                 <div class="slides-container">
-                    <img src="<?php echo base_url('storage/images/bg1-n1.jpg'); ?>" />
+                    <img src="<?php echo base_url('storage/images/bg1-n1.jpg'); ?>"/>
                 </div>
             </div>
         </div>
@@ -18,7 +18,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="slogan-head">
-                        Alumination caused by the integration of people with experience and expertise in aluminum directly. We are ready to offer a new way of decorating buildings are beautiful and add value to the maximum. As well, we will have to innovate and develop products, aluminum continued using the brand name that ALUINCH.
+                        Alumination caused by the integration of people with experience and expertise in aluminum directly.
+                        We are ready to offer a new way of decorating buildings are beautiful and add value to the maximum.
+                        As well, we will have to innovate and develop products, aluminum continued using the brand name that
+                        ALUINCH.
                     </div>
                 </div>
             </div>
@@ -33,7 +36,8 @@
                         <div class="text-box">
                             <h1>ALUMINIUM INSTINCT!</h1>
                             <p>
-                                Aluminium Instinct, The creative modern aluminium frame style has always<br /> concerned equable frame design both in vertical and horizontal line.
+                                Aluminium Instinct, The creative modern aluminium frame style has always<br/> concerned
+                                equable frame design both in vertical and horizontal line.
                             </p>
                         </div>
                         <div class="fb"></div>
@@ -57,7 +61,9 @@
                 <div class="col-md-3">
                     <ul class="list-item">
                         <?php foreach ($category_technologies as $category_technology) { ?>
-                            <li class="<?php if (rawurldecode($this->uri->segment(1)) == 'technology' && rawurldecode($this->uri->segment(2)) == $category_technology->slug) { echo 'active'; } ?>">
+                            <li class="<?php if (rawurldecode($this->uri->segment(1)) == 'technology' && rawurldecode($this->uri->segment(2)) == $category_technology->slug) {
+                                echo 'active';
+                            } ?>">
                                 <a href="<?php echo base_url('technology/' . $category_technology->slug . '/' . $category_technology->id); ?>"><?php echo $category_technology->title; ?></a>
                             </li>
                         <?php } ?>
@@ -88,7 +94,8 @@
                                         <?php foreach ($technology_specific['faqs'] as $faq) { ?>
                                             <li>
                                                 <div class="faq-main-box" data-val="toggle-<?php echo $faq->id; ?>">
-                                                    <?php echo $faq->ask; ?> <i class="glyphicon glyphicon-triangle-right"></i>
+                                                    <?php echo $faq->ask; ?> <i
+                                                            class="glyphicon glyphicon-triangle-right"></i>
                                                 </div>
                                                 <p class="toggle-<?php echo $faq->id; ?>"><?php echo $faq->ans; ?></p>
                                             </li>
@@ -106,41 +113,21 @@
         </div>
     </section>
 
-    <!-- contact -->
     <?php include 'layouts/contact.php'; ?>
-    <!-- end contact -->
-
-    <!-- Push Custom Scripts -->
-    <script>
-        $(function(){
-            size_li = $("#list-loadmore li").size();
-            x=6;
-            $('#list-loadmore li:lt('+x+')').show();
-            $('#loadmore').click(function () {
-//        x= (x+5 <= size_li) ? x+5 : size_li;
-//        $('#list-loadmore li:lt('+x+')').show();
-                $('#list-loadmore li').show();
-                equalheight('#list-loadmore li');
-                $("#loadmore").hide();
-            });
-            $('#showLess').click(function () {
-                x=(x-5<0) ? 3 : x-5;
-                $('#list-loadmore li').not(':lt('+x+')').hide();
-            });
-        });
-    </script>
 
     <!-- map -->
-    <div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="border:none">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <img src="<?php echo base_url('storage/images/viewmap.jpg'); ?>" class="img-responsive" />
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+<!--        <div class="modal-dialog" role="document">-->
+<!--            <div class="modal-content">-->
+<!--                <div class="modal-header" style="border:none">-->
+<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--                <div class="modal-body">-->
+<!--                    <img src="--><?php //echo base_url('storage/images/viewmap.jpg'); ?><!--" class="img-responsive"/>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <!-- map -->
+

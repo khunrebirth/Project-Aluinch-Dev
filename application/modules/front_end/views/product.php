@@ -59,7 +59,7 @@
                             <ul class="sub-list-item">
                                 <?php foreach ($products['category_products'] as $category_product) { ?>
                                     <li class="active">
-                                        <a href="<?php echo base_url('product/' . $products['group_product_slug'] . '/' . $category_product['category_product_slug'] . '/' . $category_product['category_product_id']); ?>">
+                                        <a href="<?php echo base_url('product/' . $products['group_product_slug'] . '/' . $category_product['category_product_slug'] . '/' . hashids_encrypt($category_product['category_product_id'])); ?>">
                                             <?php echo $category_product['category_product_name']; ?>
                                             <p><?php echo $category_product['category_product_description']; ?></p>
                                         </a>
@@ -93,7 +93,7 @@
                         <div class="clearfix"></div>
                         <ul id="list-loadmore" class="listing">
                             <?php foreach ($list_products_specific['products'] as $product) { ?>
-                                <li class="lb-detail" data-code="<?php echo $product->id . '-code'; ?>" data-val="<?php echo $product->id; ?>">
+                                <li class="lb-detail" data-code="<?php echo hashids_encrypt($product->id) . '-code'; ?>" data-val="<?php echo hashids_encrypt($product->id); ?>">
                                     <img src="<?php echo base_url('storage/uploads/images/products/' . $product->img); ?>" class="img-responsive img-center"/>
                                     <div class="clearfix"></div>
                                     <div class="box-topic"><?php echo $product->title; ?></div>

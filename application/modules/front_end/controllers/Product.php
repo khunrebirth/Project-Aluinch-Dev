@@ -43,7 +43,7 @@ class Product extends MX_Controller {
     public function show($group_product_slug, $category_product_slug, $category_product_id)
     {
         // Process
-        $category_product = $this->category_product_model->get_category_product_by_id($category_product_id);
+        $category_product = $this->category_product_model->get_category_product_by_id(hashids_decrypt($category_product_id));
 
         // Set Data
         $data['content'] = 'product';
@@ -58,7 +58,7 @@ class Product extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $product = $this->product_model->get_product_by_id($id);
+        $product = $this->product_model->get_product_by_id(hashids_decrypt($id));
 
         if ($product != false) {
 

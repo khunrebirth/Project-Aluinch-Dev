@@ -43,8 +43,8 @@ class ProjectReferences extends MX_Controller {
         $status = 500;
         $response['success'] = 0;
 
-        $project = $this->project_model->get_project_by_id($id);
-        $image_projects = $this->image_project_model->get_image_project_by_project_id($id);
+        $project = $this->project_model->get_project_by_id(hashids_decrypt($id));
+        $image_projects = $this->image_project_model->get_image_project_by_project_id(hashids_decrypt($id));
 
         if ($project != false && $image_projects != false) {
 

@@ -61,7 +61,7 @@
                                     <ul class="sub-list-item">
                                         <?php foreach ($category_technology['technologies'] as $technology) { ?>
                                             <li class="">
-                                                <a href="<?php echo base_url('technology/' . $category_technology['category_technology_slug'] . '/' . $technology->slug . '/' . $technology->id); ?>">
+                                                <a href="<?php echo base_url('technology/' . $category_technology['category_technology_slug'] . '/' . $technology->slug . '/' . hashids_encrypt($technology->id)); ?>">
                                                     <?php echo $technology->title; ?>
                                                 </a>
                                             </li>
@@ -69,7 +69,7 @@
                                     </ul>
 
                                 <?php } else if ($category_technology['category_technology_slug'] == 'faq-คำถามที่พบบอย') { ?>
-                                    <a href="<?php echo base_url('technology/' . $category_technology['category_technology_slug'] . '/' . $category_technology['category_technology_id']); ?>"><?php echo $category_technology['category_technology_name']; ?></a>
+                                    <a href="<?php echo base_url('technology/' . $category_technology['category_technology_slug'] . '/' . hashids_encrypt($category_technology['category_technology_id'])); ?>"><?php echo $category_technology['category_technology_name']; ?></a>
                                 <? } ?>
 
                             </li>
@@ -100,11 +100,11 @@
                                     <ul class="load-ul">
                                         <?php foreach ($technology_specific['faqs'] as $faq) { ?>
                                             <li>
-                                                <div class="faq-main-box" data-val="toggle-<?php echo $faq->id; ?>">
+                                                <div class="faq-main-box" data-val="toggle-<?php echo hashids_encrypt($faq->id); ?>">
                                                     <?php echo $faq->ask; ?> <i
                                                             class="glyphicon glyphicon-triangle-right"></i>
                                                 </div>
-                                                <p class="toggle-<?php echo $faq->id; ?>"><?php echo $faq->ans; ?></p>
+                                                <p class="toggle-<?php echo hashids_encrypt($faq->id); ?>"><?php echo $faq->ans; ?></p>
                                             </li>
                                         <?php } ?>
                                     </ul>

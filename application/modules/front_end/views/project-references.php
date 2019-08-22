@@ -54,7 +54,7 @@
                         <div class="main-carousel">
                             <ul class="project-ref">
                                 <?php foreach ($projects as $project) { ?>
-                                    <li class="lb-detail-project" data-id="<?php echo $project->id; ?>" data-name="<?php echo $project->title; ?>" data-des="<?php echo $project->description; ?>">
+                                    <li class="lb-detail-project" data-id="<?php echo hashids_encrypt($project->id); ?>" data-name="<?php echo $project->title; ?>" data-des="<?php echo $project->description; ?>">
                                         <figure>
                                             <div class="main-img">
                                                 <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>

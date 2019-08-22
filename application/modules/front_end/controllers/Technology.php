@@ -44,7 +44,7 @@ class Technology extends MX_Controller {
     {
         $data['content'] = 'technology';
         $data['category_technologies'] = $this->filter_data_products( $this->category_technology_model->get_category_technology_all());
-        $data['technology_specific'] = $this->technology_video_model->get_technology_video_by_id($technology_id);
+        $data['technology_specific'] = $this->technology_video_model->get_technology_video_by_id(hashids_decrypt($technology_id));
         $data['technology_specific_category_slug'] = $data['technology_specific']->category_technology_slug;
 
         $this->load->view('app', $data);
@@ -58,15 +58,15 @@ class Technology extends MX_Controller {
         switch (rawurldecode($slug)) {
             case 'faq-คำถามที่พบบอย':
 
-                $category_technology = $this->category_technology_model->get_category_technology_by_id($category_technology_id);
+                $category_technology = $this->category_technology_model->get_category_technology_by_id(hashids_decrypt($category_technology_id));
 
-                $data['technology_specific']['faqs'] = $this->faq_technology_model->get_faq_technology_by_category_technology_id($category_technology_id);
+                $data['technology_specific']['faqs'] = $this->faq_technology_model->get_faq_technology_by_category_technology_id(hashids_decrypt($category_technology_id));
                 $data['technology_specific']['category_technology_name'] = $category_technology->title;
                 $data['technology_specific_category_slug'] = $category_technology->slug;
                 break;
 
             default:
-                $data['technology_specific'] = $this->technology_video_model->get_technology_video_by_category_technology_id($category_technology_id);
+                $data['technology_specific'] = $this->technology_video_model->get_technology_video_by_category_technology_id(hashids_decrypt($category_technology_id));
                 $data['technology_specific_category_slug'] = $data['technology_specific']->category_technology_slug;
                 ;
         }

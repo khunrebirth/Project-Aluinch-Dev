@@ -54,10 +54,24 @@
                 <div class="col-md-3">
                     <ul class="list-item">
                         <?php foreach ($category_technologies as $category_technology) { ?>
-                            <li class="<?php if (rawurldecode($this->uri->segment(1)) == 'technology' && rawurldecode($this->uri->segment(2)) == $category_technology->slug) {
-                                echo 'active';
-                            } ?>">
-                                <a href="<?php echo base_url('technology/' . $category_technology->slug . '/' . $category_technology->id); ?>"><?php echo $category_technology->title; ?></a>
+                            <li class="<?php if (rawurldecode($this->uri->segment(1)) == 'technology' && rawurldecode($this->uri->segment(2)) == $category_technology['category_technology_slug']) { echo 'active'; } ?>">
+
+                                <?php if ($category_technology['category_technology_slug'] != 'faq-คำถามที่พบบอย') { ?>
+                                    <a><?php echo $category_technology['category_technology_name']; ?></a>
+                                    <ul class="sub-list-item">
+                                        <?php foreach ($category_technology['technologies'] as $technology) { ?>
+                                            <li class="">
+                                                <a href="<?php echo base_url('technology/' . $category_technology['category_technology_slug'] . '/' . $technology->slug . '/' . $technology->id); ?>">
+                                                    <?php echo $technology->title; ?>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
+
+                                <?php } else if ($category_technology['category_technology_slug'] == 'faq-คำถามที่พบบอย') { ?>
+                                    <a href="<?php echo base_url('technology/' . $category_technology['category_technology_slug'] . '/' . $category_technology['category_technology_id']); ?>"><?php echo $category_technology['category_technology_name']; ?></a>
+                                <? } ?>
+
                             </li>
                         <?php } ?>
                     </ul>

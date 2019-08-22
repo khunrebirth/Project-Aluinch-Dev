@@ -1,10 +1,3 @@
-    <!-- Push Custom CSS -->
-    <style>
-        .main-section ul.list-item > li:before {
-            content: none !important;
-        }
-    </style>
-
     <!-- Main Content -->
     <div id="section1">
         <div class="warp-slide">

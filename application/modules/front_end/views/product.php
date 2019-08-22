@@ -61,7 +61,7 @@
                                     <li class="active">
                                         <a href="<?php echo base_url('product/' . $products['group_product_slug'] . '/' . $category_product['category_product_slug'] . '/' . $category_product['category_product_id']); ?>">
                                             <?php echo $category_product['category_product_name']; ?>
-                                            <p><?php echo $category_product['category_product_desc']; ?></p>
+                                            <p><?php echo $category_product['category_product_description']; ?></p>
                                         </a>
                                     </li>
                                 <?php } ?>
@@ -73,9 +73,9 @@
                 <div class="col-md-9">
                     <div class="product-main">
                         <div class="head-item"><?php echo $list_products_specific['group_product_name']; ?></div>
-                        <h4><?php echo $list_products_specific['category_product_name'] . ':' . $list_products_specific['category_product_desc']; ?></h4>
+                        <h4><?php echo $list_products_specific['category_product_name'] . ':' . $list_products_specific['category_product_description']; ?></h4>
                         <div class="main-pic">
-                            <img src="<?php echo base_url('storage/uploads/products/' . $list_products_specific['category_product_image_cover']); ?>" class="img-responsive"/>
+                            <img src="<?php echo base_url('storage/uploads/products/' . $list_products_specific['category_product_img_cover']); ?>" class="img-responsive"/>
                         </div>
                         <div class="list-pdf">
                             <ul>
@@ -94,7 +94,7 @@
                         <ul id="list-loadmore" class="listing">
                             <?php foreach ($list_products_specific['products'] as $product) { ?>
                                 <li class="lb-detail" data-code="<?php echo $product->id . '-code'; ?>" data-val="<?php echo $product->id; ?>">
-                                    <img src="<?php echo base_url('storage/uploads/products/' . $product->image); ?>" class="img-responsive img-center"/>
+                                    <img src="<?php echo base_url('storage/uploads/products/' . $product->img); ?>" class="img-responsive img-center"/>
                                     <div class="clearfix"></div>
                                     <div class="box-topic"><?php echo $product->title; ?></div>
                                     <div class="box-des"><?php echo $product->description_en . ' | ' . $product->description_th; ?></div>
@@ -155,3 +155,24 @@
 <!--        </div>-->
 <!--    </div>-->
     <!-- map -->
+
+    <!-- Push Custom Scripts -->
+    <script>
+        $(document).ready(function () {
+
+            x = 6
+
+            $('#list-loadmore li:lt(' + x + ')').show()
+
+            $('#loadmore').click(function () {
+                $('#list-loadmore li').show()
+                equalheight('#list-loadmore li')
+                $("#loadmore").hide()
+            })
+
+            $('#showLess').click(function () {
+                x = (x - 5 < 0) ? 3 : x - 5
+                $('#list-loadmore li').not(':lt(' + x + ')').hide()
+            })
+        })
+    </script>

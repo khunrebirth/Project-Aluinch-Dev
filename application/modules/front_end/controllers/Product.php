@@ -74,7 +74,7 @@ class Product extends MX_Controller {
                     $data[$key_group_product]['category_products'][$key_category_product]['category_product_id'] = $category_product->id;
                     $data[$key_group_product]['category_products'][$key_category_product]['category_product_name'] = $category_product->title;
                     $data[$key_group_product]['category_products'][$key_category_product]['category_product_slug'] = $category_product->slug;
-                    $data[$key_group_product]['category_products'][$key_category_product]['category_product_desc'] = $category_product->desc;
+                    $data[$key_group_product]['category_products'][$key_category_product]['category_product_description'] = $category_product->description;
                     $data[$key_group_product]['category_products'][$key_category_product]['products'] = [];
 
                     $products = $this->product_model->get_product_by_custom($group_product->id, $category_product->id);
@@ -101,8 +101,8 @@ class Product extends MX_Controller {
 
         $data['group_product_name'] = $group_product->title;
         $data['category_product_name'] = $category_product->title;
-        $data['category_product_desc'] = $category_product->desc;
-        $data['category_product_image_cover'] = $category_product->image_cover;
+        $data['category_product_description'] = $category_product->description;
+        $data['category_product_img_cover'] = $category_product->img_cover;
         $data['products'] = [];
 
         if (count($products) > 0) {

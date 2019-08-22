@@ -97,5 +97,5 @@
         </div>
         <div class="clearfix"></div>
     </div>
-<!--    <div id="map-canvas" class="map-google"></div>-->
+    <!-- <div id="map-canvas" class="map-google"></div> -->
 </div>

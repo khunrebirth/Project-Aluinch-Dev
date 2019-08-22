@@ -54,11 +54,11 @@
                         <div class="main-carousel">
                             <ul class="project-ref">
                                 <?php foreach ($projects as $project) { ?>
-                                    <li class="lb-detail-project" data-id="<?php echo $project->id; ?>" data-name="<?php echo $project->title; ?>" data-des="<?php echo $project->desc; ?>">
+                                    <li class="lb-detail-project" data-id="<?php echo $project->id; ?>" data-name="<?php echo $project->title; ?>" data-des="<?php echo $project->description; ?>">
                                         <figure>
                                             <div class="main-img">
                                                 <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>
-                                                <img src="<?php echo base_url('storage/uploads/projects/' . $project->image_cover); ?>" class="img-responsive img-center" />
+                                                <img src="<?php echo base_url('storage/uploads/projects/' . $project->img_cover); ?>" class="img-responsive img-center" />
                                             </div>
                                             <figcaption> <?php echo $project->title; ?></figcaption>
                                         </figure>
@@ -81,4 +81,3 @@
     </div>
 
     <?php include 'layouts/contact.php'; ?>
-

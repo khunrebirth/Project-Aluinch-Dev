@@ -53,7 +53,61 @@ class Product extends MX_Controller {
         $this->load->view('app', $data);
     }
 
-    public function ajax_get_product_by_id($id) {}
+    public function ajax_get_product_by_id($id)
+    {
+        $status = 500;
+        $response['success'] = 0;
+
+        $product = $this->product_model->get_product_by_id($id);
+
+        if ($product != false) {
+
+            $status = 200;
+            $response['success'] = 1;
+
+            $html_template = '
+                <div class="warp-slide-product">
+                    <h1>' . $product->title . '</h1>
+                    <div class="des">' . $product->description_en . '|' . $product->description_th . '</div>
+                    <div class="owl-product">
+                        <div class="item"><img src="' . base_url("storage/uploads/images/products/$product->img") . '" width="100%"  height="300" /></div>
+                    </div>
+                    <p></p>
+                    <a target="_blank" href="http://line.me/ti/p/~ALUMINATION" style="color:#fff; padding: 5;"><p style="text-align:center;padding: 0;background: #01b901;">สอบถามเพิ่มเติมได้ที่ <img src="' . base_url('resources/front_end/images/230x0w.jpg') . '" width="50" style="padding-left: 5px;" /></p></a>
+                 </div>
+            ';
+
+            $js_template = '
+                <script>
+                    $(".owl-product").owlCarousel({
+                        pagination : true,
+                        navigation : false, // Show next and prev buttons
+                        slideSpeed : 300,
+                        paginationSpeed : 400,
+                        singleItem:true
+                    })
+                    
+                    var owl_product = $(".owl-product")
+                    
+                    $("#arrow-product-right").click(function(){
+                        owl_product.trigger(\'owl.next\')
+                    })
+                    
+                    $("#arrow-product-left").click(function(){
+                        owl_product.trigger(\'owl.prev\')
+                    })
+                </script>
+            ';
+
+            $response['data'] = $html_template . $js_template;
+        }
+
+        // Send Response
+        return $this->output
+            ->set_status_header($status)
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+    }
 
     private function filter_data_products($group_products)
     {

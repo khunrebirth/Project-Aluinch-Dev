@@ -1,6 +1,5 @@
 <?php
 
-
 class User_model extends CI_Model {
 
     public function get_user($username, $password)

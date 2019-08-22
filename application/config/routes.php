@@ -75,8 +75,8 @@ $route['contact-us/send']['post'] = 'Front_End/Contact/send';
     | -------------------------------------------------------------------------
     */
 
-    $route['ajax/get/product/(:any)'] = 'Front_End/Product/ajax_get_product_by_id/$id';
-    $route['ajax/get/project-references/(:any)'] = 'Front_End/ProjectReferences/ajax_get_project_by_id/$id';
+    $route['ajax/get/product/(:any)'] = 'Front_End/Product/ajax_get_product_by_id/$1';
+    $route['ajax/get/project-references/(:any)'] = 'Front_End/ProjectReferences/ajax_get_project_by_id/$1';
 
 
 /*

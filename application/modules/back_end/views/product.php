@@ -52,7 +52,7 @@
                                                 <td><?php echo $product->title; ?></td>
                                                 <td><?php echo $product->description_en; ?></td>
                                                 <td><?php echo $product->description_th; ?></td>
-                                                <td><img alt="image" src="<?php echo base_url('storage/uploads/products/' . $product->image); ?>" height="12%"></td>
+                                                <td><img alt="image" src="<?php echo base_url('storage/uploads/images/products/' . $product->image); ?>" height="12%"></td>
                                                 <td><?php echo $product->group_product_name; ?></td>
                                                 <td><?php echo $product->category_product_name; ?></td>
                                                 <td><?php echo $product->created_at; ?></td>

@@ -1,6 +1,5 @@
 <?php
 
-
 class Project_model extends CI_Model {
 
     public function get_project_all()

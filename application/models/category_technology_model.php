@@ -1,6 +1,5 @@
 <?php
 
-
 class Category_technology_model extends CI_Model {
 
     public function get_category_technology_all()

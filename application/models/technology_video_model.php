@@ -1,6 +1,5 @@
 <?php
 
-
 class Technology_video_model extends CI_Model {
 
     public function get_technology_video_all()

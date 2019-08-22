@@ -58,7 +58,7 @@
                                         <figure>
                                             <div class="main-img">
                                                 <div class="orange-bg"><div class="icon"><i class="glyphicon glyphicon-search"></i></div></div>
-                                                <img src="<?php echo base_url('storage/uploads/projects/' . $project->img_cover); ?>" class="img-responsive img-center" />
+                                                <img src="<?php echo base_url('storage/uploads/images/projects/' . $project->img_cover); ?>" class="img-responsive img-center" />
                                             </div>
                                             <figcaption> <?php echo $project->title; ?></figcaption>
                                         </figure>
@@ -81,3 +81,34 @@
     </div>
 
     <?php include 'layouts/contact.php'; ?>
+
+    <!-- Push Custom Scripts -->
+    <script>
+        $(document).ready(function () {
+
+            /**********
+             * Event
+             * **/
+
+            $(".lb-detail-project").on('click', function() {
+
+                let urlGetProjectRef = "<?php echo base_url('ajax/get/project-references'); ?>"
+                let $id = $(this).data("id")
+
+                $(".warp-light-box").addClass("show-black")
+                $(".bg-black").addClass("show-black")
+                $("body,html").addClass("overflow-hidden")
+
+                $.ajax({
+                    type: 'GET',
+                    url: urlGetProjectRef + '/' + $id,
+                    success: function (res) {
+                        $('#ajax-result').html(res.data);
+                    },
+                    error: function (data) {
+                        console.log("error");
+                    }
+                })
+            })
+        })
+    </script>

@@ -1,6 +1,5 @@
 <?php
 
-
 class Faq_technology_model extends CI_Model {
 
     public function get_faq_technology_all()

@@ -1,6 +1,5 @@
 <?php
 
-
 class Category_product_model extends CI_Model {
 
     public function get_category_product_all()

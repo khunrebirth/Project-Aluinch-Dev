@@ -228,54 +228,54 @@ $(function () {
         owl_product.trigger('owl.prev');
     })
     ////////////// ajax lightbox //////////////////
-    $(".lb-detail").click(function () {
-
-        $(".product-lightbox").addClass("show-black");
-        $(".product-lightbox").addClass("show-black");
-        $("body,html").addClass("overflow-hidden");
-        var val = $(this).data("code");
-        var id = $(this).data("val");
-        $.ajax({
-            type: 'POST',
-            url: "ajax-product.php",
-            data: 'code=' + val + '&id=' + id,
-            success: function (data) {
-                // console.log("success");
-                // console.log(data);
-                // $('#myform').trigger("reset");
-                $('#ajax-result').html(data);
-            },
-            error: function (data) {
-                console.log("error");
-                console.log(data);
-            }
-        });
-    });
-    $(".lb-detail-project").click(function () {
-
-        $(".warp-light-box").addClass("show-black");
-        $(".bg-black").addClass("show-black");
-        $("body,html").addClass("overflow-hidden");
-        var val = $(this).data("id");
-        var name = $(this).data("name");
-        var des = $(this).data("des");
-
-        $.ajax({
-            type: 'POST',
-            url: "ajax-project.php",
-            data: 'id=' + val + '&name=' + name + '&des=' + des,
-            success: function (data) {
-                // console.log("success");
-                // console.log(data);
-                // $('#myform').trigger("reset");
-                $('#ajax-result').html(data);
-            },
-            error: function (data) {
-                console.log("error");
-                console.log(data);
-            }
-        });
-    });
+    // $(".lb-detail").click(function () {
+    //
+    //     $(".product-lightbox").addClass("show-black");
+    //     $(".product-lightbox").addClass("show-black");
+    //     $("body,html").addClass("overflow-hidden");
+    //     var val = $(this).data("code");
+    //     var id = $(this).data("val");
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: "ajax-product.php",
+    //         data: 'code=' + val + '&id=' + id,
+    //         success: function (data) {
+    //             // console.log("success");
+    //             // console.log(data);
+    //             // $('#myform').trigger("reset");
+    //             $('#ajax-result').html(data);
+    //         },
+    //         error: function (data) {
+    //             console.log("error");
+    //             console.log(data);
+    //         }
+    //     });
+    // });
+    // $(".lb-detail-project").click(function () {
+    //
+    //     $(".warp-light-box").addClass("show-black");
+    //     $(".bg-black").addClass("show-black");
+    //     $("body,html").addClass("overflow-hidden");
+    //     var val = $(this).data("id");
+    //     var name = $(this).data("name");
+    //     var des = $(this).data("des");
+    //
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: "ajax-project.php",
+    //         data: 'id=' + val + '&name=' + name + '&des=' + des,
+    //         success: function (data) {
+    //             // console.log("success");
+    //             // console.log(data);
+    //             // $('#myform').trigger("reset");
+    //             $('#ajax-result').html(data);
+    //         },
+    //         error: function (data) {
+    //             console.log("error");
+    //             console.log(data);
+    //         }
+    //     });
+    // });
 
     $("#form-cad").submit(function (e) {
         e.preventDefault();

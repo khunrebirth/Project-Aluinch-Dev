@@ -75,7 +75,7 @@
                         <div class="head-item"><?php echo $list_products_specific['group_product_name']; ?></div>
                         <h4><?php echo $list_products_specific['category_product_name'] . ':' . $list_products_specific['category_product_description']; ?></h4>
                         <div class="main-pic">
-                            <img src="<?php echo base_url('storage/uploads/products/' . $list_products_specific['category_product_img_cover']); ?>" class="img-responsive"/>
+                            <img src="<?php echo base_url('storage/uploads/images/products/' . $list_products_specific['category_product_img_cover']); ?>" class="img-responsive"/>
                         </div>
                         <div class="list-pdf">
                             <ul>
@@ -94,7 +94,7 @@
                         <ul id="list-loadmore" class="listing">
                             <?php foreach ($list_products_specific['products'] as $product) { ?>
                                 <li class="lb-detail" data-code="<?php echo $product->id . '-code'; ?>" data-val="<?php echo $product->id; ?>">
-                                    <img src="<?php echo base_url('storage/uploads/products/' . $product->img); ?>" class="img-responsive img-center"/>
+                                    <img src="<?php echo base_url('storage/uploads/images/products/' . $product->img); ?>" class="img-responsive img-center"/>
                                     <div class="clearfix"></div>
                                     <div class="box-topic"><?php echo $product->title; ?></div>
                                     <div class="box-des"><?php echo $product->description_en . ' | ' . $product->description_th; ?></div>
@@ -160,6 +160,10 @@
     <script>
         $(document).ready(function () {
 
+            /**********
+             * Event
+             * **/
+
             x = 6
 
             $('#list-loadmore li:lt(' + x + ')').show()
@@ -174,5 +178,26 @@
                 x = (x - 5 < 0) ? 3 : x - 5
                 $('#list-loadmore li').not(':lt(' + x + ')').hide()
             })
+
+            $(".lb-detail").on('click', function () {
+
+                let urlGetProduct = "<?php echo base_url('ajax/get/product'); ?>"
+                let $id = $(this).data("val");
+
+                $(".product-lightbox").addClass("show-black");
+                $(".product-lightbox").addClass("show-black");
+                $("body,html").addClass("overflow-hidden");
+
+                $.ajax({
+                    type: 'GET',
+                    url: urlGetProduct + '/' + $id,
+                    success: function (res) {
+                        $('#ajax-result').html(res.data);
+                    },
+                    error: function (data) {
+                        console.log("error");
+                    }
+                });
+            });
         })
     </script>

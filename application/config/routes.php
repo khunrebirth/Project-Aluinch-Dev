@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Front_End/Home';
+$route['default_controller'] = 'front_end/Home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -59,15 +59,15 @@ $route['translate_uri_dashes'] = FALSE;
 | -------------------------------------------------------------------------
 */
 
-$route['home'] = 'Front_End/Home';
-$route['product'] = 'Front_End/Product';
-$route['product/(:any)/(:any)/(:any)'] = "Front_End/Product/show/$1/$2/$3";
-$route['technology'] = 'Front_End/Technology';
-$route['technology/(:any)/(:any)/(:any)'] = "Front_End/Technology/show/$1/$2/$3";
-$route['technology/(:any)/(:any)'] = "Front_End/Technology/show_faq/$1/$2";
-$route['project-references'] = 'Front_End/ProjectReferences';
-$route['contact-us'] = 'Front_End/Contact';
-$route['contact-us/send']['post'] = 'Front_End/Contact/send';
+$route['home'] = 'front_end/home';
+$route['product'] = 'front_end/product';
+$route['product/(:any)/(:any)/(:any)'] = "front_end/product/show/$1/$2/$3";
+$route['technology'] = 'front_end/technology';
+$route['technology/(:any)/(:any)/(:any)'] = "front_end/technology/show/$1/$2/$3";
+$route['technology/(:any)/(:any)'] = "front_end/technology/show_faq/$1/$2";
+$route['project-references'] = 'front_end/project_references';
+$route['contact-us'] = 'front_end/contact';
+$route['contact-us/send']['post'] = 'front_end/contact/send';
 
     /*
     | -------------------------------------------------------------------------
@@ -75,8 +75,8 @@ $route['contact-us/send']['post'] = 'Front_End/Contact/send';
     | -------------------------------------------------------------------------
     */
 
-    $route['ajax/get/product/(:any)'] = 'Front_End/Product/ajax_get_product_by_id/$1';
-    $route['ajax/get/project-references/(:any)/(:any)'] = 'Front_End/ProjectReferences/ajax_get_project_by_id/$1/$2';
+    $route['ajax/get/product/(:any)'] = 'front_end/product/ajax_get_product_by_id/$1';
+    $route['ajax/get/project-references/(:any)/(:any)'] = 'front_end/project_references/ajax_get_project_by_id/$1/$2';
 
 
 /*

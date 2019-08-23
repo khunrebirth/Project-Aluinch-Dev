@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ProjectReferences extends MX_Controller {
+class Project_references extends MX_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -32,7 +32,7 @@ class ProjectReferences extends MX_Controller {
     public function index()
 	{
 	    // Set Data
-		$data['content'] = 'project-references';
+		$data['content'] = 'project_references';
         $data['projects'] = $this->project_model->get_project_all();
 
 		$this->load->view('app', $data);

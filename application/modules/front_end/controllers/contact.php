@@ -29,7 +29,7 @@ class Contact extends MX_Controller
 
     public function index()
     {
-        $data['content'] = 'contact-us';
+        $data['content'] = 'contact_us';
 
         $this->load->view('app', $data);
     }
@@ -67,6 +67,6 @@ class Contact extends MX_Controller
             $this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
         }
 
-        redirect('contact-us', 'refresh');
+        redirect('contact_us', 'refresh');
     }
 }

@@ -58,15 +58,22 @@ class Contact extends MX_Controller
 //        if ($status['success']) {
         if ($responseData) {
 
-            print_r('Google Recaptcha Successful');
 
             // TODO:: Something
+            $data = array('name' => $this->input->post('name'),
+                'name'=> $this->input->post('name'),
+                'email'=> $this->input->post('email'),
+                'phone'=> $this->input->post('phone'),
+                'company'=> $this->input->post('company'),
+                'message'=> $this->input->post('detail'),
+            );
+            $this->load->model('contact_model');
+            $this->contact_model->insert_contacts($data);
 
-            exit;
         } else {
             $this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
         }
 
-        redirect('contact_us', 'refresh');
+        redirect('contact-us', 'refresh');
     }
 }

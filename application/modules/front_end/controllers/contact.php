@@ -58,8 +58,6 @@ class Contact extends MX_Controller
 //        if ($status['success']) {
         if ($responseData) {
 
-
-            // TODO:: Something
             $data = array('name' => $this->input->post('name'),
                 'name'=> $this->input->post('name'),
                 'email'=> $this->input->post('email'),

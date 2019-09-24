@@ -102,7 +102,7 @@
 									</div>
 								</div>
 								<div class="text-right">
-									<button type="submit" class="btn btn-primary">Save changes</button>
+									<button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-primary">Save changes</button>
 									<a href="#" class="btn btn-secondary" >Close</a>
 								</div>
 							</form>

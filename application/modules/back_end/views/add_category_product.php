@@ -32,7 +32,7 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="modalTitle">Modal Template</h5>
                             </div>
-                            <form id="addEditCategoryProductForm" href="<?php echo base_url('back_end/category_product/store/') ?>" method="post">
+                            <form id="addEditCategoryProductForm" href="<?php echo base_url('back_end/category_product/store/'); ?>" method="post">
                                 <div class="modal-body">
                                     <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Meta Tag</h6></div>
                                     <hr>

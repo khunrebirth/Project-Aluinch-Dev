@@ -22,7 +22,7 @@
                         <div class="card-header">
                             <h4>List of Product Group</h4>
                             <div class="card-header-action">
-                                <a href="<?php echo base_url('backoffice/page/product/group/create') ?>" class="btn btn-primary" >
+                                <a href="<?php echo base_url('backoffice/page/product/group/create'); ?>" class="btn btn-primary" >
                                     <i class="fas fa-plus"></i> Add
                                 </a>
                             </div>

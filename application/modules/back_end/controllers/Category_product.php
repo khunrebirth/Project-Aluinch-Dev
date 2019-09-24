@@ -30,26 +30,26 @@ class category_product extends MX_Controller
         require_login('backoffice/login');
 
         // Set Model
-        $this->load->model('user_model');
-        $this->load->model('group_product_model');
-        $this->load->model('category_product_model');
+        $this->load->model('User_model');
+        $this->load->model('Group_product_model');
+        $this->load->model('Category_product_model');
 
-        $this->data['user'] = $this->user_model->get_user_by_id($this->session->userdata('user_id'));
+        $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
     public function index()
     {
         $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product';
-        $this->data['group_products'] = $this->group_product_model->get_group_product_all();
-        $this->data['category_products'] = $this->category_product_model->get_category_product_all();
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
+        $this->data['category_products'] = $this->Category_product_model->get_category_product_all();
 
         $this->load->view('app', $this->data);
     }
 
     public function create() {
         $this->data['content'] = 'add_category_product';
-        $this->data['group_products'] = $this->group_product_model->get_group_product_all();
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
 
         $this->load->view('app', $this->data);}
 
@@ -63,8 +63,8 @@ class category_product extends MX_Controller
     public function show($id) {
         $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product';
-        $this->data['group_products'] = $this->group_product_model->get_group_product_all();
-        $this->data['category_products'] = $this->category_product_model->get_category_product_by_group_product_id($id);
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
+        $this->data['category_products'] = $this->Category_product_model->get_category_product_by_group_product_id($id);
         $this->data['group_id'] = $id;
         $this->load->view('app', $this->data);
 }
@@ -96,7 +96,7 @@ class category_product extends MX_Controller
         $response['success'] = 0;
         $category_product = false;
 
-        $category_product = $this->category_product_model->update_category_product_by_id($id, [
+        $category_product = $this->Category_product_model->update_category_product_by_id($id, [
             'title' => $this->input->post('title'),
             'group_product_id' => $this->input->post('group_product_id'),
             'updated_at' => date('Y-m-d H:i:s')
@@ -120,7 +120,7 @@ class category_product extends MX_Controller
         $status = 500;
         $response['success'] = 0;
 
-        $category_product = $this->category_product_model->delete_category_product_by_id($id);
+        $category_product = $this->Category_product_model->delete_category_product_by_id($id);
 
         // Set Response
         if ($category_product != false) {

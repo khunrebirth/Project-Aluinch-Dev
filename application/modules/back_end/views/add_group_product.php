@@ -28,7 +28,7 @@
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="modalTitle">Add</h5>
                                     </div>
-                                    <form  action="<?php echo base_url('back_end/group_product/store') ?>" method="post">
+                                    <form  action="<?php echo base_url('back_end/group_product/store'); ?>" method="post">
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label>Title</label>
@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-primary" >Save changes</button>
-                                            <a  href="<?php echo base_url('backoffice/page/product/group') ?> " class="btn btn-secondary" >Close</a>
+                                            <a  href="<?php echo base_url('backoffice/page/product/group'); ?> " class="btn btn-secondary" >Close</a>
                                         </div>
                                     </form>
                                 </div>

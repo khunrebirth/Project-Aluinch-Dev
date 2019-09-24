@@ -237,7 +237,7 @@ $(function () {
     //     var id = $(this).data("val");
     //     $.ajax({
     //         type: 'POST',
-    //         url: "ajax-product.php",
+    //         url: "ajax-Product.php",
     //         data: 'code=' + val + '&id=' + id,
     //         success: function (data) {
     //             // console.log("success");

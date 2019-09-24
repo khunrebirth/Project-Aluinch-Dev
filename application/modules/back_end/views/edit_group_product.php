@@ -28,17 +28,17 @@
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="modalTitle">Add</h5>
                                     </div>
-                                    <form  action="<?php echo base_url('back_end/group_product/update/'.$group_products->id) ?>" method="post">
+                                    <form  action="<?php echo base_url('back_end/group_product/update/'.$group_products->id); ?>" method="post">
                                         <div class="modal-body">
                                             <div class="form-group">
                                                 <label>Title</label>
                                                 <input type="hidden" value="" id="id">
-                                                <input type="text" class="form-control" name="newtitle" id="title" required="required" placeholder="<?php echo $group_products->title ?>">
+                                                <input type="text" class="form-control" name="newtitle" id="title" required="required" value="<?php echo $group_products->title ?>">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button onclick="return confirm('Are you sure?');" type="submit" class="btn btn-primary" >Save changes</button>
-                                            <a  href="<?php echo base_url('backoffice/page/product/group') ?> " class="btn btn-secondary" >Close</a>
+                                            <a  href="<?php echo base_url('backoffice/page/product/group'); ?> " class="btn btn-secondary" >Close</a>
                                         </div>
                                     </form>
                                 </div>

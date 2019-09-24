@@ -30,17 +30,17 @@ class Group_product extends MX_Controller
         require_login('backoffice/login');
 
         // Set Model
-        $this->load->model('user_model');
-        $this->load->model('group_product_model');
+        $this->load->model('User_model');
+        $this->load->model('Group_product_model');
 
-        $this->data['user'] = $this->user_model->get_user_by_id($this->session->userdata('user_id'));
+        $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
     public function index()
     {
         $this->data['title'] = 'Product Group';
         $this->data['content'] = 'group_product';
-        $this->data['group_products'] = $this->group_product_model->get_group_product_all();
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
 
         $this->load->view('app', $this->data);
     }
@@ -54,9 +54,8 @@ class Group_product extends MX_Controller
 
     public function store()
     {
-        $this->load->model('group_product_model');
         $data = array('title' => $this->input->post('title'));
-        $this->group_product_model->insert_group_product($data);
+        $this->Group_product_model->insert_group_product($data);
         redirect(base_url('backoffice/page/product/group'));
     }
 
@@ -68,16 +67,15 @@ class Group_product extends MX_Controller
     public function edit($id)
     {
         $this->data['content'] = 'edit_group_product';
-        $this->data['group_products'] = $this->group_product_model->get_group_product_by_id($id);
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($id);
         $this->load->view('app', $this->data);
 
     }
 
     public function update($id)
     {
-        $this->load->model('group_product_model');
         $data = array('title' => $this->input->post('newtitle'));
-        $this->group_product_model->update_group_product_by_id($id,$data);
+        $this->Group_product_model->update_group_product_by_id($id,$data);
         redirect(base_url('backoffice/page/product/group'));
     }
 
@@ -86,7 +84,7 @@ class Group_product extends MX_Controller
         $status = 500;
         $response['success'] = 0;
 
-        $group_product = $this->group_product_model->delete_group_product_by_id($id);
+        $group_product = $this->Group_product_model->delete_group_product_by_id($id);
 
         // Set Response
         if ($group_product != false) {

@@ -7,11 +7,11 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Product Group</h1>
+            <h1>Product Groups</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/list-products'); ?>">Page: Products</a></div>
-                <div class="breadcrumb-item">Product Group</div>
+                <div class="breadcrumb-item">Product Groups</div>
             </div>
         </div>
 
@@ -28,6 +28,14 @@
                             </div>
                         </div>
                         <div class="card-body">
+
+							<?php if ($this->session->flashdata('success')) { ?>
+								<div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
+							<?php } ?>
+							<?php if ($this->session->flashdata('error')) { ?>
+								<div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
+							<?php } ?>
+
                             <div class="table-responsive">
                                 <table class="table table-striped" id="table-1">
                                     <thead>
@@ -72,33 +80,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditGroupProduct">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Modal Template</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form id="addEditGroupProductForm">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Title</label>
-                            <input type="hidden" value="" id="id">
-                            <input type="text" class="form-control" name="title" id="title" required="required">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btnAddGroupProduct">Save changes</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
 
 
@@ -115,42 +96,6 @@
         setTimeout(function () {
             location.reload()
         }, 1 * 1500)
-    }
-
-    function clearForm() {
-        $('#modalAddEditGroupProduct form')[0].reset()
-    }
-
-    function addGroupProduct() {
-        clearForm()
-        $('#modalTitle').html('Add')
-        $('#id').val('')
-        $('#title').val('')
-    }
-
-    function editGroupProduct(url) {
-        clearForm()
-
-        $.ajax({
-            url: url,
-            success: function (res) {
-                let groupProduct = res.data
-
-                $('#modalAddEditGroupProduct').modal('show')
-
-                $('#modalTitle').html('Edit: ' + groupProduct.title)
-                $('#id').val(groupProduct.id).attr('data-link-to-update', url.replace('edit', 'update'))
-                $('#title').val(groupProduct.title)
-            },
-            error: function (res) {
-                swal({
-                    title: 'Oops...',
-                    text: 'fail',
-                    icon: 'error',
-                    timer: '1500'
-                })
-            }
-        })
     }
 
     function deleteGroupProduct(url) {
@@ -188,52 +133,4 @@
                 }
             })
     }
-
-    $(document).ready(function () {
-        $('#addEditGroupProductForm').on('submit', function (e) {
-            e.preventDefault()
-
-            let $data = new FormData($(this)[0]),
-                $groupProductId = $('#id').val(),
-                url = '',
-                method = 'POST'
-
-            // Case: Update
-            if ($groupProductId != '') {
-                url = $('#id').attr('data-link-to-update')
-            }
-            // Case: Insert New
-            else {
-                url = '<?php echo base_url('backoffice/page/product/group/store'); ?>'
-            }
-
-            $.ajax({
-                type: method,
-                url: url,
-                data: $data,
-                processData: false,
-                contentType: false,
-                cache: false,
-                async: false,
-                success: function (res) {
-                    $('#modalAddEditGroupProduct').modal('hide')
-                    swal({
-                        title: 'Success',
-                        icon: 'success',
-                        button: "Great!"
-                    })
-
-                    reload()
-                },
-                error: function (res) {
-                    swal({
-                        title: 'Oops...',
-                        text: 'fail',
-                        icon: 'error',
-                        timer: '1500'
-                    })
-                }
-            })
-        })
-    })
 </script>

@@ -4,22 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Group_product extends MX_Controller
 {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     *        http://example.com/index.php/welcome
-     *    - or -
-     *        http://example.com/index.php/welcome/index
-     *    - or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see https://codeigniter.com/user_guide/general/urls.html
-     */
-
     private $data = false;
 
     public function __construct()
@@ -54,29 +38,40 @@ class Group_product extends MX_Controller
 
     public function store()
     {
-        $data = array('title' => $this->input->post('title'));
-        $this->Group_product_model->insert_group_product($data);
-        redirect(base_url('backoffice/page/product/group'));
+        $data = ['title' => $this->input->post('title')];
+        $add_group_product = $this->Group_product_model->insert_group_product($data);
+
+        if ($add_group_product) {
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+        redirect('backoffice/page/product/group');
     }
 
-    public function show()
-    {
-
-    }
+    public function show() {}
 
     public function edit($id)
     {
         $this->data['content'] = 'group_product/edit_group_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($id);
-        $this->load->view('app', $this->data);
 
+        $this->load->view('app', $this->data);
     }
 
     public function update($id)
     {
-        $data = array('title' => $this->input->post('newtitle'));
-        $this->Group_product_model->update_group_product_by_id($id,$data);
-        redirect(base_url('backoffice/page/product/group'));
+        $data = ['title' => $this->input->post('title')];
+        $upadte_group_product = $this->Group_product_model->update_group_product_by_id($id, $data);
+
+        if ($upadte_group_product) {
+			$this->session->set_flashdata('success', 'Edit Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+        redirect('backoffice/page/product/group');
     }
 
     public function destroy($id)

@@ -33,34 +33,35 @@ class category_product extends MX_Controller
 
     public function create($group_product_id)
     {
-		$group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
+        $group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
 
         $this->data['content'] = 'category_product/add_category_product';
         $this->data['group_products'] = $group_product;
         $this->data['group_product_id'] = $group_product->id;
-		$this->data['group_product_title'] = $group_product->title;
+        $this->data['group_product_title'] = $group_product->title;
 
         $this->load->view('app', $this->data);
     }
 
     public function store()
     {
-    	$img_cover = '';
-		$img_cover_home = '';
+        $img_cover = '';
+        $img_cover_home = '';
 
-		if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
-			$img_cover = $this->do_upload_img_product('img_cover');
-		}
+        if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
+            $img_cover = $this->do_upload_img_product('img_cover');
+        }
 
-		if (isset($_FILES['img_cover_home']) && $_FILES['img_cover_home']['name'] != '') {
-			$img_cover_home = $this->do_upload_img_product('img_cover_home');
-		}
+        if (isset($_FILES['img_cover_home']) && $_FILES['img_cover_home']['name'] != '') {
+            $img_cover_home = $this->do_upload_img_product('img_cover_home');
+        }
 
         $data = [
-        	'meta_tag_title' => $this->input->post('meta_tag_title'),
+            'meta_tag_title' => $this->input->post('meta_tag_title'),
             'meta_tag_description' => $this->input->post('meta_tag_description'),
             'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
             'title' => $this->input->post('title'),
+            'description' => $this->input->post('description'),
             'group_product_id' => $this->input->post('group_product_id'),
             'img_cover' => $img_cover,
             'img_title_alt' => $this->input->post('img_title_alt'),
@@ -71,47 +72,49 @@ class category_product extends MX_Controller
         $add_category_product = $this->Category_product_model->insert_category_product($data);
 
         if ($add_category_product) {
-			$this->session->set_flashdata('success', 'Add Done');
-		} else {
-			$this->session->set_flashdata('error', 'Something wrong');
-		}
+            $this->session->set_flashdata('success', 'Add Done');
+        } else {
+            $this->session->set_flashdata('error', 'Something wrong');
+        }
 
-		 redirect('backoffice/page/product/category/show/' . $this->input->post('group_product_id'));
+        redirect('backoffice/page/product/category/show/' . $this->input->post('group_product_id'));
     }
 
     public function show($group_product_id)
     {
-		$group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
+        $group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
 
         $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product/category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
         $this->data['category_products'] = $this->Category_product_model->get_category_product_by_group_product_id($group_product_id);
         $this->data['group_product_id'] = $group_product->id;
-		$this->data['group_product_title'] = $group_product->title;
+        $this->data['group_product_title'] = $group_product->title;
 
         $this->load->view('app', $this->data);
     }
 
-    public function edit($id)
+    public function edit($category_product_id)
     {
-        $status = 500;
-        $response['success'] = 0;
+        $this->data['content'] = 'category_product/edit_category_product';
+        /* $category_product*/
+        $category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
+        $this->data['category_product_id'] = $category_product->id;
+        $this->data['category_product_title'] = $category_product->title;
+        $this->data['category_product_description'] = $category_product->description;
+        $this->data['category_product_img_cover'] = $category_product->img_cover;
+        $this->data['category_product_img_title_alt'] = $category_product->img_title_alt;
+        $this->data['category_product_img_cover_home'] = $category_product->img_cover_home;
+        $this->data['category_product_img_home_title_alt'] = $category_product->img_home_title_alt;
+        $group_product_id = $category_product->group_product_id;
+        /* group_products*/
+        $group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
+        $this->data['group_products'] = $group_product;
+        $this->data['group_product_id'] = $group_product->id;
+        $this->data['group_product_title'] = $group_product->title;
 
-        $category_product = $this->category_product_model->get_category_product_by_id($id);
 
-        // Set Response
-        if ($category_product != false) {
-            $status = 200;
-            $response['data'] = $category_product;
-            $response['success'] = 1;
-        }
-
-        // Send Response
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
+        $this->load->view('app', $this->data);
     }
 
     public function update($id)
@@ -159,22 +162,22 @@ class category_product extends MX_Controller
             ->set_output(json_encode($response));
     }
 
-	private function do_upload_img_product($filename)
-	{
-		$config['upload_path'] = './storage/uploads/images/products';
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['encrypt_name'] = TRUE;
+    private function do_upload_img_product($filename)
+    {
+        $config['upload_path'] = './storage/uploads/images/products';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['encrypt_name'] = TRUE;
 
-		$this->load->library('upload', $config);
+        $this->load->library('upload', $config);
 
-		if ( ! $this->upload->do_upload($filename)) {
-			$error = array('error' => $this->upload->display_errors());
+        if (!$this->upload->do_upload($filename)) {
+            $error = array('error' => $this->upload->display_errors());
 
-			return false;
-		} else {
-			$data = array('upload_data' => $this->upload->data());
+            return false;
+        } else {
+            $data = array('upload_data' => $this->upload->data());
 
-			return $data['upload_data']['file_name'];
-		}
-	}
+            return $data['upload_data']['file_name'];
+        }
+    }
 }

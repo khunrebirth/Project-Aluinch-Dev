@@ -63,7 +63,7 @@
                                                         <i class="fas fa-cog"></i> Manage
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item has-icon" onclick="editCategoryProduct('<?php echo base_url('backoffice/page/product/category/edit/' . $group_product->id); ?>')"><i class="far fa-edit"></i> Edit</a>
+                                                        <a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/category/edit/'. $group_product->id); ?>" ><i class="far fa-edit"></i> Edit</a>
                                                         <a class="dropdown-item has-icon" onclick="deleteCategoryProduct('<?php echo base_url('backoffice/page/product/category/destroy/' . $group_product->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
                                                     </div>
                                                 </div>

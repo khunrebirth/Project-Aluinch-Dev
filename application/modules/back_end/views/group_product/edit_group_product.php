@@ -15,9 +15,6 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h4>Edit Product Group: <?php echo $group_products->title ?></h4>
-                        </div>
                         <div class="card-body">
 							<form action="<?php echo base_url('back_end/group_product/update/' . $group_products->id); ?>" method="post">
 								<div class="form-group">

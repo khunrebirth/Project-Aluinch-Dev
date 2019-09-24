@@ -7,12 +7,12 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Product Category</h1>
+            <h1>Product Categories: (Group - <?php echo $group_product_title; ?>)</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Products</a></div>
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product Groups</a></div>
-                <div class="breadcrumb-item">Product Category</div>
+                <div class="breadcrumb-item">Product Categories: (Group - <?php echo $group_product_title; ?>)</div>
             </div>
         </div>
 
@@ -21,7 +21,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Category Product</h4>
+                            <h4>List of Category Product: (Group - <?php echo $group_product_title; ?>)</h4>
                             <div class="card-header-action">
                                 <a href="<?php echo base_url('backoffice/page/product/category/create/' . $group_product_id); ?>" class="btn btn-primary" >
                                     <i class="fas fa-plus"></i> Add

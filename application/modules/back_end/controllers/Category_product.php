@@ -47,11 +47,14 @@ class category_product extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function create($group_id)
+    public function create($group_product_id)
     {
+		$group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
+
         $this->data['content'] = 'category_product/add_category_product';
-        $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_id);
-        $this->data['group_id'] = $group_id;
+        $this->data['group_products'] = $group_product;
+        $this->data['group_product_id'] = $group_product->id;
+		$this->data['group_product_title'] = $group_product->title;
 
         $this->load->view('app', $this->data);
     }
@@ -94,11 +97,14 @@ class category_product extends MX_Controller
 
     public function show($group_product_id)
     {
+		$group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
+
         $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product/category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
         $this->data['category_products'] = $this->Category_product_model->get_category_product_by_group_product_id($group_product_id);
-        $this->data['group_product_id'] = $group_product_id;
+        $this->data['group_product_id'] = $group_product->id;
+		$this->data['group_product_title'] = $group_product->title;
 
         $this->load->view('app', $this->data);
     }

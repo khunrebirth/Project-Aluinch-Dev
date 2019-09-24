@@ -4,9 +4,10 @@
         <div class="section-header">
             <h1>Add Product Group</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/list-products'); ?>">Page: Products</a></div>
-                <div class="breadcrumb-item">Add Product Group</div>
+                <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+                <div class="breadcrumb-item"><a href="#">Page: Products</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product Groups</a></div>
+                <div class="breadcrumb-item active">Add Product Group</div>
             </div>
         </div>
 

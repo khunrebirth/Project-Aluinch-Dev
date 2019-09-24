@@ -39,9 +39,9 @@
     <script src="<?php echo base_url('resources/back_end/node_modules/sweetalert/dist/sweetalert.min.js'); ?>"></script>
 
     <style>
-        .modal-dialog {
-            min-width: 764px;
-        }
+		.input-file-w-30 {
+			width: 30%
+		}
     </style>
 </head>
 <body>

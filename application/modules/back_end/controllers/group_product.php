@@ -45,76 +45,40 @@ class Group_product extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function create() {}
+    public function create()
+    {
+        $this->data['content'] = 'add_group_product';
+
+        $this->load->view('app', $this->data);
+    }
 
     public function store()
     {
-        $status = 500;
-        $response['success'] = 0;
-
-        $group_product = $this->group_product_model->insert_group_product([
-            'title' => $this->input->post('title'),
-            'created_at' => date('Y-m-d H:i:s')
-        ]);
-
-        // Set Response
-        if ($group_product != false) {
-            $status = 200;
-            $response['success'] = 1;
-        }
-
-        // Send Response
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
+        $this->load->model('group_product_model');
+        $data = array('title' => $this->input->post('title'));
+        $this->group_product_model->insert_group_product($data);
+        redirect(base_url('backoffice/page/product/group'));
     }
 
-    public function show() {}
+    public function show()
+    {
+
+    }
 
     public function edit($id)
     {
-        $status = 500;
-        $response['success'] = 0;
+        $this->data['content'] = 'edit_group_product';
+        $this->data['group_products'] = $this->group_product_model->get_group_product_by_id($id);
+        $this->load->view('app', $this->data);
 
-        $group_product = $this->group_product_model->get_group_product_by_id($id);
-
-        // Set Response
-        if ($group_product != false) {
-            $status = 200;
-            $response['data'] = $group_product;
-            $response['success'] = 1;
-        }
-
-        // Send Response
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
     }
 
     public function update($id)
     {
-        $status = 500;
-        $response['success'] = 0;
-        $group_product = false;
-
-        $group_product = $this->group_product_model->update_group_product_by_id($id, [
-            'title' => $this->input->post('title'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ]);
-
-        // Set Response
-        if ($group_product != false) {
-            $status = 200;
-            $response['success'] = 1;
-        }
-
-        // Send Response
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
+        $this->load->model('group_product_model');
+        $data = array('title' => $this->input->post('newtitle'));
+        $this->group_product_model->update_group_product_by_id($id,$data);
+        redirect(base_url('backoffice/page/product/group'));
     }
 
     public function destroy($id)

@@ -20,51 +20,28 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Product Group</h4>
-                            <div class="card-header-action">
-                                <a href="<?php echo base_url('backoffice/page/product/group/create') ?>" class="btn btn-primary" >
-                                    <i class="fas fa-plus"></i> Add
-                                </a>
-                            </div>
+                            <h4>Add Product Group</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-striped" id="table-1">
-                                    <thead>
-                                    <tr>
-                                        <th class="text-center">#</th>
-                                        <th>Title</th>
-                                        <th>Created at</th>
-                                        <th>Content</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php
-                                        $counter = 1;
-                                        foreach ($group_products as $group_product) { ?>
-                                            <tr>
-                                                <td class="text-center"><?php echo $counter++; ?></td>
-                                                <td><?php echo $group_product->title; ?></td>
-                                                <td><?php echo $group_product->created_at; ?></td>
-                                                <td>
-                                                    <a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/category/show/' .$group_product->id); ?>""><i class="far fa-view"></i> Item</a>
-                                                </td>
-                                                <td>
-                                                    <div class="dropdown d-inline">
-                                                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="fas fa-cog"></i> Manage
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/group/edit/' .$group_product->id); ?>" ><i class="far fa-edit"></i> Edit</a>
-                                                            <a class="dropdown-item has-icon" onclick="deleteGroupProduct('<?php echo base_url('backoffice/page/product/group/destroy/' . $group_product->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                    <?php } ?>
-                                    </tbody>
-                                </table>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalTitle">Add</h5>
+                                    </div>
+                                    <form  action="<?php echo base_url('back_end/group_product/store') ?>" method="post">
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <label>Title</label>
+                                                <input type="hidden" value="" id="id">
+                                                <input type="text" class="form-control" name="title" id="title" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary" >Save changes</button>
+                                            <a  href="<?php echo base_url('backoffice/page/product/group') ?> " class="btn btn-secondary" >Close</a>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -74,32 +51,7 @@
     </section>
 
     <!-- Modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditGroupProduct">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Modal Template</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form id="addEditGroupProductForm">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Title</label>
-                            <input type="hidden" value="" id="id">
-                            <input type="text" class="form-control" name="title" id="title" required="required">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btnAddGroupProduct">Save changes</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 
 <!-- JS Libraies -->

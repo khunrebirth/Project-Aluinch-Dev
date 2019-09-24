@@ -135,14 +135,15 @@ $route['contact-us/send']['post'] = 'front_end/contact/send';
 
         // Groups
         $route['backoffice/page/product/group'] = 'back_end/group_product';
-        $route['backoffice/page/product/group/store'] = 'back_end/group_product/store';
+        $route['backoffice/page/product/group/create'] = 'back_end/group_product/create';
         $route['backoffice/page/product/group/edit/(:any)'] = "back_end/group_product/edit/$1";
         $route['backoffice/page/product/group/update/(:any)'] = "back_end/group_product/update/$1";
         $route['backoffice/page/product/group/destroy/(:any)'] = "back_end/group_product/destroy/$1";
 
+
         // Category
-        $route['backoffice/page/product/category'] = 'back_end/category_product';
-        $route['backoffice/page/product/category/store'] = 'back_end/category_product/store';
+        $route['backoffice/page/product/category/show/(:any)'] = 'back_end/category_product/show/$1';
+        $route['backoffice/page/product/category/create/(:any)'] = 'back_end/category_product/create/$1';
         $route['backoffice/page/product/category/edit/(:any)'] = "back_end/category_product/edit/$1";
         $route['backoffice/page/product/category/update/(:any)'] = "back_end/category_product/update/$1";
         $route['backoffice/page/product/category/destroy/(:any)'] = "back_end/category_product/destroy/$1";

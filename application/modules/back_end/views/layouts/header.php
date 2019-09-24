@@ -235,10 +235,10 @@
                                 <a class="nav-link" href="<?php echo base_url('backoffice/page/product/group'); ?>">&#9679; Product Group</a>
                             </li>
                             <li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "category") { echo 'active'; } ?>">
-                                <a class="nav-link" href="<?php echo base_url('backoffice/page/product/category'); ?>">&#9679; Product Category</a>
+<!--                                <a class="nav-link" href="--><?php //echo base_url('backoffice/page/product/category'); ?><!--">&#9679; Product Category</a>-->
                             </li>
                             <li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "list-products") { echo 'active'; } ?>">
-                                <a class="nav-link" href="<?php echo base_url('backoffice/page/product/list-products'); ?>">&#9679; Products</a>
+<!--                                <a class="nav-link" href="--><?php //echo base_url('backoffice/page/product/list-products'); ?><!--">&#9679; Products</a>-->
                             </li>
                         </ul>
                     </li>

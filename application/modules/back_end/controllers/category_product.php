@@ -47,33 +47,27 @@ class category_product extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function create() {}
+    public function create() {
+        $this->data['content'] = 'add_category_product';
+        $this->data['group_products'] = $this->group_product_model->get_group_product_all();
+
+        $this->load->view('app', $this->data);}
+
 
     public function store()
     {
-        $status = 500;
-        $response['success'] = 0;
-
-        $category_product = $this->category_product_model->insert_category_product([
-            'title' => $this->input->post('title'),
-            'group_product_id' => $this->input->post('group_product_id'),
-            'created_at' => date('Y-m-d H:i:s')
-        ]);
-
-        // Set Response
-        if ($category_product != false) {
-            $status = 200;
-            $response['success'] = 1;
-        }
-
-        // Send Response
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
+        $this->input->post('');
+        $this->input->post('');
     }
 
-    public function show() {}
+    public function show($id) {
+        $this->data['title'] = 'Product Category';
+        $this->data['content'] = 'category_product';
+        $this->data['group_products'] = $this->group_product_model->get_group_product_all();
+        $this->data['category_products'] = $this->category_product_model->get_category_product_by_group_product_id($id);
+        $this->data['group_id'] = $id;
+        $this->load->view('app', $this->data);
+}
 
     public function edit($id)
     {

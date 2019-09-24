@@ -117,29 +117,42 @@ class category_product extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function update($id)
+    public function update($category_product_id)
     {
-        $status = 500;
-        $response['success'] = 0;
-        $category_product = false;
+        $category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
+        $img_cover = $category_product->img_cover;
+        $img_cover_home = $category_product->img_cover_home;
 
-        $category_product = $this->Category_product_model->update_category_product_by_id($id, [
-            'title' => $this->input->post('title'),
-            'group_product_id' => $this->input->post('group_product_id'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ]);
-
-        // Set Response
-        if ($category_product != false) {
-            $status = 200;
-            $response['success'] = 1;
+        if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
+            $img_cover = $this->do_upload_img_product('img_cover');
         }
 
-        // Send Response
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
+        if (isset($_FILES['img_cover_home']) && $_FILES['img_cover_home']['name'] != '') {
+            $img_cover_home = $this->do_upload_img_product('img_cover_home');
+        }
+
+        $data = [
+            'meta_tag_title' => $this->input->post('meta_tag_title'),
+            'meta_tag_description' => $this->input->post('meta_tag_description'),
+            'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'title' => $this->input->post('title'),
+            'description' => $this->input->post('description'),
+            'group_product_id' => $this->input->post('group_product_id'),
+            'img_cover' => $img_cover,
+            'img_title_alt' => $this->input->post('img_title_alt'),
+            'img_cover_home' => $img_cover_home,
+            'img_home_title_alt' => $this->input->post('img_home_title_alt')
+        ];
+
+        $add_category_product = $this->Category_product_model->update_category_product_by_id($category_product_id, $data);
+
+        if ($add_category_product) {
+            $this->session->set_flashdata('success', 'Add Done');
+        } else {
+            $this->session->set_flashdata('error', 'Something wrong');
+        }
+
+        redirect('backoffice/page/product/category/show/' . $this->input->post('group_product_id'));
     }
 
     public function destroy($id)

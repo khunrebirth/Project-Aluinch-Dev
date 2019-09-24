@@ -39,7 +39,7 @@ class Group_product extends MX_Controller
     public function index()
     {
         $this->data['title'] = 'Product Group';
-        $this->data['content'] = 'group_product';
+        $this->data['content'] = 'group_product/group_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
 
         $this->load->view('app', $this->data);
@@ -47,7 +47,7 @@ class Group_product extends MX_Controller
 
     public function create()
     {
-        $this->data['content'] = 'add_group_product';
+        $this->data['content'] = 'group_product/add_group_product';
 
         $this->load->view('app', $this->data);
     }
@@ -66,7 +66,7 @@ class Group_product extends MX_Controller
 
     public function edit($id)
     {
-        $this->data['content'] = 'edit_group_product';
+        $this->data['content'] = 'group_product/edit_group_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($id);
         $this->load->view('app', $this->data);
 

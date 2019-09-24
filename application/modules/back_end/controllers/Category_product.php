@@ -40,7 +40,7 @@ class category_product extends MX_Controller
     public function index()
     {
         $this->data['title'] = 'Product Category';
-        $this->data['content'] = 'category_product';
+        $this->data['content'] = 'category_product/category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
         $this->data['category_products'] = $this->Category_product_model->get_category_product_all();
 
@@ -48,7 +48,7 @@ class category_product extends MX_Controller
     }
 
     public function create() {
-        $this->data['content'] = 'add_category_product';
+        $this->data['content'] = 'category_product/add_category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
 
         $this->load->view('app', $this->data);}
@@ -62,7 +62,7 @@ class category_product extends MX_Controller
 
     public function show($id) {
         $this->data['title'] = 'Product Category';
-        $this->data['content'] = 'category_product';
+        $this->data['content'] = 'category_product/category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
         $this->data['category_products'] = $this->Category_product_model->get_category_product_by_group_product_id($id);
         $this->data['group_id'] = $id;

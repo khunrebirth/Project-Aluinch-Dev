@@ -47,27 +47,40 @@ class category_product extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function create() {
+    public function create($id)
+    {
         $this->data['content'] = 'category_product/add_category_product';
-        $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
-
-        $this->load->view('app', $this->data);}
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($id);
+        $this->load->view('app', $this->data);
+    }
 
 
     public function store()
     {
-        $this->input->post('');
-        $this->input->post('');
+        $data = ['meta_tag_title' => $this->input->post('meta_tag_title'),
+            'meta_tag_description' => $this->input->post('meta_tag_description'),
+            'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'title' => $this->input->post('title'),
+            'group_product_id' => $this->input->post('group_product_id'),
+            'image_cover' => $this->input->post('image_cover'),
+            'image_title_alt' => $this->input->post('image_title_alt'),
+            'image_cover_home' => $this->input->post('image_cover_home'),
+            'image_home_title_alt' => $this->input->post('image_home_title_alt')
+        ];
+
+        $this->Category_product_model->insert_category_product($data);
+
     }
 
-    public function show($id) {
+    public function show($id)
+    {
         $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product/category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
         $this->data['category_products'] = $this->Category_product_model->get_category_product_by_group_product_id($id);
         $this->data['group_id'] = $id;
         $this->load->view('app', $this->data);
-}
+    }
 
     public function edit($id)
     {

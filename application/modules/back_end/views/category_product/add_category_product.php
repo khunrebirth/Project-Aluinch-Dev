@@ -32,7 +32,8 @@
                             <div class="modal-header">
                                 <h5 class="modal-title" id="modalTitle">Modal Template</h5>
                             </div>
-                            <form id="addEditCategoryProductForm" href="<?php echo base_url('back_end/category_product/store/'); ?>" method="post">
+                            <form id="addEditCategoryProductForm"
+                                  href="<?php echo base_url('back_end/category_product/store/'); ?>" method="post" enctype="multipart/form-data">
                                 <div class="modal-body">
                                     <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Meta Tag</h6></div>
                                     <hr>
@@ -70,12 +71,9 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">* Group</label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="groupProductId" name="group_product_id"
-                                                    required="required">
-                                                <?php foreach ($group_products as $group_product) { ?>
-                                                    <option value="<?php echo $group_product->id; ?>"><?php echo $group_product->title; ?></option>
-                                                <?php } ?>
-                                            </select>
+                                            <input type="hidden" value="<?php echo $group_products->id; ?>" name="group_product_id">
+                                            <input type="text" class="form-control"  value="<?php echo $group_products->title; ?>"
+                                                   disabled="disabled">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -87,13 +85,32 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Image Cover</label>
                                         <div class="col-sm-9">
-                                            <input type="file" class="form-control" name="file" id="file">
+                                            <input type="file" class="form-control" name="image_cover" id="file">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Image Title & Alt</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control" name="image_title_alt"
+                                                   id="imageTitleAlt">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Preview</label>
+                                        <div class="col-sm-9">
+                                            <img src="" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Image Cover Home</label>
+                                        <div class="col-sm-9">
+                                            <input type="file" class="form-control" name="image_cover_home" id="file">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Image Home Title & Alt</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="image_home_title_alt"
                                                    id="imageTitleAlt">
                                         </div>
                                     </div>

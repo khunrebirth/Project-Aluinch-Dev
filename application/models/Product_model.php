@@ -27,10 +27,21 @@ class Product_model extends CI_Model {
 
     public function get_product_by_custom($group_product_id, $category_product_id)
     {
-        $query = $this->db
-            ->where('group_product_id', $group_product_id)
-            ->where('category_product_id', $category_product_id)
-            ->get('products');
+    	$sql = "
+    		SELECT 
+				products.title,
+				products.description_en,
+				products.description_th, 
+				products.created_at, 
+				group_products.title AS  group_product_name,
+				category_products.title AS category_product_name
+			FROM products
+			INNER JOIN group_products ON products.group_product_id = group_products.id
+			INNER JOIN category_products ON  products.category_product_id = category_products.id
+			WHERE products.group_product_id = $group_product_id AND products.category_product_id = $category_product_id
+    	";
+
+		$query = $this->db->query($sql);
 
         return $query->num_rows() > 0 ? $query->result() : null;
     }

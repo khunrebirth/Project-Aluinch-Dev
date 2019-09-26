@@ -220,7 +220,7 @@ INSERT INTO `pages` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VA
 (2, 'product', '2019-08-15 10:54:05', NULL, NULL),
 (3, 'technology', '2019-08-15 10:54:18', NULL, NULL),
 (4, 'project-references', '2019-08-15 10:54:18', NULL, NULL),
-(5, 'contact', '2019-08-15 10:54:52', NULL, NULL);
+(5, 'contact_page', '2019-08-15 10:54:52', NULL, NULL);
 
 -- --------------------------------------------------------
 

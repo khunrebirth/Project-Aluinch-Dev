@@ -76,7 +76,7 @@ $(function () {
             scrollTop: 0
         }, 500);
     });
-    $(".contact-nav-mobile").click(function () {
+    $(".contact_page-nav-mobile").click(function () {
         $("html,body").animate({
             scrollTop: 6593
         }, 500);
@@ -282,10 +282,10 @@ $(function () {
         var valform = $(this).serialize();
         $.ajax({
             type: 'POST',
-            url: "ajax-contact-cad.php",
+            url: "ajax-contact_page-cad.php",
             data: valform,
             success: function (data) {
-                alert("Thank you very much. We well contact you as fast as possible.");
+                alert("Thank you very much. We well contact_page you as fast as possible.");
                 $('#form-cad').trigger("reset");
                 $(".warp-light-box").removeClass("show-black");
                 $(".bg-black").removeClass("show-black");

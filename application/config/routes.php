@@ -66,8 +66,8 @@ $route['technology'] = 'front_end/technology';
 $route['technology/(:any)/(:any)/(:any)'] = "front_end/technology/show/$1/$2/$3";
 $route['technology/(:any)/(:any)'] = "front_end/technology/show_faq/$1/$2";
 $route['project-references'] = 'front_end/project_references';
-$route['contact-us'] = 'front_end/contact';
-$route['contact-us/send']['post'] = 'front_end/contact/send';
+$route['contact_page-us'] = 'front_end/contact_page';
+$route['contact_page-us/send']['post'] = 'front_end/contact_page/send';
 
     /*
     | -------------------------------------------------------------------------
@@ -206,7 +206,7 @@ $route['contact-us/send']['post'] = 'front_end/contact/send';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice/page/contact'] = 'back_end/contact';
+    $route['backoffice/page/contact_page/content/(:any)'] = 'back_end/contact_page/edit/$1';
 
     /*
     | -------------------------------------------------------------------------

@@ -72,6 +72,6 @@ class Contact extends MX_Controller
             $this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
         }
 
-        redirect('contact-us', 'refresh');
+        redirect('contact_page-us', 'refresh');
     }
 }

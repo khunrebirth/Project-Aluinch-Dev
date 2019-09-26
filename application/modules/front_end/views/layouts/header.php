@@ -77,8 +77,8 @@
                                     <li class="project-nav <?php if ($this->uri->segment(1) == "project-references") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('project-references'); ?>">PROJECT REFERENCES</a></div>
                                     </li>
-                                    <li class="contact-nav <?php if ($this->uri->segment(1) == "contact-us") { echo 'active'; } ?>">
-                                        <div><a href="<?php echo base_url('contact-us'); ?>">CONTACT US</a></div>
+                                    <li class="contact-nav <?php if ($this->uri->segment(1) == "contact_page-us") { echo 'active'; } ?>">
+                                        <div><a href="<?php echo base_url('contact_page-us'); ?>">CONTACT US</a></div>
                                     </li>
                                     <!-- Moblie -->
                                     <li class="mobile <?php if ($this->uri->segment(1) == "" || $this->uri->segment(1) == 'home') { echo 'active'; } ?>">
@@ -93,8 +93,8 @@
                                     <li class="mobile <?php if ($this->uri->segment(1) == "project-references" ) { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('project-references'); ?>">PROJECT REFERENCES</a></div>
                                     </li>
-                                    <li class="mobile <?php if ($this->uri->segment(1) == "contact-us") { echo 'active'; } ?>">
-                                        <div><a href="<?php echo base_url('contact-us'); ?>">CONTACT US</a></div>
+                                    <li class="mobile <?php if ($this->uri->segment(1) == "contact_page-us") { echo 'active'; } ?>">
+                                        <div><a href="<?php echo base_url('contact_page-us'); ?>">CONTACT US</a></div>
                                     </li>
                                     <li class="mobile">
                                         <div><a href="tel:022863666">02 286 3666</a></div>

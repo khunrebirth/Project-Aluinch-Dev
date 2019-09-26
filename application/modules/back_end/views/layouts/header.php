@@ -261,11 +261,11 @@
                             </li>
                         </ul>
                     </li>
-					<li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "contact") { echo 'active'; } ?>">
+					<li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "contact_page") { echo 'active'; } ?>">
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Contact</span></a>
 						<ul class="dropdown-menu">
 							<li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
-								<a class="nav-link" href="<?php echo base_url('backoffice/page/contact/content'); ?>">&#9679; Content</a>
+								<a class="nav-link" href="<?php echo base_url('backoffice/page/contact_page/content/1'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
 					</li>

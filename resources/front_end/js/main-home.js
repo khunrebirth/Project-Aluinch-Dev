@@ -76,9 +76,9 @@ $(function () {
         }
         if (check_active_height > 16743) {
             $("nav ul li").removeClass("active");
-            $("nav li.contact-nav").addClass("active");
+            $("nav li.contact_page-nav").addClass("active");
             $(".nav-page li").removeClass("active");
-            $(".nav-page li.contact-nav").addClass("active");
+            $(".nav-page li.contact_page-nav").addClass("active");
         }
 ///////////////////////////////////////////   active //////////////////////////////////////////////
     }
@@ -125,12 +125,12 @@ $(function () {
         $(".nav-page li.project-nav").addClass("active");
     });
 
-    $(".contact-nav").click(function () {
+    $(".contact_page-nav").click(function () {
         $("body,html").animate({
             scrollTop: 16744
         }, 500)
         $(".nav-page li").removeClass("active");
-        $(".nav-page li.contact-nav").addClass("active");
+        $(".nav-page li.contact_page-nav").addClass("active");
     });
 
 
@@ -169,7 +169,7 @@ $(function () {
             scrollTop: 0
         }, 500);
     });
-    $(".contact-nav-mobile").click(function () {
+    $(".contact_page-nav-mobile").click(function () {
         $("html,body").animate({
             scrollTop: 6593
         }, 500);

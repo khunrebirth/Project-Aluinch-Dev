@@ -149,8 +149,8 @@ $route['contact-us/send']['post'] = 'front_end/contact/send';
         $route['backoffice/page/product/category/destroy/(:any)'] = "back_end/category_product/destroy/$1";
 
         // Products
-        $route['backoffice/page/product/show/(:any)/(:any)'] = 'back_end/product/show/$1/$2';
-        $route['backoffice/page/product/products/store'] = 'back_end/product/store';
+        $route['backoffice/page/product/product/show/(:any)/(:any)'] = 'back_end/product/show/$1/$2';
+        $route['backoffice/page/product/products/create/(:any)/(:any)'] = 'back_end/product/create/$1/$2';
         $route['backoffice/page/product/products/edit/(:any)'] = "back_end/product/edit/$1";
         $route['backoffice/page/product/products/update/(:any)'] = "back_end/product/update/$1";
         $route['backoffice/page/product/products/destroy/(:any)'] = "back_end/product/destroy/$1";

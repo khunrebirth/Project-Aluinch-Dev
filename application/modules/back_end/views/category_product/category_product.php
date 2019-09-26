@@ -59,7 +59,7 @@
                                             <td><?php echo $group_product->group_product_name; ?></td>
                                             <td><?php echo $group_product->created_at; ?></td>
                                             <td>
-                                                <a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/show/' .$group_product_id.'/'.$group_product->id); ?>""><i class="far fa-view"></i> Item</a>
+                                                <a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/product/show/' .$group_product_id.'/'.$group_product->id); ?>""><i class="far fa-view"></i> Item</a>
                                             </td>
                                             <td>
                                                 <div class="dropdown d-inline">

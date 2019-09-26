@@ -30,142 +30,124 @@ class Product extends MX_Controller
         require_login('backoffice/login');
 
         // Set Model
-        $this->load->model('user_model');
-        $this->load->model('group_product_model');
-        $this->load->model('category_product_model');
-        $this->load->model('product_model');
+        $this->load->model('User_model');
+        $this->load->model('Group_product_model');
+        $this->load->model('Category_product_model');
+        $this->load->model('Product_model');
 
-        $this->data['user'] = $this->user_model->get_user_by_id($this->session->userdata('user_id'));
+        $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
     public function index()
     {
         $this->data['title'] = 'Manage Item: products';
         $this->data['content'] = 'product';
-        $this->data['group_products'] = $this->group_product_model->get_group_product_all();
-        $this->data['category_products'] = $this->category_product_model->get_category_product_all();
-        $this->data['products'] = $this->product_model->get_product_all();
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
+        $this->data['category_products'] = $this->Category_product_model->get_category_product_all();
+        $this->data['products'] = $this->Product_model->get_product_all();
 
         $this->load->view('app', $this->data);
     }
 
-    public function create() {}
+    public function create($group_product_id, $category_product_id)
+    {
+        $this->data['title'] = 'Manage Item: products';
+        $this->data['content'] = 'product/add_product';
+
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
+        $this->data['category_products'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
+
+        $this->load->view('app', $this->data);
+    }
 
     public function store()
     {
 
-        // TODO:: Validate
+        /*     $img_cover = '';
+             $img_cover_home = '';
 
-        $config['upload_path'] = './storage/images/products';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
+             if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
+                 $img_cover = $this->do_upload_img_product('img_cover');
+             }
 
-        $status = 500;
-        $response['success'] = 0;
+             if (isset($_FILES['img_cover_home']) && $_FILES['img_cover_home']['name'] != '') {
+                 $img_cover_home = $this->do_upload_img_product('img_cover_home');
+             }
+     */
+        $data = [
+            'title' => $this->input->post('title'),
+            'description_th' => $this->input->post('description_th'),
+            'description_en' => $this->input->post('description_en'),
+            'detail' => $this->input->post('detail'),
+            'group_product_id' => $this->input->post('group_product_id'),
+            'category_product_id' => $this->input->post('category_product_id'),
+//            'img_cover' => '',
+//            'img_title_alt' => $this->input->post('img_title_alt'),
+//            'img_cover_home' => '',
+//            'img_home_title_alt' => $this->input->post('img_home_title_alt')
+        ];
 
-        $this->load->library('upload', $config);
+        $add_product = $this->Product_model->insert_product($data);
 
-        if (!$this->upload->do_upload('file')) {
-            $error = array('error' => $this->upload->display_errors());
+        if ($add_product) {
+            $this->session->set_flashdata('success', 'Add Done');
         } else {
-            $data = array('upload_data' => $this->upload->data());
-
-            $product = $this->product_model->insert_team(array(
-                'title' => $this->input->post('title'),
-                'body' => $this->input->post('body'),
-                'image' => $data['upload_data']['file_name'],
-                'created_at' => date('Y-m-d H:i:s')
-            ));
-
-            if ($product != false) {
-                $status = 200;
-                $response['success'] = 1;
-            }
+            $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
+        redirect('backoffice/page/product/product/show/' . $this->input->post('group_product_id') . '/' . $this->input->post('category_product_id'));
     }
 
-    public function show($group_product_id, $category_product_id) {
+    public function show($group_product_id, $category_product_id)
+    {
         $this->data['title'] = 'Manage Item: products';
         $this->data['content'] = 'product/product';
-        $this->data['products'] = $this->product_model->get_product_by_custom($group_product_id, $category_product_id);
-        $this->data['group_products'] = $this->group_product_model->get_group_product_by_id($group_product_id);
-        $this->data['category_products'] = $this->category_product_model->get_category_product_by_id($category_product_id);
+        $this->data['products'] = $this->Product_model->get_product_by_custom($group_product_id, $category_product_id);
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
+        $this->data['category_products'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
 
         $this->load->view('app', $this->data);
     }
 
-    public function edit($id)
+    public function edit($product_id)
     {
-        $status = 500;
-        $response['success'] = 0;
+        $this->data['title'] = 'Manage Item: products';
+        $this->data['content'] = 'product/edit_product';
 
-        $product = $this->product_model->get_product_by_id($id);
+        $products = $this->Product_model->get_product_by_id($product_id);
+        $this->data['products'] = $products;
 
-        if ($product != false) {
-            $status = 200;
-            $response['data'] = $product;
-            $response['success'] = 1;
-        }
+        $group_product_id = $products->group_product_id;
+        $category_product_id = $products->category_product_id;
 
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
+
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
+        $this->data['category_products'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
+
+        $this->load->view('app', $this->data);
+
     }
 
-    public function update($id)
+    public function update($product_id)
     {
+        $data = [
+            'title' => $this->input->post('title'),
+            'description_th' => $this->input->post('description_th'),
+            'description_en' => $this->input->post('description_en'),
+            'detail' => $this->input->post('detail'),
+            'group_product_id' => $this->input->post('group_product_id'),
+            'category_product_id' => $this->input->post('category_product_id'),
+        ];
 
-        // TODO:: Validate
+        $update_product = $this->Product_model->update_product_by_id($product_id, $data);
 
-        $config['upload_path'] = './storage/images/products';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['file_name'] = 'img-' . $this->input->post('title') . '-' . time();
-
-        $status = 500;
-        $response['success'] = 0;
-        $product = false;
-
-        $this->load->library('upload', $config);
-
-        // Case: Don't have upload
-        if (!$this->upload->do_upload('file')) {
-            $error = array('error' => $this->upload->display_errors());
-
-            $product = $this->product_model->update_product_by_id($id, array(
-                'title' => $this->input->post('title'),
-                'body' => $this->input->post('body'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ));
+        if ($update_product) {
+            $this->session->set_flashdata('success', 'Update Done');
+        } else {
+            $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        // Case: Have Upload
-        else {
-            $data = array('upload_data' => $this->upload->data());
-
-            $product = $this->product_model->update_product_by_id($id, array(
-                'title' => $this->input->post('title'),
-                'body' => $this->input->post('body'),
-                'image' => $data['upload_data']['file_name'],
-                'updated_at' => date('Y-m-d H:i:s')
-            ));
-        }
-
-        // Set Status
-        if ($product != false) {
-            $status = 200;
-            $response['success'] = 1;
-        }
-
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
+        redirect('backoffice/page/product/product/show/' . $this->input->post('group_product_id') . '/' . $this->input->post('category_product_id'));
     }
 
     public function destroy($id)
@@ -173,7 +155,7 @@ class Product extends MX_Controller
         $status = 500;
         $response['success'] = 0;
 
-        $product = $this->product_model->delete_product_by_id($id);
+        $product = $this->Product_model->delete_product_by_id($id);
 
         if ($product != false) {
             $status = 200;

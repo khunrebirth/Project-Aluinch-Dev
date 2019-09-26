@@ -29,6 +29,7 @@ class Product_model extends CI_Model {
     {
     	$sql = "
     		SELECT 
+    		    products.id,
 				products.title,
 				products.description_en,
 				products.description_th, 

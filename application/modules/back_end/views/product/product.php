@@ -7,10 +7,12 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Product Group</h1>
+            <h1>Product :(Categories-<?php echo $category_products->title; ?>)</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/list-products'); ?>">Page: Products</a></div>
+                <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product Groups</a></div>
+                <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/category/show/' . $group_products->id); ?>">Product Categories </a></div>
                 <div class="breadcrumb-item">Products :(Categories-<?php echo $category_products->title; ?>)</div>
             </div>
         </div>
@@ -20,9 +22,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Product</h4>
+                            <h4>List of Product :(Categories-<?php echo $category_products->title; ?>)</h4>
                             <div class="card-header-action">
-                                <a href="#modalAddEditProduct" class="btn btn-primary" onclick="addProduct()" data-toggle="modal">
+                                <a href="<?php echo base_url('backoffice/page/product/products/create/'.$group_products->id.'/'.$category_products->id); ?>" class="btn btn-primary" >
                                     <i class="fas fa-plus"></i> Add
                                 </a>
                             </div>
@@ -52,7 +54,7 @@
                                                 <td><?php echo $product->title; ?></td>
                                                 <td><?php echo $product->description_en; ?></td>
                                                 <td><?php echo $product->description_th; ?></td>
-                                                <td><img alt="image" src="<?php echo base_url('storage/uploads/images/products/' . $product->image); ?>" height="12%"></td>
+                                                <td><img alt="image" src="<?php echo base_url('storage/uploads/images/products/' ); ?>" height="12%"></td>
                                                 <td><?php echo $product->group_product_name; ?></td>
                                                 <td><?php echo $product->category_product_name; ?></td>
                                                 <td><?php echo $product->created_at; ?></td>
@@ -62,7 +64,7 @@
                                                             <i class="fas fa-cog"></i> Manage
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item has-icon" onclick="editProduct('<?php echo base_url('backoffice/page/product/products/edit/' . $product->id); ?>')"><i class="far fa-edit"></i> Edit</a>
+                                                            <a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/products/edit/' .$product->id); ?>" ><i class="far fa-edit"></i> Edit</a>
                                                             <a class="dropdown-item has-icon" onclick="deleteProduct('<?php echo base_url('backoffice/page/product/products/destroy/' . $product->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
                                                         </div>
                                                     </div>
@@ -78,35 +80,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="modalAddEditProduct">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTitle">Modal Template</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form id="addEditProductForm">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Title</label>
-                            <input type="hidden" value="" id="id">
-                            <input type="text" class="form-control" name="title" id="title" required="required">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="btnAddProduct">Save changes</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 <!-- JS Libraies -->
 <script src="<?php echo base_url('resources/back_end/node_modules/datatables/media/js/jquery.dataTables.min.js'); ?>"></script>

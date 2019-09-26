@@ -43,7 +43,7 @@ class Contact_page extends MX_Controller
     {
         $this->data['title'] = 'Manage Item: contact page';
         $this->data['content'] = 'contact_page/edit_contact_page';
-        $this->data['contact_page'] = $this->Contact_page_model->get_Contact_pages_by_id($contact_page_id);
+        $this->data['contact_page'] = $this->Contact_page_model->get_contact_pages_by_id($contact_page_id);
 
         $this->load->view('app', $this->data);
 
@@ -57,7 +57,7 @@ class Contact_page extends MX_Controller
             'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
         ];
 
-        $update_contact_page = $this->Contact_page_model->update_Contact_pages_by_id($contact_page_id, $data);
+        $update_contact_page = $this->Contact_page_model->update_contact_pages_by_id($contact_page_id, $data);
 
         if ($update_contact_page) {
             $this->session->set_flashdata('success', 'Update Done');

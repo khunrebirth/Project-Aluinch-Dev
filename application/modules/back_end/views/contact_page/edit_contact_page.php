@@ -2,12 +2,11 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Add Product Category</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a
                             href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Contact</a></div>
-                <div class="breadcrumb-item">Edit Contact</div>
+                <div class="breadcrumb-item">Edit Content</div>
             </div>
         </div>
 
@@ -15,7 +14,19 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <h4>Edit Content</h4>
+                        </div>
                         <div class="card-body">
+
+                            <!--Alert -->
+                            <?php if ($this->session->flashdata('success')) { ?>
+                                <div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
+                            <?php } ?>
+                            <?php if ($this->session->flashdata('error')) { ?>
+                                <div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
+                            <?php } ?>
+
                             <form action="<?php echo base_url('back_end/contact_page/update/1'); ?>" method="post"
                                   enctype="multipart/form-data">
                                 <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Meta Tag</h6></div>
@@ -24,7 +35,7 @@
                                     <label class="col-sm-3 col-form-label">Title</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="meta_tag_title"
-                                               value="<?php echo $contact_page->meta_tag_title; ?>" >
+                                               value="<?php echo $contact_page->meta_tag_title; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">

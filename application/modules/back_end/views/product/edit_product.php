@@ -2,7 +2,6 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Add Product </h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Products</a></div>
@@ -16,6 +15,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <h4>Edit Product</h4>
+                        </div>
                         <div class="card-body">
 							<form action="<?php echo base_url('back_end/product/update/'.$products->id); ?>" method="post" enctype="multipart/form-data">
 								<div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>

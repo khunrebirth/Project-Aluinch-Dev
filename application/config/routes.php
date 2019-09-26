@@ -206,7 +206,7 @@ $route['contact_page-us/send']['post'] = 'front_end/contact_page/send';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice/page/contact_page/content/(:any)'] = 'back_end/contact_page/edit/$1';
+    $route['backoffice/page/contact/content/(:any)'] = 'back_end/contact_page/edit/$1';
 
     /*
     | -------------------------------------------------------------------------

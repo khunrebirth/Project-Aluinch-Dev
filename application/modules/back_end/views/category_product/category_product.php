@@ -1,17 +1,20 @@
 <!-- CSS Libraries -->
-<link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
-<link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
+<link rel="stylesheet"
+      href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
+<link rel="stylesheet"
+      href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
 
 <!-- Main Content -->
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Product Categories: (Group - <?php echo $group_product_title; ?>)</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a
+                            href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Products</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product Groups</a></div>
+                <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product
+                        Groups</a></div>
                 <div class="breadcrumb-item">Product Categories: (Group - <?php echo $group_product_title; ?>)</div>
             </div>
         </div>
@@ -23,19 +26,20 @@
                         <div class="card-header">
                             <h4>List of Category Product: (Group - <?php echo $group_product_title; ?>)</h4>
                             <div class="card-header-action">
-                                <a href="<?php echo base_url('backoffice/page/product/category/create/' . $group_product_id); ?>" class="btn btn-primary" >
+                                <a href="<?php echo base_url('backoffice/page/product/category/create/' . $group_product_id); ?>"
+                                   class="btn btn-primary">
                                     <i class="fas fa-plus"></i> Add
                                 </a>
                             </div>
                         </div>
                         <div class="card-body">
 
-							<?php if ($this->session->flashdata('success')) { ?>
-								<div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
-							<?php } ?>
-							<?php if ($this->session->flashdata('error')) { ?>
-								<div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
-							<?php } ?>
+                            <?php if ($this->session->flashdata('success')) { ?>
+                                <div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
+                            <?php } ?>
+                            <?php if ($this->session->flashdata('error')) { ?>
+                                <div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
+                            <?php } ?>
 
                             <div class="table-responsive">
                                 <table class="table table-striped" id="table-1">
@@ -59,16 +63,24 @@
                                             <td><?php echo $group_product->group_product_name; ?></td>
                                             <td><?php echo $group_product->created_at; ?></td>
                                             <td>
-                                                <a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/product/show/' .$group_product_id.'/'.$group_product->id); ?>""><i class="far fa-view"></i> Item</a>
+                                                <a class="btn btn-warning"
+                                                   href="<?php echo base_url('backoffice/page/product/product/show/' . $group_product_id . '/' . $group_product->id); ?>""><i
+                                                        class="far fa-view"></i> Item</a>
                                             </td>
                                             <td>
                                                 <div class="dropdown d-inline">
-                                                    <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <button class="btn btn-info dropdown-toggle" type="button"
+                                                            id="dropdownMenuButton2" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
                                                         <i class="fas fa-cog"></i> Manage
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/category/edit/'. $group_product->id); ?>" ><i class="far fa-edit"></i> Edit</a>
-                                                        <a class="dropdown-item has-icon" onclick="deleteCategoryProduct('<?php echo base_url('backoffice/page/product/category/destroy/' . $group_product->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+                                                        <a class="dropdown-item has-icon"
+                                                           href="<?php echo base_url('backoffice/page/product/category/edit/' . $group_product->id); ?>"><i
+                                                                    class="far fa-edit"></i> Edit</a>
+                                                        <a class="dropdown-item has-icon"
+                                                           onclick="deleteCategoryProduct('<?php echo base_url('backoffice/page/product/category/destroy/' . $group_product->id); ?>')"><i
+                                                                    class="far fa-trash-alt"></i> Delete</a>
                                                     </div>
                                                 </div>
                                             </td>

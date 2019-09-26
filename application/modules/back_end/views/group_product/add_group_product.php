@@ -2,7 +2,6 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header">
-            <h1>Add Product Group</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Products</a></div>
@@ -15,6 +14,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <h4>Add Product Group</h4>
+                        </div>
                         <div class="card-body">
 							<form action="<?php echo base_url('back_end/group_product/store'); ?>" method="post">
 								<div class="form-group">

@@ -99,13 +99,8 @@ class category_product extends MX_Controller
         $this->data['content'] = 'category_product/edit_category_product';
         /* $category_product*/
         $category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
-        $this->data['category_product_id'] = $category_product->id;
-        $this->data['category_product_title'] = $category_product->title;
-        $this->data['category_product_description'] = $category_product->description;
-        $this->data['category_product_img_cover'] = $category_product->img_cover;
-        $this->data['category_product_img_title_alt'] = $category_product->img_title_alt;
-        $this->data['category_product_img_cover_home'] = $category_product->img_cover_home;
-        $this->data['category_product_img_home_title_alt'] = $category_product->img_home_title_alt;
+        $this->data['category_product'] = $category_product;
+
         $group_product_id = $category_product->group_product_id;
         /* group_products*/
         $group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
@@ -144,10 +139,10 @@ class category_product extends MX_Controller
             'img_home_title_alt' => $this->input->post('img_home_title_alt')
         ];
 
-        $add_category_product = $this->Category_product_model->update_category_product_by_id($category_product_id, $data);
+        $update_category_product = $this->Category_product_model->update_category_product_by_id($category_product_id, $data);
 
-        if ($add_category_product) {
-            $this->session->set_flashdata('success', 'Add Done');
+        if ($update_category_product) {
+            $this->session->set_flashdata('success', 'Update Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
         }

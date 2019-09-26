@@ -89,7 +89,16 @@ class Product extends MX_Controller
             ->set_output(json_encode($response));
     }
 
-    public function show() {}
+    public function show($group_product_id, $category_product_id) {
+        $this->data['title'] = 'Manage Item: products';
+        $this->data['content'] = 'product/product';
+        $this->data['products'] = $this->product_model->get_product_by_custom($group_product_id, $category_product_id);
+
+        $this->data['group_products'] = $this->group_product_model->get_group_product_by_id($group_product_id);
+        $this->data['category_products'] = $this->category_product_model->get_category_product_by_id($category_product_id);
+
+        $this->load->view('app', $this->data);
+    }
 
     public function edit($id)
     {

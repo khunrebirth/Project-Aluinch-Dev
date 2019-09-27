@@ -16,7 +16,7 @@ class Project_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
-    public function insert_product($data)
+    public function insert_project($data)
     {
         $this->db->insert('projects', $data);
 

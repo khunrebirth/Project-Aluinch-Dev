@@ -194,10 +194,10 @@ $route['contact_page-us/send']['post'] = 'front_end/contact_page/send';
         // Projects
         $route['backoffice/page/project'] = 'back_end/project';
         $route['backoffice/page/project/list-projects'] = 'back_end/project';
-        $route['backoffice/page/project/projects/store'] = 'back_end/project/store';
-        $route['backoffice/page/project/projects/edit/(:any)'] = "back_end/project/edit/$1";
-        $route['backoffice/page/project/projects/update/(:any)'] = "back_end/project/update/$1";
-        $route['backoffice/page/project/projects/destroy/(:any)'] = "back_end/project/destroy/$1";
+        $route['backoffice/page/project/create'] = 'back_end/project/create';
+        $route['backoffice/page/project/edit/(:any)'] = "back_end/project/edit/$1";
+        $route['backoffice/page/project/update/(:any)'] = "back_end/project/update/$1";
+        $route['backoffice/page/project/destroy/(:any)'] = "back_end/project/destroy/$1";
         $route['backoffice/page/project/content'] = 'back_end/project/content';
 
     /*

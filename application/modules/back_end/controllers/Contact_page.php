@@ -55,6 +55,7 @@ class Contact_page extends MX_Controller
             'meta_tag_title' => $this->input->post('meta_tag_title'),
             'meta_tag_description' => $this->input->post('meta_tag_description'),
             'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'updated_at' => date('Y-m-d H:i:s')
         ];
 
         $update_contact_page = $this->Contact_page_model->update_contact_pages_by_id($contact_page_id, $data);

@@ -35,6 +35,7 @@ class category_product extends MX_Controller
     {
         $group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
 
+        $this->data['title'] = 'Manage Item : Product Category';
         $this->data['content'] = 'category_product/add_category_product';
         $this->data['group_products'] = $group_product;
         $this->data['group_product_id'] = $group_product->id;
@@ -85,6 +86,7 @@ class category_product extends MX_Controller
         $group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
 
         $this->data['title'] = 'Product Category';
+        $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product/category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
         $this->data['category_products'] = $this->Category_product_model->get_category_product_by_group_product_id($group_product_id);
@@ -96,6 +98,7 @@ class category_product extends MX_Controller
 
     public function edit($category_product_id)
     {
+        $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product/edit_category_product';
         /* $category_product*/
         $category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
@@ -136,7 +139,9 @@ class category_product extends MX_Controller
             'img_cover' => $img_cover,
             'img_title_alt' => $this->input->post('img_title_alt'),
             'img_cover_home' => $img_cover_home,
-            'img_home_title_alt' => $this->input->post('img_home_title_alt')
+            'img_home_title_alt' => $this->input->post('img_home_title_alt'),
+            'updated_at' => date('Y-m-d H:i:s')
+
         ];
 
         $update_category_product = $this->Category_product_model->update_category_product_by_id($category_product_id, $data);

@@ -31,6 +31,7 @@ class Group_product extends MX_Controller
 
     public function create()
     {
+        $this->data['title'] = 'Product Group';
         $this->data['content'] = 'group_product/add_group_product';
 
         $this->load->view('app', $this->data);
@@ -54,6 +55,7 @@ class Group_product extends MX_Controller
 
     public function edit($id)
     {
+        $this->data['title'] = 'Product Group';
         $this->data['content'] = 'group_product/edit_group_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($id);
 
@@ -62,10 +64,13 @@ class Group_product extends MX_Controller
 
     public function update($id)
     {
-        $data = ['title' => $this->input->post('title')];
-        $upadte_group_product = $this->Group_product_model->update_group_product_by_id($id, $data);
+        $data = [
+            'title' => $this->input->post('title'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ];
+        $update_group_product = $this->Group_product_model->update_group_product_by_id($id, $data);
 
-        if ($upadte_group_product) {
+        if ($update_group_product) {
 			$this->session->set_flashdata('success', 'Edit Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');

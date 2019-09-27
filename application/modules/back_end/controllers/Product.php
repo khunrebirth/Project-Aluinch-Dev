@@ -40,7 +40,7 @@ class Product extends MX_Controller
 
     public function index()
     {
-        $this->data['title'] = 'Manage Item: products';
+        $this->data['title'] = 'Products';
         $this->data['content'] = 'product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
         $this->data['category_products'] = $this->Category_product_model->get_category_product_all();
@@ -100,7 +100,7 @@ class Product extends MX_Controller
 
     public function show($group_product_id, $category_product_id)
     {
-        $this->data['title'] = 'Manage Item: products';
+        $this->data['title'] = 'Products';
         $this->data['content'] = 'product/product';
         $this->data['products'] = $this->Product_model->get_product_by_custom($group_product_id, $category_product_id);
         $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
@@ -111,7 +111,7 @@ class Product extends MX_Controller
 
     public function edit($product_id)
     {
-        $this->data['title'] = 'Manage Item: products';
+        $this->data['title'] = 'Products';
         $this->data['content'] = 'product/edit_product';
 
         $products = $this->Product_model->get_product_by_id($product_id);
@@ -137,6 +137,7 @@ class Product extends MX_Controller
             'detail' => $this->input->post('detail'),
             'group_product_id' => $this->input->post('group_product_id'),
             'category_product_id' => $this->input->post('category_product_id'),
+            'updated_at' => date('Y-m-d H:i:s')
         ];
 
         $update_product = $this->Product_model->update_product_by_id($product_id, $data);

@@ -1,6 +1,7 @@
 <?php
 
-class Product_model extends CI_Model {
+class Product_model extends CI_Model
+{
 
     public function get_product_all()
     {
@@ -27,7 +28,7 @@ class Product_model extends CI_Model {
 
     public function get_product_by_custom($group_product_id, $category_product_id)
     {
-    	$sql = "
+        $sql = "
     		SELECT 
     		    products.id,
 				products.title,
@@ -42,7 +43,7 @@ class Product_model extends CI_Model {
 			WHERE products.group_product_id = $group_product_id AND products.category_product_id = $category_product_id
     	";
 
-		$query = $this->db->query($sql);
+        $query = $this->db->query($sql);
 
         return $query->num_rows() > 0 ? $query->result() : null;
     }

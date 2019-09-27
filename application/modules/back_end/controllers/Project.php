@@ -10,12 +10,29 @@ class Project extends MX_Controller
     {
         parent::__construct();
 
-        // Middleware
+		/*
+		| -------------------------------------------------------------------------
+		| MIDDLEWARE
+		| -------------------------------------------------------------------------
+		*/
+
         require_login('backoffice/login');
 
-        // Set Model
+		/*
+		| -------------------------------------------------------------------------
+		| SET UTILITIES
+		| -------------------------------------------------------------------------
+		*/
+
+        // Model
         $this->load->model('User_model');
         $this->load->model('Project_model');
+
+		/*
+		| -------------------------------------------------------------------------
+		| HANDLE
+		| -------------------------------------------------------------------------
+		*/
 
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
@@ -45,13 +62,13 @@ class Project extends MX_Controller
             $img_cover = $this->do_upload_img_project('img_cover');
         }
 
-        $data = ['title' => $this->input->post('title'),
-            'description' => $this->input->post('description'),
-            'img_cover' => $this->input->post('img_cover'),
-            'img_cover' => $img_cover,
-            'img_title_alt' => $this->input->post('img_title_alt'),
-        ];
-        $add_project = $this->Project_model->insert_project($data);
+        $add_project = $this->Project_model->insert_project([
+			'title' => $this->input->post('title'),
+			'description' => $this->input->post('description'),
+			'img_cover' => $this->input->post('img_cover'),
+			'img_cover' => $img_cover,
+			'img_title_alt' => $this->input->post('img_title_alt'),
+		]);
 
         if ($add_project) {
             $this->session->set_flashdata('success', 'Add Done');
@@ -62,9 +79,7 @@ class Project extends MX_Controller
         redirect('backoffice/page/project/projects');
     }
 
-    public function show()
-    {
-    }
+    public function show() {}
 
     public function edit($id)
     {
@@ -84,17 +99,16 @@ class Project extends MX_Controller
             $img_cover = $this->do_upload_img_project('img_cover');
         }
 
-        $data = ['title' => $this->input->post('title'),
-            'description' => $this->input->post('description'),
-            'img_cover' => $this->input->post('img_cover'),
-            'img_cover' => $img_cover,
-            'img_title_alt' => $this->input->post('img_title_alt'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
+        $update_project = $this->Project_model->update_project_by_id($project_id, [
+			'title' => $this->input->post('title'),
+			'description' => $this->input->post('description'),
+			'img_cover' => $this->input->post('img_cover'),
+			'img_cover' => $img_cover,
+			'img_title_alt' => $this->input->post('img_title_alt'),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
 
-        $add_project = $this->Project_model->update_project_by_id($project_id, $data);
-
-        if ($add_project) {
+        if ($update_project) {
             $this->session->set_flashdata('success', 'Add Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');

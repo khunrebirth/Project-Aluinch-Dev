@@ -10,12 +10,29 @@ class Group_product extends MX_Controller
     {
         parent::__construct();
 
-        // Middleware
+		/*
+		| -------------------------------------------------------------------------
+		| MIDDLEWARE
+		| -------------------------------------------------------------------------
+		*/
+
         require_login('backoffice/login');
 
-        // Set Model
+		/*
+		| -------------------------------------------------------------------------
+		| SET UTILITIES
+		| -------------------------------------------------------------------------
+		*/
+
+        // Model
         $this->load->model('User_model');
         $this->load->model('Group_product_model');
+
+		/*
+		| -------------------------------------------------------------------------
+		| HANDLE
+		| -------------------------------------------------------------------------
+		*/
 
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
@@ -24,7 +41,7 @@ class Group_product extends MX_Controller
     {
         $this->data['title'] = 'Product Group';
         $this->data['content'] = 'group_product/group_product';
-        $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
+        $this->data['group_products'] = $this->Group_product_model->get_group_product_and_count_all();
 
         $this->load->view('app', $this->data);
     }
@@ -39,8 +56,9 @@ class Group_product extends MX_Controller
 
     public function store()
     {
-        $data = ['title' => $this->input->post('title')];
-        $add_group_product = $this->Group_product_model->insert_group_product($data);
+        $add_group_product = $this->Group_product_model->insert_group_product([
+        	'title' => $this->input->post('title')
+		]);
 
         if ($add_group_product) {
 			$this->session->set_flashdata('success', 'Add Done');
@@ -64,11 +82,10 @@ class Group_product extends MX_Controller
 
     public function update($id)
     {
-        $data = [
-            'title' => $this->input->post('title'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
-        $update_group_product = $this->Group_product_model->update_group_product_by_id($id, $data);
+        $update_group_product = $this->Group_product_model->update_group_product_by_id($id, [
+			'title' => $this->input->post('title'),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
 
         if ($update_group_product) {
 			$this->session->set_flashdata('success', 'Edit Done');

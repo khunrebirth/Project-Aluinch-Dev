@@ -37,7 +37,6 @@ class Contact_page extends MX_Controller
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
-
     public function edit_content($contact_page_id)
     {
 		$this->data['title'] = 'Page: Contact - Content';

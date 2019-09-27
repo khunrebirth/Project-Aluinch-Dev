@@ -113,19 +113,15 @@ class Category_product extends MX_Controller
 
     public function edit($category_product_id)
     {
+		$category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
+		$group_product = $this->Group_product_model->get_group_product_by_id($category_product->group_product_id);
+
         $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product/edit_category_product';
-        /* $category_product*/
-        $category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
         $this->data['category_product'] = $category_product;
-
-        $group_product_id = $category_product->group_product_id;
-        /* group_products*/
-        $group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
         $this->data['group_products'] = $group_product;
         $this->data['group_product_id'] = $group_product->id;
         $this->data['group_product_title'] = $group_product->title;
-
 
         $this->load->view('app', $this->data);
     }

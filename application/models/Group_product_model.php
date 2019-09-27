@@ -1,6 +1,7 @@
 <?php
 
-class Group_product_model extends CI_Model {
+class Group_product_model extends CI_Model
+{
 
     public function get_group_product_all()
     {

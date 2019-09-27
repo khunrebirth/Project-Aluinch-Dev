@@ -93,7 +93,7 @@
                                     <li class="mobile <?php if ($this->uri->segment(1) == "project-references" ) { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('project-references'); ?>">PROJECT REFERENCES</a></div>
                                     </li>
-                                    <li class="mobile <?php if ($this->uri->segment(1) == "contact_page-us") { echo 'active'; } ?>">
+                                    <li class="mobile <?php if ($this->uri->segment(1) == "contact-us") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('contact_page-us'); ?>">CONTACT US</a></div>
                                     </li>
                                     <li class="mobile">

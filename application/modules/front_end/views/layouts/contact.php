@@ -18,9 +18,7 @@
                             <img class="media-object" src="<?php echo base_url('storage/images/c1.png'); ?>">
                         </div>
                         <div class="media-body">
-                            Alumination Ltd.<br />
-                            1369 Room No. 7, Chan road, Thungwatdon, Sathorn, Bangkok 10120<br />
-                            Fax : 02 286 3669
+                            <?php echo $contact_info->address; ?>
                         </div>
                     </div>
                     <div class="media box-c">
@@ -28,7 +26,7 @@
                             <img class="media-object" src="<?php echo base_url('storage/images/c3.png'); ?>">
                         </div>
                         <div class="media-body" style="padding-top:5px;">
-                            <a href="mailto:info@aluinch.com">info@aluinch.com</a>
+                            <a href="mailto:<?php echo $contact_info->email; ?>"> <?php echo $contact_info->email; ?></a>
                         </div>
                     </div>
                     <div class="contact-clear"></div>
@@ -47,7 +45,7 @@
                             <img class="media-object" src="<?php echo base_url('storage/images/c2.png'); ?>">
                         </div>
                         <div class="media-body" style="padding-top:5px;">
-                            <a href="tel:022863666"> 02 286 3666</a>
+                            <a href="tel:022863666"><?php echo $contact_info->tel; ?></a>
                         </div>
                     </div>
                     <div class="media box-c">
@@ -55,7 +53,7 @@
                             <img class="media-object" src="<?php echo base_url('storage/images/c4.png'); ?>">
                         </div>
                         <div class="media-body" style="padding-top:5px;">
-                            www.aluinch.com
+                            <?php echo $contact_info->web; ?>
                         </div>
                     </div>
                     <div class="media box-c desktop">

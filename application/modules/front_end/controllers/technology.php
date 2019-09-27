@@ -32,10 +32,12 @@ class Technology extends MX_Controller {
 
 	public function index()
 	{
+        $this->load->model('Contact_page_model');
 		$data['content'] = 'technology';
         $data['category_technologies'] = $this->filter_data_products( $this->category_technology_model->get_category_technology_all());
         $data['technology_specific'] = $this->technology_video_model->get_technology_video_by_id(1);
         $data['technology_specific_category_slug'] = $data['technology_specific']->category_technology_slug;
+        $data['contact_info'] =$this->Contact_page_model->get_contact_pages_by_id(1);
 
 		$this->load->view('app', $data);
 	}

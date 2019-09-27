@@ -29,7 +29,10 @@ class Contact extends MX_Controller
 
     public function index()
     {
+        $this->load->model('Contact_page_model');
+
         $data['content'] = 'contact_us';
+        $data['contact_info'] =$this->Contact_page_model->get_contact_pages_by_id(1);
 
         $this->load->view('app', $data);
     }

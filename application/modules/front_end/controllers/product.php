@@ -32,10 +32,12 @@ class Product extends MX_Controller {
 	public function index()
 	{
         // Set Data
+        $this->load->model('Contact_page_model');
         $data['title'] = 'Product Category';
         $data['content'] = 'product';
         $data['list_products'] = $this->filter_data_products($this->group_product_model->get_group_product_all());
         $data['list_products_specific'] = $this->filter_data_products_specific(1, 1);
+        $data['contact_info'] =$this->Contact_page_model->get_contact_pages_by_id(1);
 
 		$this->load->view('app', $data);
 	}

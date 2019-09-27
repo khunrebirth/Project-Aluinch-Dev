@@ -73,9 +73,7 @@
                                         <img class="media-object" data-callback="makeaction" src="<?php echo base_url('storage/images/contact_page/c1.png'); ?>">
                                     </div>
                                     <div class="media-body">
-                                        <strong>Alumination Ltd.</strong> <br/>
-                                        Head Office : 1369 Room No. 7, Chan road, Thungwatdon, Sathorn, Bangkok 10120 <br/>
-                                        Fax : 02 286 3669
+                                        <?php echo $contact_info->address?>
                                     </div>
                                 </div>
                                 <div class="media box-c">

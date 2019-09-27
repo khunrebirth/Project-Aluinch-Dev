@@ -40,6 +40,25 @@ class Category_product_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->result() : false;
     }
 
+	public function get_category_product_and_count_all_by_group_product_id($group_product_id)
+	{
+		$sql = "
+			SELECT  category_products.*,
+					group_products.title AS group_product_name,
+					group_products.slug AS group_product_slug,
+					COUNT(products.id) AS counter
+			FROM category_products
+			LEFT JOIN products ON category_products.id = products.category_product_id
+			LEFT JOIn group_products ON group_products.id = category_products.group_product_id
+			WHERE category_products.group_product_id = $group_product_id
+			GROUP BY category_products.id
+        ";
+
+		$query = $this->db->query($sql);
+
+		return $query->num_rows() > 0 ? $query->result() : false;
+	}
+
     public function insert_category_product($data)
     {
         $this->db->insert('category_products', $data);

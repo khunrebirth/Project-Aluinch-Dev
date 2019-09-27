@@ -52,14 +52,14 @@
                                     <tbody>
                                     <?php
 										$counter = 1;
-										foreach ($category_products as $group_product) { ?>
+										foreach ($category_products as $category_product) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><?php echo $group_product->title; ?></td>
-												<td><?php echo $group_product->group_product_name; ?></td>
-												<td><?php echo $group_product->created_at; ?></td>
+												<td><?php echo $category_product->title; ?></td>
+												<td><?php echo $category_product->group_product_name; ?></td>
+												<td><?php echo $category_product->created_at; ?></td>
 												<td>
-													<a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/product/show/' . $group_product_id . '/' . $group_product->id); ?>""><i class="far fa-view"></i> Item</a>
+													<a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/product/show/' . $group_product_id . '/' . $category_product->id); ?>""><i class="far fa-view"></i> Items (<?php echo $category_product->counter; ?>)</a>
 												</td>
 												<td>
 													<div class="dropdown d-inline">
@@ -67,8 +67,8 @@
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/category/edit/' . $group_product->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteCategoryProduct('<?php echo base_url('backoffice/page/product/category/destroy/' . $group_product->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/category/edit/' . $category_product->id); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteCategoryProduct('<?php echo base_url('backoffice/page/product/category/destroy/' . $category_product->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>

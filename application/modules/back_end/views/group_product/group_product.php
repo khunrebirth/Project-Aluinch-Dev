@@ -55,8 +55,8 @@
                                                 <td><?php echo $group_product->title; ?></td>
                                                 <td><?php echo $group_product->created_at; ?></td>
                                                 <td>
-                                                    <a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/category/show/' .$group_product->id); ?>"">
-                                                    <i class="far fa-view"></i> Item (<?php echo $group_product->counter; ?>)</a>
+                                                    <a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/category/show/' .$group_product->id); ?>">
+                                                    <i class="far fa-view"></i> Items (<?php echo $group_product->counter; ?>)</a>
                                                 </td>
                                                 <td>
                                                     <div class="dropdown d-inline">

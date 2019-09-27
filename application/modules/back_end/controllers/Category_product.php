@@ -104,7 +104,7 @@ class Category_product extends MX_Controller
         $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product/category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
-        $this->data['category_products'] = $this->Category_product_model->get_category_product_by_group_product_id($group_product_id);
+        $this->data['category_products'] = $this->Category_product_model->get_category_product_and_count_all_by_group_product_id($group_product_id);
         $this->data['group_product_id'] = $group_product->id;
         $this->data['group_product_title'] = $group_product->title;
 

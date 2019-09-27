@@ -21,7 +21,6 @@ class Group_product_model extends CI_Model
 			FROM group_products
 			LEFT JOIN category_products ON group_products.id = category_products.group_product_id
 			GROUP BY group_products.id
-
         ";
 
 		$query = $this->db->query($sql);

@@ -59,15 +59,15 @@ $route['translate_uri_dashes'] = FALSE;
 | -------------------------------------------------------------------------
 */
 
-$route['home'] = 'front_end/home';
-$route['product'] = 'front_end/product';
-$route['product/(:any)/(:any)/(:any)'] = "front_end/product/show/$1/$2/$3";
-$route['technology'] = 'front_end/technology';
-$route['technology/(:any)/(:any)/(:any)'] = "front_end/technology/show/$1/$2/$3";
-$route['technology/(:any)/(:any)'] = "front_end/technology/show_faq/$1/$2";
-$route['project-references'] = 'front_end/project_references';
-$route['contact_page-us'] = 'front_end/contact';
-$route['contact_page-us/send']['post'] = 'front_end/contact/send';
+$route['home'] = 'front_end/Home';
+$route['product'] = 'front_end/Product';
+$route['product/(:any)/(:any)/(:any)'] = "front_end/Product/show/$1/$2/$3";
+$route['technology'] = 'front_end/Technology';
+$route['technology/(:any)/(:any)/(:any)'] = "front_end/Technology/show/$1/$2/$3";
+$route['technology/(:any)/(:any)'] = "front_end/Technology/show_faq/$1/$2";
+$route['project-references'] = 'front_end/Project_references';
+$route['contact'] = 'front_end/Contact';
+$route['contact/send']['post'] = 'front_end/Contact/send';
 
     /*
     | -------------------------------------------------------------------------
@@ -75,8 +75,8 @@ $route['contact_page-us/send']['post'] = 'front_end/contact/send';
     | -------------------------------------------------------------------------
     */
 
-    $route['ajax/get/product/(:any)'] = 'front_end/product/ajax_get_product_by_id/$1';
-    $route['ajax/get/project-references/(:any)/(:any)'] = 'front_end/project_references/ajax_get_project_by_id/$1/$2';
+    $route['ajax/get/product/(:any)'] = 'front_end/Product/ajax_get_product_by_id/$1';
+    $route['ajax/get/project-references/(:any)/(:any)'] = 'front_end/Project_references/ajax_get_project_by_id/$1/$2';
 
 
 /*
@@ -91,10 +91,10 @@ $route['contact_page-us/send']['post'] = 'front_end/contact/send';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice'] = 'back_end/auth/authentication';
-    $route['backoffice/login'] = 'back_end/auth/authentication';
-    $route['backoffice/login_process'] = 'back_end/auth/authentication/login_process';
-    $route['backoffice/logout'] = 'back_end/auth/authentication/logout';
+    $route['backoffice'] = 'back_end/auth/Authentication';
+    $route['backoffice/login'] = 'back_end/auth/Authentication';
+    $route['backoffice/login_process'] = 'back_end/auth/Authentication/login_process';
+    $route['backoffice/logout'] = 'back_end/auth/Authentication/logout';
 
     /*
     | -------------------------------------------------------------------------
@@ -102,15 +102,7 @@ $route['contact_page-us/send']['post'] = 'front_end/contact/send';
     | -------------------------------------------------------------------------
     */
 
-    $route['backoffice/dashboard'] = 'back_end/dashboard';
-
-    /*
-    | -------------------------------------------------------------------------
-    | Meta tag
-    | -------------------------------------------------------------------------
-    */
-
-    $route['backoffice/mete-tag'] = 'back_end/meta_tag';
+    $route['backoffice/dashboard'] = 'back_end/Dashboard';
 
     /*
     | -------------------------------------------------------------------------
@@ -124,8 +116,8 @@ $route['contact_page-us/send']['post'] = 'front_end/contact/send';
         | -------------------------------------------------------------------------
         */
 
-        $route['backoffice/page/home'] = 'back_end/home';
-        $route['backoffice/page/home/content'] = 'back_end/home/content';
+        $route['backoffice/page/home'] = 'back_end/Home';
+        $route['backoffice/page/home/content'] = 'back_end/Home/content';
 
         /*
         | -------------------------------------------------------------------------
@@ -139,7 +131,6 @@ $route['contact_page-us/send']['post'] = 'front_end/contact/send';
         $route['backoffice/page/product/group/edit/(:any)'] = "back_end/group_product/edit/$1";
         $route['backoffice/page/product/group/update/(:any)'] = "back_end/group_product/update/$1";
         $route['backoffice/page/product/group/destroy/(:any)'] = "back_end/group_product/destroy/$1";
-
 
         // Category
         $route['backoffice/page/product/category/show/(:any)'] = 'back_end/category_product/show/$1';
@@ -198,19 +189,19 @@ $route['contact_page-us/send']['post'] = 'front_end/contact/send';
         $route['backoffice/page/project/projects/update/(:any)'] = "back_end/project/update/$1";
         $route['backoffice/page/project/projects/destroy/(:any)'] = "back_end/project/destroy/$1";
 
-
-
     /*
     | -------------------------------------------------------------------------
     | Contact
     | -------------------------------------------------------------------------
     */
 
-        $route['backoffice/page/contact/content/(:any)'] = 'back_end/contact_page/edit_content/$1';
+    	// Content
+        $route['backoffice/page/contact/content/(:any)'] = 'back_end/Contact_page/edit_content/$1';
+		$route['backoffice/page/contact/content/update/(:any)'] = 'back_end/Contact_page/edit_update/$1';
 
-
-        //Info
-        $route['backoffice/page/contact/info/(:any)'] = 'back_end/contact_page/edit_info/$1';
+        // Info
+        $route['backoffice/page/contact/info/(:any)'] = 'back_end/Contact_page/edit_info/$1';
+		$route['backoffice/page/contact/info/update/(:any)'] = 'back_end/Contact_page/update_info/$1';
 
     /*
     | -------------------------------------------------------------------------

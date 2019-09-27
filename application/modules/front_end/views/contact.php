@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="contact-main">
-                        <form action="<?php echo base_url('contact_page-us/send'); ?>" method="POST">
+                        <form action="<?php echo base_url('contact/send'); ?>" method="POST">
                             <input type="text" name="name" placeholder="Name:" required/>
                             <input type="text" name="email" placeholder="Email:" required/>
                             <input type="text" name="phone" placeholder="Phone:"/>

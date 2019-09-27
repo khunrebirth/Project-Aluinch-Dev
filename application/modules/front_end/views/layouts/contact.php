@@ -70,7 +70,7 @@
                 <div class="partner desktop">partnership by <img src="<?php echo base_url('storage/images/partner-logo.jpg'); ?>" width="100" /> Company</div>
             </div>
             <div class="box-contact form-contact">
-                <form action="<?php echo base_url('contact_page-us/send'); ?>" method="POST">
+                <form action="<?php echo base_url('contact/send'); ?>" method="POST">
                     <input type="text" name="name" placeholder="Name:" required />
                     <input type="text" name="email" placeholder="Email:" required />
                     <input type="text" name="company" placeholder="Company:" />

@@ -4,35 +4,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Contact_page extends MX_Controller
 {
 
-    /**
-     * Index Page for this controller.
-     *
-     * Maps to the following URL
-     *        http://example.com/index.php/welcome
-     *    - or -
-     *        http://example.com/index.php/welcome/index
-     *    - or -
-     * Since this controller is set as the default controller in
-     * config/routes.php, it's displayed at http://example.com/
-     *
-     * So any other public methods not prefixed with an underscore will
-     * map to /index.php/welcome/<method_name>
-     * @see https://codeigniter.com/user_guide/general/urls.html
-     */
-
     private $data = false;
 
     public function __construct()
     {
         parent::__construct();
 
-        // Middleware
+		/*
+		| -------------------------------------------------------------------------
+		| MIDDLEWARE
+		| -------------------------------------------------------------------------
+		*/
+
         require_login('backoffice/login');
 
-        // Set Model
+		/*
+		| -------------------------------------------------------------------------
+		| SET UTILITIES
+		| -------------------------------------------------------------------------
+		*/
 
+        // Model
         $this->load->model('Contact_page_model');
         $this->load->model('User_model');
+
+		/*
+		| -------------------------------------------------------------------------
+		| HANDLE
+		| -------------------------------------------------------------------------
+		*/
 
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
@@ -40,24 +40,21 @@ class Contact_page extends MX_Controller
 
     public function edit_content($contact_page_id)
     {
-        $this->data['title'] = 'Manage Item: contact page';
+		$this->data['title'] = 'Page: Contact - Content';
         $this->data['content'] = 'contact_page/edit_contact_page';
         $this->data['contact_page'] = $this->Contact_page_model->get_contact_pages_by_id($contact_page_id);
 
         $this->load->view('app', $this->data);
-
     }
 
-    public function update($contact_page_id)
+    public function edit_update($contact_page_id)
     {
-        $data = [
-            'meta_tag_title' => $this->input->post('meta_tag_title'),
-            'meta_tag_description' => $this->input->post('meta_tag_description'),
-            'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
-
-        $update_contact_page = $this->Contact_page_model->update_contact_pages_by_id($contact_page_id, $data);
+        $update_contact_page = $this->Contact_page_model->update_contact_pages_by_id($contact_page_id, [
+			'meta_tag_title' => $this->input->post('meta_tag_title'),
+			'meta_tag_description' => $this->input->post('meta_tag_description'),
+			'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
 
         if ($update_contact_page) {
             $this->session->set_flashdata('success', 'Update Done');
@@ -65,8 +62,7 @@ class Contact_page extends MX_Controller
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect('backoffice/page/contact_page/content/1');
-
+        redirect('backoffice/page/contact/content/1');
     }
 
     public function edit_info($contact_page_id)
@@ -78,17 +74,16 @@ class Contact_page extends MX_Controller
         $this->load->view('app', $this->data);
 
     }
+
     public function update_info($contact_page_id)
     {
-        $data = [
-            'address' => $this->input->post('address'),
-            'email' => $this->input->post('email'),
-            'tel' => $this->input->post('tel'),
-            'web' => $this->input->post('web'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
-
-        $update_contact_page = $this->Contact_page_model->update_contact_pages_by_id($contact_page_id, $data);
+        $update_contact_page = $this->Contact_page_model->update_contact_pages_by_id($contact_page_id, [
+			'address' => $this->input->post('address'),
+			'email' => $this->input->post('email'),
+			'tel' => $this->input->post('tel'),
+			'web' => $this->input->post('web'),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
 
         if ($update_contact_page) {
             $this->session->set_flashdata('success', 'Update Done');
@@ -97,7 +92,5 @@ class Contact_page extends MX_Controller
         }
 
         redirect('backoffice/page/contact/info/1');
-
     }
 }
-

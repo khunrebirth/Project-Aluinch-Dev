@@ -207,12 +207,6 @@
                     <li class="">
                         <a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
                     </li>
-
-                    <li class="menu-header">Meta tags</li>
-                    <li class="">
-                        <a class="nav-link" href="<?php echo base_url('backoffice/meta-tag'); ?>"><i class="fas fa-pencil-ruler"></i> <span>Meta Tags</span></a>
-                    </li>
-
                     <li class="menu-header">Pages</li>
                     <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "home") { echo 'active'; } ?>">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-home"></i><span>Home</span></a>

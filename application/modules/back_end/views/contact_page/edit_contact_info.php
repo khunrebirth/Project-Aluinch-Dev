@@ -6,7 +6,7 @@
                 <div class="breadcrumb-item active"><a
                             href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Contact</a></div>
-                <div class="breadcrumb-item">Edit Content</div>
+                <div class="breadcrumb-item">Edit Info</div>
             </div>
         </div>
 
@@ -15,7 +15,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Edit Content</h4>
+                            <h4>Edit Info</h4>
                         </div>
                         <div class="card-body">
 
@@ -27,29 +27,32 @@
                                 <div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
                             <?php } ?>
 
-                            <form action="<?php echo base_url('back_end/contact_page/update/1'); ?>" method="post"
+                            <form action="<?php echo base_url('back_end/contact_page/update_info/1'); ?>" method="post"
                                   enctype="multipart/form-data">
-                                <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Meta Tag</h6></div>
+                                <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
                                 <hr>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Title</label>
+                                    <label class="col-sm-3 col-form-label">* Address</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="meta_tag_title"
-                                               value="<?php echo $contact_page->meta_tag_title; ?>">
+                                        <textarea class="form-control" name="address" required ><?php echo $contact_page->address; ?></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Description</label>
+                                    <label class="col-sm-3 col-form-label">* Email</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="meta_tag_description"
-                                               value="<?php echo $contact_page->meta_tag_description; ?>">
+                                        <input type="text" class="form-control" name="email" required value="<?php echo $contact_page->email; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Keywords</label>
+                                    <label class="col-sm-3 col-form-label">* Telephone</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="meta_tag_keywords"
-                                               value="<?php echo $contact_page->meta_tag_keywords; ?>">
+                                        <input type="text" class="form-control" name="tel" required value="<?php echo $contact_page->tel; ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">* Website</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="web" required value="<?php echo $contact_page->web; ?>">
                                     </div>
                                 </div>
                                 <div class="text-right">

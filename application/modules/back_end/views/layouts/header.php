@@ -254,7 +254,7 @@
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-project-diagram"></i><span>Project References</span></a>
                         <ul class="dropdown-menu">
                             <li class="<?php if ($this->uri->segment(3) == "project" && $this->uri->segment(4) == "list-projects") { echo 'active'; } ?>">
-                                <a class="nav-link" href="<?php echo base_url('backoffice/page/project') ?>">&#9679; Projects</a>
+                                <a class="nav-link" href="<?php echo base_url('backoffice/page/project/projects') ?>">&#9679; Projects</a>
                             </li>
                         </ul>
                     </li>
@@ -265,6 +265,11 @@
 								<a class="nav-link" href="<?php echo base_url('backoffice/page/contact/content/1'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
+                        <ul class="dropdown-menu">
+                            <li class="<?php if ($this->uri->segment(3) == "project" && $this->uri->segment(4) == "list-projects") { echo 'active'; } ?>">
+                                <a class="nav-link" href="<?php echo base_url('backoffice/page/contact/info/1') ?>">&#9679; Info</a>
+                            </li>
+                        </ul>
 					</li>
 
                     <li class="menu-header">Settings</li>

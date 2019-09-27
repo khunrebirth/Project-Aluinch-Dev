@@ -38,8 +38,7 @@ class Contact_page extends MX_Controller
     }
 
 
-
-    public function edit($contact_page_id)
+    public function edit_content($contact_page_id)
     {
         $this->data['title'] = 'Manage Item: contact page';
         $this->data['content'] = 'contact_page/edit_contact_page';
@@ -67,6 +66,37 @@ class Contact_page extends MX_Controller
         }
 
         redirect('backoffice/page/contact_page/content/1');
+
+    }
+
+    public function edit_info($contact_page_id)
+    {
+        $this->data['title'] = 'Manage Item: contact page';
+        $this->data['content'] = 'contact_page/edit_contact_info';
+        $this->data['contact_page'] = $this->Contact_page_model->get_contact_pages_by_id($contact_page_id);
+
+        $this->load->view('app', $this->data);
+
+    }
+    public function update_info($contact_page_id)
+    {
+        $data = [
+            'address' => $this->input->post('address'),
+            'email' => $this->input->post('email'),
+            'tel' => $this->input->post('tel'),
+            'web' => $this->input->post('web'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ];
+
+        $update_contact_page = $this->Contact_page_model->update_contact_pages_by_id($contact_page_id, $data);
+
+        if ($update_contact_page) {
+            $this->session->set_flashdata('success', 'Update Done');
+        } else {
+            $this->session->set_flashdata('error', 'Something wrong');
+        }
+
+        redirect('backoffice/page/contact/info/1');
 
     }
 }

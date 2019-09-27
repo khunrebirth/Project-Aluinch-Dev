@@ -59,7 +59,7 @@ class Project extends MX_Controller
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect('backoffice/page/project');
+        redirect('backoffice/page/project/projects');
     }
 
     public function show()
@@ -100,7 +100,7 @@ class Project extends MX_Controller
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect('backoffice/page/project');
+        redirect('backoffice/page/project/projects');
     }
 
     public function destroy($id)

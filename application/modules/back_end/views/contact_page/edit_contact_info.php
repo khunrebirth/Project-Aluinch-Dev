@@ -30,27 +30,27 @@
                                 <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
                                 <hr>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Address</label>
+                                    <label class="col-sm-3 col-form-label">Address</label>
                                     <div class="col-sm-9">
-                                        <textarea class="summernote" name="address" required><?php echo $contact_page->address; ?></textarea>
+                                        <textarea class="summernote" name="address"><?php echo $contact_page->address; ?></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Email</label>
+                                    <label class="col-sm-3 col-form-label">Email</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="email" required value="<?php echo $contact_page->email; ?>">
+                                        <input type="text" class="form-control" name="email" value="<?php echo $contact_page->email; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Telephone</label>
+                                    <label class="col-sm-3 col-form-label">Telephone</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="tel" required value="<?php echo $contact_page->tel; ?>">
+                                        <input type="text" class="form-control" name="tel" value="<?php echo $contact_page->tel; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Website</label>
+                                    <label class="col-sm-3 col-form-label">Website</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="web" required value="<?php echo $contact_page->web; ?>">
+                                        <input type="text" class="form-control" name="web" value="<?php echo $contact_page->web; ?>">
                                     </div>
                                 </div>
                                 <div class="text-right">

@@ -29,19 +29,19 @@
 									</div>
 								</div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Description (TH)</label>
+                                    <label class="col-sm-3 col-form-label">* Description (TH)</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="description_th" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Description (EN)</label>
+                                    <label class="col-sm-3 col-form-label">* Description (EN)</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="description_en" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Detail</label>
+                                    <label class="col-sm-3 col-form-label">* Detail</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="detail" required>
                                     </div>

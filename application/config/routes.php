@@ -175,13 +175,6 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         | -------------------------------------------------------------------------
         */
 
-        // Category
-        $route['backoffice/page/project/category'] = 'back_end/project_category';
-        $route['backoffice/page/project/category/store'] = 'back_end/project_category/store';
-        $route['backoffice/page/project/category/edit/(:any)'] = "back_end/project_category/edit/$1";
-        $route['backoffice/page/project/category/update/(:any)'] = "back_end/project_category/update/$1";
-        $route['backoffice/page/project/category/destroy/(:any)'] = "back_end/project_category/destroy/$1";
-
         // Projects
         $route['backoffice/page/project/projects'] = 'back_end/project';
         $route['backoffice/page/project/projects/create'] = 'back_end/project/create';
@@ -189,11 +182,11 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         $route['backoffice/page/project/projects/update/(:any)'] = "back_end/project/update/$1";
         $route['backoffice/page/project/projects/destroy/(:any)'] = "back_end/project/destroy/$1";
 
-    /*
-    | -------------------------------------------------------------------------
-    | Contact
-    | -------------------------------------------------------------------------
-    */
+		/*
+		| -------------------------------------------------------------------------
+		| Contact
+		| -------------------------------------------------------------------------
+		*/
 
     	// Content
         $route['backoffice/page/contact/content/(:any)'] = 'back_end/Contact_page/edit_content/$1';
@@ -205,7 +198,7 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
 
     /*
     | -------------------------------------------------------------------------
-    | Contact
+    | SETTING
     | -------------------------------------------------------------------------
     */
 

@@ -222,7 +222,7 @@
                     <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "product") { echo 'active'; } ?>">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-gopuram"></i><span>Products</span></a>
                         <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "group") { echo 'active'; } ?>">
+                            <li class="<?php if ($this->uri->segment(3) == "product") { echo 'active'; } ?>">
                                 <a class="nav-link" href="<?php echo base_url('backoffice/page/product/group'); ?>">&#9679; Products</a>
                             </li>
                         </ul>
@@ -247,25 +247,24 @@
                     <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "project") { echo 'active'; } ?>">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-project-diagram"></i><span>Project References</span></a>
                         <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(3) == "project" && $this->uri->segment(4) == "list-projects") { echo 'active'; } ?>">
+                            <li class="<?php if ($this->uri->segment(3) == "project" && $this->uri->segment(4) == "projects") { echo 'active'; } ?>">
                                 <a class="nav-link" href="<?php echo base_url('backoffice/page/project/projects') ?>">&#9679; Projects</a>
                             </li>
                         </ul>
                     </li>
-					<li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "contact_page") { echo 'active'; } ?>">
+					<li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "contact") { echo 'active'; } ?>">
 						<a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Contact</span></a>
 						<ul class="dropdown-menu">
-							<li class="<?php if ($this->uri->segment(3) == "product" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
+							<li class="<?php if ($this->uri->segment(3) == "contact" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
 								<a class="nav-link" href="<?php echo base_url('backoffice/page/contact/content/1'); ?>">&#9679; Content</a>
 							</li>
 						</ul>
                         <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(3) == "project" && $this->uri->segment(4) == "list-projects") { echo 'active'; } ?>">
+                            <li class="<?php if ($this->uri->segment(3) == "contact" && $this->uri->segment(4) == "info") { echo 'active'; } ?>">
                                 <a class="nav-link" href="<?php echo base_url('backoffice/page/contact/info/1') ?>">&#9679; Info</a>
                             </li>
                         </ul>
 					</li>
-
                     <li class="menu-header">Settings</li>
                     <li>
                         <a class="nav-link" href="<?php echo base_url('backoffice/settings'); ?>"><i class="fas fa-ellipsis-h"></i> <span>Settings</span></a>

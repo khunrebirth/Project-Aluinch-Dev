@@ -227,20 +227,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "technology") { echo 'active'; } ?>">
+                    <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "category_technology") { echo 'active'; } ?>">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-microchip"></i><span>Technologies</span></a>
                         <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(3) == "technology" && $this->uri->segment(4) == "content"){ echo 'active'; } ?>">
-                                <a class="nav-link" href="#">&#9679; Content Page</a>
-                            </li>
-                            <li class="<?php if ($this->uri->segment(3) == "technology" && $this->uri->segment(4) == "category"){ echo 'active'; } ?>">
-                                <a class="nav-link" href="#">&#9679; Category Technology</a>
-                            </li>
-                            <li class="<?php if ($this->uri->segment(3) == "technology" && $this->uri->segment(4) == "faq"){ echo 'active'; } ?>">
-                                <a class="nav-link" href="#">&#9679; Technology FAQ</a>
-                            </li>
-                            <li class="<?php if ($this->uri->segment(3) == "technology" && $this->uri->segment(4) == "list-technologies"){ echo 'active'; } ?>">
-                                <a class="nav-link" href="#">&#9679; Technologies</a>
+                            <li class="<?php if ($this->uri->segment(3) == "category_technology" && $this->uri->segment(4) == "category"){ echo 'active'; } ?>">
+                                <a class="nav-link" href="<?php echo base_url('backoffice/page/technology/category')?>">&#9679; Technologies</a>
                             </li>
                         </ul>
                     </li>

@@ -63,8 +63,8 @@ $route['home'] = 'front_end/Home';
 $route['product'] = 'front_end/Product';
 $route['product/(:any)/(:any)/(:any)'] = "front_end/Product/show/$1/$2/$3";
 $route['technology'] = 'front_end/Technology';
-$route['technology/(:any)/(:any)/(:any)'] = "front_end/Technology/show/$1/$2/$3";
-$route['technology/(:any)/(:any)'] = "front_end/Technology/show_faq/$1/$2";
+$route['category_technology/(:any)/(:any)/(:any)'] = "front_end/Technology/show/$1/$2/$3";
+$route['category_technology/(:any)/(:any)'] = "front_end/Technology/show_faq/$1/$2";
 $route['project-references'] = 'front_end/Project_references';
 $route['contact'] = 'front_end/Contact';
 $route['contact/send']['post'] = 'front_end/Contact/send';
@@ -154,26 +154,28 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         */
 
         // Category
-        $route['backoffice/page/technology/category'] = 'back_end/technology_category';
-        $route['backoffice/page/technology/category/store'] = 'back_end/product_category/store';
-        $route['backoffice/page/technology/category/edit/(:any)'] = "back_end/product_category/edit/$1";
-        $route['backoffice/page/technology/category/update/(:any)'] = "back_end/product_category/update/$1";
-        $route['backoffice/page/technology/category/destroy/(:any)'] = "back_end/product_category/destroy/$1";
+        $route['backoffice/page/technology/category'] = 'back_end/category_technology';
+        $route['backoffice/page/technology/category/store'] = 'back_end/category_technology/store';
+        $route['backoffice/page/technology/category/edit/(:any)'] = "back_end/category_technology/edit/$1";
+        $route['backoffice/page/technology/category/update/(:any)'] = "back_end/category_technology/update/$1";
+        $route['backoffice/page/technology/category/destroy/(:any)'] = "back_end/category_technology/destroy/$1";
+        $route['backoffice/page/technology/category/content'] = 'back_end/category_technology/content';
+
 
         // Technologies
-        $route['backoffice/page/technology'] = 'back_end/technology';
-        $route['backoffice/page/technology/list-technologies'] = 'back_end/technology';
-        $route['backoffice/page/technology/technologies/store'] = 'back_end/technology/store';
-        $route['backoffice/page/technology/technologies/edit/(:any)'] = "back_end/technology/edit/$1";
-        $route['backoffice/page/technology/technologies/update/(:any)'] = "back_end/technology/update/$1";
-        $route['backoffice/page/technology/technologies/destroy/(:any)'] = "back_end/technology/destroy/$1";
-        $route['backoffice/page/technology/content'] = 'back_end/technology/content';
+        $route['backoffice/page/technology/technology_videos/show/(:any)'] = 'back_end/technology_video/show/$1';
+        $route['backoffice/page/technology/technology_videos/create/(:any)'] = 'back_end/technology_video/create/$1';
+        $route['backoffice/page/technology/technology_videos/store'] = 'back_end/technology_video/store';
+        $route['backoffice/page/technology/technology_videos/edit/(:any)'] = "back_end/technology_video/edit/$1";
+        $route['backoffice/page/technology/technology_videos/update/(:any)'] = "back_end/technology_video/update/$1";
+        $route['backoffice/page/technology/technology_videos/destroy/(:any)'] = "back_end/technology_video/destroy/$1";
 
-        /*
-        | -------------------------------------------------------------------------
-        | Project
-        | -------------------------------------------------------------------------
-        */
+
+/*
+| -------------------------------------------------------------------------
+| Project
+| -------------------------------------------------------------------------
+*/
 
         // Projects
         $route['backoffice/page/project/projects'] = 'back_end/project';

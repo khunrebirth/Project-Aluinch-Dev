@@ -9,6 +9,24 @@ class Category_technology_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->result() : false;
     }
 
+    public function get_category_technology_and_count_all()
+    {
+        $sql = "
+			SELECT  category_technologies.id, 
+					category_technologies.title, 
+					category_technologies.slug, 
+					category_technologies.created_at, 
+					COUNT(technology_videos.id) AS counter
+			FROM category_technologies
+			LEFT JOIN technology_videos ON category_technologies.id = technology_videos.category_technology_id
+			GROUP BY category_technologies.id
+        ";
+
+        $query = $this->db->query($sql);
+
+        return $query->num_rows() > 0 ? $query->result() : false;
+    }
+
     public function get_category_technology_by_id($id)
     {
         $query = $this->db->where('id', $id)->get('category_technologies');

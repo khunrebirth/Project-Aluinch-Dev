@@ -178,7 +178,7 @@
                     <?php foreach ($technologies['vdos'] as $vdo) {?>
                         <div class="item vdo-lightbox" data-val="pZFeraPjm4s">
                             <img src="<?php echo $vdo->img_cover; ?>" alt="<?php echo $vdo->img_title_alt; ?>"/>
-<!--                            <img src="--><?php //echo base_url('storage/uploads/images/technology' . $vdo->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
+<!--                            <img src="--><?php //echo base_url('storage/uploads/images/category_technology' . $vdo->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
                             <div class="vdo-box">
                                 <h3><?php echo $vdo->title; ?></h3>
                                 <p><?php echo $vdo->description; ?></p>
@@ -198,7 +198,7 @@
                     <?php foreach ($technologies['tips'] as $tip) {?>
                         <div class="item vdo-lightbox" data-val="pZFeraPjm4s">
                             <img src="<?php echo $tip->img_cover; ?>" alt="<?php echo $tip->img_title_alt; ?>"/>
-                            <!--                            <img src="--><?php //echo base_url('storage/uploads/images/technology' . $tip->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
+                            <!--                            <img src="--><?php //echo base_url('storage/uploads/images/category_technology' . $tip->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
                             <div class="vdo-box">
                                 <h3><?php echo $tip->title; ?></h3>
                                 <p><?php echo $tip->description; ?></p>

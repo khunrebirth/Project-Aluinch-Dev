@@ -71,7 +71,7 @@
                                     <li class="product-nav <?php if ($this->uri->segment(1) == "product") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('product'); ?>">PRODUCTS</a></div>
                                     </li>
-                                    <li class="technology-nav <?php if ($this->uri->segment(1) == "technology" || $this->uri->segment(1) == "technology-tips-and-tracks" || $this->uri->segment(1) == 'technology-faq') { echo 'active'; } ?>">
+                                    <li class="technology-nav <?php if ($this->uri->segment(1) == "category_technology" || $this->uri->segment(1) == "category_technology-tips-and-tracks" || $this->uri->segment(1) == 'category_technology-faq') { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('technology'); ?>">TECHNOLOGY</a></div>
                                     </li>
                                     <li class="project-nav <?php if ($this->uri->segment(1) == "project-references") { echo 'active'; } ?>">
@@ -87,7 +87,7 @@
                                     <li class="mobile <?php if ($this->uri->segment(1) == "product") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('product'); ?>">PRODUCTS</a></div>
                                     </li>
-                                    <li class="mobile <?php if ($this->uri->segment(1) == "technology" ) { echo 'active'; } ?>">
+                                    <li class="mobile <?php if ($this->uri->segment(1) == "category_technology" ) { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('technology'); ?>">TECHNOLOGY</a></div>
                                     </li>
                                     <li class="mobile <?php if ($this->uri->segment(1) == "project-references" ) { echo 'active'; } ?>">

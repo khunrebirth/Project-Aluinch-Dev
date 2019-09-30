@@ -33,7 +33,7 @@ class Technology_video extends MX_Controller
         $this->load->model('User_model');
         $this->load->model('Technology_video_model');
         $this->load->model('Category_technology_model');
-
+        $this->load->model('Faq_technology_model');
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
@@ -48,6 +48,7 @@ class Technology_video extends MX_Controller
         $this->data['content'] = 'technology_video/technology_video';
         $this->data['technology_videos'] = $this->Technology_video_model->get_technology_video_by_category_technology_id($category_technology_id);
         $this->data['category_technology'] = $this->Category_technology_model->get_category_technology_by_id($category_technology_id);
+        $this->data['feq_technologies'] = $this->Faq_technology_model->get_faq_technology_by_category_technology_id($category_technology_id);
 
         $this->load->view('app', $this->data);
     }
@@ -65,28 +66,36 @@ class Technology_video extends MX_Controller
 
     public function store()
     {
+        if ($this->input->post('category_technology_id') < 3) {
+            $data = [
+                'title' => $this->input->post('title'),
+                'body' => $this->input->post('body'),
+                'description' => $this->input->post('description'),
+                'src' => $this->input->post('src'),
+                'short_src' => $this->input->post('short_src'),
+                'img_cover' => $this->input->post('img_cover'),
+                'img_title_alt' => $this->input->post('img_title_alt'),
+                'category_technology_id' => $this->input->post('category_technology_id')
 
-        $data = [
-            'title' => $this->input->post('title'),
-            'body' => $this->input->post('body'),
-            'description' => $this->input->post('description'),
-            'src' => $this->input->post('src'),
-            'short_src' => $this->input->post('short_src'),
-            'img_cover' => $this->input->post('img_cover'),
-            'img_title_alt' => $this->input->post('img_title_alt'),
-            'category_technology_id' => $this->input->post('category_technology_id')
+            ];
+            $add_technology = $this->Technology_video_model->insert_category_product($data);
+        } else {
+            $Questions = [
+                'ask' => $this->input->post('ask'),
+                'ans' => $this->input->post('ans'),
+                'category_technology_id' => $this->input->post('category_technology_id')
 
-        ];
+            ];
 
-        $add_technology = $this->Technology_video_model->insert_category_product($data);
-
+            $add_technology = $this->Faq_technology_model->insert_category_product($Questions);
+        }
         if ($add_technology) {
             $this->session->set_flashdata('success', 'Add Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect('backoffice/page/technology/technology_videos/show/' . $this->input->post('category_technology_id') );
+        redirect('backoffice/page/technology/technology_videos/show/' . $this->input->post('category_technology_id'));
     }
 
 
@@ -127,17 +136,36 @@ class Technology_video extends MX_Controller
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect('backoffice/page/technology/technology_videos/show/' . $this->input->post('category_technology_id') );
+        redirect('backoffice/page/technology/technology_videos/show/' . $this->input->post('category_technology_id'));
     }
 
     public function destroy($id)
     {
+
         $status = 500;
         $response['success'] = 0;
 
-        $product = $this->Technology_video_model->delete_technology_video_by_id($id);
+        $technology = $this->Technology_video_model->delete_technology_video_by_id($id);
 
-        if ($product != false) {
+        if ($technology != false) {
+            $status = 200;
+            $response['success'] = 1;
+        }
+
+        return $this->output
+            ->set_status_header($status)
+            ->set_content_type('application/json')
+            ->set_output(json_encode($response));
+    }
+    public function destroy_question($id)
+    {
+
+        $status = 500;
+        $response['success'] = 0;
+
+        $faq_technology = $this->Faq_technology_model->delete_faq_technology_by_id($id);
+
+        if ($faq_technology != false) {
             $status = 200;
             $response['success'] = 1;
         }

@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <title>Aluinch</title>
+	<title><?php echo $title; ?></title>
+	<meta name="description" content="<?php echo $meta['description']; ?>">
+	<meta name="keywords" content="<?php echo $meta['keyword']; ?>">
+
+	<link rel="canonical" href="<?php echo current_url(); ?>" />
+	<meta property="og:locale" content="th_TH" />
+	<meta property="og:locale:alternate" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="<?php echo $og_twitter['title']; ?>" />
+	<meta property="og:description" content="<?php echo $og_twitter['description']; ?>" />
+	<meta property="og:url" content="<?php echo current_url(); ?>" />
+	<meta property="og:site_name" content="<?php echo base_url(); ?>" />
+	<meta property="og:image" content="<?php echo $og_twitter['image']; ?>" />
+
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="<?php echo $og_twitter['title']; ?>" />
+	<meta name="twitter:description" content="<?php echo $og_twitter['description']; ?>" />
+	<meta name="twitter:image" content="<?php echo $og_twitter['image']; ?>" />
 
     <!-- Fonts -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/font-awesome.min.css?v=001'); ?>">
@@ -50,7 +67,6 @@
     <?php } ?>
 </head>
 <body>
-
     <header>
         <div class="mobile-nav" data-toggle="collapse" data-target="#navi" aria-expanded="false" aria-controls="navi"><i class="fa fa-bars"></i></div>
         <nav>

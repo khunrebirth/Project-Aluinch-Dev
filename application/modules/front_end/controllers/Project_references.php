@@ -1,74 +1,101 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Project_references extends MX_Controller {
+class Project_references extends MX_Controller
+{
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /home.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-
-    public function __construct()
-    {
-        parent::__construct();
-
-        // Set Model
-        $this->load->model('project_model');
-        $this->load->model('image_project_model');
-    }
-
-
-    public function index()
+	public function __construct()
 	{
-	    // Set Data
-        $this->load->model('Contact_page_model');
-		$data['content'] = 'project_references';
-        $data['projects'] = $this->project_model->get_project_all();
+		parent::__construct();
 
-        $data['contact_info'] =$this->Contact_page_model->get_contact_pages_by_id(1);
+		/*
+		| -------------------------------------------------------------------------
+		| SET UTILITIES
+		| -------------------------------------------------------------------------
+		*/
+
+		// Model
+		$this->load->model('Project_model');
+		$this->load->model('Image_project_model');
+		$this->load->model('Contact_page_model');
+	}
+
+	public function index()
+	{
+		/*
+		| -------------------------------------------------------------------------
+		| HANDLE
+		| -------------------------------------------------------------------------
+		*/
+
+		$project_id = 1;
+		$page_content = $this->Project_page_model->get_project_pages_by_id($project_id);
+
+		/*
+		| -------------------------------------------------------------------------
+		| SET DATA
+		| -------------------------------------------------------------------------
+		*/
+
+		// Title Page
+		$data['title'] = $page_content->meta_tag_title;
+
+		// Meta Tag
+		$data['meta']['title'] = $page_content->meta_tag_title;
+		$data['meta']['description'] = $page_content->meta_tag_description;
+		$data['meta']['keyword'] = $page_content->meta_tag_keywords;
+
+		// OG & Twitter
+		$data['og_twitter']['title'] = $page_content->meta_tag_title;
+		$data['og_twitter']['description'] = $page_content->meta_tag_description;
+		// $data['og_twitter']['image'] = base_url('storage/uploads/images/contacts/'. $page_content->img_og_twitter);
+		$data['og_twitter']['image'] = '';
+
+		// Content
+		$data['content'] = 'project_references';
+
+		// Utilities
+		$data['projects'] = $this->Project_model->get_project_all();
+		$data['contact_info'] = $this->Contact_page_model->get_contact_pages_by_id(1);
+
+		/*
+		| -------------------------------------------------------------------------
+		| EXECUTE VIEWS
+		| -------------------------------------------------------------------------
+		*/
+
 		$this->load->view('app', $data);
 	}
 
 	public function ajax_get_project_by_id($id, $page = null)
-    {
-        $status = 500;
-        $response['success'] = 0;
+	{
+		$status = 500;
+		$response['success'] = 0;
 
-        $project = $this->project_model->get_project_by_id(hashids_decrypt($id));
-        $image_projects = $this->image_project_model->get_image_project_by_project_id(hashids_decrypt($id));
+		$project = $this->Project_model->get_project_by_id(hashids_decrypt($id));
+		$image_projects = $this->Image_project_model->get_image_project_by_project_id(hashids_decrypt($id));
 
-        if ($project != false && $image_projects != false) {
+		if ($project != false && $image_projects != false) {
 
-            $status = 200;
-            $response['success'] = 1;
+			$status = 200;
+			$response['success'] = 1;
 
-            $html_img_sync1 = '';
-            $html_img_sync2 = '';
+			$html_img_sync1 = '';
+			$html_img_sync2 = '';
 
-            foreach ($image_projects as $image_project) {
-                $html_img_sync1 .=
-                    '<div class="item">
+			foreach ($image_projects as $image_project) {
+				$html_img_sync1 .=
+					'<div class="item">
                         <img src="' . base_url("storage/uploads/images/projects/$image_project->title") . '" class="img-responsive"/>
                     </div>';
 
-                $html_img_sync2 .=
-                    '<div class="item">
+				$html_img_sync2 .=
+					'<div class="item">
                         <img src="' . base_url("storage/uploads/images/projects/$image_project->title") . '" class="img-responsive"/>
                     </div>';
-            }
+			}
 
-            $html_template = '
+			$html_template = '
                 <div class="warp-slide project-gal">
                     <div class="sync1" class="owl-carousel">
                         ' . $html_img_sync1 . '
@@ -86,8 +113,8 @@ class Project_references extends MX_Controller {
                  </div>
             ';
 
-            if ($page == 'home') {
-                $js_template = '
+			if ($page == 'home') {
+				$js_template = '
                     <script>
                         var $sync1 = $(".sync1"),
                             $sync2 = $(".sync2"),
@@ -133,8 +160,8 @@ class Project_references extends MX_Controller {
                         })
                     </script>
                 ';
-            } else {
-                $js_template = '
+			} else {
+				$js_template = '
                     <script>
                     $(document).ready(function() {
                         
@@ -234,16 +261,16 @@ class Project_references extends MX_Controller {
                     })
                 </script>
                 ';
-            }
+			}
 
 
-            $response['data'] = $html_template . $js_template;
-        }
+			$response['data'] = $html_template . $js_template;
+		}
 
-        // Send Response
-        return $this->output
-            ->set_status_header($status)
-            ->set_content_type('application/json')
-            ->set_output(json_encode($response));
-    }
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
 }

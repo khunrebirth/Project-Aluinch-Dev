@@ -54,7 +54,6 @@ class Product extends MX_Controller
     {
         $this->data['title'] = 'Manage Item: products';
         $this->data['content'] = 'product/add_product';
-
         $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
         $this->data['category_products'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
 
@@ -112,21 +111,17 @@ class Product extends MX_Controller
 
     public function edit($product_id)
     {
+		$products = $this->Product_model->get_product_by_id($product_id);
+		$group_product_id = $products->group_product_id;
+		$category_product_id = $products->category_product_id;
+
         $this->data['title'] = 'Products';
         $this->data['content'] = 'product/edit_product';
-
-        $products = $this->Product_model->get_product_by_id($product_id);
         $this->data['products'] = $products;
-
-        $group_product_id = $products->group_product_id;
-        $category_product_id = $products->category_product_id;
-
-
         $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
         $this->data['category_products'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
 
         $this->load->view('app', $this->data);
-
     }
 
     public function update($product_id)

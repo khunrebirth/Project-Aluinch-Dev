@@ -3,7 +3,7 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a
+                <div class="breadcrumb-item "><a
                             href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Products</a></div>
                 <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product
@@ -11,7 +11,7 @@
                 <div class="breadcrumb-item"><a
                             href="<?php echo base_url('backoffice/page/product/category/show/' . $group_product_id); ?>">Product
                         Categories: (Group - <?php echo $group_product_title; ?>)</a></div>
-                <div class="breadcrumb-item">Add Product Category</div>
+                <div class="breadcrumb-item active">Add Product Category</div>
             </div>
         </div>
 

@@ -8,14 +8,13 @@
 	<section class="section">
 		<div class="section-header">
 			<div class="section-header-breadcrumb">
-				<div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/list-products'); ?>">Page: Products</a></div>
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product Groups</a></div>
-				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/category/show/' . $group_products->id); ?>">Product Categories </a></div>
-				<div class="breadcrumb-item">Products :(Categories-<?php echo $category_products->title; ?>)</div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/category/show/' . $group_products->id); ?>">Product Categories</a></div>
+				<div class="breadcrumb-item active">Products :(Categories-<?php echo $category_products->title; ?>)</div>
 			</div>
 		</div>
-
 		<div class="section-body">
 			<div class="row">
 				<div class="col-12">
@@ -77,55 +76,56 @@
 			</div>
 		</div>
 	</section>
+</div>
 
-	<!-- JS Libraies -->
-	<script src="<?php echo base_url('resources/back_end/node_modules/datatables/media/js/jquery.dataTables.min.js'); ?>"></script>
-	<script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
-	<script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js'); ?>"></script>
+<!-- JS Libraies -->
+<script src="<?php echo base_url('resources/back_end/node_modules/datatables/media/js/jquery.dataTables.min.js'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
+<script src="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js'); ?>"></script>
 
-	<!-- Page Specific JS File -->
-	<script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
+<!-- Page Specific JS File -->
+<script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
 
-	<script>
-        function reload() {
-            setTimeout(function () {
-                location.reload()
-            }, 1 * 1500)
-        }
+<script>
+	function reload() {
+		setTimeout(function () {
+			location.reload()
+		}, 1 * 1500)
+	}
 
-        function deleteProduct(url) {
-            swal({
-                title: 'Are you sure ?',
-                icon: 'warning',
-                button: true,
-                dangerMode: true
-            })
-                .then((willDelete) => {
-                    if (willDelete) {
-                        $.ajax({
-                            type: 'POST',
-                            url: url,
-                            success: function (res) {
-                                swal({
-                                    title: 'Success',
-                                    icon: 'success',
-                                    button: 'Great!'
-                                })
+	function deleteProduct(url) {
+		swal({
+			title: 'Are you sure ?',
+			icon: 'warning',
+			button: true,
+			dangerMode: true
+		})
+			.then((willDelete) => {
+				if (willDelete) {
+					$.ajax({
+						type: 'POST',
+						url: url,
+						success: function (res) {
+							swal({
+								title: 'Success',
+								icon: 'success',
+								button: 'Great!'
+							})
 
-                                reload()
-                            },
-                            error: function (res) {
-                                swal({
-                                    title: 'Oops...',
-                                    text: 'Fail',
-                                    icon: 'error',
-                                    timer: '1500'
-                                })
-                            }
-                        })
-                    } else {
-                        swal('Cancel')
-                    }
-                })
-        }
-	</script>
+							reload()
+						},
+						error: function (res) {
+							swal({
+								title: 'Oops...',
+								text: 'Fail',
+								icon: 'error',
+								timer: '1500'
+							})
+						}
+					})
+				} else {
+					swal('Cancel')
+				}
+			})
+	}
+</script>

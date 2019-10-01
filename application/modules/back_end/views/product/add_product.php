@@ -6,6 +6,7 @@
                 <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
 				<div class="breadcrumb-item"><a href="#">Page: Products</a></div>
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product Groups</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/category/show/' . $group_products->id); ?>">Product Categories</a></div>
 				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/product/show/' . $group_products->id .'/'.$category_products->id); ?>">Product : (Categories - <?php echo $category_products->title; ?>)</a></div>
                 <div class="breadcrumb-item">Add Product </div>
             </div>

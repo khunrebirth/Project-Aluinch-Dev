@@ -40,7 +40,7 @@
                                     <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th>Title</th>
+                                        <th>Images</th>
                                         <th>Created at</th>
                                         <th>Action</th>
                                     </tr>
@@ -61,8 +61,8 @@
                                                             <i class="fas fa-cog"></i> Manage
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/group/edit/' .$image_gallery->id); ?>" ><i class="far fa-edit"></i> Edit</a>
-                                                            <a class="dropdown-item has-icon" onclick="deleteGroupProduct('<?php echo base_url('backoffice/page/product/group/destroy/' . $image_gallery->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+                                                            <a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/home/gallery/edit/' .$image_gallery->id); ?>" ><i class="far fa-edit"></i> Edit</a>
+                                                            <a class="dropdown-item has-icon" onclick="deleteGroupProduct('<?php echo base_url('backoffice/page/home/gallery/destroy/' . $image_gallery->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>

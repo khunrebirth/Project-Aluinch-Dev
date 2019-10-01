@@ -174,7 +174,6 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         $route['backoffice/page/technology/technology_videos/destroy/(:any)'] = "back_end/Technology_video/destroy/$1";
         $route['backoffice/page/technology/technology_videos/destroy_question/(:any)'] = "back_end/Technology_video/destroy_question/$1";
 
-
 		/*
 		| -------------------------------------------------------------------------
 		| Project

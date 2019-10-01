@@ -42,14 +42,12 @@ class Category_technology extends MX_Controller
     {
         $this->data['title'] = 'Technology';
         $this->data['content'] = 'category_technology/category_technology';
-        $this->data['technologies'] = $this->Category_technology_model->get_category_technology_and_count_all();
+        $this->data['technologies'] = $this->filter_data_category_technology($this->Category_technology_model->get_category_technology_all());
 
         $this->load->view('app', $this->data);
     }
 
-    public function show()
-    {
-    }
+    public function show() {}
 
     public function edit($category_technologies)
     {
@@ -62,11 +60,10 @@ class Category_technology extends MX_Controller
 
     public function update($category_technologies)
     {
-        $update_category_technology = $this->Category_technology_model->update_category_technology_by_id($category_technologies,
-            [
-                'title' => $this->input->post('title'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ]);
+        $update_category_technology = $this->Category_technology_model->update_category_technology_by_id($category_technologies, [
+			'title' => $this->input->post('title'),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
 
         if ($update_category_technology) {
             $this->session->set_flashdata('success', 'Edit Done');
@@ -77,4 +74,29 @@ class Category_technology extends MX_Controller
         redirect('backoffice/page/technology/category');
     }
 
+	private function filter_data_category_technology($category_technologies)
+	{
+		$data = [];
+
+		foreach ($category_technologies as $category_technology) {
+			$temp_data = [];
+			$temp_data['id'] = $category_technology->id;
+			$temp_data['title'] = $category_technology->title;
+			$temp_data['created_at'] = $category_technology->created_at;
+			$temp_data['counter'] = 0;
+
+			// Case: Video
+			if ($category_technology->id == 1 || $category_technology->id == 2) {
+				$temp_data['counter'] = $this->Category_technology_model->get_category_technology_count_type_video($category_technology->id)->counter;
+			}
+			// Case: Faq
+			else if ($category_technology->id == 3) {
+				$temp_data['counter'] = $this->Category_technology_model->get_category_technology_count_type_faq($category_technology->id)->counter;
+			}
+
+			$data[] = $temp_data;
+		}
+
+		return $data;
+	}
 }

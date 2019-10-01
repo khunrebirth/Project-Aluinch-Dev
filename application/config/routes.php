@@ -116,9 +116,6 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         | -------------------------------------------------------------------------
         */
 
-        $route['backoffice/page/home'] = 'back_end/Home';
-        $route['backoffice/page/home/content'] = 'back_end/Home/content';
-
         // Gallery
         $route['backoffice/page/home/gallery'] = 'back_end/Home/gallery';
         $route['backoffice/page/home/gallery/create'] = 'back_end/Home/gallery_create';
@@ -126,6 +123,7 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         $route["backoffice/page/home/gallery/edit/(:any)"] = "back_end/Home/gallery_edit/$1";
         $route["backoffice/page/home/gallery/update/(:any)"] = "back_end/Home/gallery_update/$1";
         $route["backoffice/page/home/gallery/destroy/(:any)"] = "back_end/Home/gallery_destroy/$1";
+
         /*
         | -------------------------------------------------------------------------
         | Product

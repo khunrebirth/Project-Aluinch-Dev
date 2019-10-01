@@ -4,10 +4,10 @@
         <div class="section-header">
             <div class="section-header-breadcrumb">
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+                    <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                     <div class="breadcrumb-item"><a href="#">Page: Home</a></div>
                     <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/home/gallery'); ?>">Image Gallery</a></div>
-                    <div class="breadcrumb-item ">Add Image Gallery</div>
+                    <div class="breadcrumb-item active">Add Image Gallery</div>
 
                 </div>
             </div>

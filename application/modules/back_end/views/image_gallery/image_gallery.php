@@ -8,9 +8,9 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+                <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Home</a></div>
-                <div class="breadcrumb-item">Image Gallery</div>
+                <div class="breadcrumb-item active">Image Gallery</div>
             </div>
         </div>
 

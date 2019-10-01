@@ -42,7 +42,10 @@ class Category_technology extends MX_Controller
     {
         $this->data['title'] = 'Technology';
         $this->data['content'] = 'category_technology/category_technology';
-        $this->data['technologies'] = $this->filter_data_category_technology($this->Category_technology_model->get_category_technology_all());
+
+        $this->data['technologies'] = $this->filter_data_category_technology(
+        	$this->Category_technology_model->get_category_technology_all()
+		);
 
         $this->load->view('app', $this->data);
     }

@@ -39,7 +39,6 @@ class Category_technology_model extends CI_Model {
 		return $query->num_rows() > 0 ? $query->row() : false;
 	}
 
-
     public function get_category_technology_by_id($id)
     {
         $query = $this->db->where('id', $id)->get('category_technologies');

@@ -133,6 +133,7 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         // Groups
         $route['backoffice/page/product/group'] = 'back_end/Group_product';
         $route['backoffice/page/product/group/create'] = 'back_end/Group_product/create';
+        $route['backoffice/page/product/group/store'] = 'back_end/Group_product/store';
         $route['backoffice/page/product/group/edit/(:any)'] = "back_end/Group_product/edit/$1";
         $route['backoffice/page/product/group/update/(:any)'] = "back_end/Group_product/update/$1";
         $route['backoffice/page/product/group/destroy/(:any)'] = "back_end/Group_product/destroy/$1";
@@ -140,6 +141,7 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         // Category
         $route['backoffice/page/product/category/show/(:any)'] = 'back_end/Category_product/show/$1';
         $route['backoffice/page/product/category/create/(:any)'] = 'back_end/Category_product/create/$1';
+        $route['backoffice/page/product/category/store'] = 'back_end/category_product/store';
         $route['backoffice/page/product/category/edit/(:any)'] = "back_end/Category_product/edit/$1";
         $route['backoffice/page/product/category/update/(:any)'] = "back_end/Category_product/update/$1";
         $route['backoffice/page/product/category/destroy/(:any)'] = "back_end/Category_product/destroy/$1";
@@ -147,6 +149,7 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         // Products
         $route['backoffice/page/product/product/show/(:any)/(:any)'] = 'back_end/Product/show/$1/$2';
         $route['backoffice/page/product/products/create/(:any)/(:any)'] = 'back_end/Product/create/$1/$2';
+        $route['backoffice/page/product/products/store'] = "back_end/Product/store";
         $route['backoffice/page/product/products/edit/(:any)'] = "back_end/Product/edit/$1";
         $route['backoffice/page/product/products/update/(:any)'] = "back_end/Product/update/$1";
         $route['backoffice/page/product/products/destroy/(:any)'] = "back_end/Product/destroy/$1";
@@ -169,10 +172,12 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         $route['backoffice/page/technology/technology_videos/show/(:any)'] = 'back_end/Technology_video/show/$1';
         $route['backoffice/page/technology/technology_videos/create/(:any)'] = 'back_end/Technology_video/create/$1';
         $route['backoffice/page/technology/technology_videos/store'] = 'back_end/Technology_video/store';
-        $route['backoffice/page/technology/technology_videos/edit/(:any)'] = "back_end/Technology_video/edit/$1";
+        $route['backoffice/page/technology/technology_videos/edit/(:any)/(:any)'] = "back_end/Technology_video/edit/$1/$2";
         $route['backoffice/page/technology/technology_videos/update/(:any)'] = "back_end/Technology_video/update/$1";
         $route['backoffice/page/technology/technology_videos/destroy/(:any)'] = "back_end/Technology_video/destroy/$1";
         $route['backoffice/page/technology/technology_videos/destroy_question/(:any)'] = "back_end/Technology_video/destroy_question/$1";
+
+
 
 		/*
 		| -------------------------------------------------------------------------

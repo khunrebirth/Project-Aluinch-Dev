@@ -20,7 +20,7 @@
                             <h4>Add Product</h4>
                         </div>
                         <div class="card-body">
-							<form action="<?php echo base_url('back_end/product/store/'); ?>" method="post" enctype="multipart/form-data">
+							<form action="<?php echo base_url('backoffice/page/product/products/store'); ?>" method="post" enctype="multipart/form-data">
 								<div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
 								<hr>
 								<div class="form-group row">
@@ -105,7 +105,7 @@
 								</div> -->
 								<div class="text-right">
 									<button type="submit" class="btn btn-primary">Save changes</button>
-									<a href="#" class="btn btn-secondary" >Close</a>
+									<a href="<?php echo base_url('backoffice/page/product/product/show/'.$group_products->id.'/'.$category_products->id); ?>" class="btn btn-secondary" >Close</a>
 								</div>
 							</form>
                         </div>

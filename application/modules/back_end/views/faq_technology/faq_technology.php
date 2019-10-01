@@ -25,7 +25,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Techonology :(Categories-<?php echo $category_technology->title; ?>)</h4>
+                            <h4>List of Questions :(Categories-<?php echo $category_technology->title; ?>)</h4>
                             <div class="card-header-action">
                                 <a href="<?php echo base_url('backoffice/page/technology/technology_videos/create/' . $category_technology->id); ?>"
                                    class="btn btn-primary">
@@ -39,9 +39,8 @@
                                     <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th>Title</th>
-                                        <th>Body</th>
-                                        <th>Description</th>
+                                        <th>Questions</th>
+                                        <th>Answers</th>
                                         <th>Created at</th>
                                         <th>Action</th>
                                     </tr>
@@ -49,13 +48,12 @@
                                     <tbody>
                                     <?php
                                     $counter = 1;
-                                    foreach ($technology_videos as $technology_video) { ?>
+                                    foreach ($feq_technologies as $feq_technology) { ?>
                                         <tr>
                                             <td class="text-center"><?php echo $counter++; ?></td>
-                                            <td><?php echo $technology_video->title; ?></td>
-                                            <td><?php echo $technology_video->body; ?></td>
-                                            <td><?php echo $technology_video->description; ?></td>
-                                            <td><?php echo $technology_video->created_at; ?></td>
+                                            <td><?php echo $feq_technology->ask; ?></td>
+                                            <td><?php echo $feq_technology->ans; ?></td>
+                                            <td><?php echo $feq_technology->created_at; ?></td>
                                             <td>
                                                 <div class="dropdown d-inline">
                                                     <button class="btn btn-info dropdown-toggle" type="button"
@@ -65,10 +63,10 @@
                                                     </button>
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item has-icon"
-                                                           href="<?php echo base_url('backoffice/page/technology/technology_videos/edit/' .$category_technology->id.'/'. $technology_video->id); ?>"><i
+                                                           href="<?php echo base_url('backoffice/page/technology/technology_videos/edit/' . $category_technology->id.'/'. $feq_technology->id); ?>"><i
                                                                     class="far fa-edit"></i> Edit</a>
                                                         <a class="dropdown-item has-icon"
-                                                           onclick="deleteProduct('<?php echo base_url('backoffice/page/technology/technology_videos/destroy/' . $technology_video->id); ?>')"><i
+                                                           onclick="deleteProduct('<?php echo base_url('backoffice/page/technology/technology_videos/destroy_question/' . $feq_technology->id); ?>')"><i
                                                                     class="far fa-trash-alt"></i> Delete</a>
                                                     </div>
                                                 </div>

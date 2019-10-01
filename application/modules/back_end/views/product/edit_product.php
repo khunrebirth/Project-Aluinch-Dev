@@ -105,8 +105,8 @@
 								</div> -->
 								<div class="text-right">
 									<button type="submit" onclick="return confirm('Are you sure?');" class="btn btn-primary">Save changes</button>
-									<a href="#" class="btn btn-secondary" >Close</a>
-								</div>
+                                    <a href="<?php echo base_url('backoffice/page/product/product/show/'.$group_products->id.'/'.$category_products->id); ?>" class="btn btn-secondary" >Close</a>
+                                </div>
 							</form>
                         </div>
                     </div>

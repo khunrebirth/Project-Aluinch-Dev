@@ -23,7 +23,7 @@
                             <h4>Add Product Category</h4>
                         </div>
                         <div class="card-body">
-                            <form action="<?php echo base_url('back_end/category_product/store/'); ?>" method="post"
+                            <form action="<?php echo base_url('backoffice/page/product/category/store'); ?>" method="post"
                                   enctype="multipart/form-data">
                                 <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Meta Tag</h6></div>
                                 <hr>
@@ -116,7 +116,7 @@
                                 </div>
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary">Save changes</button>
-                                    <a href="#" class="btn btn-secondary">Close</a>
+                                    <a href="<?php echo base_url('backoffice/page/product/category/show/'.$group_products->id); ?>" class="btn btn-secondary">Close</a>
                                 </div>
                             </form>
                         </div>

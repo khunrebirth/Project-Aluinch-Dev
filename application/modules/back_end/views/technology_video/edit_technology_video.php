@@ -6,8 +6,8 @@
                 <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Technologies</a></div>
                 <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/technology/category'); ?>">Category technology</a></div>
-                <div class="breadcrumb-item ">Technology</div>
-                <div class="breadcrumb-item active ">Edit Technology: (Category-<?php echo $category_technology->title ?>)</div>
+                <div class="breadcrumb-item "><a href="<?php echo base_url('backoffice/page/technology/technology_videos/show/'.$category_technology->id); ?>">Technology</a></div>
+                <div class="breadcrumb-item active ">Edit Technology: (Category-<?php echo $category_technology->title; ?>)</div>
             </div>
         </div>
 
@@ -19,7 +19,7 @@
                             <h4>Edit Technology</h4>
                         </div>
                         <div class="card-body">
-                            <form action="<?php echo base_url('backoffice/page/technology/technology_videos/update/'.$technology_videos->id); ?>" method="post"
+                            <form action="<?php echo base_url('backoffice/page/technology/technology_videos/update/'.$category_technology->id.'/'.$technology_videos->id); ?>" method="post"
                                   enctype="multipart/form-data">
                                 <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
                                 <hr>

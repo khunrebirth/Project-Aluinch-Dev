@@ -18,7 +18,7 @@
                             <h4>Add Product Group</h4>
                         </div>
                         <div class="card-body">
-							<form action="<?php echo base_url('back_end/group_product/store'); ?>" method="post">
+							<form action="<?php echo base_url('backoffice/page/product/group/store'); ?>" method="post">
 								<div class="form-group">
 									<label>* Title</label>
 									<input type="text" class="form-control" name="title" required>

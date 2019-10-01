@@ -21,12 +21,19 @@ class Technology_video extends MX_Controller
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
-    public function index() { }
+    public function index()
+    {
+    }
 
     public function show($category_technology_id)
     {
         $this->data['title'] = 'Technology';
-        $this->data['content'] = 'technology_video/technology_video';
+        if ($category_technology_id == 3) {
+            $this->data['content'] = 'faq_technology/faq_technology';
+        } else {
+            $this->data['content'] = 'technology_video/technology_video';
+        }
+
         $this->data['technology_videos'] = $this->Technology_video_model->get_technology_video_by_category_technology_id($category_technology_id);
         $this->data['category_technology'] = $this->Category_technology_model->get_category_technology_by_id($category_technology_id);
         $this->data['feq_technologies'] = $this->Faq_technology_model->get_faq_technology_by_category_technology_id($category_technology_id);
@@ -37,7 +44,12 @@ class Technology_video extends MX_Controller
     public function create($category_technology_id)
     {
         $this->data['title'] = 'Technology';
-        $this->data['content'] = 'technology_video/add_technology_video';
+        if ($category_technology_id == 3) {
+            $this->data['content'] = 'faq_technology/add_faq_technology';
+        } else {
+            $this->data['content'] = 'technology_video/add_technology_video';
+        }
+
 
         $this->data['technology_videos'] = $this->Technology_video_model->get_technology_video_by_category_technology_id($category_technology_id);
         $this->data['category_technology'] = $this->Category_technology_model->get_category_technology_by_id($category_technology_id);
@@ -47,7 +59,15 @@ class Technology_video extends MX_Controller
 
     public function store()
     {
-        if ($this->input->post('category_technology_id') < 3) {
+        if ($this->input->post('category_technology_id') == 3) {
+            $Questions = [
+                'ask' => $this->input->post('ask'),
+                'ans' => $this->input->post('ans'),
+                'category_technology_id' => $this->input->post('category_technology_id')
+            ];
+            $add_technology = $this->Faq_technology_model->insert_category_product($Questions);
+
+        } else {
             $data = [
                 'title' => $this->input->post('title'),
                 'body' => $this->input->post('body'),
@@ -57,18 +77,8 @@ class Technology_video extends MX_Controller
                 'img_cover' => $this->input->post('img_cover'),
                 'img_title_alt' => $this->input->post('img_title_alt'),
                 'category_technology_id' => $this->input->post('category_technology_id')
-
             ];
             $add_technology = $this->Technology_video_model->insert_category_product($data);
-        } else {
-            $Questions = [
-                'ask' => $this->input->post('ask'),
-                'ans' => $this->input->post('ans'),
-                'category_technology_id' => $this->input->post('category_technology_id')
-
-            ];
-
-            $add_technology = $this->Faq_technology_model->insert_category_product($Questions);
         }
         if ($add_technology) {
             $this->session->set_flashdata('success', 'Add Done');
@@ -80,36 +90,56 @@ class Technology_video extends MX_Controller
     }
 
 
-    public function edit($technologies_id)
+    public function edit($category_technology_id,$technology_id)
     {
         $this->data['title'] = 'Technology';
-        $this->data['content'] = 'technology_video/edit_technology_video';
+
+        if ($category_technology_id == 3) {
+            $this->data['content'] = 'faq_technology/edit_faq_technology';
+            $technology = $this->Faq_technology_model->get_faq_technology_by_id($technology_id);
+        } else {
+            $this->data['content'] = 'technology_video/edit_technology_video';
+            $technology = $this->Technology_video_model->get_technology_video_by_id($technology_id);
+        }
 
 
-        $technology_videos = $this->Technology_video_model->get_technology_video_by_id($technologies_id);
 
-        $this->data['category_technology'] = $this->Category_technology_model->get_category_technology_by_id($technology_videos->category_technology_id);
-        $this->data['technology_videos'] = $technology_videos;
+
+        $this->data['category_technology'] = $this->Category_technology_model->get_category_technology_by_id($technology->category_technology_id);
+
+        $this->data['technology_videos'] = $technology;
+        $this->data['faq_technology'] = $technology;
 
         $this->load->view('app', $this->data);
 
     }
 
-    public function update($product_id)
+    public function update($technology_id)
     {
-        $data = [
-            'title' => $this->input->post('title'),
-            'body' => $this->input->post('body'),
-            'description' => $this->input->post('description'),
-            'src' => $this->input->post('src'),
-            'short_src' => $this->input->post('short_src'),
-            'img_cover' => $this->input->post('img_cover'),
-            'img_title_alt' => $this->input->post('img_title_alt'),
-            'category_technology_id' => $this->input->post('category_technology_id'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
+        if ($this->input->post('category_technology_id') == 3) {
+            $Questions = [
+                'ask' => $this->input->post('ask'),
+                'ans' => $this->input->post('ans'),
+                'category_technology_id' => $this->input->post('category_technology_id')
+            ];
+            $edit_technology = $this->Faq_technology_model->update_faq_technology_by_id($technology_id,$Questions);
 
-        $edit_technology = $this->Technology_video_model->update_technology_video_by_id($product_id, $data);
+        } else {
+            $data = [
+                'title' => $this->input->post('title'),
+                'body' => $this->input->post('body'),
+                'description' => $this->input->post('description'),
+                'src' => $this->input->post('src'),
+                'short_src' => $this->input->post('short_src'),
+                'img_cover' => $this->input->post('img_cover'),
+                'img_title_alt' => $this->input->post('img_title_alt'),
+                'category_technology_id' => $this->input->post('category_technology_id'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ];
+
+            $edit_technology = $this->Technology_video_model->update_technology_video_by_id($technology_id,$data);
+        }
+
 
         if ($edit_technology) {
             $this->session->set_flashdata('success', 'Update Done');
@@ -138,6 +168,7 @@ class Technology_video extends MX_Controller
             ->set_content_type('application/json')
             ->set_output(json_encode($response));
     }
+
     public function destroy_question($id)
     {
 

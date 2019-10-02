@@ -47,8 +47,7 @@ class Contact extends MX_Controller
 		// OG & Twitter
 		$data['og_twitter']['title'] = $page_content->meta_tag_title;
 		$data['og_twitter']['description'] = $page_content->meta_tag_description;
-		// $data['og_twitter']['image'] = base_url('storage/uploads/images/contacts/'. $page_content->img_og_twitter);
-		$data['og_twitter']['image'] = '';
+		$data['og_twitter']['image'] = base_url('storage/uploads/images/contacts/'. $page_content->img_og_twitter);
 
 		// Content
 		$data['content'] = 'contact';
@@ -80,15 +79,21 @@ class Contact extends MX_Controller
 
 		if ($responseData) {
 
-			$data = [
+			$add_contact = $this->Contact_model->insert_contacts([
 				'name' => $this->input->post('name'),
 				'email' => $this->input->post('email'),
 				'phone' => $this->input->post('phone'),
 				'company' => $this->input->post('company'),
 				'message' => $this->input->post('detail'),
-			];
+			]);
 
-			$this->Contact_model->insert_contacts($data);
+			// TODO:: redirect to thank you page
+			if ($add_contact) {
+				$this->session->set_flashdata('success', 'Thank you for contact');
+			} else {
+				$this->session->set_flashdata('error', 'Something wrong');
+			}
+
 		} else {
 			$this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
 		}

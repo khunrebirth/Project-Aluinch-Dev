@@ -52,7 +52,15 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div class="contact-main">
+
+					<?php if ($this->session->flashdata('success')) { ?>
+						<div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
+					<?php } ?>
+					<?php if ($this->session->flashdata('error')) { ?>
+						<div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
+					<?php } ?>
+
+					<div class="contact-main">
                         <form action="<?php echo base_url('contact/send'); ?>" method="POST">
                             <input type="text" name="name" placeholder="Name:" required/>
                             <input type="text" name="email" placeholder="Email:" required/>

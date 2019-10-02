@@ -71,7 +71,7 @@
 									<label class="col-sm-3 col-form-label">Image Cover</label>
 									<div class="col-sm-9">
 										<div class="custom-file input-file-w-30">
-											<input type="file" class="custom-file-input" name="img_cover" value="<?php echo $category_product->img_cover; ?> onchange="PreviewImage(this, 'previewImgCover');">
+											<input type="file" class="custom-file-input" name="img_cover" value="<?php echo $category_product->img_cover; ?>" onchange="PreviewImage(this, 'previewImgCover');">
 											<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
 										</div>
 									</div>

@@ -48,10 +48,20 @@ class Contact_page extends MX_Controller
 
     public function edit_update($contact_page_id)
     {
+        $contact_page = $this->Contact_page_model->get_contact_pages_by_id($contact_page_id);
+
+        $img_og_twitter = $contact_page->img_og_twitter;
+
+        if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
+            $img_og_twitter = $this->do_upload_img_meta_contact('img_og_twitter');
+        }
+
+
         $update_contact_page = $this->Contact_page_model->update_contact_pages_by_id($contact_page_id, [
 			'meta_tag_title' => $this->input->post('meta_tag_title'),
 			'meta_tag_description' => $this->input->post('meta_tag_description'),
 			'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'img_og_twitter' => $img_og_twitter,
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -91,5 +101,23 @@ class Contact_page extends MX_Controller
         }
 
         redirect('backoffice/page/contact/info/1');
+    }
+    private function do_upload_img_meta_contact($filename)
+    {
+        $config['upload_path'] = './storage/uploads/images/contacts';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['encrypt_name'] = TRUE;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload($filename)) {
+            $error = array('error' => $this->upload->display_errors());
+
+            return false;
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+
+            return $data['upload_data']['file_name'];
+        }
     }
 }

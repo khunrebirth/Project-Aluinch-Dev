@@ -10,36 +10,39 @@ class Home extends MX_Controller
     {
         parent::__construct();
 
-		/*
-		| -------------------------------------------------------------------------
-		| MIDDLEWARE
-		| -------------------------------------------------------------------------
-		*/
+        /*
+        | -------------------------------------------------------------------------
+        | MIDDLEWARE
+        | -------------------------------------------------------------------------
+        */
 
         require_login('backoffice/login');
 
-		/*
-		| -------------------------------------------------------------------------
-		| SET UTILITIES
-		| -------------------------------------------------------------------------
-		*/
+        /*
+        | -------------------------------------------------------------------------
+        | SET UTILITIES
+        | -------------------------------------------------------------------------
+        */
 
-		// Model
+        // Model
         $this->load->model('User_model');
         $this->load->model('Group_product_model');
         $this->load->model('Category_product_model');
         $this->load->model('Image_gallery_model');
+        $this->load->model('Home_page_model');
 
-		/*
-		| -------------------------------------------------------------------------
-		| HANDLE
-		| -------------------------------------------------------------------------
-		*/
+        /*
+        | -------------------------------------------------------------------------
+        | HANDLE
+        | -------------------------------------------------------------------------
+        */
 
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
-    public function index() {}
+    public function index()
+    {
+    }
 
     public function gallery()
     {
@@ -58,6 +61,7 @@ class Home extends MX_Controller
         $this->load->view('app', $this->data);
 
     }
+
     public function gallery_store()
     {
         $img_cover = '';
@@ -67,9 +71,9 @@ class Home extends MX_Controller
         }
 
         $add_image_gallery = $this->Image_gallery_model->insert_image_gallery([
-			'title' => $img_cover,
-			'img_title_alt' => $this->input->post('img_title_alt')
-		]);
+            'title' => $img_cover,
+            'img_title_alt' => $this->input->post('img_title_alt')
+        ]);
 
         if ($add_image_gallery) {
             $this->session->set_flashdata('success', 'Add Done');
@@ -79,6 +83,7 @@ class Home extends MX_Controller
 
         redirect('backoffice/page/home/gallery');
     }
+
     public function gallery_edit($image_gallery_id)
     {
         $this->data['title'] = 'Homes';
@@ -99,11 +104,11 @@ class Home extends MX_Controller
         }
 
         $update_image_gallery = $this->Image_gallery_model->update_image_gallery_by_id($image_gallery_id, [
-			'title' => $img_cover,
-			'img_title_alt' => $this->input->post('img_title_alt'),
-			'updated_at' => date('Y-m-d H:i:s')
+            'title' => $img_cover,
+            'img_title_alt' => $this->input->post('img_title_alt'),
+            'updated_at' => date('Y-m-d H:i:s')
 
-		]);
+        ]);
 
         if ($update_image_gallery) {
             $this->session->set_flashdata('success', 'Add Done');
@@ -150,4 +155,62 @@ class Home extends MX_Controller
             return $data['upload_data']['file_name'];
         }
     }
+
+//    MetaTag
+    public function edit_content($contact_page_id)
+    {
+        $this->data['title'] = 'Page: Home - Content';
+        $this->data['content'] = 'home_page/edit_home_page';
+        $this->data['contact_page'] = $this->Home_page_model->get_home_pages_by_id($contact_page_id);
+
+        $this->load->view('app', $this->data);
+    }
+
+    public function update_content($contact_page_id)
+    {
+        $contact_page = $this->Home_page_model->get_home_pages_by_id($contact_page_id);
+
+        $img_og_twitter = $contact_page->img_og_twitter;
+
+        if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
+            $img_og_twitter = $this->do_upload_img_meta_home('img_og_twitter');
+        }
+
+
+        $update_home_page = $this->Home_page_model->update_home_pages_by_id($contact_page_id, [
+            'meta_tag_title' => $this->input->post('meta_tag_title'),
+            'meta_tag_description' => $this->input->post('meta_tag_description'),
+            'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'img_og_twitter' => $img_og_twitter,
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+
+        if ($update_home_page) {
+            $this->session->set_flashdata('success', 'Update Done');
+        } else {
+            $this->session->set_flashdata('error', 'Something wrong');
+        }
+
+        redirect('backoffice/page/home/content/1');
+    }
+
+    private function do_upload_img_meta_home($filename)
+    {
+        $config['upload_path'] = './storage/uploads/images/homes';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['encrypt_name'] = TRUE;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload($filename)) {
+            $error = array('error' => $this->upload->display_errors());
+
+            return false;
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+
+            return $data['upload_data']['file_name'];
+        }
+    }
+
 }

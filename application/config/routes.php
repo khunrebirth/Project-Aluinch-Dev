@@ -116,6 +116,10 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         | -------------------------------------------------------------------------
         */
 
+        // Content
+        $route['backoffice/page/home/content/(:any)'] = 'back_end/Home/edit_content/$1';
+        $route['backoffice/page/home/content/update/(:any)'] = 'back_end/Home/update_content/$1';
+
         // Gallery
         $route['backoffice/page/home/gallery'] = 'back_end/Home/gallery';
         $route['backoffice/page/home/gallery/create'] = 'back_end/Home/gallery_create';
@@ -184,6 +188,10 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
 		| Project
 		| -------------------------------------------------------------------------
 		*/
+        //	content
+        $route['backoffice/page/project/content/(:any)'] = 'back_end/Project/edit_content/$1';
+        $route['backoffice/page/project/content/update/(:any)'] = 'back_end/Project/update_content/$1';
+
 
         // Projects
         $route['backoffice/page/project/projects'] = 'back_end/Project';
@@ -200,7 +208,7 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
 
     	// Content
         $route['backoffice/page/contact/content/(:any)'] = 'back_end/Contact_page/edit_content/$1';
-		$route['backoffice/page/contact/content/update/(:any)'] = 'back_end/Contact_page/edit_update/$1';
+		$route['backoffice/page/contact/content/update/(:any)'] = 'back_end/Contact_page/update_content/$1';
 
         // Info
         $route['backoffice/page/contact/info/(:any)'] = 'back_end/Contact_page/edit_info/$1';

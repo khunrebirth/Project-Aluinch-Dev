@@ -46,7 +46,7 @@ class Contact_page extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function edit_update($contact_page_id)
+    public function update_content($contact_page_id)
     {
         $contact_page = $this->Contact_page_model->get_contact_pages_by_id($contact_page_id);
 

@@ -19,7 +19,7 @@
                             <h4>Edit Technology</h4>
                         </div>
                         <div class="card-body">
-                            <form action="<?php echo base_url('backoffice/page/technology/technology_videos/update/'.$category_technology->id.'/'.$technology_videos->id); ?>" method="post"
+                            <form action="<?php echo base_url('backoffice/page/technology/technology_videos/update/'.$technology_videos->id); ?>" method="post"
                                   enctype="multipart/form-data">
                                 <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
                                 <hr>

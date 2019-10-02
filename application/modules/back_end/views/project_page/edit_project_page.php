@@ -4,7 +4,7 @@
         <div class="section-header">
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Page: Contact</a></div>
+                <div class="breadcrumb-item"><a href="#">Page: Project</a></div>
                 <div class="breadcrumb-item active">Edit Content</div>
             </div>
         </div>

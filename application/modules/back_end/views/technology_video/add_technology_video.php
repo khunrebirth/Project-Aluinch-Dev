@@ -46,21 +46,21 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Src</label>
+                                    <label class="col-sm-3 col-form-label">* Src</label>
                                     <div class="col-sm-9">
-                                        <textarea type="text" class="form-control" name="src"></textarea>
+                                        <textarea type="text" class="form-control" name="src" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Short Src</label>
+                                    <label class="col-sm-3 col-form-label">* Short Src</label>
                                     <div class="col-sm-9">
-                                        <textarea type="text" class="form-control" name="short_src"></textarea>
+                                        <textarea type="text" class="form-control" name="short_src" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Image Cover</label>
+                                    <label class="col-sm-3 col-form-label">* Image Cover</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="img_cover">
+                                        <input type="text" class="form-control" name="img_cover" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">

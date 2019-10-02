@@ -35,7 +35,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-striped" id="table-1">
+                                <table class="table table-striped" id="ssmDataTable">
                                     <thead>
                                     <tr>
                                         <th class="text-center">#</th>
@@ -90,6 +90,14 @@
 
     <!-- Page Specific JS File -->
     <script src="<?php echo base_url('resources/back_end/assets/js/page/modules-datatables.js'); ?>"></script>
+
+    <script src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="<?php echo base_url('resources/back_end/assets/js/pdfmake.min.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/back_end/assets/js/vfs_fonts.js'); ?>"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
 
     <script>
         function reload() {

@@ -181,17 +181,15 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         $route['backoffice/page/technology/technology_videos/destroy/(:any)'] = "back_end/Technology_video/destroy/$1";
         $route['backoffice/page/technology/technology_videos/destroy_question/(:any)'] = "back_end/Technology_video/destroy_question/$1";
 
-
-
 		/*
 		| -------------------------------------------------------------------------
 		| Project
 		| -------------------------------------------------------------------------
 		*/
-        //	content
+
+		// Content
         $route['backoffice/page/project/content/(:any)'] = 'back_end/Project/edit_content/$1';
         $route['backoffice/page/project/content/update/(:any)'] = 'back_end/Project/update_content/$1';
-
 
         // Projects
         $route['backoffice/page/project/projects'] = 'back_end/Project';

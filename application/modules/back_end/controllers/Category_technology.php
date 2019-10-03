@@ -75,14 +75,8 @@ class Category_technology extends MX_Controller
             $img_og_twitter = $category_technology->img_og_twitter;
 
             if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
-                echo '1';
-                exit();
-//                $img_og_twitter = $this->do_upload_img_category_technology('img_og_twitter');
+                $img_og_twitter = $this->do_upload_img_category_technology('img_og_twitter');
 
-            }
-            else{
-                echo '2';
-                exit();
             }
 
             $data = [
@@ -101,7 +95,7 @@ class Category_technology extends MX_Controller
             ];
         }
 
-        $update_category_technology = $this->Category_technology_model->update_category_technology_by_id($category_technologies,$data);
+        $update_category_technology = $this->Category_technology_model->update_category_technology_by_id($category_technologies, $data);
 
 
         if ($update_category_technology) {
@@ -137,6 +131,7 @@ class Category_technology extends MX_Controller
 
         return $data;
     }
+
     private function do_upload_img_category_technology($filename)
     {
         $config['upload_path'] = './storage/uploads/images/technologies';

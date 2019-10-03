@@ -29,8 +29,8 @@ class Technology extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$id = 1;
-		$page_content = '';
+		$technology_id = 1;
+		$page_content = $this->Technology_video_model->get_technology_video_by_id($technology_id);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -49,15 +49,14 @@ class Technology extends MX_Controller
 		// OG & Twitter
 		$data['og_twitter']['title'] = $page_content->meta_tag_title;
 		$data['og_twitter']['description'] = $page_content->meta_tag_description;
-		// $data['og_twitter']['image'] = base_url('storage/uploads/images/contacts/'. $page_content->img_og_twitter);
-		$data['og_twitter']['image'] = '';
+		$data['og_twitter']['image'] = base_url('storage/uploads/images/technologies/'. $page_content->img_og_twitter);
 
 		// Content
 		$data['content'] = 'technology';
 
 		// Utilities
-		$data['category_technologies'] = $this->filter_data_products($this->category_technology_model->get_category_technology_all());
-		$data['technology_specific'] = $this->technology_video_model->get_technology_video_by_id(1);
+		$data['category_technologies'] = $this->filter_data_products($this->Category_technology_model->get_category_technology_all());
+		$data['technology_specific'] = $this->Technology_video_model->get_technology_video_by_id(1);
 		$data['technology_specific_category_slug'] = $data['technology_specific']->category_technology_slug;
 		$data['contact_info'] = $this->Contact_page_model->get_contact_pages_by_id(1);
 
@@ -78,8 +77,8 @@ class Technology extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$id = 1;
-		$page_content = '';
+		$technology_id = hashids_decrypt($technology_id);
+		$page_content = $this->Technology_video_model->get_technology_video_by_id($technology_id);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -98,15 +97,14 @@ class Technology extends MX_Controller
 		// OG & Twitter
 		$data['og_twitter']['title'] = $page_content->meta_tag_title;
 		$data['og_twitter']['description'] = $page_content->meta_tag_description;
-		// $data['og_twitter']['image'] = base_url('storage/uploads/images/contacts/'. $page_content->img_og_twitter);
-		$data['og_twitter']['image'] = '';
+		$data['og_twitter']['image'] = base_url('storage/uploads/images/technologies/'. $page_content->img_og_twitter);
 
 		// Content
 		$data['content'] = 'technology';
 
 		// Utilities
-		$data['category_technologies'] = $this->filter_data_products($this->category_technology_model->get_category_technology_all());
-		$data['technology_specific'] = $this->technology_video_model->get_technology_video_by_id(hashids_decrypt($technology_id));
+		$data['category_technologies'] = $this->filter_data_products($this->Category_technology_model->get_category_technology_all());
+		$data['technology_specific'] = $this->Technology_video_model->get_technology_video_by_id($technology_id);
 		$data['technology_specific_category_slug'] = $data['technology_specific']->category_technology_slug;
 
 		/*
@@ -126,8 +124,8 @@ class Technology extends MX_Controller
 		| -------------------------------------------------------------------------
 		*/
 
-		$id = 1;
-		$page_content = '';
+		$category_technology_id = hashids_decrypt($category_technology_id);
+		$page_content = $this->Category_technology_model->get_category_technology_by_id($category_technology_id);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -146,27 +144,26 @@ class Technology extends MX_Controller
 		// OG & Twitter
 		$data['og_twitter']['title'] = $page_content->meta_tag_title;
 		$data['og_twitter']['description'] = $page_content->meta_tag_description;
-		// $data['og_twitter']['image'] = base_url('storage/uploads/images/contacts/'. $page_content->img_og_twitter);
-		$data['og_twitter']['image'] = '';
+		$data['og_twitter']['image'] = base_url('storage/uploads/images/technologies/'. $page_content->img_og_twitter);
 
 		// Content
 		$data['content'] = 'technology';
 
 		// Utilities
-		$data['category_technologies'] = $this->filter_data_products($this->category_technology_model->get_category_technology_all());
+		$data['category_technologies'] = $this->filter_data_products($this->Category_technology_model->get_category_technology_all());
 
 		switch (rawurldecode($slug)) {
 			case 'faq-คำถามที่พบบอย':
 
-				$category_technology = $this->category_technology_model->get_category_technology_by_id(hashids_decrypt($category_technology_id));
+				$category_technology = $this->Category_technology_model->get_category_technology_by_id($category_technology_id);
 
-				$data['technology_specific']['faqs'] = $this->faq_technology_model->get_faq_technology_by_category_technology_id(hashids_decrypt($category_technology_id));
+				$data['technology_specific']['faqs'] = $this->Faq_technology_model->get_faq_technology_by_category_technology_id($category_technology_id);
 				$data['technology_specific']['category_technology_name'] = $category_technology->title;
 				$data['technology_specific_category_slug'] = $category_technology->slug;
 				break;
 
 			default:
-				$data['technology_specific'] = $this->technology_video_model->get_technology_video_by_category_technology_id(hashids_decrypt($category_technology_id));
+				$data['technology_specific'] = $this->Technology_video_model->get_technology_video_by_category_technology_id($category_technology_id);
 				$data['technology_specific_category_slug'] = $data['technology_specific']->category_technology_slug;;
 		}
 
@@ -192,9 +189,9 @@ class Technology extends MX_Controller
 			$CASE_OTHER = 0;
 
 			if ($category_technology->id != $CASE_FAQ) {
-				$technologies = $this->technology_video_model->get_technology_video_by_category_technology_id($category_technology->id);
+				$technologies = $this->Technology_video_model->get_technology_video_by_category_technology_id($category_technology->id);
 			} else {
-				$technologies = $this->faq_technology_model->get_faq_technology_by_category_technology_id($category_technology->id);
+				$technologies = $this->Faq_technology_model->get_faq_technology_by_category_technology_id($category_technology->id);
 			}
 
 			$data[$key_category_technology]['category_technology_id'] = $category_technology->id;

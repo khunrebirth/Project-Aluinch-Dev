@@ -19,7 +19,9 @@
                         </div>
                         <div class="card-body">
 							<form action="<?php echo base_url('backoffice/page/product/group/store'); ?>" method="post">
-								<div class="form-group">
+                                <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
+                                <hr>
+                                <div class="form-group">
 									<label>* Title</label>
 									<input type="text" class="form-control" name="title" required>
 								</div>

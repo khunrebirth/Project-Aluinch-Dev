@@ -134,6 +134,7 @@ class Category_product extends MX_Controller
     public function update($category_product_id)
     {
         $category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
+
         $img_cover = $category_product->img_cover;
         $img_cover_home = $category_product->img_cover_home;
         $img_og_twitter = $category_product->img_og_twitter;
@@ -149,6 +150,7 @@ class Category_product extends MX_Controller
         if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
             $img_og_twitter = $this->do_upload_img_product('img_og_twitter');
         }
+
         $update_category_product = $this->Category_product_model->update_category_product_by_id($category_product_id, [
 			'meta_tag_title' => $this->input->post('meta_tag_title'),
 			'meta_tag_description' => $this->input->post('meta_tag_description'),
@@ -162,7 +164,6 @@ class Category_product extends MX_Controller
 			'img_cover_home' => $img_cover_home,
 			'img_home_title_alt' => $this->input->post('img_home_title_alt'),
 			'updated_at' => date('Y-m-d H:i:s')
-
 		]);
 
         if ($update_category_product) {

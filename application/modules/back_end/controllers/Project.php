@@ -137,25 +137,7 @@ class Project extends MX_Controller
             ->set_content_type('application/json')
             ->set_output(json_encode($response));
     }
-    private function do_upload_img_project($filename)
-    {
-        $config['upload_path'] = './storage/uploads/images/projects';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['encrypt_name'] = TRUE;
 
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload($filename)) {
-            $error = array('error' => $this->upload->display_errors());
-
-            return false;
-        } else {
-            $data = array('upload_data' => $this->upload->data());
-
-            return $data['upload_data']['file_name'];
-        }
-    }
-    //    MetaTag
     public function edit_content($contact_page_id)
     {
         $this->data['title'] = 'Page: Home - Content';
@@ -172,9 +154,8 @@ class Project extends MX_Controller
         $img_og_twitter = $project->img_og_twitter;
 
         if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
-            $img_og_twitter = $this->do_upload_img_meta_project('img_og_twitter');
+            $img_og_twitter = $this->do_upload_img_project('img_og_twitter');
         }
-
 
         $update_project_page = $this->Project_page_model->update_project_pages_by_id($contact_page_id, [
             'meta_tag_title' => $this->input->post('meta_tag_title'),
@@ -193,7 +174,7 @@ class Project extends MX_Controller
         redirect('backoffice/page/project/content/1');
     }
 
-    private function do_upload_img_meta_project($filename)
+    private function do_upload_img_project($filename)
     {
         $config['upload_path'] = './storage/uploads/images/projects';
         $config['allowed_types'] = 'gif|jpg|png';

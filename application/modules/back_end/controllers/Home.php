@@ -40,9 +40,7 @@ class Home extends MX_Controller
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
-    public function index()
-    {
-    }
+    public function index() {}
 
     public function gallery()
     {
@@ -137,26 +135,6 @@ class Home extends MX_Controller
             ->set_output(json_encode($response));
     }
 
-    private function do_upload_img_gallery($filename)
-    {
-        $config['upload_path'] = './storage/uploads/images/portfolios';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['encrypt_name'] = TRUE;
-
-        $this->load->library('upload', $config);
-
-        if (!$this->upload->do_upload($filename)) {
-            $error = array('error' => $this->upload->display_errors());
-
-            return false;
-        } else {
-            $data = array('upload_data' => $this->upload->data());
-
-            return $data['upload_data']['file_name'];
-        }
-    }
-
-//    MetaTag
     public function edit_content($contact_page_id)
     {
         $this->data['title'] = 'Page: Home - Content';
@@ -176,7 +154,6 @@ class Home extends MX_Controller
             $img_og_twitter = $this->do_upload_img_meta_home('img_og_twitter');
         }
 
-
         $update_home_page = $this->Home_page_model->update_home_pages_by_id($contact_page_id, [
             'meta_tag_title' => $this->input->post('meta_tag_title'),
             'meta_tag_description' => $this->input->post('meta_tag_description'),
@@ -191,8 +168,27 @@ class Home extends MX_Controller
             $this->session->set_flashdata('error', 'Something wrong');
         }
 
-        redirect('backoffice/page/home/content/1');
+        redirect('backoffice/page/home/content/' . $contact_page_id);
     }
+
+	private function do_upload_img_gallery($filename)
+	{
+		$config['upload_path'] = './storage/uploads/images/portfolios';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload($filename)) {
+			$error = array('error' => $this->upload->display_errors());
+
+			return false;
+		} else {
+			$data = array('upload_data' => $this->upload->data());
+
+			return $data['upload_data']['file_name'];
+		}
+	}
 
     private function do_upload_img_meta_home($filename)
     {
@@ -212,5 +208,4 @@ class Home extends MX_Controller
             return $data['upload_data']['file_name'];
         }
     }
-
 }

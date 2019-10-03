@@ -50,17 +50,20 @@ class Category_technology extends MX_Controller
         $this->load->view('app', $this->data);
     }
 
-    public function show()
-    {
-    }
+    public function show() {}
 
     public function edit($category_technologies)
     {
-        if ($category_technologies == 3) {
+    	$CASE_VIDEO_TYPE_FIRST = 1;
+		$CASE_VIDEO_TYPE_SECOUND = 2;
+		$CASE_FAQ = 3;
+
+        if ($category_technologies == $CASE_FAQ) {
             $this->data['content'] = 'category_technology/edit_category_faq_technology';
         } else {
             $this->data['content'] = 'category_technology/edit_category_technology';
         }
+
         $this->data['title'] = 'Technology';
         $this->data['technologies'] = $this->Category_technology_model->get_category_technology_by_id($category_technologies);
 
@@ -69,14 +72,17 @@ class Category_technology extends MX_Controller
 
     public function update($category_technologies)
     {
-        if ($category_technologies == 3) {
+		$CASE_VIDEO_TYPE_FIRST = 1;
+		$CASE_VIDEO_TYPE_SECOUND = 2;
+		$CASE_FAQ = 3;
+
+        if ($category_technologies == $CASE_FAQ) {
 
             $category_technology = $this->Category_technology_model->get_category_technology_by_id($category_technologies);
             $img_og_twitter = $category_technology->img_og_twitter;
 
             if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
                 $img_og_twitter = $this->do_upload_img_category_technology('img_og_twitter');
-
             }
 
             $data = [
@@ -97,7 +103,6 @@ class Category_technology extends MX_Controller
 
         $update_category_technology = $this->Category_technology_model->update_category_technology_by_id($category_technologies, $data);
 
-
         if ($update_category_technology) {
             $this->session->set_flashdata('success', 'Edit Done');
         } else {
@@ -109,6 +114,10 @@ class Category_technology extends MX_Controller
 
     private function filter_data_category_technology($category_technologies)
     {
+		$CASE_VIDEO_TYPE_FIRST = 1;
+		$CASE_VIDEO_TYPE_SECOUND = 2;
+		$CASE_FAQ = 3;
+
         $data = [];
 
         foreach ($category_technologies as $category_technology) {
@@ -119,10 +128,10 @@ class Category_technology extends MX_Controller
             $temp_data['counter'] = 0;
 
             // Case: Video
-            if ($category_technology->id == 1 || $category_technology->id == 2) {
+            if ($category_technology->id == $CASE_VIDEO_TYPE_FIRST || $category_technology->id == $CASE_VIDEO_TYPE_SECOUND) {
                 $temp_data['counter'] = $this->Category_technology_model->get_category_technology_count_type_video($category_technology->id)->counter;
             } // Case: Faq
-            else if ($category_technology->id == 3) {
+            else if ($category_technology->id == $CASE_FAQ) {
                 $temp_data['counter'] = $this->Category_technology_model->get_category_technology_count_type_faq($category_technology->id)->counter;
             }
 

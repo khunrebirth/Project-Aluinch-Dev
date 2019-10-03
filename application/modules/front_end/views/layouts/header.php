@@ -84,16 +84,16 @@
                                     <li class="home-nav <?php if ($this->uri->segment(1) == "" || $this->uri->segment(1) == 'home') { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('home'); ?>">HOME</a></div>
                                     </li>
-                                    <li class="product-nav <?php if ($this->uri->segment(1) == "product") { echo 'active'; } ?>">
+                                    <li class="<?php if ($this->uri->segment(1) == "product") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('product'); ?>">PRODUCTS</a></div>
                                     </li>
-                                    <li class="technology-nav <?php if ($this->uri->segment(1) == "technology" || $this->uri->segment(1) == "category_technology-tips-and-tracks" || $this->uri->segment(1) == 'category_technology-faq') { echo 'active'; } ?>">
+                                    <li class="<?php if ($this->uri->segment(1) == "technology" || $this->uri->segment(1) == "category_technology-tips-and-tracks" || $this->uri->segment(1) == 'category_technology-faq') { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('technology'); ?>">TECHNOLOGY</a></div>
                                     </li>
-                                    <li class="project-nav <?php if ($this->uri->segment(1) == "project-references") { echo 'active'; } ?>">
+                                    <li class="<?php if ($this->uri->segment(1) == "project-references") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('project-references'); ?>">PROJECT REFERENCES</a></div>
                                     </li>
-                                    <li class="contact-nav <?php if ($this->uri->segment(1) == "contact") { echo 'active'; } ?>">
+                                    <li class="<?php if ($this->uri->segment(1) == "contact") { echo 'active'; } ?>">
                                         <div><a href="<?php echo base_url('contact'); ?>">CONTACT US</a></div>
                                     </li>
                                     <!-- Moblie -->

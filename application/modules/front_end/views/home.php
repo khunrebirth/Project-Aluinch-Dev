@@ -441,7 +441,7 @@
 
 			$.ajax({
 				type: 'GET',
-				url: urlGetProjectRef + '/' + $id + '/' + 'home',
+				url: urlGetProjectRef + '/' + $id + '/home',
 				success: function (res) {
 					$('#ajax-result').html(res.data);
 				},

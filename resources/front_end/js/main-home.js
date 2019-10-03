@@ -64,9 +64,9 @@ $(function () {
         }
         if (check_active_height > 10509 && check_active_height <= 15426) {
             $("nav ul li").removeClass("active");
-            $("nav li.category_technology-nav").addClass("active");
+            $("nav li.technology-nav").addClass("active");
             $(".nav-page li").removeClass("active");
-            $(".nav-page li.category_technology-nav").addClass("active");
+            $(".nav-page li.technology-nav").addClass("active");
         }
         if (check_active_height > 15427 && check_active_height <= 16742) {
             $("nav ul li").removeClass("active");
@@ -109,12 +109,12 @@ $(function () {
     });
 
 
-    $(".category_technology-nav").click(function () {
+    $(".technology-nav").click(function () {
         $("body,html").animate({
             scrollTop: 10511
         }, 500)
         $(".nav-page li").removeClass("active");
-        $(".nav-page li.category_technology-nav").addClass("active");
+        $(".nav-page li.technology-nav").addClass("active");
     });
 
     $(".project-nav").click(function () {

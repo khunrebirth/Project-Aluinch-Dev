@@ -107,7 +107,7 @@
 
 			$.ajax({
 				type: 'GET',
-				url: urlGetProjectRef + '/' + $id,
+				url: urlGetProjectRef + '/' + $id + '/other',
 				success: function (res) {
 					$('#ajax-result').html(res.data);
 				},

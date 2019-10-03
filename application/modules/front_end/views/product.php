@@ -1,3 +1,8 @@
+<!-- Push Custom Style -->
+<style>
+	body { overflow-x: hidden; }
+</style>
+
 <!-- Main Content -->
 <div id="section1">
 	<div class="warp-slide">

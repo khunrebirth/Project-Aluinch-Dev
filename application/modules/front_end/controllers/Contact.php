@@ -15,8 +15,8 @@ class Contact extends MX_Controller
 		*/
 
 		// Model
-		$this->load->model('Contact_model');
 		$this->load->model('Contact_page_model');
+		$this->load->model('Contact_model');
 	}
 
 	public function index()

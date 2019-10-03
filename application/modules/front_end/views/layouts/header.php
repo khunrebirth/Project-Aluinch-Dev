@@ -44,6 +44,7 @@
     <?php if ($this->uri->segment(1) != "home" && $this->uri->segment(1) != '') { ?>
         <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/index.css'); ?>">
         <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/main.css'); ?>">
+		<link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/custom-specific.css'); ?>">
     <?php } ?>
 
 
@@ -74,10 +75,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="navigation">
-                            <div class="logo">
-                                <img src="<?php echo base_url('storage/images/logo.png'); ?>" class="img-responsive hidden-xs"/>
-                                <img src="<?php echo base_url('storage/images/logo-mobile.png'); ?>" class="img-responsive visible-xs"/>
-                            </div>
+							<div class="logo">
+								<a href="<?php echo base_url('home'); ?>"><img src="<?php echo base_url('storage/images/logo.png'); ?>" class="img-responsive"></a>
+							</div>
                             <div id="navi" class="collapse navbar-collapse">
                                 <ul>
                                     <!-- Desktop -->

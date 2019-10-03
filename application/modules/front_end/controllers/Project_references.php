@@ -15,6 +15,7 @@ class Project_references extends MX_Controller
 		*/
 
 		// Model
+		$this->load->model('Project_page_model');
 		$this->load->model('Project_model');
 		$this->load->model('Image_project_model');
 		$this->load->model('Contact_page_model');
@@ -48,8 +49,7 @@ class Project_references extends MX_Controller
 		// OG & Twitter
 		$data['og_twitter']['title'] = $page_content->meta_tag_title;
 		$data['og_twitter']['description'] = $page_content->meta_tag_description;
-		// $data['og_twitter']['image'] = base_url('storage/uploads/images/contacts/'. $page_content->img_og_twitter);
-		$data['og_twitter']['image'] = '';
+		$data['og_twitter']['image'] = base_url('storage/uploads/images/projects/'. $page_content->img_og_twitter);
 
 		// Content
 		$data['content'] = 'project_references';

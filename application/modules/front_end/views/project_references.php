@@ -82,6 +82,12 @@
 
     <?php include 'layouts/contact.php'; ?>
 
+	<?php include 'layouts/model_term.php'; ?>
+
+	<?php include 'layouts/model_sitemap.php'; ?>
+
+	<?php include 'layouts/model_map.php'; ?>
+
     <!-- Push Custom Scripts -->
     <script>
         $(document).ready(function () {

@@ -124,9 +124,9 @@
                             <div class="contact-detail">Copyright © 2018 www.aluinch.com All Rights Reserved. SEO maintained by <a href="https://www.iseo.in.th" target="_blank" style="color:#f15e22;">iSEO.in.th</a>
                             </div>
                             <div class="contact-detail">
-                                <a href="javascript:void(0)">Sitemap</a>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#sitemap">Sitemap</a>
                                 <br/>
-                                <a href="javascript:void(0)">Terms and Conditions</a>
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#term">Terms and Conditions</a>
                             </div>
                             <div class="clearfix"></div>
                             <br/>
@@ -169,3 +169,9 @@
     </section>
 
     <div class="graphic-contact"><img src="<?php echo base_url('storage/images/contact/graphic.png'); ?>" class="img-responsive"/></div>
+
+	<?php include 'layouts/model_term.php'; ?>
+
+	<?php include 'layouts/model_sitemap.php'; ?>
+
+	<?php include 'layouts/model_map.php'; ?>

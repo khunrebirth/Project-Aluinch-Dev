@@ -1178,7 +1178,7 @@ h1 {
 
     #section6 > .bg-orange {
         width: 100%;
-        height: 100%;
+        height: 1040px;
         position: absolute;
         background: rgba(241, 94, 34, .9);
         left: 0;
@@ -2307,7 +2307,8 @@ h1 {
     #section6 {
         position: fixed;
         width: 100%;
-        height: 100%;
+        /*height: 100%;*/
+		height: 1135px;
         z-index: 1;
         font-size: 12px
     }

@@ -74,7 +74,7 @@
                         <div class="owl-gallery">
                             <?php foreach ($portfolios as $portfolio) { ?>
                                 <div class="item" data-hash="port<?php echo $portfolio->id; ?>">
-                                    <img src="<?php echo base_url('storage/uploads/images/portfolios/' . $portfolio->img); ?>" class="img-responsive" atl="<?php echo $portfolio->img_title_alt; ?>"/>
+                                    <img src="<?php echo base_url('storage/uploads/images/portfolios/' . $portfolio->title); ?>" class="img-responsive" atl="<?php echo $portfolio->img_title_alt; ?>"/>
                                 </div>
                             <?php } ?>
                         </div>
@@ -85,7 +85,7 @@
                             <div class="owl-gallery-thumb">
                                 <?php foreach ($portfolios as $portfolio) { ?>
                                     <div class="item" data-hash="port<?php echo $portfolio->id; ?>">
-                                        <img src="<?php echo base_url('storage/uploads/images/portfolios/' . $portfolio->img); ?>" class="img-responsive" atl="<?php echo $portfolio->img_title_alt; ?>"/>
+                                        <img src="<?php echo base_url('storage/uploads/images/portfolios/' . $portfolio->title); ?>" class="img-responsive" atl="<?php echo $portfolio->img_title_alt; ?>"/>
                                     </div>
                                 <?php } ?>
                             </div>
@@ -266,6 +266,16 @@
     </div>
     <!-- end section5 -->
 
+	<!-- project-ref -->
+	<div class="warp-light-box">
+		<div class="bg-black"></div>
+		<div class="main-lb">
+			<div class="close-lb"><img src="<?php echo base_url('storage/images/product/close.png'); ?>"/></div>
+			<div id="ajax-result"></div>
+		</div>
+	</div>
+	<!-- end project-ref -->
+
     <!-- section6: Contact -->
     <div id="section6" data-0="top:50%;opacity:0;" data-14000="opacity:0;top:500px;" data-14500="opacity:1;" data-16000="top:10%;" data-18000="top:-50%;">
         <div class="bg" data-2000="opacity:1;"></div>
@@ -356,7 +366,7 @@
                         <a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>" /></a>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="copy mobile">Sitemap | Terms and Conditions</div>
+					<div class="copy mobile"><span data-toggle="modal" data-target="#sitemap">Sitemap</span> | <span class="term-lb" data-toggle="modal" data-target="#term">Terms and Conditions</span></div>
                     <div class="copy mobile">Copyright © 2015 www.aluinch.com All Rights Reserved. SEO maintained by iSEO.in.th</div>
                     <div class="clearfix"></div>
                     <div class="copy-line mobile"></div>
@@ -365,109 +375,15 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <!-- <div id="map-canvas" class="map-google"></div> -->
+		<!-- <div id="map-canvas" class="map-google"></div> -->
     </div>
     <!-- end section6 -->
 
-    <!-- term -->
-<!--    <div class="modal fade" id="term" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-<!--        <div class="modal-dialog" role="document">-->
-<!--            <div class="modal-content">-->
-<!--                <div class="modal-header" style="border:none">-->
-<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--                <div class="modal-body sitemap-main">-->
-<!--                    <h5>TERMS AND CONDITIONS</h5>-->
-<!--                    <div class="line"></div>-->
-<!--                    บริษัท อลูมิเนชั่น จำกัด ขอทำความเข้าใจเกี่ยวกับการใช้บริการเว็บไซด์ของบริษัท-->
-<!--                    โดยบริษัทมีนโยบายในการคุ้มครองข้อมูลส่วนบุคคล ของผู้ใช้บริการทุกท่านโดยสังเขปดังนี้-->
-<!--                    <br/>-->
-<!--                    <br/>-->
-<!--                    <strong>อมูลส่วนบุคคล (Privacy notes)</strong>-->
-<!--                    <br/> ข้อมูลส่วนบุคคลที่ท่านได้ให้ไว้ หรือใช้ผ่านการประมวลผลของเครื่องคอมพิวเตอร์-->
-<!--                    ที่ควบคุมการทำงานของเว็บไซด์ของบริษัท ทั้งหมดนั้น ท่านยอมรับ และตกลงว่าเป็นสิทธิ และกรรมสิทธิ์ของบริษัท-->
-<!--                    ซึ่งบริษัทจะให้ความคุ้มครองความลับ ดังกล่าวอย่างดี ที่สุด อย่างไรก็ตาม-->
-<!--                    เพื่อความปลอดภัยในข้อมูลส่วนบุคคลของท่าน ท่านควรปฏิบัติตามข้อกำหนด และเงื่อนไขในการใช้เว็บไซต์-->
-<!--                    ของบริษัทอย่างเคร่งครัด ในกรณีที่ข้อมูลส่วนบุคคลดังกล่าวถูกจารกรรมโดยวิธีการทางอิเล็กทรอนิกส์ (hack)-->
-<!--                    หรือสูญหาย เสียหายอันเนื่องจากเหตุสุดวิสัย หรือไม่ว่ากรณีใดๆ-->
-<!--                    ถือเป็นความเสี่ยงภัยของท่านเองที่จะต้องระมัดระวังใน การใช้ข้อมูลของท่าน บริษัทขอสงวนสิทธิในการปฏิเสธ-->
-<!--                    ความรับผิดจากเหตุดังกล่าวทั้งหมด-->
-<!--                    <br/>-->
-<!--                    <br/>-->
-<!--                    <strong>ลิขสิทธิ์ตามกฎหมาย (Copyrights)</strong>-->
-<!--                    <br/> บริษัทขอแจ้งให้ผู้เข้าชมเว็บไซต์โดยทั่วไปทราบว่า ข้อความ ภาพ เสียง เนื้อหาใดๆ ทั้งหมดบนเว็บไซต์-->
-<!--                    รวมทั้งเครื่องหมาย การค้า-->
-<!--                    ชื่อทางการค้าที่ปรากฏบนเว็บไซต์ของบริษัทเป็นทรัพย์สินทางปัญญาของบริษัทโดยชอบทำตามกฏหมาย หากบุคคลใด-->
-<!--                    ลอกเลียน ปลอมแปลง ทำซ้ำ ดัดแปลง เผยแพร่ต่อสาธารณชน จำหน่าย มีไว้ให้เช่าหรือกระทำการใดๆ ในลักษณะที่เป็น-->
-<!--                    การแสวงหาประโยชน์ทางการค้าหรือประโยชน์โดยมิชอบ ไม่ว่าโดยประการใดๆ กับทรัพย์สินทางปัญญาของบริษัทดังกล่าง-->
-<!--                    ข้างต้น โดยที่ทางบริษัทไม่ได้อนุญาตอย่างถูกต้องตามระเบียบของบริษัท-->
-<!--                    ทางบริษัทจะดำเนินการตามกฏหมายกับผู้ละเมิดสิทธิ ดังกล่าวโดยทันที-->
-<!--                    <br/>-->
-<!--                    <br/>-->
-<!--                    <strong>การจำกัดความรับผิด</strong>-->
-<!--                    <br/> ผู้เข้าชมเว็บไซต์ทราบและยอมรับว่า การใช้บริการผ่านเว็บไซด์ของบริษัท-->
-<!--                    ถือเป็นความเสี่ยงของผู้ใช้บริการแต่เพียงผู้เดียว บริษัทจะไม่รับ ผิดชอบต่อความเสียหายใดๆ-->
-<!--                    ไม่ว่าโดยทางตรงหรือทางอ้อม ความเสียหายอันเป็นผลต่อเนื่อง ความเสียหายเชิงลงโทษ การสูญเสีย กำไร ผลประโยชน์-->
-<!--                    ข้อมูล หรือความสูญเสียอื่นๆ ทั้งที่จับต้องได้และที่ไม่สามารถจับต้องได้-->
-<!--                    อันเป็นผลอันเนื่องมาจากการใช้บริการ การส่งต่อข้อมูล หรือการเข้ามาใช้บริการโดยไม่ได้รับอนุญาต-->
-<!--                    หรือเนื้อหาสาระใดๆ ที่เกี่ยวข้องกับบริการ-->
-<!--                    <div class="clearfix"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-    <!-- end term -->
+	<?php include 'layouts/model_term.php'; ?>
 
-    <!-- sitemap -->
-<!--    <div class="modal fade" id="sitemap" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-<!--        <div class="modal-dialog" role="document">-->
-<!--            <div class="modal-content">-->
-<!--                <div class="modal-header" style="border:none">-->
-<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--                <div class="modal-body sitemap-main">-->
-<!--                    <h5>SITEMAP</h5>-->
-<!--                    <div class="line"></div>-->
-<!--                    <ul>-->
-<!--                        <li><a href="https://www.aluinch.com/">HOME</a></li>-->
-<!--                        <li><a href="https://www.aluinch.com/product">PRODUCTS</a></li>-->
-<!--                        <li><a href="https://www.aluinch.com/technology">TECHNOLOGY</a></li>-->
-<!--                        <li class="box"><a href="https://www.aluinch.com/project-references">PROJECT REFERENCES</a></li>-->
-<!--                        <li class="box"><a href="https://www.aluinch.com/contact-us">CONTACT US</a></li>-->
-<!--                    </ul>-->
-<!--                    <div class="clearfix"></div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+	<?php include 'layouts/model_sitemap.php'; ?>
 
-    <!-- map -->
-<!--    <div class="modal fade" id="map" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
-<!--        <div class="modal-dialog" role="document">-->
-<!--            <div class="modal-content">-->
-<!--                <div class="modal-header" style="border:none">-->
-<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--                <div class="modal-body">-->
-<!--                    <img src="--><?php //echo base_url('storage/images/viewmap.jpg'); ?><!--" class="img-responsive"/>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-    <!-- end map -->
-
-    <!-- project-ref -->
-    <div class="warp-light-box">
-        <div class="bg-black"></div>
-        <div class="main-lb">
-            <div class="close-lb"><img src="<?php echo base_url('storage/images/product/close.png'); ?>"/></div>
-            <div id="ajax-result"></div>
-        </div>
-    </div>
-    <!-- end project-ref -->
+	<?php include 'layouts/model_map.php'; ?>
 
     <!-- Push Scripts -->
     <script src="<?php echo base_url('resources/front_end/js/owl.carousel.min.js'); ?>"></script>
@@ -534,6 +450,5 @@
                     }
                 })
             })
-
         });
     </script>

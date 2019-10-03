@@ -76,9 +76,9 @@ $(function () {
         }
         if (check_active_height > 16743) {
             $("nav ul li").removeClass("active");
-            $("nav li.contact_page-nav").addClass("active");
+            $("nav li.contact-nav").addClass("active");
             $(".nav-page li").removeClass("active");
-            $(".nav-page li.contact_page-nav").addClass("active");
+            $(".nav-page li.contact-nav").addClass("active");
         }
 ///////////////////////////////////////////   active //////////////////////////////////////////////
     }
@@ -125,12 +125,12 @@ $(function () {
         $(".nav-page li.project-nav").addClass("active");
     });
 
-    $(".contact_page-nav").click(function () {
+    $(".contact-nav").click(function () {
         $("body,html").animate({
             scrollTop: 16744
         }, 500)
         $(".nav-page li").removeClass("active");
-        $(".nav-page li.contact_page-nav").addClass("active");
+        $(".nav-page li.contact-nav").addClass("active");
     });
 
 
@@ -169,7 +169,7 @@ $(function () {
             scrollTop: 0
         }, 500);
     });
-    $(".contact_page-nav-mobile").click(function () {
+    $(".contact-nav-mobile").click(function () {
         $("html,body").animate({
             scrollTop: 6593
         }, 500);
@@ -212,7 +212,7 @@ $(function () {
     });
 
     $('.owl-product1').owlCarousel({
-        loop: true,
+        // loop: true,
         autoplay: false,
         autoplayTimeout: 4000,
         autoplaySpeed: 800,
@@ -248,7 +248,7 @@ $(function () {
     })
 
     $('.owl-product2').owlCarousel({
-        loop: true,
+        // loop: true,
         autoplay: false,
         autoplayTimeout: 4000,
         autoplaySpeed: 800,
@@ -284,7 +284,7 @@ $(function () {
     })
 
     $('.owl-techno1').owlCarousel({
-        loop: true,
+        // loop: true,
         autoplay: false,
         autoplayTimeout: 4000,
         autoplaySpeed: 800,
@@ -320,7 +320,7 @@ $(function () {
     })
 
     $('.owl-techno2').owlCarousel({
-        loop: true,
+        // loop: true,
         autoplay: false,
         autoplayTimeout: 4000,
         autoplaySpeed: 800,
@@ -368,7 +368,7 @@ $(function () {
     })
 
     $('.owl-project').owlCarousel({
-        loop: true,
+        // loop: true,
         autoplay: false,
         autoplayTimeout: 4000,
         autoplaySpeed: 800,

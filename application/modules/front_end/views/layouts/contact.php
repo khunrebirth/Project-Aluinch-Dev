@@ -58,8 +58,8 @@
                     </div>
                     <div class="media box-c desktop">
                         <div class="media-body">
-                            <br /> Sitemap
-                            <br />Terms and Conditions
+							<br/><span class="term-lb" data-toggle="modal" data-target="#sitemap">Sitemap</span>
+							<br/><span class="term-lb" data-toggle="modal" data-target="#term">Terms and Conditions</span>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                     <a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>" /></a>
                 </div>
                 <div class="clearfix"></div>
-                <div class="copy mobile">Sitemap | Terms and Conditions</div>
+				<div class="copy mobile"><span data-toggle="modal" data-target="#sitemap">Sitemap</span> | <span class="term-lb" data-toggle="modal" data-target="#term">Terms and Conditions</span></div>
                 <div class="copy mobile">Copyright © 2015 www.aluinch.com All Rights Reserved. SEO maintained by iSEO.in.th</div>
                 <div class="clearfix"></div>
                 <div class="copy-line mobile"></div>

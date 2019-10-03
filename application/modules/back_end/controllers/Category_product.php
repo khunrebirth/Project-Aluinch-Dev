@@ -65,6 +65,7 @@ class Category_product extends MX_Controller
     {
         $img_cover = '';
         $img_cover_home = '';
+        $img_og_twitter = '';
 
         if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
             $img_cover = $this->do_upload_img_product('img_cover');
@@ -73,11 +74,15 @@ class Category_product extends MX_Controller
         if (isset($_FILES['img_cover_home']) && $_FILES['img_cover_home']['name'] != '') {
             $img_cover_home = $this->do_upload_img_product('img_cover_home');
         }
+        if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
+            $img_og_twitter = $this->do_upload_img_product('img_og_twitter');
+        }
 
         $add_category_product = $this->Category_product_model->insert_category_product([
 			'meta_tag_title' => $this->input->post('meta_tag_title'),
 			'meta_tag_description' => $this->input->post('meta_tag_description'),
 			'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'img_og_twitter' => $img_og_twitter,
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
 			'group_product_id' => $this->input->post('group_product_id'),
@@ -131,6 +136,7 @@ class Category_product extends MX_Controller
         $category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
         $img_cover = $category_product->img_cover;
         $img_cover_home = $category_product->img_cover_home;
+        $img_og_twitter = $category_product->img_og_twitter;
 
         if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
             $img_cover = $this->do_upload_img_product('img_cover');
@@ -140,10 +146,14 @@ class Category_product extends MX_Controller
             $img_cover_home = $this->do_upload_img_product('img_cover_home');
         }
 
+        if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
+            $img_og_twitter = $this->do_upload_img_product('img_og_twitter');
+        }
         $update_category_product = $this->Category_product_model->update_category_product_by_id($category_product_id, [
 			'meta_tag_title' => $this->input->post('meta_tag_title'),
 			'meta_tag_description' => $this->input->post('meta_tag_description'),
 			'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'img_og_twitter' => $img_og_twitter,
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
 			'group_product_id' => $this->input->post('group_product_id'),

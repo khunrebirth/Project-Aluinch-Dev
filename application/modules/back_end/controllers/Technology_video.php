@@ -60,7 +60,16 @@ class Technology_video extends MX_Controller
     public function store()
     {
         if ($this->input->post('category_technology_id') == 3) {
+
+            $img_og_twitter = '';
+            if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
+                $img_og_twitter = $this->do_upload_img_technology('img_og_twitter');
+            }
             $Questions = [
+                'meta_tag_title' => $this->input->post('meta_tag_title'),
+                'meta_tag_description' => $this->input->post('meta_tag_description'),
+                'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+                'img_og_twitter' => $img_og_twitter,
                 'ask' => $this->input->post('ask'),
                 'ans' => $this->input->post('ans'),
                 'category_technology_id' => $this->input->post('category_technology_id')
@@ -68,7 +77,15 @@ class Technology_video extends MX_Controller
             $add_technology = $this->Faq_technology_model->insert_category_product($Questions);
 
         } else {
+            $img_og_twitter = '';
+            if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
+                $img_og_twitter = $this->do_upload_img_technology('img_og_twitter');
+            }
             $data = [
+                'meta_tag_title' => $this->input->post('meta_tag_title'),
+                'meta_tag_description' => $this->input->post('meta_tag_description'),
+                'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+                'img_og_twitter' => $img_og_twitter,
                 'title' => $this->input->post('title'),
                 'body' => $this->input->post('body'),
                 'description' => $this->input->post('description'),
@@ -90,7 +107,7 @@ class Technology_video extends MX_Controller
     }
 
 
-    public function edit($category_technology_id,$technology_id)
+    public function edit($category_technology_id, $technology_id)
     {
         $this->data['title'] = 'Technology';
 
@@ -101,8 +118,6 @@ class Technology_video extends MX_Controller
             $this->data['content'] = 'technology_video/edit_technology_video';
             $technology = $this->Technology_video_model->get_technology_video_by_id($technology_id);
         }
-
-
 
 
         $this->data['category_technology'] = $this->Category_technology_model->get_category_technology_by_id($technology->category_technology_id);
@@ -116,16 +131,28 @@ class Technology_video extends MX_Controller
 
     public function update($technology_id)
     {
+
         if ($this->input->post('category_technology_id') == 3) {
             $Questions = [
                 'ask' => $this->input->post('ask'),
                 'ans' => $this->input->post('ans'),
                 'category_technology_id' => $this->input->post('category_technology_id')
             ];
-            $edit_technology = $this->Faq_technology_model->update_faq_technology_by_id($technology_id,$Questions);
+            $edit_technology = $this->Faq_technology_model->update_faq_technology_by_id($technology_id, $Questions);
 
         } else {
+            $technology_video = $this->Technology_video_model->get_technology_video_by_id($technology_id);
+            $img_og_twitter = $technology_video->img_og_twitter;
+
+
+            if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
+                $img_og_twitter = $this->do_upload_img_technology('img_og_twitter');
+            }
             $data = [
+                'meta_tag_title' => $this->input->post('meta_tag_title'),
+                'meta_tag_description' => $this->input->post('meta_tag_description'),
+                'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+                'img_og_twitter' => $img_og_twitter,
                 'title' => $this->input->post('title'),
                 'body' => $this->input->post('body'),
                 'description' => $this->input->post('description'),
@@ -137,7 +164,7 @@ class Technology_video extends MX_Controller
                 'updated_at' => date('Y-m-d H:i:s')
             ];
 
-            $edit_technology = $this->Technology_video_model->update_technology_video_by_id($technology_id,$data);
+            $edit_technology = $this->Technology_video_model->update_technology_video_by_id($technology_id, $data);
         }
 
 
@@ -186,5 +213,24 @@ class Technology_video extends MX_Controller
             ->set_status_header($status)
             ->set_content_type('application/json')
             ->set_output(json_encode($response));
+    }
+
+    private function do_upload_img_technology($filename)
+    {
+        $config['upload_path'] = './storage/uploads/images/technologies';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['encrypt_name'] = TRUE;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload($filename)) {
+            $error = array('error' => $this->upload->display_errors());
+
+            return false;
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+
+            return $data['upload_data']['file_name'];
+        }
     }
 }

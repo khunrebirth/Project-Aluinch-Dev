@@ -25,7 +25,7 @@ class Group_product_model extends CI_Model
 
 		$query = $this->db->query($sql);
 
-		return $query->num_rows() > 0 ? $query->result() : false;
+		return $query->num_rows() > 0 ? $query->result() : [];
 	}
 
     public function get_group_product_by_id($id)

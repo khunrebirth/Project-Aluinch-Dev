@@ -77,7 +77,7 @@
 
 							<?php } else if ($category_technology['category_technology_slug'] == 'faq-คำถามที่พบบอย') { ?>
 								<a href="<?php echo base_url('technology/' . $category_technology['category_technology_slug'] . '/' . hashids_encrypt($category_technology['category_technology_id'])); ?>"><?php echo $category_technology['category_technology_name']; ?></a>
-							<? } ?>
+							<?php } ?>
 
 						</li>
 					<?php } ?>

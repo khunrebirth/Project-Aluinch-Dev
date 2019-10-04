@@ -6,7 +6,7 @@ class Project_model extends CI_Model {
     {
         $query = $this->db->get('projects');
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_project_by_id($id)

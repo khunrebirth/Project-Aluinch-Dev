@@ -38,7 +38,7 @@ class Technology_video_model extends CI_Model {
 
         $query = $this->db->get();
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function insert_category_product($data)

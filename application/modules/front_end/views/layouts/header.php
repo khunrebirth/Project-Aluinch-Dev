@@ -8,6 +8,9 @@
 	<meta name="description" content="<?php echo $meta['description']; ?>">
 	<meta name="keywords" content="<?php echo $meta['keyword']; ?>">
 
+    <!-- Icon -->
+    <link rel="shortcut icon" href="<?php echo base_url('storage/images/favicon.png');?>">
+
 	<link rel="canonical" href="<?php echo current_url(); ?>" />
 	<meta property="og:locale" content="th_TH" />
 	<meta property="og:locale:alternate" content="en_US" />
@@ -23,6 +26,8 @@
 	<meta name="twitter:description" content="<?php echo $og_twitter['description']; ?>" />
 	<meta name="twitter:image" content="<?php echo $og_twitter['image']; ?>" />
 
+
+    <!-- Fonts -->
     <!-- Fonts -->
     <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/font-awesome.min.css?v=001'); ?>">
 

@@ -48,41 +48,43 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $counter = 1;
-                                    foreach ($technology_videos as $technology_video) { ?>
-                                        <tr>
-                                            <td class="text-center"><?php echo $counter++; ?></td>
-                                            <td><?php echo $technology_video->title; ?></td>
-                                            <td><?php echo $technology_video->body; ?></td>
-                                            <td><?php echo $technology_video->description; ?></td>
-                                            <td><?php echo $technology_video->created_at; ?></td>
-                                            <td>
-                                                <div class="dropdown d-inline">
-                                                    <button class="btn btn-info dropdown-toggle" type="button"
-                                                            id="dropdownMenuButton2" data-toggle="dropdown"
-                                                            aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fas fa-cog"></i> Manage
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item has-icon"
-                                                           href="<?php echo base_url('backoffice/page/technology/technology_videos/edit/' .$category_technology->id.'/'. $technology_video->id); ?>"><i
-                                                                    class="far fa-edit"></i> Edit</a>
-                                                        <a class="dropdown-item has-icon"
-                                                           onclick="deleteProduct('<?php echo base_url('backoffice/page/technology/technology_videos/destroy/' . $technology_video->id); ?>')"><i
-                                                                    class="far fa-trash-alt"></i> Delete</a>
+                                    if (count($technology_videos) > 0) {
+                                        $counter = 1;
+                                        foreach ($technology_videos as $technology_video) { ?>
+                                            <tr>
+                                                <td class="text-center"><?php echo $counter++; ?></td>
+                                                <td><?php echo $technology_video->title; ?></td>
+                                                <td><?php echo $technology_video->body; ?></td>
+                                                <td><?php echo $technology_video->description; ?></td>
+                                                <td><?php echo $technology_video->created_at; ?></td>
+                                                <td>
+                                                    <div class="dropdown d-inline">
+                                                        <button class="btn btn-info dropdown-toggle" type="button"
+                                                                id="dropdownMenuButton2" data-toggle="dropdown"
+                                                                aria-haspopup="true" aria-expanded="false">
+                                                            <i class="fas fa-cog"></i> Manage
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item has-icon"
+                                                               href="<?php echo base_url('backoffice/page/technology/technology_videos/edit/' . $category_technology->id . '/' . $technology_video->id); ?>"><i
+                                                                        class="far fa-edit"></i> Edit</a>
+                                                            <a class="dropdown-item has-icon"
+                                                               onclick="deleteProduct('<?php echo base_url('backoffice/page/technology/technology_videos/destroy/' . $technology_video->id); ?>')"><i
+                                                                        class="far fa-trash-alt"></i> Delete</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
+                                                </td>
+                                            </tr>
+                                        <?php }
+                                    } ?>
                                     </tbody>
                                 </table>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- JS Libraies -->

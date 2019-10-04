@@ -45,7 +45,7 @@ class Product_model extends CI_Model
 
         $query = $this->db->query($sql);
 
-        return $query->num_rows() > 0 ? $query->result() : null;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function insert_product($data)

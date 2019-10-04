@@ -66,6 +66,9 @@ class Category_product extends MX_Controller
         $img_cover = '';
         $img_cover_home = '';
         $img_og_twitter = '';
+        $file_catalog = '';
+		$file_price = '';
+		$file_cad = '';
 
         if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
             $img_cover = $this->do_upload_img_product('img_cover');
@@ -74,9 +77,22 @@ class Category_product extends MX_Controller
         if (isset($_FILES['img_cover_home']) && $_FILES['img_cover_home']['name'] != '') {
             $img_cover_home = $this->do_upload_img_product('img_cover_home');
         }
+
         if (isset($_FILES['img_og_twitter']) && $_FILES['img_og_twitter']['name'] != '') {
             $img_og_twitter = $this->do_upload_img_product('img_og_twitter');
         }
+
+		if (isset($_FILES['file_catalog']) && $_FILES['file_catalog']['name'] != '') {
+			$file_catalog = $this->do_upload_pdf_product('file_catalog');
+		}
+
+		if (isset($_FILES['file_price']) && $_FILES['file_price']['name'] != '') {
+			$file_price = $this->do_upload_pdf_product('file_price');
+		}
+
+		if (isset($_FILES['file_cad']) && $_FILES['file_cad']['name'] != '') {
+			$file_cad = $this->do_upload_pdf_product('file_cad');
+		}
 
         $add_category_product = $this->Category_product_model->insert_category_product([
 			'meta_tag_title' => $this->input->post('meta_tag_title'),
@@ -89,7 +105,10 @@ class Category_product extends MX_Controller
 			'img_cover' => $img_cover,
 			'img_title_alt' => $this->input->post('img_title_alt'),
 			'img_cover_home' => $img_cover_home,
-			'img_home_title_alt' => $this->input->post('img_home_title_alt')
+			'img_home_title_alt' => $this->input->post('img_home_title_alt'),
+			'file_catalog' => $file_catalog,
+			'file_price' => $file_price,
+			'file_cad' => $file_cad
 		]);
 
         if ($add_category_product) {
@@ -138,6 +157,9 @@ class Category_product extends MX_Controller
         $img_cover = $category_product->img_cover;
         $img_cover_home = $category_product->img_cover_home;
         $img_og_twitter = $category_product->img_og_twitter;
+		$file_catalog = $category_product->file_catalog;
+		$file_price = $category_product->file_price;
+		$file_cad = $category_product->file_cad;
 
         if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
             $img_cover = $this->do_upload_img_product('img_cover');
@@ -151,6 +173,18 @@ class Category_product extends MX_Controller
             $img_og_twitter = $this->do_upload_img_product('img_og_twitter');
         }
 
+		if (isset($_FILES['file_catalog']) && $_FILES['file_catalog']['name'] != '') {
+			$file_catalog = $this->do_upload_pdf_product('file_catalog');
+		}
+
+		if (isset($_FILES['file_price']) && $_FILES['file_price']['name'] != '') {
+			$file_price = $this->do_upload_pdf_product('file_price');
+		}
+
+		if (isset($_FILES['file_cad']) && $_FILES['file_cad']['name'] != '') {
+			$file_cad = $this->do_upload_pdf_product('file_cad');
+		}
+
         $update_category_product = $this->Category_product_model->update_category_product_by_id($category_product_id, [
 			'meta_tag_title' => $this->input->post('meta_tag_title'),
 			'meta_tag_description' => $this->input->post('meta_tag_description'),
@@ -163,6 +197,9 @@ class Category_product extends MX_Controller
 			'img_title_alt' => $this->input->post('img_title_alt'),
 			'img_cover_home' => $img_cover_home,
 			'img_home_title_alt' => $this->input->post('img_home_title_alt'),
+			'file_catalog' => $file_catalog,
+			'file_price' => $file_price,
+			'file_cad' => $file_cad,
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
@@ -213,4 +250,23 @@ class Category_product extends MX_Controller
             return $data['upload_data']['file_name'];
         }
     }
+
+	public function do_upload_pdf_product($filename)
+	{
+		$config['upload_path'] = './storage/uploads/files/products';
+		$config['allowed_types'] = 'pdf';
+		$config['encrypt_name'] = TRUE;
+
+		$this->load->library('upload', $config);
+
+		if (!$this->upload->do_upload($filename)) {
+			$error = array('error' => $this->upload->display_errors());
+
+			return false;
+		} else {
+			$data = array('upload_data' => $this->upload->data());
+
+			return $data['upload_data']['file_name'];
+		}
+	}
 }

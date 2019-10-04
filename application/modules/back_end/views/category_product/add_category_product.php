@@ -115,6 +115,34 @@
                                         <input type="text" class="form-control" name="img_title_alt">
                                     </div>
                                 </div>
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">File Catalog</label>
+									<div class="col-sm-9">
+										<div class="custom-file input-file-w-30">
+											<input type="file" class="custom-file-input" name="file_catalog" onchange="PreviewFile(this, 'previewFileCatalog');">
+											<label class="custom-file-label" id="previewFileCatalog">Choose file (.pdf)</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">File Price</label>
+									<div class="col-sm-9">
+										<div class="custom-file input-file-w-30">
+											<input type="file" class="custom-file-input" name="file_price" onchange="PreviewFile(this, 'previewFilePrice');">
+											<label class="custom-file-label" id="previewFilePrice">Choose file (.pdf)</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">File CAD</label>
+									<div class="col-sm-9">
+										<div class="custom-file input-file-w-30">
+											<input type="file" class="custom-file-input" name="file_cad" onchange="PreviewFile(this, 'previewFileCad');">
+											<label class="custom-file-label" id="previewFileCad">Choose file (.pdf)</label>
+										</div>
+									</div>
+								</div>
+								<hr>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Preview</label>
                                     <div class="col-sm-9">
@@ -164,4 +192,8 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+	function PreviewFile(input, previewFile) {
+        $("#" + previewFile).html(input.files[0].name)
+	}
 </script>

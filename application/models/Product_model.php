@@ -66,4 +66,16 @@ class Product_model extends CI_Model
     {
         return $this->db->where('id', $id)->delete('products');
     }
+
+	public function get_count_product_image($product_id)
+	{
+		$sql = "
+			SELECT COUNT(*) as count_picture FROM image_products
+			WHERE product_id = $product_id
+		";
+
+		$query = $this->db->query($sql);
+
+		return $query->num_rows() > 0 ? $query->row() : false;
+	}
 }

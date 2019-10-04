@@ -158,6 +158,14 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         $route['backoffice/page/product/products/update/(:any)'] = "back_end/Product/update/$1";
         $route['backoffice/page/product/products/destroy/(:any)'] = "back_end/Product/destroy/$1";
 
+        // List Product Pictures
+		$route['backoffice/page/product/list-product-pictures/(:any)'] = 'back_end/Product/list_product_pictures/$1';
+		$route['backoffice/page/product/list-product-pictures/create/(:any)'] = 'back_end/Product/product_pictures_create/$1';
+		$route['backoffice/page/product/list-product-pictures/store/(:any)'] = 'back_end/Product/product_pictures_store/$1';
+		$route['backoffice/page/product/list-product-pictures/edit/(:any)/(:any)'] = 'back_end/Product/product_pictures_edit/$1/$2';
+		$route['backoffice/page/product/list-product-pictures/update/(:any)'] = 'back_end/Product/product_pictures_update/$1';
+		$route['backoffice/page/product/list-product-pictures/destroy/(:any)'] = 'back_end/Product/product_pictures_destroy/$1';
+
         /*
         | -------------------------------------------------------------------------
         | Technology

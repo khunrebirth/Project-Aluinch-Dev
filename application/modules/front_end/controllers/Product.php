@@ -106,6 +106,7 @@ class Product extends MX_Controller
 		// Utilities
 		$data['list_products'] = $this->filter_data_products($this->Group_product_model->get_group_product_all());
 		$data['list_products_specific'] = $this->filter_data_products_specific($category_product->group_product_id, $category_product->id);
+		$data['contact_info'] = $this->Contact_page_model->get_contact_pages_by_id(1);
 
 		/*
 		| -------------------------------------------------------------------------

@@ -106,6 +106,7 @@ class Technology extends MX_Controller
 		$data['category_technologies'] = $this->filter_data_products($this->Category_technology_model->get_category_technology_all());
 		$data['technology_specific'] = $this->Technology_video_model->get_technology_video_by_id($technology_id);
 		$data['technology_specific_category_slug'] = $data['technology_specific']->category_technology_slug;
+		$data['contact_info'] = $this->Contact_page_model->get_contact_pages_by_id(1);
 
 		/*
 		| -------------------------------------------------------------------------
@@ -151,6 +152,7 @@ class Technology extends MX_Controller
 
 		// Utilities
 		$data['category_technologies'] = $this->filter_data_products($this->Category_technology_model->get_category_technology_all());
+		$data['contact_info'] = $this->Contact_page_model->get_contact_pages_by_id(1);
 
 		switch (rawurldecode($slug)) {
 			case 'faq-คำถามที่พบบอย':

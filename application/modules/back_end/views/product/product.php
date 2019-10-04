@@ -39,6 +39,7 @@
 										<th>Product Group</th>
 										<th>Product Category</th>
 										<th>Created at</th>
+										<th>Pictures</th>
 										<th>Action</th>
 									</tr>
 									</thead>
@@ -48,20 +49,21 @@
 										foreach ($products as $product) { ?>
 											<tr>
 												<td class="text-center"><?php echo $counter++; ?></td>
-												<td><?php echo $product->title; ?></td>
-												<td><?php echo $product->description_en; ?></td>
-												<td><?php echo $product->description_th; ?></td>
-												<td><?php echo $product->group_product_name; ?></td>
-												<td><?php echo $product->category_product_name; ?></td>
-												<td><?php echo $product->created_at; ?></td>
+												<td><?php echo $product['title']; ?></td>
+												<td><?php echo $product['description_en']; ?></td>
+												<td><?php echo $product['description_th']; ?></td>
+												<td><?php echo $product['group_product_name']; ?></td>
+												<td><?php echo $product['category_product_name']; ?></td>
+												<td><?php echo $product['created_at']; ?></td>
+												<td><a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/list-product-pictures/' . $product['id']); ?>"><i class="fas fa-pencil-ruler"></i> Pictures (<?php echo $product['count']['count_picture']; ?>)</a></td>
 												<td>
 													<div class="dropdown d-inline">
 														<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 															<i class="fas fa-cog"></i> Manage
 														</button>
 														<div class="dropdown-menu">
-															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/products/edit/' . $product->id); ?>"><i class="far fa-edit"></i> Edit</a>
-															<a class="dropdown-item has-icon" onclick="deleteProduct('<?php echo base_url('backoffice/page/product/products/destroy/' . $product->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
+															<a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/products/edit/' . $product['id']); ?>"><i class="far fa-edit"></i> Edit</a>
+															<a class="dropdown-item has-icon" onclick="deleteProduct('<?php echo base_url('backoffice/page/product/products/destroy/' . $product['id']); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
 														</div>
 													</div>
 												</td>

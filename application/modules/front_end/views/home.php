@@ -176,7 +176,7 @@
 			<h2>PRESENTATION VDO วีดีโอแนะนำการใช้งาน</h2>
 			<div class="owl-techno1">
 				<?php foreach ($technologies['vdos'] as $vdo) {?>
-					<div class="item vdo-lightbox" data-val="pZFeraPjm4s">
+					<div class="item vdo-lightbox" data-val="<?php echo $vdo->short_src; ?>">
 						<img src="<?php echo $vdo->img_cover; ?>" alt="<?php echo $vdo->img_title_alt; ?>"/>
 <!--                            <img src="--><?php //echo base_url('storage/uploads/images/category_technology' . $vdo->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
 						<div class="vdo-box">
@@ -261,7 +261,7 @@
 				<?php } ?>
 			</div>
 		</div>
-		<div class="see-more"><a href="https://www.aluinch.com/project-references">SEE MORE</a></div>
+		<div class="see-more"><a href="<?php echo base_url('project-references'); ?>">SEE MORE</a></div>
 	</div>
 </div>
 <!-- end section5 -->

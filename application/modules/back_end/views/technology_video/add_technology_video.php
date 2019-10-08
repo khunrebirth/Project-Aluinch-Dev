@@ -42,8 +42,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Keywords</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" name="meta_tag_keywords"
-                                               value="">
+                                        <input type="text" class="form-control" name="meta_tag_keywords" value="">
                                     </div>
                                 </div>
                                 <!-- OG & Twitter -->
@@ -70,8 +69,7 @@
                                         Upload</label>
                                     <div class="col-sm-9">
                                         <div class="custom-file input-file-w-30">
-                                            <input type="file" name="img_og_twitter" class="custom-file-input"
-                                                   onchange="PreviewImage(this, 'previewMetaOgImg');">
+                                            <input type="file" name="img_og_twitter" class="custom-file-input" onchange="PreviewImage(this, 'previewMetaOgImg');">
                                             <label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
                                         </div>
                                     </div>
@@ -97,19 +95,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Src</label>
+                                    <label class="col-sm-3 col-form-label">* Src สำหรับใส่ link youtube</label>
                                     <div class="col-sm-9">
                                         <textarea type="text" class="form-control" name="src" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Short Src</label>
+                                    <label class="col-sm-3 col-form-label">* Short Src สำหรับใส่ link สั้น youtube</label>
                                     <div class="col-sm-9">
                                         <textarea type="text" class="form-control" name="short_src" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">* Image Cover</label>
+                                    <label class="col-sm-3 col-form-label">* Image Cover สำหรับใส่ url ภาพปก Youtube <span>(ตัวอย่าง: https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg)</span></label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="img_cover" required>
                                     </div>

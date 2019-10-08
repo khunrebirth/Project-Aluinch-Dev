@@ -8,7 +8,9 @@ class Project_model extends CI_Model {
 			SELECT  projects.id,
 					projects.title, 
 					projects.description, 
-					projects.created_at, 
+					projects.created_at,
+					projects.img_cover,
+					projects.img_title_alt,
 					COUNT(image_projects.id) as counter 
 			FROM projects
 			LEFT JOIN image_projects ON projects.id = image_projects.project_id

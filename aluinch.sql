@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 27, 2019 at 09:18 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Host: localhost
+-- Generation Time: Oct 08, 2019 at 11:02 AM
+-- Server version: 5.7.17-log
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -44,7 +42,8 @@ CREATE TABLE `category_products` (
   `meta_tag_title` text NOT NULL,
   `meta_tag_description` text NOT NULL,
   `meta_tag_keywords` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `img_og_twitter` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -53,33 +52,32 @@ CREATE TABLE `category_products` (
 -- Dumping data for table `category_products`
 --
 
-INSERT INTO `category_products` (`id`, `title`, `slug`, `description`, `img_cover_home`, `img_home_title_alt`, `img_cover`, `img_title_alt`, `group_product_id`, `file_catalog`, `file_price`, `file_cad`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'T-SERIES', 't-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.', '02af9a.jpg', '', '0121df.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
-(2, 'F-SERIES', 'f-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm.', '282986.jpg', '', 'a24779.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
-(3, 'V-SERIES', 'v-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm.', 'c4093f.jpg', '', '471fcb.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:29:46', NULL, NULL),
-(4, 'D-SERIES', 'd-series', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm.', '6d2aff.jpg', '', 'ff80c3.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:31:56', NULL, NULL),
-(5, 'S-SERIES', 's-series', 'ระบบอลูมิเนียมขัวเชิงผนัง แบบเรียบและสกรู ออน', '', '', '8ce542.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:33:07', '2019-08-15 10:27:38', NULL),
-(6, 'X-SERIES', 'x-series', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง ขนาด 16 x 35 mm.', '', '', '45c20e.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:33:07', NULL, NULL),
-(7, 'M-SERIES', 'm-series', 'ระบบอลูมิเนียมประตู บานเลื่อนและบานสวิง ขนาด 9 x 35 mm.', '', '', '6b7b90.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
-(8, 'E-SERIES', 'e-series', 'ระบบอลูมิเนียมบานเลื่อนประตูหน้าต่าง ( กันน้ำ )', '', '', 'de801d.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
-(9, 'C-SERIES', 'c-series', 'ระบบอลูมิเนียมหน้าต่างบานกระทุ้ง ( กันน้ำ )', '', '', 'a7b71e.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
-(10, 'B-SERIES', 'b-series', 'ระบบอลูมิเนียมบานเฟี้ยมประตูและหน้าต่าง ( กันน้ำ )', '', '', 'ae7132.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
-(11, 'I-SERIES', 'i-series', 'ระบบอลูมิเนียมบานหน้าตู้ บานเลื่อนและบานเปิด', '', '', '91af97.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
-(12, 'J-SERIES', 'j-series', 'ระบบอลูมิเนียมใช้ตกแต่งประตูหรือผนัง', '', '', 'b9c5bc.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
-(13, 'L-SERIES', 'l-series', 'ระบบอลูมิเนียมบานเกร็ดสำหรับบังลมและรับลม', '', '', '780c33.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
-(14, 'ACCESSORIES', 'accessories', 'ยางอัด ยางหุ้ม ยางปิดร่อง ยางสันบานประตูและขนสักหลาด', '', '', 'af734c.jpg', '', 1, '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
-(15, 'Lever Handle', 'lever-handle', 'มือจับก้านโยกสำหรับประตูไม้และอลูมิเนียม', 'ce998a.jpg', '', '6cab71.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
-(16, 'Pull Handle with Lock', 'pull-handle-with-lock', 'มือจับกระบองยาวมีล็อคในตัว', '949bfd.jpg', '', '71cd55.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
-(18, 'Pull Handle', 'pull-handle', 'มือจับกระบองใช้สำหรับประตูทุกชนิด', '', '', '698931.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:45:11', NULL, NULL),
-(19, 'Flush Handle', 'flush-handle', 'มือจับแบบฝังใช้กับประตูบานไม้และอลูมิเนียม', 'ce265b.jpg', '', '4096f9.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
-(20, 'Mortise Lock', 'mortise-lock', 'เสื้อกุญแจสำหรับประตูบานไม้และอลูมิเนียม', '', '', '29bcf9.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
-(21, 'Knob Cylinder', 'knob-cylinder', 'ไส้กุญแจสำหรับประตูทุกชนิด', '', '', '35deea.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
-(22, 'Door Closer', 'door-closer', 'โช้คอัพประตูใช้ได้กับประตูทุกชนิด', '', '', '92a66f.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
-(23, 'Patch Fitting', 'patch-fitting', 'อุปกรณ์สำหรับประตูกระจกบานเปลือย', '', '', 'ea2aab.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:47:53', NULL, NULL),
-(24, 'Rolling Set', 'rolling-set', 'รางเลื่อนและล้อเลื่อนใช้กับประตูทุกชนิด', '', '', 'ef0b60.jpg', '', 2, '', '', '', '', '', '', '2019-08-14 10:48:20', NULL, NULL),
-(25, 'ANODIZED', 'anodized', 'สีชุบเน้นความสวยงามของเฟรม', '', '', '0acae9.jpg', '', 3, '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL),
-(26, 'POWDER COATED', 'powder-coated', 'สีพ่น ทนการขีดข่วนสีคงทนตามการใช้งาน', '', '', '688945.jpg', '', 3, '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL),
-(28, 'test', '', 'test', 'a38ac25624f46b9de23a5dfcee1dcd46.jpg', 'test', 'd83cf92e78ac364aeabc2ee7e74e16d4.jpg', 'test', 1, '', '', '', '', '', '', '2019-09-27 06:10:05', '2019-09-27 06:10:15', NULL);
+INSERT INTO `category_products` (`id`, `title`, `slug`, `description`, `img_cover_home`, `img_home_title_alt`, `img_cover`, `img_title_alt`, `group_product_id`, `file_catalog`, `file_price`, `file_cad`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'T-SERIES', 't-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.', '02af9a.jpg', '', '0121df.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:29:14', '2019-10-03 06:51:54', NULL),
+(2, 'F-SERIES', 'f-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm.', '282986.jpg', '', 'a24779.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
+(3, 'V-SERIES', 'v-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm.', 'c4093f.jpg', '', '471fcb.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:29:46', NULL, NULL),
+(4, 'D-SERIES', 'd-series', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm.', '6d2aff.jpg', '', 'ff80c3.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:31:56', NULL, NULL),
+(5, 'S-SERIES', 's-series', 'ระบบอลูมิเนียมขัวเชิงผนัง แบบเรียบและสกรู ออน', '', '', '8ce542.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:33:07', '2019-08-15 10:27:38', NULL),
+(6, 'X-SERIES', 'x-series', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง ขนาด 16 x 35 mm.', '', '', '45c20e.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:33:07', NULL, NULL),
+(7, 'M-SERIES', 'm-series', 'ระบบอลูมิเนียมประตู บานเลื่อนและบานสวิง ขนาด 9 x 35 mm.', '', '', '6b7b90.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
+(8, 'E-SERIES', 'e-series', 'ระบบอลูมิเนียมบานเลื่อนประตูหน้าต่าง ( กันน้ำ )', '', '', 'de801d.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:34:09', NULL, NULL),
+(9, 'C-SERIES', 'c-series', 'ระบบอลูมิเนียมหน้าต่างบานกระทุ้ง ( กันน้ำ )', '', '', 'a7b71e.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
+(10, 'B-SERIES', 'b-series', 'ระบบอลูมิเนียมบานเฟี้ยมประตูและหน้าต่าง ( กันน้ำ )', '', '', 'ae7132.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:35:17', NULL, NULL),
+(11, 'I-SERIES', 'i-series', 'ระบบอลูมิเนียมบานหน้าตู้ บานเลื่อนและบานเปิด', '', '', '91af97.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
+(12, 'J-SERIES', 'j-series', 'ระบบอลูมิเนียมใช้ตกแต่งประตูหรือผนัง', '', '', 'b9c5bc.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:36:17', NULL, NULL),
+(13, 'L-SERIES', 'l-series', 'ระบบอลูมิเนียมบานเกร็ดสำหรับบังลมและรับลม', '', '', '780c33.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
+(14, 'ACCESSORIES', 'accessories', 'ยางอัด ยางหุ้ม ยางปิดร่อง ยางสันบานประตูและขนสักหลาด', '', '', 'af734c.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:37:39', NULL, NULL),
+(15, 'Lever Handle', 'lever-handle', 'มือจับก้านโยกสำหรับประตูไม้และอลูมิเนียม', 'ce998a.jpg', '', '6cab71.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
+(16, 'Pull Handle with Lock', 'pull-handle-with-lock', 'มือจับกระบองยาวมีล็อคในตัว', '949bfd.jpg', '', '71cd55.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:40:08', NULL, NULL),
+(18, 'Pull Handle', 'pull-handle', 'มือจับกระบองใช้สำหรับประตูทุกชนิด', '', '', '698931.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:45:11', NULL, NULL),
+(19, 'Flush Handle', 'flush-handle', 'มือจับแบบฝังใช้กับประตูบานไม้และอลูมิเนียม', 'ce265b.jpg', '', '4096f9.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
+(20, 'Mortise Lock', 'mortise-lock', 'เสื้อกุญแจสำหรับประตูบานไม้และอลูมิเนียม', '', '', '29bcf9.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:46:28', NULL, NULL),
+(21, 'Knob Cylinder', 'knob-cylinder', 'ไส้กุญแจสำหรับประตูทุกชนิด', '', '', '35deea.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
+(22, 'Door Closer', 'door-closer', 'โช้คอัพประตูใช้ได้กับประตูทุกชนิด', '', '', '92a66f.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:47:25', NULL, NULL),
+(23, 'Patch Fitting', 'patch-fitting', 'อุปกรณ์สำหรับประตูกระจกบานเปลือย', '', '', 'ea2aab.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:47:53', NULL, NULL),
+(24, 'Rolling Set', 'rolling-set', 'รางเลื่อนและล้อเลื่อนใช้กับประตูทุกชนิด', '', '', 'ef0b60.jpg', '', 2, '', '', '', '', '', '', '', '2019-08-14 10:48:20', NULL, NULL),
+(25, 'ANODIZED', 'anodized', 'สีชุบเน้นความสวยงามของเฟรม', '', '', '0acae9.jpg', '', 3, '', '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL),
+(26, 'POWDER COATED', 'powder-coated', 'สีพ่น ทนการขีดข่วนสีคงทนตามการใช้งาน', '', '', '688945.jpg', '', 3, '', '', '', '', '', '', '', '2019-08-14 10:49:24', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -91,7 +89,11 @@ CREATE TABLE `category_technologies` (
   `id` int(11) NOT NULL,
   `title` text NOT NULL,
   `slug` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `meta_tag_title` text NOT NULL,
+  `meta_tag_description` text NOT NULL,
+  `meta_tag_keywords` text NOT NULL,
+  `img_og_twitter` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -100,10 +102,10 @@ CREATE TABLE `category_technologies` (
 -- Dumping data for table `category_technologies`
 --
 
-INSERT INTO `category_technologies` (`id`, `title`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'PRESENTATION VDO วีดีโอแนะนำการใช้งาน', 'presentation-vdo-วีดีโอแนะนำการใช้งาน', '2019-08-15 02:39:51', NULL, NULL),
-(2, 'TIPS AND TRICKS เกร็ดความรู้อลูมิเนียม', 'tips-and-tricks-เกร็ดความรู้อลูมิเนียม', '2019-08-15 02:39:51', NULL, NULL),
-(3, 'FAQ คำถามที่พบบอย', 'faq-คำถามที่พบบอย', '2019-08-15 02:40:01', NULL, NULL);
+INSERT INTO `category_technologies` (`id`, `title`, `slug`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'PRESENTATION VDO วีดีโอแนะนำการใช้งาน', 'presentation-vdo-วีดีโอแนะนำการใช้งาน', '', '', '', '', '2019-08-15 02:39:51', '2019-09-30 04:33:15', NULL),
+(2, 'TIPS AND TRICKS เกร็ดความรู้อลูมิเนียม', 'tips-and-tricks-เกร็ดความรู้อลูมิเนียม', '', '', '', '', '2019-08-15 02:39:51', NULL, NULL),
+(3, 'FAQ คำถามที่พบบอย', 'faq-คำถามที่พบบอย', '', '', '', '', '2019-08-15 02:40:01', '2019-10-04 03:39:50', NULL);
 
 -- --------------------------------------------------------
 
@@ -118,19 +120,10 @@ CREATE TABLE `contacts` (
   `phone` int(11) NOT NULL,
   `company` text CHARACTER SET utf8 NOT NULL,
   `message` text CHARACTER SET utf8 NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `contacts`
---
-
-INSERT INTO `contacts` (`id`, `name`, `email`, `phone`, `company`, `message`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'นิลาวรรณ', 'nilawan_chd@hotmail.com', 222222222, 'abc', 'test', '2019-09-19 04:58:46', NULL, NULL),
-(2, 'คชภัค', 'nilawan_pnch@hotmail.com', 222222222, 'abc', 'test', '2019-09-19 04:59:49', NULL, NULL),
-(3, 'คชภัค', 'nilawan_pnch@hotmail.com', 222222222, 'abc', 'test', '2019-09-19 05:00:13', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -142,12 +135,13 @@ CREATE TABLE `contact_page` (
   `id` int(11) NOT NULL,
   `address` text CHARACTER SET utf8 NOT NULL,
   `email` text CHARACTER SET utf8 NOT NULL,
-  `tel` int(11) NOT NULL,
+  `tel` text COLLATE utf8_unicode_ci NOT NULL,
   `web` text CHARACTER SET utf8 NOT NULL,
   `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
   `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
   `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -156,8 +150,8 @@ CREATE TABLE `contact_page` (
 -- Dumping data for table `contact_page`
 --
 
-INSERT INTO `contact_page` (`id`, `address`, `email`, `tel`, `web`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'abc', 'nilawan_chd@hotmail.com', 222222222, 'www.test.com', 'Test', 'Test', 'Test', '2019-09-26 07:54:28', '2019-09-27 07:15:01', NULL);
+INSERT INTO `contact_page` (`id`, `address`, `email`, `tel`, `web`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '<p>Alumination Ltd.\r\n</p><p>Head Office : 1369 Room No. 7, </p><p>Chan road, Thungwatdon, </p><p>Sathorn, Bangkok 10120\r\n</p><p>Fax : 02 286 3669</p>', 'info@aluinch.com', '02 286 3666', 'www.aluinch.com', '', '', '', '', '2019-09-26 07:54:28', '2019-10-04 03:44:05', NULL);
 
 -- --------------------------------------------------------
 
@@ -170,7 +164,7 @@ CREATE TABLE `faq_technologies` (
   `ask` text NOT NULL,
   `ans` text NOT NULL,
   `category_technology_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -194,7 +188,7 @@ CREATE TABLE `group_products` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
   `slug` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -204,9 +198,60 @@ CREATE TABLE `group_products` (
 --
 
 INSERT INTO `group_products` (`id`, `title`, `slug`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'ALUMINIUM อลูมิเนียมโปรไฟล์', 'aluminium-อลูมิเนียมโปรไฟล์', '2019-08-14 10:23:28', '2019-09-27 04:39:09', NULL),
+(1, 'ALUMINIUM อลูมิเนียมโปรไฟล์', 'aluminium-อลูมิเนียมโปรไฟล์', '2019-08-14 10:23:28', '2019-10-01 10:55:20', NULL),
 (2, 'HARDWARE อุปกรณ์ประตูหน้าต่าง', 'hardware-อุปกรณ์ประตูหน้าต่าง', '2019-08-14 10:23:28', NULL, NULL),
 (3, 'COLLOR CHART สีอลูมิเนียมของเรา', 'collor-chart-สีอลูมิเนียมของเรา', '2019-08-14 10:23:39', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_page`
+--
+
+CREATE TABLE `home_page` (
+  `id` int(11) NOT NULL,
+  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `home_page`
+--
+
+INSERT INTO `home_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '', '', '', '', '2019-10-02 09:06:34', '2019-10-04 03:37:52', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `image_galleries`
+--
+
+CREATE TABLE `image_galleries` (
+  `id` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
+  `title` text CHARACTER SET utf8 NOT NULL,
+  `img_title_alt` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `image_galleries`
+--
+
+INSERT INTO `image_galleries` (`id`, `sort`, `title`, `img_title_alt`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 2, 'f3bdc0.jpg', '', '2019-10-01 03:23:56', '2019-10-01 06:39:13', NULL),
+(2, 1, '77af11.jpg', '', '2019-10-01 04:27:52', NULL, NULL),
+(3, 3, 'e44907.jpg', '', '2019-10-01 04:31:53', NULL, NULL),
+(4, 4, '5c4262.jpg', '', '2019-10-01 04:31:53', NULL, NULL),
+(5, 5, 'b69890.jpg', '', '2019-10-01 04:31:53', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -216,9 +261,11 @@ INSERT INTO `group_products` (`id`, `title`, `slug`, `created_at`, `updated_at`,
 
 CREATE TABLE `image_products` (
   `id` int(11) NOT NULL,
-  `images` text COLLATE utf8_unicode_ci NOT NULL,
-  `products_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `sort` int(11) NOT NULL,
+  `img` text COLLATE utf8_unicode_ci NOT NULL,
+  `img_title_alt` text CHARACTER SET utf8 NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -227,295 +274,295 @@ CREATE TABLE `image_products` (
 -- Dumping data for table `image_products`
 --
 
-INSERT INTO `image_products` (`id`, `images`, `products_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '5875ebc1dfdd4.jpg', 1, '2019-09-20 09:04:29', NULL, NULL),
-(2, '5875ebc1dfdd4.jpg', 1, '2019-09-20 09:04:51', NULL, NULL),
-(3, 'b3f154.jpg', 2, '2019-09-20 09:04:51', NULL, NULL),
-(4, '38ff6c.jpg', 3, '2019-09-20 09:04:51', NULL, NULL),
-(5, '33a234.jpg', 4, '2019-09-20 09:04:51', NULL, NULL),
-(6, '6fb176.jpg', 5, '2019-09-20 09:04:51', NULL, NULL),
-(7, '106d27.jpg', 6, '2019-09-20 09:04:51', NULL, NULL),
-(8, '433828.jpg', 7, '2019-09-20 09:04:51', NULL, NULL),
-(9, 'd47562.jpg', 8, '2019-09-20 09:04:51', NULL, NULL),
-(10, 'd55b26.jpg', 9, '2019-09-20 09:04:51', NULL, NULL),
-(11, '4795f8.jpg', 10, '2019-09-20 09:04:51', NULL, NULL),
-(12, '6ed14b.jpg', 11, '2019-09-20 09:04:51', NULL, NULL),
-(13, 'd7d7b8.jpg', 12, '2019-09-20 09:04:51', NULL, NULL),
-(14, 'b34757.jpg', 13, '2019-09-20 09:04:51', NULL, NULL),
-(15, '27bc8e.jpg', 14, '2019-09-20 09:04:51', NULL, NULL),
-(16, '715dc2.jpg', 15, '2019-09-20 09:04:51', NULL, NULL),
-(17, '8ccb68.jpg', 16, '2019-09-20 09:04:51', NULL, NULL),
-(18, 'c9c017.jpg', 17, '2019-09-20 09:04:51', NULL, NULL),
-(19, '9eeb20.jpg', 18, '2019-09-20 09:04:51', NULL, NULL),
-(20, 'de389b.jpg', 19, '2019-09-20 09:04:51', NULL, NULL),
-(21, 'edac02.jpg', 20, '2019-09-20 09:04:51', NULL, NULL),
-(22, '44b92c.jpg', 21, '2019-09-20 09:04:51', NULL, NULL),
-(23, '79622f.jpg', 22, '2019-09-20 09:04:51', NULL, NULL),
-(24, 'dc05df.jpg', 23, '2019-09-20 09:04:51', NULL, NULL),
-(25, '4b8631.jpg', 24, '2019-09-20 09:04:51', NULL, NULL),
-(26, '906e31.jpg', 25, '2019-09-20 09:04:51', NULL, NULL),
-(27, '58ad6c.jpg', 26, '2019-09-20 09:04:51', NULL, NULL),
-(28, '0eb773.jpg', 27, '2019-09-20 09:04:51', NULL, NULL),
-(29, 'a4cbae.jpg', 28, '2019-09-20 09:04:51', NULL, NULL),
-(30, '1ddc54.jpg', 29, '2019-09-20 09:04:51', NULL, NULL),
-(31, 'f6ce3c.jpg', 30, '2019-09-20 09:04:51', NULL, NULL),
-(32, '5adec0.jpg', 31, '2019-09-20 09:04:51', NULL, NULL),
-(33, '4fa4a8.jpg', 32, '2019-09-20 09:04:51', NULL, NULL),
-(34, 'c429c7.jpg', 33, '2019-09-20 09:04:51', NULL, NULL),
-(35, '379fdf.jpg', 34, '2019-09-20 09:04:51', NULL, NULL),
-(36, 'd228e6.jpg', 35, '2019-09-20 09:04:51', NULL, NULL),
-(37, 'c50dcf.jpg', 36, '2019-09-20 09:04:51', NULL, NULL),
-(38, '7bc506.jpg', 37, '2019-09-20 09:04:51', NULL, NULL),
-(39, 'c0a2d2.jpg', 38, '2019-09-20 09:04:51', NULL, NULL),
-(40, '060c35.jpg', 39, '2019-09-20 09:04:51', NULL, NULL),
-(41, 'ab8d36.jpg', 40, '2019-09-20 09:04:51', NULL, NULL),
-(42, 'e94c17.jpg', 41, '2019-09-20 09:04:51', NULL, NULL),
-(43, '79d986.jpg', 42, '2019-09-20 09:04:51', NULL, NULL),
-(44, '2ff6b8.jpg', 43, '2019-09-20 09:04:51', NULL, NULL),
-(45, '64ec0d.jpg', 44, '2019-09-20 09:04:51', NULL, NULL),
-(46, '29d5ac.jpg', 45, '2019-09-20 09:04:51', NULL, NULL),
-(47, 'b633ac.jpg', 46, '2019-09-20 09:04:51', NULL, NULL),
-(48, '7bdf50.jpg', 47, '2019-09-20 09:04:51', NULL, NULL),
-(49, '6df70c.jpg', 48, '2019-09-20 09:04:51', NULL, NULL),
-(50, '776569.jpg', 49, '2019-09-20 09:04:51', NULL, NULL),
-(51, '34a74b.jpg', 50, '2019-09-20 09:04:51', NULL, NULL),
-(52, 'b64600.jpg', 51, '2019-09-20 09:04:51', NULL, NULL),
-(53, 'f8c0de.jpg', 52, '2019-09-20 09:04:51', NULL, NULL),
-(54, '06ceb3.jpg', 53, '2019-09-20 09:04:51', NULL, NULL),
-(55, 'da4aec.jpg', 54, '2019-09-20 09:04:51', NULL, NULL),
-(56, 'b439d3.jpg', 55, '2019-09-20 09:04:51', NULL, NULL),
-(57, '7f83d9.jpg', 56, '2019-09-20 09:04:51', NULL, NULL),
-(58, 'e725af.jpg', 57, '2019-09-20 09:04:51', NULL, NULL),
-(59, '207a3f.jpg', 58, '2019-09-20 09:04:51', NULL, NULL),
-(60, '22bb7d.jpg', 59, '2019-09-20 09:04:51', NULL, NULL),
-(61, '5b2b56.jpg', 60, '2019-09-20 09:04:51', NULL, NULL),
-(62, '73dac0.jpg', 61, '2019-09-20 09:04:51', NULL, NULL),
-(63, 'c464ff.jpg', 62, '2019-09-20 09:04:51', NULL, NULL),
-(64, 'acc5ff.jpg', 63, '2019-09-20 09:04:51', NULL, NULL),
-(65, 'd52589.jpg', 64, '2019-09-20 09:04:51', NULL, NULL),
-(66, '56b213.jpg', 65, '2019-09-20 09:04:51', NULL, NULL),
-(67, 'b71a26.jpg', 66, '2019-09-20 09:04:51', NULL, NULL),
-(68, '7a57ac.jpg', 67, '2019-09-20 09:04:51', NULL, NULL),
-(69, '2b3745.jpg', 68, '2019-09-20 09:04:51', NULL, NULL),
-(70, 'b407fd.jpg', 69, '2019-09-20 09:04:51', NULL, NULL),
-(71, '373181.jpg', 70, '2019-09-20 09:04:51', NULL, NULL),
-(72, '2a4846.jpg', 71, '2019-09-20 09:04:51', NULL, NULL),
-(73, '435b84.jpg', 72, '2019-09-20 09:04:51', NULL, NULL),
-(74, '9024d6.jpg', 73, '2019-09-20 09:04:51', NULL, NULL),
-(75, '58f512.jpg', 74, '2019-09-20 09:04:51', NULL, NULL),
-(76, '5f6709.jpg', 75, '2019-09-20 09:04:51', NULL, NULL),
-(77, 'c2f9b8.jpg', 76, '2019-09-20 09:04:51', NULL, NULL),
-(78, '37de77.jpg', 77, '2019-09-20 09:04:51', NULL, NULL),
-(79, '1bcd55.jpg', 78, '2019-09-20 09:04:51', NULL, NULL),
-(80, '0391ef.jpg', 79, '2019-09-20 09:04:51', NULL, NULL),
-(81, '313386.jpg', 80, '2019-09-20 09:04:51', NULL, NULL),
-(82, '96712e.jpg', 81, '2019-09-20 09:04:51', NULL, NULL),
-(83, 'aeed3f.jpg', 82, '2019-09-20 09:04:51', NULL, NULL),
-(84, 'a06334.jpg', 83, '2019-09-20 09:04:51', NULL, NULL),
-(85, 'a4050d.jpg', 84, '2019-09-20 09:04:51', NULL, NULL),
-(86, '1b5adf.jpg', 85, '2019-09-20 09:04:51', NULL, NULL),
-(87, '828bf6.jpg', 86, '2019-09-20 09:04:51', NULL, NULL),
-(88, 'f2b7c4.jpg', 87, '2019-09-20 09:04:51', NULL, NULL),
-(89, '9e7a88.jpg', 88, '2019-09-20 09:04:51', NULL, NULL),
-(90, 'f064e0.jpg', 89, '2019-09-20 09:04:51', NULL, NULL),
-(91, 'c9dfc4.jpg', 90, '2019-09-20 09:04:51', NULL, NULL),
-(92, '2466a3.jpg', 91, '2019-09-20 09:04:51', NULL, NULL),
-(93, '5fd270.jpg', 92, '2019-09-20 09:04:51', NULL, NULL),
-(94, '2f5337.jpg', 93, '2019-09-20 09:04:51', NULL, NULL),
-(95, 'efa9ad.jpg', 94, '2019-09-20 09:04:51', NULL, NULL),
-(96, '7df92e.jpg', 95, '2019-09-20 09:04:51', NULL, NULL),
-(97, '92a27a.jpg', 96, '2019-09-20 09:04:51', NULL, NULL),
-(98, 'f8602b.jpg', 97, '2019-09-20 09:04:51', NULL, NULL),
-(99, '7b1f4b.jpg', 98, '2019-09-20 09:04:51', NULL, NULL),
-(100, '8dda38.jpg', 99, '2019-09-20 09:04:51', NULL, NULL),
-(101, 'c53798.jpg', 100, '2019-09-20 09:04:51', NULL, NULL),
-(102, '53443b.jpg', 101, '2019-09-20 09:04:51', NULL, NULL),
-(103, 'd197b1.jpg', 102, '2019-09-20 09:04:51', NULL, NULL),
-(104, '0ee3d9.jpg', 103, '2019-09-20 09:04:51', NULL, NULL),
-(105, '0fd438.jpg', 104, '2019-09-20 09:04:51', NULL, NULL),
-(106, '90b84b.jpg', 105, '2019-09-20 09:04:51', NULL, NULL),
-(107, 'b2813e.jpg', 106, '2019-09-20 09:04:51', NULL, NULL),
-(108, '2710e6.jpg', 107, '2019-09-20 09:04:51', NULL, NULL),
-(109, 'aabc05.jpg', 108, '2019-09-20 09:04:51', NULL, NULL),
-(110, 'ac08c6.jpg', 109, '2019-09-20 09:04:51', NULL, NULL),
-(111, '6b4f7d.jpg', 110, '2019-09-20 09:04:51', NULL, NULL),
-(112, '0d183a.jpg', 111, '2019-09-20 09:04:51', NULL, NULL),
-(113, 'b19625.jpg', 112, '2019-09-20 09:04:51', NULL, NULL),
-(114, '2f99a7.jpg', 113, '2019-09-20 09:04:51', NULL, NULL),
-(115, '12c29b.jpg', 114, '2019-09-20 09:04:51', NULL, NULL),
-(116, '70f9fe.jpg', 115, '2019-09-20 09:04:51', NULL, NULL),
-(117, 'f9348c.jpg', 116, '2019-09-20 09:04:51', NULL, NULL),
-(118, '58c68a.jpg', 117, '2019-09-20 09:04:51', NULL, NULL),
-(119, '2d8b98.jpg', 118, '2019-09-20 09:04:51', NULL, NULL),
-(120, 'd8eb8e.jpg', 119, '2019-09-20 09:04:51', NULL, NULL),
-(121, '90f294.jpg', 120, '2019-09-20 09:04:51', NULL, NULL),
-(122, '49f80c.jpg', 121, '2019-09-20 09:04:51', NULL, NULL),
-(123, '709aff.jpg', 122, '2019-09-20 09:04:51', NULL, NULL),
-(124, 'bf9f11.jpg', 123, '2019-09-20 09:04:51', NULL, NULL),
-(125, '6304b1.jpg', 124, '2019-09-20 09:04:51', NULL, NULL),
-(126, '50b95e.jpg', 125, '2019-09-20 09:04:51', NULL, NULL),
-(127, 'f33b75.jpg', 126, '2019-09-20 09:04:51', NULL, NULL),
-(128, '2c6312.jpg', 127, '2019-09-20 09:04:51', NULL, NULL),
-(129, '8ab2d2.jpg', 128, '2019-09-20 09:04:51', NULL, NULL),
-(130, 'b33cdc.jpg', 129, '2019-09-20 09:04:51', NULL, NULL),
-(131, '3fc79d.jpg', 130, '2019-09-20 09:04:51', NULL, NULL),
-(132, 'aca898.jpg', 131, '2019-09-20 09:04:51', NULL, NULL),
-(133, '632f24.jpg', 132, '2019-09-20 09:04:51', NULL, NULL),
-(134, '24cb82.jpg', 133, '2019-09-20 09:04:51', NULL, NULL),
-(135, 'b1eb4f.jpg', 134, '2019-09-20 09:04:51', NULL, NULL),
-(136, '2cab0d.jpg', 135, '2019-09-20 09:04:51', NULL, NULL),
-(137, '72456c.jpg', 136, '2019-09-20 09:04:51', NULL, NULL),
-(138, 'c11c7d.jpg', 137, '2019-09-20 09:04:51', NULL, NULL),
-(139, '0df26f.jpg', 138, '2019-09-20 09:04:51', NULL, NULL),
-(140, 'fca0ee.jpg', 139, '2019-09-20 09:04:51', NULL, NULL),
-(141, '5d9932.jpg', 140, '2019-09-20 09:04:51', NULL, NULL),
-(142, '217180.jpg', 141, '2019-09-20 09:04:51', NULL, NULL),
-(143, '0b1f96.jpg', 142, '2019-09-20 09:04:51', NULL, NULL),
-(144, 'b4f2d6.jpg', 143, '2019-09-20 09:04:51', NULL, NULL),
-(145, '349b27.jpg', 144, '2019-09-20 09:04:51', NULL, NULL),
-(146, '6b5361.jpg', 145, '2019-09-20 09:04:51', NULL, NULL),
-(147, '5e0515.jpg', 146, '2019-09-20 09:04:51', NULL, NULL),
-(148, 'a9dbce.jpg', 147, '2019-09-20 09:04:51', NULL, NULL),
-(149, 'c919a6.jpg', 148, '2019-09-20 09:04:51', NULL, NULL),
-(150, 'a3660c.jpg', 149, '2019-09-20 09:04:51', NULL, NULL),
-(151, '28922d.jpg', 150, '2019-09-20 09:04:51', NULL, NULL),
-(152, '45fb86.jpg', 151, '2019-09-20 09:04:51', NULL, NULL),
-(153, 'a0a6a2.jpg', 152, '2019-09-20 09:04:51', NULL, NULL),
-(154, 'ac56da.jpg', 153, '2019-09-20 09:04:51', NULL, NULL),
-(155, '15e922.jpg', 154, '2019-09-20 09:04:51', NULL, NULL),
-(156, '72e14c.jpg', 155, '2019-09-20 09:04:51', NULL, NULL),
-(157, 'c73ab8.jpg', 156, '2019-09-20 09:04:51', NULL, NULL),
-(158, '86f919.jpg', 157, '2019-09-20 09:04:51', NULL, NULL),
-(159, '5cb764.jpg', 158, '2019-09-20 09:04:51', NULL, NULL),
-(160, '7b3e31.jpg', 159, '2019-09-20 09:04:51', NULL, NULL),
-(161, 'a10aea.jpg', 160, '2019-09-20 09:04:51', NULL, NULL),
-(162, '9c05f0.jpg', 161, '2019-09-20 09:04:51', NULL, NULL),
-(163, '90dd42.jpg', 162, '2019-09-20 09:04:51', NULL, NULL),
-(164, 'bd593e.jpg', 163, '2019-09-20 09:04:51', NULL, NULL),
-(165, '04e236.jpg', 164, '2019-09-20 09:04:51', NULL, NULL),
-(166, 'b69f67.jpg', 165, '2019-09-20 09:04:51', NULL, NULL),
-(167, '03574a.jpg', 166, '2019-09-20 09:04:51', NULL, NULL),
-(168, '3f3f92.jpg', 167, '2019-09-20 09:04:51', NULL, NULL),
-(169, 'c423d4.jpg', 168, '2019-09-20 09:04:51', NULL, NULL),
-(170, '98cb78.jpg', 169, '2019-09-20 09:04:51', NULL, NULL),
-(171, '4962a1.jpg', 170, '2019-09-20 09:04:51', NULL, NULL),
-(172, '3ac686.jpg', 171, '2019-09-20 09:04:51', NULL, NULL),
-(173, '5de234.jpg', 172, '2019-09-20 09:04:51', NULL, NULL),
-(174, '3f675d.jpg', 173, '2019-09-20 09:04:51', NULL, NULL),
-(175, '8f721a.jpg', 174, '2019-09-20 09:04:51', NULL, NULL),
-(176, '31a51e.jpg', 175, '2019-09-20 09:04:51', NULL, NULL),
-(177, '523656.jpg', 176, '2019-09-20 09:04:51', NULL, NULL),
-(178, '79c677.jpg', 177, '2019-09-20 09:04:51', NULL, NULL),
-(179, 'df73a1.jpg', 178, '2019-09-20 09:04:51', NULL, NULL),
-(180, '16a9cb.jpg', 179, '2019-09-20 09:04:51', NULL, NULL),
-(181, 'a5ef07.jpg', 180, '2019-09-20 09:04:51', NULL, NULL),
-(182, '362c91.jpg', 181, '2019-09-20 09:04:51', NULL, NULL),
-(183, '28c9e1.jpg', 182, '2019-09-20 09:04:51', NULL, NULL),
-(184, '291fe9.jpg', 183, '2019-09-20 09:04:51', NULL, NULL),
-(185, '5213fa.jpg', 184, '2019-09-20 09:04:51', NULL, NULL),
-(186, '00dcfb.jpg', 185, '2019-09-20 09:04:51', NULL, NULL),
-(187, '589e21.jpg', 186, '2019-09-20 09:04:51', NULL, NULL),
-(188, '1e9b8a.jpg', 187, '2019-09-20 09:04:51', NULL, NULL),
-(189, '8ea4b0.jpg', 188, '2019-09-20 09:04:51', NULL, NULL),
-(190, '65fd5c.jpg', 189, '2019-09-20 09:04:51', NULL, NULL),
-(191, '4b81f8.jpg', 190, '2019-09-20 09:04:51', NULL, NULL),
-(192, '383c17.jpg', 191, '2019-09-20 09:04:51', NULL, NULL),
-(193, '86d6cc.jpg', 192, '2019-09-20 09:04:51', NULL, NULL),
-(194, 'e1cc81.jpg', 193, '2019-09-20 09:04:51', NULL, NULL),
-(195, 'eb7ef8.jpg', 194, '2019-09-20 09:04:51', NULL, NULL),
-(196, '85cc40.jpg', 195, '2019-09-20 09:04:51', NULL, NULL),
-(197, '3b43f1.jpg', 196, '2019-09-20 09:04:51', NULL, NULL),
-(198, '1ca043.jpg', 197, '2019-09-20 09:04:51', NULL, NULL),
-(199, '9381fa.jpg', 198, '2019-09-20 09:04:51', NULL, NULL),
-(200, '578c78.jpg', 199, '2019-09-20 09:04:51', NULL, NULL),
-(201, '6916f8.jpg', 200, '2019-09-20 09:04:51', NULL, NULL),
-(202, '695e50.jpg', 201, '2019-09-20 09:04:51', NULL, NULL),
-(203, '513d4a.jpg', 202, '2019-09-20 09:04:51', NULL, NULL),
-(204, 'eeb337.jpg', 203, '2019-09-20 09:04:51', NULL, NULL),
-(205, '04222c.jpg', 204, '2019-09-20 09:04:51', NULL, NULL),
-(206, '630b59.jpg', 205, '2019-09-20 09:04:51', NULL, NULL),
-(207, '50b116.jpg', 206, '2019-09-20 09:04:51', NULL, NULL),
-(208, '0aebfc.jpg', 207, '2019-09-20 09:04:51', NULL, NULL),
-(209, '2c1be9.jpg', 208, '2019-09-20 09:04:51', NULL, NULL),
-(210, '4e75d3.jpg', 209, '2019-09-20 09:04:51', NULL, NULL),
-(211, 'cba7e4.jpg', 210, '2019-09-20 09:04:51', NULL, NULL),
-(212, '7effd6.jpg', 211, '2019-09-20 09:04:51', NULL, NULL),
-(213, '537dc1.jpg', 212, '2019-09-20 09:04:51', NULL, NULL),
-(214, '3ad4b3.jpg', 213, '2019-09-20 09:04:51', NULL, NULL),
-(215, '2010fb.jpg', 214, '2019-09-20 09:04:51', NULL, NULL),
-(216, '8829d5.jpg', 215, '2019-09-20 09:04:51', NULL, NULL),
-(217, '0ccd29.jpg', 216, '2019-09-20 09:04:51', NULL, NULL),
-(218, 'e506b4.jpg', 217, '2019-09-20 09:04:51', NULL, NULL),
-(219, '11e82f.jpg', 218, '2019-09-20 09:04:51', NULL, NULL),
-(220, 'eb613f.jpg', 219, '2019-09-20 09:04:51', NULL, NULL),
-(221, 'ab9fb5.jpg', 220, '2019-09-20 09:04:51', NULL, NULL),
-(222, 'e9732e.jpg', 221, '2019-09-20 09:04:51', NULL, NULL),
-(223, '0a6d3f.jpg', 222, '2019-09-20 09:04:51', NULL, NULL),
-(224, '114fac.jpg', 223, '2019-09-20 09:04:51', NULL, NULL),
-(225, '056cfc.jpg', 224, '2019-09-20 09:04:51', NULL, NULL),
-(226, '7f0db8.jpg', 225, '2019-09-20 09:04:51', NULL, NULL),
-(227, '73b754.jpg', 226, '2019-09-20 09:04:51', NULL, NULL),
-(228, 'ddfb4b.jpg', 227, '2019-09-20 09:04:51', NULL, NULL),
-(229, '84b510.jpg', 228, '2019-09-20 09:04:51', NULL, NULL),
-(230, 'd4955a.jpg', 229, '2019-09-20 09:04:51', NULL, NULL),
-(231, 'ef8875.jpg', 230, '2019-09-20 09:04:51', NULL, NULL),
-(232, '8dcd80.jpg', 231, '2019-09-20 09:04:51', NULL, NULL),
-(233, 'be8557.jpg', 232, '2019-09-20 09:04:51', NULL, NULL),
-(234, '8f46fb.jpg', 233, '2019-09-20 09:04:51', NULL, NULL),
-(235, '6ba84b.jpg', 234, '2019-09-20 09:04:51', NULL, NULL),
-(236, 'ffb303.jpg', 235, '2019-09-20 09:04:51', NULL, NULL),
-(237, '3b6c6d.jpg', 236, '2019-09-20 09:04:51', NULL, NULL),
-(238, 'bffa5c.jpg', 237, '2019-09-20 09:04:51', NULL, NULL),
-(239, 'eeafd9.jpg', 238, '2019-09-20 09:04:51', NULL, NULL),
-(240, 'c0b55d.jpg', 239, '2019-09-20 09:04:51', NULL, NULL),
-(241, 'ec0bc7.jpg', 240, '2019-09-20 09:04:51', NULL, NULL),
-(242, 'f26443.jpg', 241, '2019-09-20 09:04:51', NULL, NULL),
-(243, 'a35049.jpg', 242, '2019-09-20 09:04:51', NULL, NULL),
-(244, 'c0d706.jpg', 243, '2019-09-20 09:04:51', NULL, NULL),
-(245, 'd834ca.jpg', 244, '2019-09-20 09:04:51', NULL, NULL),
-(246, '138d34.jpg', 245, '2019-09-20 09:04:51', NULL, NULL),
-(247, '1346db.jpg', 246, '2019-09-20 09:04:51', NULL, NULL),
-(248, 'a0acbb.jpg', 247, '2019-09-20 09:04:51', NULL, NULL),
-(249, '12a9e6.jpg', 248, '2019-09-20 09:04:51', NULL, NULL),
-(250, 'c573b6.jpg', 249, '2019-09-20 09:04:51', NULL, NULL),
-(251, '5d4379.jpg', 250, '2019-09-20 09:04:51', NULL, NULL),
-(252, 'dc0678.jpg', 251, '2019-09-20 09:04:51', NULL, NULL),
-(253, '5c6eb2.jpg', 252, '2019-09-20 09:04:51', NULL, NULL),
-(254, 'af2c09.jpg', 253, '2019-09-20 09:04:51', NULL, NULL),
-(255, '4c9551.jpg', 254, '2019-09-20 09:04:51', NULL, NULL),
-(256, '95951f.jpg', 255, '2019-09-20 09:04:51', NULL, NULL),
-(257, 'c4f03e.jpg', 256, '2019-09-20 09:04:51', NULL, NULL),
-(258, 'b59410.jpg', 257, '2019-09-20 09:04:51', NULL, NULL),
-(259, 'c9db2a.jpg', 258, '2019-09-20 09:04:51', NULL, NULL),
-(260, '0427ba.jpg', 259, '2019-09-20 09:04:51', NULL, NULL),
-(261, 'a18b8f.jpg', 260, '2019-09-20 09:04:51', NULL, NULL),
-(262, 'ee1775.jpg', 261, '2019-09-20 09:04:51', NULL, NULL),
-(263, '8d9b2b.jpg', 262, '2019-09-20 09:04:51', NULL, NULL),
-(264, 'c99878.jpg', 263, '2019-09-20 09:04:51', NULL, NULL),
-(265, 'd4a659.jpg', 264, '2019-09-20 09:04:51', NULL, NULL),
-(266, 'e878a4.jpg', 265, '2019-09-20 09:04:51', NULL, NULL),
-(267, '58a999.jpg', 266, '2019-09-20 09:04:51', NULL, NULL),
-(268, '85e78e.jpg', 267, '2019-09-20 09:04:51', NULL, NULL),
-(269, '6139d0.jpg', 268, '2019-09-20 09:04:51', NULL, NULL),
-(270, 'f9946d.jpg', 269, '2019-09-20 09:04:51', NULL, NULL),
-(271, 'fe3409.jpg', 270, '2019-09-20 09:04:51', NULL, NULL),
-(272, 'a4236b.jpg', 271, '2019-09-20 09:04:51', NULL, NULL),
-(273, '70a526.jpg', 272, '2019-09-20 09:04:51', NULL, NULL),
-(274, '68b560.jpg', 273, '2019-09-20 09:04:51', NULL, NULL),
-(275, '74583c.jpg', 274, '2019-09-20 09:04:51', NULL, NULL),
-(276, '11477a.jpg', 275, '2019-09-20 09:04:51', NULL, NULL),
-(277, 'ad4853.jpg', 276, '2019-09-20 09:04:51', NULL, NULL),
-(278, '0b89e8.jpg', 277, '2019-09-20 09:04:51', NULL, NULL),
-(279, 'd6bc7d.jpg', 278, '2019-09-20 09:04:51', NULL, NULL),
-(280, '5866f6.jpg', 279, '2019-09-20 09:04:51', NULL, NULL),
-(281, 'eb6211.jpg', 280, '2019-09-20 09:04:51', NULL, NULL),
-(282, 'afb3d4.jpg', 281, '2019-09-20 09:04:51', NULL, NULL),
-(283, '571b253f42940.jpg', 205, '2019-09-20 09:35:43', NULL, NULL),
-(284, '568f807814ec2.jpg', 214, '2019-09-20 09:37:41', NULL, NULL),
-(285, '568f8251b43a5.jpg', 220, '2019-09-20 09:39:52', NULL, NULL),
-(286, '568c78547c29a.jpg', 221, '2019-09-20 09:40:40', NULL, NULL),
-(287, '568c78600d999.jpg', 222, '2019-09-20 09:41:11', NULL, NULL),
-(288, '568f6fcbb8a3f.jpg', 255, '2019-09-20 09:53:27', NULL, NULL);
+INSERT INTO `image_products` (`id`, `sort`, `img`, `img_title_alt`, `product_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, '5875ebc1dfdd4.jpg', '', 1, '2019-09-20 09:04:29', NULL, NULL),
+(2, 2, '5875ebc1dfdd4.jpg', '', 1, '2019-09-20 09:04:51', NULL, NULL),
+(3, 0, 'b3f154.jpg', '', 2, '2019-09-20 09:04:51', NULL, NULL),
+(4, 0, '38ff6c.jpg', '', 3, '2019-09-20 09:04:51', NULL, NULL),
+(5, 0, '33a234.jpg', '', 4, '2019-09-20 09:04:51', NULL, NULL),
+(6, 0, '6fb176.jpg', '', 5, '2019-09-20 09:04:51', NULL, NULL),
+(7, 0, '106d27.jpg', '', 6, '2019-09-20 09:04:51', NULL, NULL),
+(8, 0, '433828.jpg', '', 7, '2019-09-20 09:04:51', NULL, NULL),
+(9, 0, 'd47562.jpg', '', 8, '2019-09-20 09:04:51', NULL, NULL),
+(10, 0, 'd55b26.jpg', '', 9, '2019-09-20 09:04:51', NULL, NULL),
+(11, 0, '4795f8.jpg', '', 10, '2019-09-20 09:04:51', NULL, NULL),
+(12, 0, '6ed14b.jpg', '', 11, '2019-09-20 09:04:51', NULL, NULL),
+(13, 0, 'd7d7b8.jpg', '', 12, '2019-09-20 09:04:51', NULL, NULL),
+(14, 0, 'b34757.jpg', '', 13, '2019-09-20 09:04:51', NULL, NULL),
+(15, 0, '27bc8e.jpg', '', 14, '2019-09-20 09:04:51', NULL, NULL),
+(16, 0, '715dc2.jpg', '', 15, '2019-09-20 09:04:51', NULL, NULL),
+(17, 0, '8ccb68.jpg', '', 16, '2019-09-20 09:04:51', NULL, NULL),
+(18, 0, 'c9c017.jpg', '', 17, '2019-09-20 09:04:51', NULL, NULL),
+(19, 0, '9eeb20.jpg', '', 18, '2019-09-20 09:04:51', NULL, NULL),
+(20, 0, 'de389b.jpg', '', 19, '2019-09-20 09:04:51', NULL, NULL),
+(21, 0, 'edac02.jpg', '', 20, '2019-09-20 09:04:51', NULL, NULL),
+(22, 0, '44b92c.jpg', '', 21, '2019-09-20 09:04:51', NULL, NULL),
+(23, 0, '79622f.jpg', '', 22, '2019-09-20 09:04:51', NULL, NULL),
+(24, 0, 'dc05df.jpg', '', 23, '2019-09-20 09:04:51', NULL, NULL),
+(25, 0, '4b8631.jpg', '', 24, '2019-09-20 09:04:51', NULL, NULL),
+(26, 0, '906e31.jpg', '', 25, '2019-09-20 09:04:51', NULL, NULL),
+(27, 0, '58ad6c.jpg', '', 26, '2019-09-20 09:04:51', NULL, NULL),
+(28, 0, '0eb773.jpg', '', 27, '2019-09-20 09:04:51', NULL, NULL),
+(29, 0, 'a4cbae.jpg', '', 28, '2019-09-20 09:04:51', NULL, NULL),
+(30, 0, '1ddc54.jpg', '', 29, '2019-09-20 09:04:51', NULL, NULL),
+(31, 0, 'f6ce3c.jpg', '', 30, '2019-09-20 09:04:51', NULL, NULL),
+(32, 0, '5adec0.jpg', '', 31, '2019-09-20 09:04:51', NULL, NULL),
+(33, 0, '4fa4a8.jpg', '', 32, '2019-09-20 09:04:51', NULL, NULL),
+(34, 0, 'c429c7.jpg', '', 33, '2019-09-20 09:04:51', NULL, NULL),
+(35, 0, '379fdf.jpg', '', 34, '2019-09-20 09:04:51', NULL, NULL),
+(36, 0, 'd228e6.jpg', '', 35, '2019-09-20 09:04:51', NULL, NULL),
+(37, 0, 'c50dcf.jpg', '', 36, '2019-09-20 09:04:51', NULL, NULL),
+(38, 0, '7bc506.jpg', '', 37, '2019-09-20 09:04:51', NULL, NULL),
+(39, 0, 'c0a2d2.jpg', '', 38, '2019-09-20 09:04:51', NULL, NULL),
+(40, 0, '060c35.jpg', '', 39, '2019-09-20 09:04:51', NULL, NULL),
+(41, 0, 'ab8d36.jpg', '', 40, '2019-09-20 09:04:51', NULL, NULL),
+(42, 0, 'e94c17.jpg', '', 41, '2019-09-20 09:04:51', NULL, NULL),
+(43, 0, '79d986.jpg', '', 42, '2019-09-20 09:04:51', NULL, NULL),
+(44, 0, '2ff6b8.jpg', '', 43, '2019-09-20 09:04:51', NULL, NULL),
+(45, 0, '64ec0d.jpg', '', 44, '2019-09-20 09:04:51', NULL, NULL),
+(46, 0, '29d5ac.jpg', '', 45, '2019-09-20 09:04:51', NULL, NULL),
+(47, 0, 'b633ac.jpg', '', 46, '2019-09-20 09:04:51', NULL, NULL),
+(48, 0, '7bdf50.jpg', '', 47, '2019-09-20 09:04:51', NULL, NULL),
+(49, 0, '6df70c.jpg', '', 48, '2019-09-20 09:04:51', NULL, NULL),
+(50, 0, '776569.jpg', '', 49, '2019-09-20 09:04:51', NULL, NULL),
+(51, 0, '34a74b.jpg', '', 50, '2019-09-20 09:04:51', NULL, NULL),
+(52, 0, 'b64600.jpg', '', 51, '2019-09-20 09:04:51', NULL, NULL),
+(53, 0, 'f8c0de.jpg', '', 52, '2019-09-20 09:04:51', NULL, NULL),
+(54, 0, '06ceb3.jpg', '', 53, '2019-09-20 09:04:51', NULL, NULL),
+(55, 0, 'da4aec.jpg', '', 54, '2019-09-20 09:04:51', NULL, NULL),
+(56, 0, 'b439d3.jpg', '', 55, '2019-09-20 09:04:51', NULL, NULL),
+(57, 0, '7f83d9.jpg', '', 56, '2019-09-20 09:04:51', NULL, NULL),
+(58, 0, 'e725af.jpg', '', 57, '2019-09-20 09:04:51', NULL, NULL),
+(59, 0, '207a3f.jpg', '', 58, '2019-09-20 09:04:51', NULL, NULL),
+(60, 0, '22bb7d.jpg', '', 59, '2019-09-20 09:04:51', NULL, NULL),
+(61, 0, '5b2b56.jpg', '', 60, '2019-09-20 09:04:51', NULL, NULL),
+(62, 0, '73dac0.jpg', '', 61, '2019-09-20 09:04:51', NULL, NULL),
+(63, 0, 'c464ff.jpg', '', 62, '2019-09-20 09:04:51', NULL, NULL),
+(64, 0, 'acc5ff.jpg', '', 63, '2019-09-20 09:04:51', NULL, NULL),
+(65, 0, 'd52589.jpg', '', 64, '2019-09-20 09:04:51', NULL, NULL),
+(66, 0, '56b213.jpg', '', 65, '2019-09-20 09:04:51', NULL, NULL),
+(67, 0, 'b71a26.jpg', '', 66, '2019-09-20 09:04:51', NULL, NULL),
+(68, 0, '7a57ac.jpg', '', 67, '2019-09-20 09:04:51', NULL, NULL),
+(69, 0, '2b3745.jpg', '', 68, '2019-09-20 09:04:51', NULL, NULL),
+(70, 0, 'b407fd.jpg', '', 69, '2019-09-20 09:04:51', NULL, NULL),
+(71, 0, '373181.jpg', '', 70, '2019-09-20 09:04:51', NULL, NULL),
+(72, 0, '2a4846.jpg', '', 71, '2019-09-20 09:04:51', NULL, NULL),
+(73, 0, '435b84.jpg', '', 72, '2019-09-20 09:04:51', NULL, NULL),
+(74, 0, '9024d6.jpg', '', 73, '2019-09-20 09:04:51', NULL, NULL),
+(75, 0, '58f512.jpg', '', 74, '2019-09-20 09:04:51', NULL, NULL),
+(76, 0, '5f6709.jpg', '', 75, '2019-09-20 09:04:51', NULL, NULL),
+(77, 0, 'c2f9b8.jpg', '', 76, '2019-09-20 09:04:51', NULL, NULL),
+(78, 0, '37de77.jpg', '', 77, '2019-09-20 09:04:51', NULL, NULL),
+(79, 0, '1bcd55.jpg', '', 78, '2019-09-20 09:04:51', NULL, NULL),
+(80, 0, '0391ef.jpg', '', 79, '2019-09-20 09:04:51', NULL, NULL),
+(81, 0, '313386.jpg', '', 80, '2019-09-20 09:04:51', NULL, NULL),
+(82, 0, '96712e.jpg', '', 81, '2019-09-20 09:04:51', NULL, NULL),
+(83, 0, 'aeed3f.jpg', '', 82, '2019-09-20 09:04:51', NULL, NULL),
+(84, 0, 'a06334.jpg', '', 83, '2019-09-20 09:04:51', NULL, NULL),
+(85, 0, 'a4050d.jpg', '', 84, '2019-09-20 09:04:51', NULL, NULL),
+(86, 0, '1b5adf.jpg', '', 85, '2019-09-20 09:04:51', NULL, NULL),
+(87, 0, '828bf6.jpg', '', 86, '2019-09-20 09:04:51', NULL, NULL),
+(88, 0, 'f2b7c4.jpg', '', 87, '2019-09-20 09:04:51', NULL, NULL),
+(89, 0, '9e7a88.jpg', '', 88, '2019-09-20 09:04:51', NULL, NULL),
+(90, 0, 'f064e0.jpg', '', 89, '2019-09-20 09:04:51', NULL, NULL),
+(91, 0, 'c9dfc4.jpg', '', 90, '2019-09-20 09:04:51', NULL, NULL),
+(92, 0, '2466a3.jpg', '', 91, '2019-09-20 09:04:51', NULL, NULL),
+(93, 0, '5fd270.jpg', '', 92, '2019-09-20 09:04:51', NULL, NULL),
+(94, 0, '2f5337.jpg', '', 93, '2019-09-20 09:04:51', NULL, NULL),
+(95, 0, 'efa9ad.jpg', '', 94, '2019-09-20 09:04:51', NULL, NULL),
+(96, 0, '7df92e.jpg', '', 95, '2019-09-20 09:04:51', NULL, NULL),
+(97, 0, '92a27a.jpg', '', 96, '2019-09-20 09:04:51', NULL, NULL),
+(98, 0, 'f8602b.jpg', '', 97, '2019-09-20 09:04:51', NULL, NULL),
+(99, 0, '7b1f4b.jpg', '', 98, '2019-09-20 09:04:51', NULL, NULL),
+(100, 0, '8dda38.jpg', '', 99, '2019-09-20 09:04:51', NULL, NULL),
+(101, 0, 'c53798.jpg', '', 100, '2019-09-20 09:04:51', NULL, NULL),
+(102, 0, '53443b.jpg', '', 101, '2019-09-20 09:04:51', NULL, NULL),
+(103, 0, 'd197b1.jpg', '', 102, '2019-09-20 09:04:51', NULL, NULL),
+(104, 0, '0ee3d9.jpg', '', 103, '2019-09-20 09:04:51', NULL, NULL),
+(105, 0, '0fd438.jpg', '', 104, '2019-09-20 09:04:51', NULL, NULL),
+(106, 0, '90b84b.jpg', '', 105, '2019-09-20 09:04:51', NULL, NULL),
+(107, 0, 'b2813e.jpg', '', 106, '2019-09-20 09:04:51', NULL, NULL),
+(108, 0, '2710e6.jpg', '', 107, '2019-09-20 09:04:51', NULL, NULL),
+(109, 0, 'aabc05.jpg', '', 108, '2019-09-20 09:04:51', NULL, NULL),
+(110, 0, 'ac08c6.jpg', '', 109, '2019-09-20 09:04:51', NULL, NULL),
+(111, 0, '6b4f7d.jpg', '', 110, '2019-09-20 09:04:51', NULL, NULL),
+(112, 0, '0d183a.jpg', '', 111, '2019-09-20 09:04:51', NULL, NULL),
+(113, 0, 'b19625.jpg', '', 112, '2019-09-20 09:04:51', NULL, NULL),
+(114, 0, '2f99a7.jpg', '', 113, '2019-09-20 09:04:51', NULL, NULL),
+(115, 0, '12c29b.jpg', '', 114, '2019-09-20 09:04:51', NULL, NULL),
+(116, 0, '70f9fe.jpg', '', 115, '2019-09-20 09:04:51', NULL, NULL),
+(117, 0, 'f9348c.jpg', '', 116, '2019-09-20 09:04:51', NULL, NULL),
+(118, 0, '58c68a.jpg', '', 117, '2019-09-20 09:04:51', NULL, NULL),
+(119, 0, '2d8b98.jpg', '', 118, '2019-09-20 09:04:51', NULL, NULL),
+(120, 0, 'd8eb8e.jpg', '', 119, '2019-09-20 09:04:51', NULL, NULL),
+(121, 0, '90f294.jpg', '', 120, '2019-09-20 09:04:51', NULL, NULL),
+(122, 0, '49f80c.jpg', '', 121, '2019-09-20 09:04:51', NULL, NULL),
+(123, 0, '709aff.jpg', '', 122, '2019-09-20 09:04:51', NULL, NULL),
+(124, 0, 'bf9f11.jpg', '', 123, '2019-09-20 09:04:51', NULL, NULL),
+(125, 0, '6304b1.jpg', '', 124, '2019-09-20 09:04:51', NULL, NULL),
+(126, 0, '50b95e.jpg', '', 125, '2019-09-20 09:04:51', NULL, NULL),
+(127, 0, 'f33b75.jpg', '', 126, '2019-09-20 09:04:51', NULL, NULL),
+(128, 0, '2c6312.jpg', '', 127, '2019-09-20 09:04:51', NULL, NULL),
+(129, 0, '8ab2d2.jpg', '', 128, '2019-09-20 09:04:51', NULL, NULL),
+(130, 0, 'b33cdc.jpg', '', 129, '2019-09-20 09:04:51', NULL, NULL),
+(131, 0, '3fc79d.jpg', '', 130, '2019-09-20 09:04:51', NULL, NULL),
+(132, 0, 'aca898.jpg', '', 131, '2019-09-20 09:04:51', NULL, NULL),
+(133, 0, '632f24.jpg', '', 132, '2019-09-20 09:04:51', NULL, NULL),
+(134, 0, '24cb82.jpg', '', 133, '2019-09-20 09:04:51', NULL, NULL),
+(135, 0, 'b1eb4f.jpg', '', 134, '2019-09-20 09:04:51', NULL, NULL),
+(136, 0, '2cab0d.jpg', '', 135, '2019-09-20 09:04:51', NULL, NULL),
+(137, 0, '72456c.jpg', '', 136, '2019-09-20 09:04:51', NULL, NULL),
+(138, 0, 'c11c7d.jpg', '', 137, '2019-09-20 09:04:51', NULL, NULL),
+(139, 0, '0df26f.jpg', '', 138, '2019-09-20 09:04:51', NULL, NULL),
+(140, 0, 'fca0ee.jpg', '', 139, '2019-09-20 09:04:51', NULL, NULL),
+(141, 0, '5d9932.jpg', '', 140, '2019-09-20 09:04:51', NULL, NULL),
+(142, 0, '217180.jpg', '', 141, '2019-09-20 09:04:51', NULL, NULL),
+(143, 0, '0b1f96.jpg', '', 142, '2019-09-20 09:04:51', NULL, NULL),
+(144, 0, 'b4f2d6.jpg', '', 143, '2019-09-20 09:04:51', NULL, NULL),
+(145, 0, '349b27.jpg', '', 144, '2019-09-20 09:04:51', NULL, NULL),
+(146, 0, '6b5361.jpg', '', 145, '2019-09-20 09:04:51', NULL, NULL),
+(147, 0, '5e0515.jpg', '', 146, '2019-09-20 09:04:51', NULL, NULL),
+(148, 0, 'a9dbce.jpg', '', 147, '2019-09-20 09:04:51', NULL, NULL),
+(149, 0, 'c919a6.jpg', '', 148, '2019-09-20 09:04:51', NULL, NULL),
+(150, 0, 'a3660c.jpg', '', 149, '2019-09-20 09:04:51', NULL, NULL),
+(151, 0, '28922d.jpg', '', 150, '2019-09-20 09:04:51', NULL, NULL),
+(152, 0, '45fb86.jpg', '', 151, '2019-09-20 09:04:51', NULL, NULL),
+(153, 0, 'a0a6a2.jpg', '', 152, '2019-09-20 09:04:51', NULL, NULL),
+(154, 0, 'ac56da.jpg', '', 153, '2019-09-20 09:04:51', NULL, NULL),
+(155, 0, '15e922.jpg', '', 154, '2019-09-20 09:04:51', NULL, NULL),
+(156, 0, '72e14c.jpg', '', 155, '2019-09-20 09:04:51', NULL, NULL),
+(157, 0, 'c73ab8.jpg', '', 156, '2019-09-20 09:04:51', NULL, NULL),
+(158, 0, '86f919.jpg', '', 157, '2019-09-20 09:04:51', NULL, NULL),
+(159, 0, '5cb764.jpg', '', 158, '2019-09-20 09:04:51', NULL, NULL),
+(160, 0, '7b3e31.jpg', '', 159, '2019-09-20 09:04:51', NULL, NULL),
+(161, 0, 'a10aea.jpg', '', 160, '2019-09-20 09:04:51', NULL, NULL),
+(162, 0, '9c05f0.jpg', '', 161, '2019-09-20 09:04:51', NULL, NULL),
+(163, 0, '90dd42.jpg', '', 162, '2019-09-20 09:04:51', NULL, NULL),
+(164, 0, 'bd593e.jpg', '', 163, '2019-09-20 09:04:51', NULL, NULL),
+(165, 0, '04e236.jpg', '', 164, '2019-09-20 09:04:51', NULL, NULL),
+(166, 0, 'b69f67.jpg', '', 165, '2019-09-20 09:04:51', NULL, NULL),
+(167, 0, '03574a.jpg', '', 166, '2019-09-20 09:04:51', NULL, NULL),
+(168, 0, '3f3f92.jpg', '', 167, '2019-09-20 09:04:51', NULL, NULL),
+(169, 0, 'c423d4.jpg', '', 168, '2019-09-20 09:04:51', NULL, NULL),
+(170, 0, '98cb78.jpg', '', 169, '2019-09-20 09:04:51', NULL, NULL),
+(171, 0, '4962a1.jpg', '', 170, '2019-09-20 09:04:51', NULL, NULL),
+(172, 0, '3ac686.jpg', '', 171, '2019-09-20 09:04:51', NULL, NULL),
+(173, 0, '5de234.jpg', '', 172, '2019-09-20 09:04:51', NULL, NULL),
+(174, 0, '3f675d.jpg', '', 173, '2019-09-20 09:04:51', NULL, NULL),
+(175, 0, '8f721a.jpg', '', 174, '2019-09-20 09:04:51', NULL, NULL),
+(176, 0, '31a51e.jpg', '', 175, '2019-09-20 09:04:51', NULL, NULL),
+(177, 0, '523656.jpg', '', 176, '2019-09-20 09:04:51', NULL, NULL),
+(178, 0, '79c677.jpg', '', 177, '2019-09-20 09:04:51', NULL, NULL),
+(179, 0, 'df73a1.jpg', '', 178, '2019-09-20 09:04:51', NULL, NULL),
+(180, 0, '16a9cb.jpg', '', 179, '2019-09-20 09:04:51', NULL, NULL),
+(181, 0, 'a5ef07.jpg', '', 180, '2019-09-20 09:04:51', NULL, NULL),
+(182, 0, '362c91.jpg', '', 181, '2019-09-20 09:04:51', NULL, NULL),
+(183, 0, '28c9e1.jpg', '', 182, '2019-09-20 09:04:51', NULL, NULL),
+(184, 0, '291fe9.jpg', '', 183, '2019-09-20 09:04:51', NULL, NULL),
+(185, 0, '5213fa.jpg', '', 184, '2019-09-20 09:04:51', NULL, NULL),
+(186, 0, '00dcfb.jpg', '', 185, '2019-09-20 09:04:51', NULL, NULL),
+(187, 0, '589e21.jpg', '', 186, '2019-09-20 09:04:51', NULL, NULL),
+(188, 0, '1e9b8a.jpg', '', 187, '2019-09-20 09:04:51', NULL, NULL),
+(189, 0, '8ea4b0.jpg', '', 188, '2019-09-20 09:04:51', NULL, NULL),
+(190, 0, '65fd5c.jpg', '', 189, '2019-09-20 09:04:51', NULL, NULL),
+(191, 0, '4b81f8.jpg', '', 190, '2019-09-20 09:04:51', NULL, NULL),
+(192, 0, '383c17.jpg', '', 191, '2019-09-20 09:04:51', NULL, NULL),
+(193, 0, '86d6cc.jpg', '', 192, '2019-09-20 09:04:51', NULL, NULL),
+(194, 0, 'e1cc81.jpg', '', 193, '2019-09-20 09:04:51', NULL, NULL),
+(195, 0, 'eb7ef8.jpg', '', 194, '2019-09-20 09:04:51', NULL, NULL),
+(196, 0, '85cc40.jpg', '', 195, '2019-09-20 09:04:51', NULL, NULL),
+(197, 0, '3b43f1.jpg', '', 196, '2019-09-20 09:04:51', NULL, NULL),
+(198, 0, '1ca043.jpg', '', 197, '2019-09-20 09:04:51', NULL, NULL),
+(199, 0, '9381fa.jpg', '', 198, '2019-09-20 09:04:51', NULL, NULL),
+(200, 0, '578c78.jpg', '', 199, '2019-09-20 09:04:51', NULL, NULL),
+(201, 0, '6916f8.jpg', '', 200, '2019-09-20 09:04:51', NULL, NULL),
+(202, 0, '695e50.jpg', '', 201, '2019-09-20 09:04:51', NULL, NULL),
+(203, 0, '513d4a.jpg', '', 202, '2019-09-20 09:04:51', NULL, NULL),
+(204, 0, 'eeb337.jpg', '', 203, '2019-09-20 09:04:51', NULL, NULL),
+(205, 0, '04222c.jpg', '', 204, '2019-09-20 09:04:51', NULL, NULL),
+(206, 0, '630b59.jpg', '', 205, '2019-09-20 09:04:51', NULL, NULL),
+(207, 0, '50b116.jpg', '', 206, '2019-09-20 09:04:51', NULL, NULL),
+(208, 0, '0aebfc.jpg', '', 207, '2019-09-20 09:04:51', NULL, NULL),
+(209, 0, '2c1be9.jpg', '', 208, '2019-09-20 09:04:51', NULL, NULL),
+(210, 0, '4e75d3.jpg', '', 209, '2019-09-20 09:04:51', NULL, NULL),
+(211, 0, 'cba7e4.jpg', '', 210, '2019-09-20 09:04:51', NULL, NULL),
+(212, 0, '7effd6.jpg', '', 211, '2019-09-20 09:04:51', NULL, NULL),
+(213, 0, '537dc1.jpg', '', 212, '2019-09-20 09:04:51', NULL, NULL),
+(214, 0, '3ad4b3.jpg', '', 213, '2019-09-20 09:04:51', NULL, NULL),
+(215, 0, '2010fb.jpg', '', 214, '2019-09-20 09:04:51', NULL, NULL),
+(216, 0, '8829d5.jpg', '', 215, '2019-09-20 09:04:51', NULL, NULL),
+(217, 0, '0ccd29.jpg', '', 216, '2019-09-20 09:04:51', NULL, NULL),
+(218, 0, 'e506b4.jpg', '', 217, '2019-09-20 09:04:51', NULL, NULL),
+(219, 0, '11e82f.jpg', '', 218, '2019-09-20 09:04:51', NULL, NULL),
+(220, 0, 'eb613f.jpg', '', 219, '2019-09-20 09:04:51', NULL, NULL),
+(221, 0, 'ab9fb5.jpg', '', 220, '2019-09-20 09:04:51', NULL, NULL),
+(222, 0, 'e9732e.jpg', '', 221, '2019-09-20 09:04:51', NULL, NULL),
+(223, 0, '0a6d3f.jpg', '', 222, '2019-09-20 09:04:51', NULL, NULL),
+(224, 0, '114fac.jpg', '', 223, '2019-09-20 09:04:51', NULL, NULL),
+(225, 0, '056cfc.jpg', '', 224, '2019-09-20 09:04:51', NULL, NULL),
+(226, 0, '7f0db8.jpg', '', 225, '2019-09-20 09:04:51', NULL, NULL),
+(227, 0, '73b754.jpg', '', 226, '2019-09-20 09:04:51', NULL, NULL),
+(228, 0, 'ddfb4b.jpg', '', 227, '2019-09-20 09:04:51', NULL, NULL),
+(229, 0, '84b510.jpg', '', 228, '2019-09-20 09:04:51', NULL, NULL),
+(230, 0, 'd4955a.jpg', '', 229, '2019-09-20 09:04:51', NULL, NULL),
+(231, 0, 'ef8875.jpg', '', 230, '2019-09-20 09:04:51', NULL, NULL),
+(232, 0, '8dcd80.jpg', '', 231, '2019-09-20 09:04:51', NULL, NULL),
+(233, 0, 'be8557.jpg', '', 232, '2019-09-20 09:04:51', NULL, NULL),
+(234, 0, '8f46fb.jpg', '', 233, '2019-09-20 09:04:51', NULL, NULL),
+(235, 0, '6ba84b.jpg', '', 234, '2019-09-20 09:04:51', NULL, NULL),
+(236, 0, 'ffb303.jpg', '', 235, '2019-09-20 09:04:51', NULL, NULL),
+(237, 0, '3b6c6d.jpg', '', 236, '2019-09-20 09:04:51', NULL, NULL),
+(238, 0, 'bffa5c.jpg', '', 237, '2019-09-20 09:04:51', NULL, NULL),
+(239, 0, 'eeafd9.jpg', '', 238, '2019-09-20 09:04:51', NULL, NULL),
+(240, 0, 'c0b55d.jpg', '', 239, '2019-09-20 09:04:51', NULL, NULL),
+(241, 0, 'ec0bc7.jpg', '', 240, '2019-09-20 09:04:51', NULL, NULL),
+(242, 0, 'f26443.jpg', '', 241, '2019-09-20 09:04:51', NULL, NULL),
+(243, 0, 'a35049.jpg', '', 242, '2019-09-20 09:04:51', NULL, NULL),
+(244, 0, 'c0d706.jpg', '', 243, '2019-09-20 09:04:51', NULL, NULL),
+(245, 0, 'd834ca.jpg', '', 244, '2019-09-20 09:04:51', NULL, NULL),
+(246, 0, '138d34.jpg', '', 245, '2019-09-20 09:04:51', NULL, NULL),
+(247, 0, '1346db.jpg', '', 246, '2019-09-20 09:04:51', NULL, NULL),
+(248, 0, 'a0acbb.jpg', '', 247, '2019-09-20 09:04:51', NULL, NULL),
+(249, 0, '12a9e6.jpg', '', 248, '2019-09-20 09:04:51', NULL, NULL),
+(250, 0, 'c573b6.jpg', '', 249, '2019-09-20 09:04:51', NULL, NULL),
+(251, 0, '5d4379.jpg', '', 250, '2019-09-20 09:04:51', NULL, NULL),
+(252, 0, 'dc0678.jpg', '', 251, '2019-09-20 09:04:51', NULL, NULL),
+(253, 0, '5c6eb2.jpg', '', 252, '2019-09-20 09:04:51', NULL, NULL),
+(254, 0, 'af2c09.jpg', '', 253, '2019-09-20 09:04:51', NULL, NULL),
+(255, 0, '4c9551.jpg', '', 254, '2019-09-20 09:04:51', NULL, NULL),
+(256, 0, '95951f.jpg', '', 255, '2019-09-20 09:04:51', NULL, NULL),
+(257, 0, 'c4f03e.jpg', '', 256, '2019-09-20 09:04:51', NULL, NULL),
+(258, 0, 'b59410.jpg', '', 257, '2019-09-20 09:04:51', NULL, NULL),
+(259, 0, 'c9db2a.jpg', '', 258, '2019-09-20 09:04:51', NULL, NULL),
+(260, 0, '0427ba.jpg', '', 259, '2019-09-20 09:04:51', NULL, NULL),
+(261, 0, 'a18b8f.jpg', '', 260, '2019-09-20 09:04:51', NULL, NULL),
+(262, 0, 'ee1775.jpg', '', 261, '2019-09-20 09:04:51', NULL, NULL),
+(263, 0, '8d9b2b.jpg', '', 262, '2019-09-20 09:04:51', NULL, NULL),
+(264, 0, 'c99878.jpg', '', 263, '2019-09-20 09:04:51', NULL, NULL),
+(265, 0, 'd4a659.jpg', '', 264, '2019-09-20 09:04:51', NULL, NULL),
+(266, 0, 'e878a4.jpg', '', 265, '2019-09-20 09:04:51', NULL, NULL),
+(267, 0, '58a999.jpg', '', 266, '2019-09-20 09:04:51', NULL, NULL),
+(268, 0, '85e78e.jpg', '', 267, '2019-09-20 09:04:51', NULL, NULL),
+(269, 0, '6139d0.jpg', '', 268, '2019-09-20 09:04:51', NULL, NULL),
+(270, 0, 'f9946d.jpg', '', 269, '2019-09-20 09:04:51', NULL, NULL),
+(271, 0, 'fe3409.jpg', '', 270, '2019-09-20 09:04:51', NULL, NULL),
+(272, 0, 'a4236b.jpg', '', 271, '2019-09-20 09:04:51', NULL, NULL),
+(273, 0, '70a526.jpg', '', 272, '2019-09-20 09:04:51', NULL, NULL),
+(274, 0, '68b560.jpg', '', 273, '2019-09-20 09:04:51', NULL, NULL),
+(275, 0, '74583c.jpg', '', 274, '2019-09-20 09:04:51', NULL, NULL),
+(276, 0, '11477a.jpg', '', 275, '2019-09-20 09:04:51', NULL, NULL),
+(277, 0, 'ad4853.jpg', '', 276, '2019-09-20 09:04:51', NULL, NULL),
+(278, 0, '0b89e8.jpg', '', 277, '2019-09-20 09:04:51', NULL, NULL),
+(279, 0, 'd6bc7d.jpg', '', 278, '2019-09-20 09:04:51', NULL, NULL),
+(280, 0, '5866f6.jpg', '', 279, '2019-09-20 09:04:51', NULL, NULL),
+(281, 0, 'eb6211.jpg', '', 280, '2019-09-20 09:04:51', NULL, NULL),
+(282, 0, 'afb3d4.jpg', '', 281, '2019-09-20 09:04:51', NULL, NULL),
+(283, 0, '571b253f42940.jpg', '', 205, '2019-09-20 09:35:43', NULL, NULL),
+(284, 0, '568f807814ec2.jpg', '', 214, '2019-09-20 09:37:41', NULL, NULL),
+(285, 0, '568f8251b43a5.jpg', '', 220, '2019-09-20 09:39:52', NULL, NULL),
+(286, 0, '568c78547c29a.jpg', '', 221, '2019-09-20 09:40:40', NULL, NULL),
+(287, 0, '568c78600d999.jpg', '', 222, '2019-09-20 09:41:11', NULL, NULL),
+(288, 0, '568f6fcbb8a3f.jpg', '', 255, '2019-09-20 09:53:27', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -525,9 +572,10 @@ INSERT INTO `image_products` (`id`, `images`, `products_id`, `created_at`, `upda
 
 CREATE TABLE `image_projects` (
   `id` int(11) NOT NULL,
+  `sort` int(11) NOT NULL,
   `title` text NOT NULL,
   `project_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -536,33 +584,33 @@ CREATE TABLE `image_projects` (
 -- Dumping data for table `image_projects`
 --
 
-INSERT INTO `image_projects` (`id`, `title`, `project_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '567379f030b79.jpg', 1, '2019-08-15 02:43:46', NULL, NULL),
-(2, '567379f11d868.jpg', 1, '2019-08-15 02:43:46', NULL, NULL),
-(3, '567379f21db5a.jpg', 1, '2019-08-15 02:44:26', NULL, NULL),
-(4, '567379f2c8361.jpg', 1, '2019-08-15 02:44:26', NULL, NULL),
-(5, '567379f3bb4dd.jpg', 1, '2019-08-15 02:45:05', NULL, NULL),
-(6, '567379f3d4dbb.jpg', 1, '2019-08-15 02:45:05', NULL, NULL),
-(7, '567379e8117ef.jpg', 1, '2019-08-15 02:46:17', NULL, NULL),
-(8, '567379ef8bb22.jpg', 1, '2019-08-15 02:46:17', NULL, NULL),
-(9, '56737b29b4c2f.jpg', 2, '2019-08-15 02:49:47', NULL, NULL),
-(10, '56737b2b65d41.jpg', 2, '2019-08-15 02:49:47', NULL, NULL),
-(11, '56737b2d6d02a.jpg', 2, '2019-08-15 02:50:07', NULL, NULL),
-(12, '56737b2f0d056.jpg', 2, '2019-08-15 02:50:07', NULL, NULL),
-(13, '57590dcfa7cd0.jpg', 3, '2019-08-15 03:41:07', NULL, NULL),
-(14, '57591349e21be.jpg', 3, '2019-08-15 03:41:07', NULL, NULL),
-(15, '575913505a601.jpg', 3, '2019-08-15 03:41:37', NULL, NULL),
-(16, '57591356df339.jpg', 3, '2019-08-15 03:41:37', NULL, NULL),
-(17, '57590e1d66770.jpg', 3, '2019-08-15 03:42:10', NULL, NULL),
-(18, '5759135d97eb0.jpg', 3, '2019-08-15 03:42:10', NULL, NULL),
-(19, '575913655c5a7.jpg', 3, '2019-08-15 03:42:41', NULL, NULL),
-(20, '57591374289de.jpg', 3, '2019-08-15 03:42:41', NULL, NULL),
-(21, '57591379b639f.jpg', 3, '2019-08-15 03:43:10', NULL, NULL),
-(22, '5759137eb255e.jpg', 3, '2019-08-15 03:43:10', NULL, NULL),
-(23, '57591397f2ced.jpg', 3, '2019-08-15 03:43:42', NULL, NULL),
-(24, '5759139cc4eb3.jpg', 3, '2019-08-15 03:43:42', NULL, NULL),
-(25, '5759224837e41.jpg', 4, '2019-08-15 03:44:32', NULL, NULL),
-(26, '575921fde0be8.jpg', 4, '2019-08-15 03:44:32', NULL, NULL);
+INSERT INTO `image_projects` (`id`, `sort`, `title`, `project_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 2, '567379f030b79.jpg', 1, '2019-08-15 02:43:46', NULL, NULL),
+(2, 3, '567379f11d868.jpg', 1, '2019-08-15 02:43:46', NULL, NULL),
+(3, 1, '567379f21db5a.jpg', 1, '2019-08-15 02:44:26', NULL, NULL),
+(4, 4, '567379f2c8361.jpg', 1, '2019-08-15 02:44:26', NULL, NULL),
+(5, 5, '567379f3bb4dd.jpg', 1, '2019-08-15 02:45:05', NULL, NULL),
+(6, 6, '567379f3d4dbb.jpg', 1, '2019-08-15 02:45:05', NULL, NULL),
+(7, 7, '567379e8117ef.jpg', 1, '2019-08-15 02:46:17', NULL, NULL),
+(8, 8, '567379ef8bb22.jpg', 1, '2019-08-15 02:46:17', NULL, NULL),
+(9, 1, '56737b29b4c2f.jpg', 2, '2019-08-15 02:49:47', NULL, NULL),
+(10, 2, '56737b2b65d41.jpg', 2, '2019-08-15 02:49:47', NULL, NULL),
+(11, 3, '56737b2d6d02a.jpg', 2, '2019-08-15 02:50:07', NULL, NULL),
+(12, 4, '56737b2f0d056.jpg', 2, '2019-08-15 02:50:07', NULL, NULL),
+(13, 1, '57590dcfa7cd0.jpg', 3, '2019-08-15 03:41:07', NULL, NULL),
+(14, 2, '57591349e21be.jpg', 3, '2019-08-15 03:41:07', NULL, NULL),
+(15, 3, '575913505a601.jpg', 3, '2019-08-15 03:41:37', NULL, NULL),
+(16, 4, '57591356df339.jpg', 3, '2019-08-15 03:41:37', NULL, NULL),
+(17, 5, '57590e1d66770.jpg', 3, '2019-08-15 03:42:10', NULL, NULL),
+(18, 6, '5759135d97eb0.jpg', 3, '2019-08-15 03:42:10', NULL, NULL),
+(19, 7, '575913655c5a7.jpg', 3, '2019-08-15 03:42:41', NULL, NULL),
+(20, 8, '57591374289de.jpg', 3, '2019-08-15 03:42:41', NULL, NULL),
+(21, 9, '57591379b639f.jpg', 3, '2019-08-15 03:43:10', NULL, NULL),
+(22, 10, '5759137eb255e.jpg', 3, '2019-08-15 03:43:10', NULL, NULL),
+(23, 11, '57591397f2ced.jpg', 3, '2019-08-15 03:43:42', NULL, NULL),
+(24, 12, '5759139cc4eb3.jpg', 3, '2019-08-15 03:43:42', NULL, NULL),
+(25, 1, '5759224837e41.jpg', 4, '2019-08-15 03:44:32', NULL, NULL),
+(26, 2, '575921fde0be8.jpg', 4, '2019-08-15 03:44:32', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -573,7 +621,7 @@ INSERT INTO `image_projects` (`id`, `title`, `project_id`, `created_at`, `update
 CREATE TABLE `pages` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -585,26 +633,9 @@ CREATE TABLE `pages` (
 INSERT INTO `pages` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'home', '2019-08-15 10:54:05', NULL, NULL),
 (2, 'product', '2019-08-15 10:54:05', NULL, NULL),
-(3, 'category_technology', '2019-08-15 10:54:18', NULL, NULL),
+(3, 'technology', '2019-08-15 10:54:18', NULL, NULL),
 (4, 'project-references', '2019-08-15 10:54:18', NULL, NULL),
 (5, 'contact', '2019-08-15 10:54:52', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `page_meta_tags`
---
-
-CREATE TABLE `page_meta_tags` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `keywords` text NOT NULL,
-  `page_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -616,7 +647,7 @@ CREATE TABLE `portfolios` (
   `id` int(11) NOT NULL,
   `img` text NOT NULL,
   `img_title_alt` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -646,7 +677,7 @@ CREATE TABLE `products` (
   `detail` text NOT NULL,
   `group_product_id` int(11) NOT NULL,
   `category_product_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -950,7 +981,7 @@ CREATE TABLE `projects` (
   `description` text NOT NULL,
   `img_cover` text NOT NULL,
   `img_title_alt` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -968,16 +999,48 @@ INSERT INTO `projects` (`id`, `title`, `description`, `img_cover`, `img_title_al
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `project_page`
+--
+
+CREATE TABLE `project_page` (
+  `id` int(11) NOT NULL,
+  `meta_tag_title` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
+  `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
+  `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `project_page`
+--
+
+INSERT INTO `project_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '', '', '', '', '2019-10-02 09:16:29', '2019-10-04 03:43:15', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'super admin', '2019-10-08 09:38:23', NULL, NULL),
+(2, 'admin', '2019-10-08 09:38:23', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -995,8 +1058,12 @@ CREATE TABLE `technology_videos` (
   `short_src` text NOT NULL,
   `img_cover` text NOT NULL,
   `img_title_alt` text NOT NULL,
+  `meta_tag_title` text NOT NULL,
+  `meta_tag_description` text NOT NULL,
+  `meta_tag_keywords` text NOT NULL,
+  `img_og_twitter` text NOT NULL,
   `category_technology_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1005,12 +1072,12 @@ CREATE TABLE `technology_videos` (
 -- Dumping data for table `technology_videos`
 --
 
-INSERT INTO `technology_videos` (`id`, `title`, `slug`, `body`, `description`, `src`, `short_src`, `img_cover`, `img_title_alt`, `category_technology_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'ระบบอลูมิเนียมประตูหน้าต่าง B-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-b-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานเฟี้ยม', '<iframe width=\"100%\" height=\"400\" src=\"https://www.youtube.com/embed/pZFeraPjm4s\" frameborder=\"0\" allowfullscreen></iframe>', 'pZFeraPjm4s', 'https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg', '', 1, '2019-08-21 08:40:26', NULL, NULL),
-(2, 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม  Aluminium Profile Copy Router', 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม-aluminium-profile-copy-router', '<p>สามารถลดเวลาการทำงานเจาะรูกุญแกได้ 2 เท่า เพราะสามารถเร้าเตอร์ได้ทั้ง 2ฝั่งในเวลาเดียวกัน</p><p><br></p><p>Credit by&nbsp; :&nbsp; &nbsp;<span style=\\\"\\\\&quot;color:\\\" rgb(0,=\\\"\\\" 0,=\\\"\\\" 0);=\\\"\\\" font-family:=\\\"\\\" arial;=\\\"\\\" font-size:=\\\"\\\" 13px;=\\\"\\\" white-space:=\\\"\\\" pre-wrap;\\\\\\\"=\\\"\\\">&nbsp; </span><span style=\\\"\\\\&quot;color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span>www.ozgencmachine.com<span style=\\\"\\\\&quot;color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span></p>                        </p>', 'เทคโนโลยียุคใหม่ของการทำงานอลูมิเนียมให้เป็นเรื่องง่าย', '<iframe width=\"100%\" height=\"400\" src=\"https://www.youtube.com/embed/swT-nMNmmz4\" frameborder=\"0\" allowfullscreen></iframe>', 'swT-nMNmmz4', 'https://img.youtube.com/vi/swT-nMNmmz4/mqdefault.jpg', '', 2, '2019-08-21 08:41:34', NULL, NULL),
-(3, 'ระบบอลูมิเนียมประตูหน้าต่าง  X-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-x-series', '', 'ระบบอลูมิเนียมประตู SLIM DESIGN', '', 'hd3MghzSIRs', 'https://img.youtube.com/vi/hd3MghzSIRs/mqdefault.jpg', '', 1, '2019-08-22 03:28:20', NULL, NULL),
-(4, 'ระบบอลูมิเนียมประตูหน้าต่าง  E-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-e-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานเลิ่อน', '', 'Qs4bW40XLwk', 'https://img.youtube.com/vi/Qs4bW40XLwk/mqdefault.jpg', '', 1, '2019-08-22 03:32:27', NULL, NULL),
-(5, 'ระบบอลูมิเนียมประตูหน้าต่าง C-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานกระทุ้ง', '', 'IqDe4FbX67w', 'https://img.youtube.com/vi/IqDe4FbX67w/mqdefault.jpg', '', 1, '2019-08-22 03:32:27', NULL, NULL);
+INSERT INTO `technology_videos` (`id`, `title`, `slug`, `body`, `description`, `src`, `short_src`, `img_cover`, `img_title_alt`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `category_technology_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'ระบบอลูมิเนียมประตูหน้าต่าง  B-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-b-series', '<p><br></p>', 'ระบบอลูมิเนียมประตูหน้าต่างบานเฟี้ยม                                    ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/pZFeraPjm4s\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'pZFeraPjm4s', 'https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-21 08:40:26', '2019-10-03 06:52:24', NULL),
+(2, 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม  Aluminium Profile Copy Router', 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม-aluminium-profile-copy-router', '<p>สามารถลดเวลาการทำงานเจาะรูกุญแกได้ 2 เท่า เพราะสามารถเร้าเตอร์ได้ทั้ง 2ฝั่งในเวลาเดียวกัน</p><p><br></p><p>Credit by  :   <span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 0,=\\\"\\\" 0);=\\\"\\\" font-family:=\\\"\\\" arial;=\\\"\\\" font-size:=\\\"\\\" 13px;=\\\"\\\" white-space:=\\\"\\\" pre-wrap;\\\\\\\"=\\\"\\\">  </span><span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span>www.ozgencmachine.com<span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span></p>                        </p>', 'เทคโนโลยียุคใหม่ของการทำงานอลูมิเนียมให้เป็นเรื่องง่าย', '<iframe width=\"100%\" height=\"400\" src=\"https://www.youtube.com/embed/swT-nMNmmz4\" frameborder=\"0\" allowfullscreen></iframe>', 'swT-nMNmmz4', 'https://img.youtube.com/vi/swT-nMNmmz4/mqdefault.jpg', '', '', '', '', '', 2, '2019-08-21 08:41:34', '2019-10-01 09:39:26', NULL),
+(3, 'ระบบอลูมิเนียมประตูหน้าต่าง  X-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-x-series', '', 'ระบบอลูมิเนียมประตู SLIM DESIGN', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hd3MghzSIRs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'hd3MghzSIRs', 'https://img.youtube.com/vi/hd3MghzSIRs/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-22 03:28:20', '2019-10-03 07:04:52', NULL),
+(5, 'ระบบอลูมิเนียมประตูหน้าต่าง  E-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานเลิ่อน                                    ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Qs4bW40XLwk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'Qs4bW40XLwk', 'https://img.youtube.com/vi/Qs4bW40XLwk/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-22 03:32:27', '2019-10-02 10:23:38', NULL),
+(7, 'ระบบอลูมิเนียมประตูหน้าต่าง C-SERIES', '', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานกระทุ้ง                                     ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IqDe4FbX67w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'IqDe4FbX67w', 'https://img.youtube.com/vi/IqDe4FbX67w/mqdefault.jpg', '', '', '', '', '', 1, '2019-10-02 10:25:23', '2019-10-04 03:42:40', NULL);
 
 -- --------------------------------------------------------
 
@@ -1023,7 +1090,7 @@ CREATE TABLE `users` (
   `username` varchar(40) NOT NULL,
   `password` varchar(40) NOT NULL,
   `role_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1033,7 +1100,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'admin', '1234', 0, '2019-08-14 08:23:55', NULL, NULL);
+(1, 'spadmin', '1234', 1, '2019-08-14 08:23:55', NULL, NULL),
+(2, 'admin', '1234', 2, '2019-10-08 09:39:07', NULL, NULL),
+(3, 'khun', '1234', 2, '2019-10-08 09:39:14', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -1076,6 +1145,18 @@ ALTER TABLE `group_products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `home_page`
+--
+ALTER TABLE `home_page`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `image_galleries`
+--
+ALTER TABLE `image_galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `image_products`
 --
 ALTER TABLE `image_products`
@@ -1094,12 +1175,6 @@ ALTER TABLE `pages`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `page_meta_tags`
---
-ALTER TABLE `page_meta_tags`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `portfolios`
 --
 ALTER TABLE `portfolios`
@@ -1115,6 +1190,12 @@ ALTER TABLE `products`
 -- Indexes for table `projects`
 --
 ALTER TABLE `projects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `project_page`
+--
+ALTER TABLE `project_page`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1143,99 +1224,92 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category_products`
 --
 ALTER TABLE `category_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT for table `category_technologies`
 --
 ALTER TABLE `category_technologies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `contact_page`
 --
 ALTER TABLE `contact_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `faq_technologies`
 --
 ALTER TABLE `faq_technologies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `group_products`
 --
 ALTER TABLE `group_products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+--
+-- AUTO_INCREMENT for table `home_page`
+--
+ALTER TABLE `home_page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `image_galleries`
+--
+ALTER TABLE `image_galleries`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `image_products`
 --
 ALTER TABLE `image_products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=289;
-
 --
 -- AUTO_INCREMENT for table `image_projects`
 --
 ALTER TABLE `image_projects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `page_meta_tags`
---
-ALTER TABLE `page_meta_tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=287;
-
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+--
+-- AUTO_INCREMENT for table `project_page`
+--
+ALTER TABLE `project_page`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `technology_videos`
 --
 ALTER TABLE `technology_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

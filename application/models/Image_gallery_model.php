@@ -5,7 +5,7 @@ class Image_gallery_model extends CI_Model
 
     public function get_image_gallery_all()
     {
-        $query = $this->db->get('image_galleries');
+        $query = $this->db->order_by('sort', 'asc')->get('image_galleries');
 
         return $query->num_rows() > 0 ? $query->result() : [];
     }

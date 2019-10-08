@@ -170,6 +170,68 @@ class Home extends MX_Controller
         redirect('backoffice/page/home/content/' . $contact_page_id);
     }
 
+	/***********************************
+	 * Sorting (Using Ajax)
+	 * ********************************/
+
+	public function ajax_get_gallery_and_sort_show()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$image_galleries = $this->Image_gallery_model->get_image_gallery_all();
+
+		// Set Response
+		if ($image_galleries != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			$counter = 1;
+			$html = '<ul id="sortable">';
+			foreach ($image_galleries as $image_gallery) {
+				$html .= '<li id="' . $image_gallery->id . '" data-sort="' . $image_gallery->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img width="120px;" src="' . base_url('storage/uploads/images/portfolios/' . $image_gallery->title) . '"</li>';
+				$counter++;
+			}
+			$html .= '</ul>';
+
+			$response['data'] = $html;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_gallery_and_sort_update()
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		// Set Response
+		if ($this->input->post()) {
+			$bundle_id = $this->input->post('id');
+			$bundle_sort = $this->input->post('sort');
+			$counter = 1;
+			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+				$this->Image_gallery_model->update_image_gallery_by_id($id, [
+					'sort' => $counter
+				]);
+				$counter++;
+			}
+
+			$status = 200;
+			$response['success'] = 1;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
 	private function do_upload_img_gallery($filename)
 	{
 		$config['upload_path'] = './storage/uploads/images/portfolios';

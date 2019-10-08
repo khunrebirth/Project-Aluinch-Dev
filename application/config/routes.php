@@ -127,6 +127,8 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         $route["backoffice/page/home/gallery/edit/(:any)"] = "back_end/Home/gallery_edit/$1";
         $route["backoffice/page/home/gallery/update/(:any)"] = "back_end/Home/gallery_update/$1";
         $route["backoffice/page/home/gallery/destroy/(:any)"] = "back_end/Home/gallery_destroy/$1";
+		$route['backoffice/page/home/gallery/ajax/get/gallery/sort/show'] = 'back_end/Home/ajax_get_gallery_and_sort_show';
+		$route['backoffice/page/home/gallery/ajax/get/gallery/sort/update'] = 'back_end/Home/ajax_get_gallery_and_sort_update';
 
         /*
         | -------------------------------------------------------------------------

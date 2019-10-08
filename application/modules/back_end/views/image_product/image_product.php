@@ -1,8 +1,6 @@
 <!-- CSS Libraries -->
-<link rel="stylesheet"
-      href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
-<link rel="stylesheet"
-      href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/back_end/node_modules/prismjs/themes/prism.css'); ?> ">
 
 <!-- Main Content -->
@@ -10,10 +8,12 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a
-                            href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
+                <div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Products</a></div>
-                <div class="breadcrumb-item">Product Groups</div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/group'); ?>">Product Groups</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/category/show/' . $group_product->id); ?>">Product Categories (Group: <?php echo $group_product->title; ?>)</a></div>
+				<div class="breadcrumb-item"><a href="<?php echo base_url('backoffice/page/product/product/show/' . $group_product->id . '/' . $category_product->id); ?>">Products (Category: <?php echo $category_product->title; ?>)</a></div>
+                <div class="breadcrumb-item active">Image Product</div>
             </div>
         </div>
 
@@ -22,69 +22,55 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>List of Product Group</h4>
+                            <h4>List of Image Product</h4>
                             <div class="card-header-action">
-                                <a href="<?php echo base_url('backoffice/page/product/group/create'); ?>"
-                                   class="btn btn-primary">
+                                <a href="<?php echo base_url('backoffice/page/product/list-product-pictures/create/' . $group_product->id . '/' . $category_product->id . '/' . $product->id); ?>" class="btn btn-primary" >
                                     <i class="fas fa-plus"></i> Add
                                 </a>
                             </div>
                         </div>
                         <div class="card-body">
 
-                            <?php if ($this->session->flashdata('success')) { ?>
-                                <div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
-                            <?php } ?>
-                            <?php if ($this->session->flashdata('error')) { ?>
-                                <div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
-                            <?php } ?>
+							<?php if ($this->session->flashdata('success')) { ?>
+								<div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
+							<?php } ?>
+							<?php if ($this->session->flashdata('error')) { ?>
+								<div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
+							<?php } ?>
 
                             <div class="table-responsive">
-                                <table class="table table-striped" id="ssmDataTable">
+                                <table class="table table-striped" id="table-1">
                                     <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th>Title</th>
+                                        <th>Images</th>
                                         <th>Created at</th>
-                                        <th>Content</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?php
-                                    if (count($group_products) > 0) {
                                         $counter = 1;
-                                        foreach ($group_products as $group_product) { ?>
+                                        foreach ($product_pictures as $product_picture) { ?>
                                             <tr>
                                                 <td class="text-center"><?php echo $counter++; ?></td>
-                                                <td><?php echo $group_product->title; ?></td>
-                                                <td><?php echo $group_product->created_at; ?></td>
                                                 <td>
-                                                    <a class="btn btn-warning"
-                                                       href="<?php echo base_url('backoffice/page/product/category/show/' . $group_product->id); ?>">
-                                                        <i class="far fa-view"></i> Items
-                                                        (<?php echo $group_product->counter; ?>)</a>
+                                                    <img id="previewImgCover"  src="<?php echo base_url('storage/uploads/images/products/'. $product_picture->img );?>" style="background-color: #fff;" width="20%">
                                                 </td>
+                                                <td><?php echo $product_picture->created_at; ?></td>
                                                 <td>
                                                     <div class="dropdown d-inline">
-                                                        <button class="btn btn-info dropdown-toggle" type="button"
-                                                                id="dropdownMenuButton2" data-toggle="dropdown"
-                                                                aria-haspopup="true" aria-expanded="false">
+                                                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             <i class="fas fa-cog"></i> Manage
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item has-icon"
-                                                               href="<?php echo base_url('backoffice/page/product/group/edit/' . $group_product->id); ?>"><i
-                                                                        class="far fa-edit"></i> Edit</a>
-                                                            <a class="dropdown-item has-icon"
-                                                               onclick="deleteGroupProduct('<?php echo base_url('backoffice/page/product/group/destroy/' . $group_product->id); ?>')"><i
-                                                                        class="far fa-trash-alt"></i> Delete</a>
+                                                            <a class="dropdown-item has-icon" href="<?php echo base_url('backoffice/page/product/list-product-pictures/edit/' . $group_product->id . '/' . $category_product->id . '/' . $product->id . '/' . $product_picture->id); ?>" ><i class="far fa-edit"></i> Edit</a>
+                                                            <a class="dropdown-item has-icon" onclick="deleteImageProduct('<?php echo base_url('backoffice/page/product/list-product-pictures/destroy/' . $product_picture->id); ?>')"><i class="far fa-trash-alt"></i> Delete</a>
                                                         </div>
                                                     </div>
                                                 </td>
                                             </tr>
-                                        <?php }
-                                    } ?>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -120,7 +106,7 @@
         }, 1 * 1500)
     }
 
-    function deleteGroupProduct(url) {
+    function deleteImageProduct(url) {
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
@@ -151,7 +137,7 @@
                         }
                     })
                 } else {
-                    swal('Cancel')
+                    swal('Your file is safe');
                 }
             })
     }

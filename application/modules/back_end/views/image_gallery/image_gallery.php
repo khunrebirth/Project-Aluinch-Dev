@@ -107,7 +107,7 @@
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
-            button: true,
+            buttons: true,
             dangerMode: true
         })
             .then((willDelete) => {

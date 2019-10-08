@@ -76,7 +76,7 @@ class Product extends MX_Controller
 
 			$product_id = $add_product;
 
-        	$bundle_images = $this->upload_files_multi('img-product', $_FILES['img_multi']);
+        	$bundle_images = $this->upload_images_multi('img-product', $_FILES['img_multi']);
 
         	if ($bundle_images) {
         		foreach ($bundle_images as $image) {
@@ -187,109 +187,91 @@ class Product extends MX_Controller
 	 * Product Pictures
 	 * ********************************/
 
-	public function list_product_pictures($product_id)
+	public function list_product_pictures($group_product_id, $category_product_id, $product_id)
 	{
-		// Set Data
-		$this->data['title'] = '';
-		$this->data['content'] = '';
-		$this->data['product_pictures'] = $this->Image_product->get_image_product_by_product_id($product_id);
+		$this->data['title'] = 'List of Image Product';
+		$this->data['content'] = 'image_product/image_product';
+		$this->data['product_pictures'] = $this->Image_product_model->get_image_product_by_product_id($product_id);
+		$this->data['group_product'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
+		$this->data['category_product'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
+		$this->data['product'] = $this->Product_model->get_product_by_id($product_id);
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function product_pictures_create()
+	public function product_pictures_create($group_product_id, $category_product_id, $product_id)
 	{
-		// Set Data
-		$this->data['title'] = '';
-		$this->data['content'] = '';
-
-		// TODO:: Multi Load
+		$this->data['title'] = 'Image Product - Add';
+		$this->data['content'] = 'image_product/add_image_product';
+		$this->data['group_product'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
+		$this->data['category_product'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
+		$this->data['product'] = $this->Product_model->get_product_by_id($product_id);
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function product_pictures_store()
+	public function product_pictures_store($group_product_id, $category_product_id, $product_id)
 	{
-		// Handle Image
-		$img_en = '';
-		$img_th = '';
 
-		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->do_upload_img_product('img_en');
+		$bundle_images = $this->upload_images_multi('img-product', $_FILES['img_multi']);
+
+		if ($bundle_images) {
+			foreach ($bundle_images as $image) {
+				$this->Image_product_model->insert_image_product([
+					'img' => $image,
+					'product_id' => $product_id
+				]);
+			}
 		}
-
-		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->do_upload_img_product('img_th');
-		}
-
-		// Filter Data
-		$input_img = ['en' => $img_en, 'th' => $img_th];
-		$input_img_title_alt = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
-
-		// Update Data
-		$add_client = $this->Image_product->insert_product_picture([
-			'img' => serialize($input_img),
-			'img_title_alt' => serialize($input_img_title_alt)
-		]);
 
 		// Set Session To View
-		if ($add_client) {
+		if ($bundle_images) {
 			$this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/client/list-client-brands');
+		redirect('backoffice/page/product/list-product-pictures/' .  $group_product_id . '/' . $category_product_id . '/' . $product_id);
 	}
 
-	public function product_pictures_edit($product_picture_id)
+	public function product_pictures_edit($group_product_id, $category_product_id, $product_id, $product_picture_id)
 	{
-		$client_brand = $this->Image_product->get_client_brand_pictures_by_id($product_picture_id);
-
-		// Set Data
-		$this->data['title'] = 'Page: Client - List Client Brands - Edit Client Brands: ' . $client_brand->id;
-		$this->data['content'] = 'client/list_client_brand_edit';
-		$this->data['product_picture'] = $client_brand;
+		$this->data['title'] = 'Edit Image product';
+		$this->data['content'] = 'image_product/edit_image_product';
+		$this->data['image_product'] = $this->Image_product_model->get_image_product_by_id($product_picture_id);
+		$this->data['group_product'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
+		$this->data['category_product'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
+		$this->data['product'] = $this->Product_model->get_product_by_id($product_id);
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function product_pictures_update($product_picture_id)
+	public function product_pictures_update($group_product_id, $category_product_id, $product_id, $product_picture_id)
 	{
 		// Get Old data
-		$client_brand = $this->Image_product->get_client_brand_pictures_by_id($product_picture_id);
+		$image_product = $this->Image_product_model->get_image_product_by_id($product_picture_id);
 
 		// Handle Image
-		$img_en = unserialize($client_brand->img)['en'];
-		$img_th = unserialize($client_brand->img)['th'];
+		$img = $image_product->img;
 
-		if (isset($_FILES['img_en']) && $_FILES['img_en']['name'] != '') {
-			$img_en = $this->do_upload_img_product('img_en');
+		if (isset($_FILES['img']) && $_FILES['img']['name'] != '') {
+			$img = $this->do_upload_img_product('img');
 		}
-
-		if (isset($_FILES['img_th']) && $_FILES['img_th']['name'] != '') {
-			$img_th = $this->do_upload_img_product('img_th');
-		}
-
-		// Filter Data
-		$input_img = ['en' => $img_en, 'th' => $img_th];
-		$input_img_title_alt = ['en' => $this->input->post('img_title_alt_en'), 'th' => $this->input->post('img_title_alt_th')];
 
 		// Update Data
-		$update_client_brand = $this->Image_product->update_client_brand_pictures_by_id($product_picture_id, [
-			'img' => serialize($input_img),
-			'img_title_alt' => serialize($input_img_title_alt),
+		$update_image_product = $this->Image_product_model->update_image_product_by_id($product_picture_id, [
+			'img' => $img,
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
 		// Set Session To View
-		if ($update_client_brand) {
+		if ($update_image_product) {
 			$this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect($this->lang . '/backoffice/page/client/list-client-brands');
+		redirect('backoffice/page/product/list-product-pictures/' .  $group_product_id . '/' . $category_product_id . '/' . $product_id);
 	}
 
 	public function product_pictures_destroy($product_picture_id)
@@ -297,7 +279,7 @@ class Product extends MX_Controller
 		$status = 500;
 		$response['success'] = 0;
 
-		$delete_product_picture = $this->Image_product->delete_image_product_by_id($product_picture_id);
+		$delete_product_picture = $this->Image_product_model->delete_image_product_by_id($product_picture_id);
 
 		if ($delete_product_picture != false) {
 			$status = 200;
@@ -329,9 +311,9 @@ class Product extends MX_Controller
 		}
 	}
 
-	private function upload_files_multi($title, $files)
+	private function upload_images_multi($title, $files)
 	{
-		$config['upload_path'] = './storage/uploads/files/products';
+		$config['upload_path'] = './storage/uploads/images/products';
 		$config['allowed_types'] = 'jpg|gif|png';
 		$config['overwrite'] = 1;
 

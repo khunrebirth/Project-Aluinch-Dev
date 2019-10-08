@@ -55,7 +55,7 @@
 												<td><?php echo $product['group_product_name']; ?></td>
 												<td><?php echo $product['category_product_name']; ?></td>
 												<td><?php echo $product['created_at']; ?></td>
-												<td><a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/list-product-pictures/' . $product['id']); ?>"><i class="fas fa-pencil-ruler"></i> Pictures (<?php echo $product['count']['count_picture']; ?>)</a></td>
+												<td><a class="btn btn-warning" href="<?php echo base_url('backoffice/page/product/list-product-pictures/' .  $group_products->id . '/' . $category_products->id . '/' . $product['id']); ?>"><i class="fas fa-pencil-ruler"></i> Pictures (<?php echo $product['count']['count_picture']; ?>)</a></td>
 												<td>
 													<div class="dropdown d-inline">
 														<button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,7 +107,7 @@
 		swal({
 			title: 'Are you sure ?',
 			icon: 'warning',
-			button: true,
+			buttons: true,
 			dangerMode: true
 		})
 			.then((willDelete) => {

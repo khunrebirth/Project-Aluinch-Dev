@@ -83,12 +83,11 @@
 									<div class="col-sm-9">
 										<div class="custom-file input-file-w-30">
 											<input type="file" id="img_multi" class="custom-file-input"
-												   name="img_multi[]" onchange="preview_image();" multiple>
+												   name="img_multi[]" onchange="previewImageMulti();" multiple>
 											<label class="custom-file-label">Choose file (.gif | .jpg | .png)</label>
 										</div>
 									</div>
 								</div>
-
 								<div class="text-right">
 									<button type="submit" class="btn btn-primary">Save changes</button>
 									<a href="<?php echo base_url('backoffice/page/product/product/show/' . $group_products->id . '/' . $category_products->id); ?>"
@@ -117,7 +116,7 @@
         }
     }
 
-    function preview_image() {
+    function previewImageMulti() {
         $('#previewImg').html('')
         let totalFile = document.getElementById("img_multi").files.length
 

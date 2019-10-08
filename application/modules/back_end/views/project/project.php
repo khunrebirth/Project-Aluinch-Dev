@@ -13,7 +13,7 @@
                 <div class="breadcrumb-item active"><a
                             href="<?php echo base_url('backoffice/dashboard'); ?>">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="#">Page: Projects</a></div>
-                <div class="breadcrumb-item">Project</div>
+                <div class="breadcrumb-item">Projects</div>
             </div>
         </div>
 
@@ -119,7 +119,7 @@
         swal({
             title: 'Are you sure ?',
             icon: 'warning',
-            button: true,
+            buttons: true,
             dangerMode: true
         })
             .then((willDelete) => {

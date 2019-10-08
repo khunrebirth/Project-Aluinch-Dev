@@ -40,20 +40,11 @@ class Product extends MX_Controller
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
 
-    public function index()
-    {
-        $this->data['title'] = 'Products';
-        $this->data['content'] = 'product';
-        $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
-        $this->data['category_products'] = $this->Category_product_model->get_category_product_all();
-        $this->data['products'] = $this->Product_model->get_product_all();
-
-        $this->load->view('app', $this->data);
-    }
+    public function index() {}
 
     public function create($group_product_id, $category_product_id)
     {
-        $this->data['title'] = 'Manage Item: products';
+        $this->data['title'] = 'Page: Products - Add';
         $this->data['content'] = 'product/add_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
         $this->data['category_products'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
@@ -112,7 +103,7 @@ class Product extends MX_Controller
 		$group_product_id = $products->group_product_id;
 		$category_product_id = $products->category_product_id;
 
-        $this->data['title'] = 'Products';
+        $this->data['title'] = 'Page: Products - Edit';
         $this->data['content'] = 'product/edit_product';
         $this->data['products'] = $products;
         $this->data['group_products'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
@@ -123,17 +114,15 @@ class Product extends MX_Controller
 
     public function update($product_id)
     {
-        $data = [
-            'title' => $this->input->post('title'),
-            'description_th' => $this->input->post('description_th'),
-            'description_en' => $this->input->post('description_en'),
-            'detail' => $this->input->post('detail'),
-            'group_product_id' => $this->input->post('group_product_id'),
-            'category_product_id' => $this->input->post('category_product_id'),
-            'updated_at' => date('Y-m-d H:i:s')
-        ];
-
-        $update_product = $this->Product_model->update_product_by_id($product_id, $data);
+        $update_product = $this->Product_model->update_product_by_id($product_id, [
+			'title' => $this->input->post('title'),
+			'description_th' => $this->input->post('description_th'),
+			'description_en' => $this->input->post('description_en'),
+			'detail' => $this->input->post('detail'),
+			'group_product_id' => $this->input->post('group_product_id'),
+			'category_product_id' => $this->input->post('category_product_id'),
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
 
         if ($update_product) {
             $this->session->set_flashdata('success', 'Update Done');
@@ -189,7 +178,7 @@ class Product extends MX_Controller
 
 	public function list_product_pictures($group_product_id, $category_product_id, $product_id)
 	{
-		$this->data['title'] = 'List of Image Product';
+		$this->data['title'] = 'Page: Products - Image Product';
 		$this->data['content'] = 'image_product/image_product';
 		$this->data['product_pictures'] = $this->Image_product_model->get_image_product_by_product_id($product_id);
 		$this->data['group_product'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
@@ -201,7 +190,7 @@ class Product extends MX_Controller
 
 	public function product_pictures_create($group_product_id, $category_product_id, $product_id)
 	{
-		$this->data['title'] = 'Image Product - Add';
+		$this->data['title'] = 'Page: Products - Image Product - Add';
 		$this->data['content'] = 'image_product/add_image_product';
 		$this->data['group_product'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
 		$this->data['category_product'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
@@ -234,11 +223,11 @@ class Product extends MX_Controller
 		redirect('backoffice/page/product/list-product-pictures/' .  $group_product_id . '/' . $category_product_id . '/' . $product_id);
 	}
 
-	public function product_pictures_edit($group_product_id, $category_product_id, $product_id, $product_picture_id)
+	public function product_pictures_edit($group_product_id, $category_product_id, $product_id, $image_product_id)
 	{
-		$this->data['title'] = 'Edit Image product';
+		$this->data['title'] = 'Page: Products - Image product - Edit';
 		$this->data['content'] = 'image_product/edit_image_product';
-		$this->data['image_product'] = $this->Image_product_model->get_image_product_by_id($product_picture_id);
+		$this->data['image_product'] = $this->Image_product_model->get_image_product_by_id($image_product_id);
 		$this->data['group_product'] = $this->Group_product_model->get_group_product_by_id($group_product_id);
 		$this->data['category_product'] = $this->Category_product_model->get_category_product_by_id($category_product_id);
 		$this->data['product'] = $this->Product_model->get_product_by_id($product_id);
@@ -246,10 +235,10 @@ class Product extends MX_Controller
 		$this->load->view('app', $this->data);
 	}
 
-	public function product_pictures_update($group_product_id, $category_product_id, $product_id, $product_picture_id)
+	public function product_pictures_update($group_product_id, $category_product_id, $product_id, $image_product_id)
 	{
 		// Get Old data
-		$image_product = $this->Image_product_model->get_image_product_by_id($product_picture_id);
+		$image_product = $this->Image_product_model->get_image_product_by_id($image_product_id);
 
 		// Handle Image
 		$img = $image_product->img;
@@ -259,7 +248,7 @@ class Product extends MX_Controller
 		}
 
 		// Update Data
-		$update_image_product = $this->Image_product_model->update_image_product_by_id($product_picture_id, [
+		$update_image_product = $this->Image_product_model->update_image_product_by_id($image_product_id, [
 			'img' => $img,
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
@@ -274,12 +263,12 @@ class Product extends MX_Controller
 		redirect('backoffice/page/product/list-product-pictures/' .  $group_product_id . '/' . $category_product_id . '/' . $product_id);
 	}
 
-	public function product_pictures_destroy($product_picture_id)
+	public function product_pictures_destroy($image_product_id)
 	{
 		$status = 500;
 		$response['success'] = 0;
 
-		$delete_product_picture = $this->Image_product_model->delete_image_product_by_id($product_picture_id);
+		$delete_product_picture = $this->Image_product_model->delete_image_product_by_id($image_product_id);
 
 		if ($delete_product_picture != false) {
 			$status = 200;

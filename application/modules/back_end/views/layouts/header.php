@@ -84,12 +84,12 @@
                     <li class="nav-item dropdown <?php if ($this->uri->segment(2) == "page" && $this->uri->segment(3) == "home") { echo 'active'; } ?>">
                         <a href="#" class="nav-link has-dropdown"><i class="fas fa-home"></i><span>Home</span></a>
                         <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(3) == "home" && $this->uri->segment(4) == "content"){ echo 'active'; } ?>">
+                            <li class="<?php if ($this->uri->segment(3) == "home" && $this->uri->segment(4) == "content") { echo 'active'; } ?>">
                                 <a class="nav-link" href="<?php echo base_url('backoffice/page/home/content/1'); ?>">&#9679; Content</a>
                             </li>
                         </ul>
                         <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(3) == "home" && $this->uri->segment(4) == "gallery"){ echo 'active'; } ?>">
+                            <li class="<?php if ($this->uri->segment(3) == "home" && $this->uri->segment(4) == "gallery") { echo 'active'; } ?>">
                                 <a class="nav-link" href="<?php echo base_url('backoffice/page/home/gallery'); ?>">&#9679; Gallery</a>
                             </li>
                         </ul>
@@ -118,7 +118,7 @@
                             </li>
                         </ul>
                         <ul class="dropdown-menu">
-                            <li class="<?php if ($this->uri->segment(3) == "project" && $this->uri->segment(4) == "projects") { echo 'active'; } ?>">
+                            <li class="<?php if ($this->uri->segment(3) == "project" && ($this->uri->segment(4) == "projects" || $this->uri->segment(4) == "list-project-pictures")) { echo 'active'; } ?>">
                                 <a class="nav-link" href="<?php echo base_url('backoffice/page/project/projects') ?>">&#9679; Projects</a>
                             </li>
                         </ul>
@@ -141,7 +141,6 @@
                         <a class="nav-link" href="<?php echo base_url('backoffice/settings'); ?>"><i class="fas fa-ellipsis-h"></i> <span>Settings</span></a>
                     </li>
                 </ul>
-
                 <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                     <a href="<?php echo base_url('home'); ?>" class="btn btn-primary btn-lg btn-block btn-icon-split">
                         <i class="fas fa-rocket"></i> Back to Website

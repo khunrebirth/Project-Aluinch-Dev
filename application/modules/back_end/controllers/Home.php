@@ -44,7 +44,7 @@ class Home extends MX_Controller
 
     public function gallery()
     {
-        $this->data['title'] = 'Homes';
+        $this->data['title'] = 'Page: Home - Galleries';
         $this->data['content'] = 'image_gallery/image_gallery';
         $this->data['image_galleries'] = $this->Image_gallery_model->get_image_gallery_all();
 
@@ -53,11 +53,10 @@ class Home extends MX_Controller
 
     public function gallery_create()
     {
-        $this->data['title'] = 'Homes';
+        $this->data['title'] = 'Page: Home - Gallery - Add';
         $this->data['content'] = 'image_gallery/add_image_gallery';
 
         $this->load->view('app', $this->data);
-
     }
 
     public function gallery_store()
@@ -84,7 +83,7 @@ class Home extends MX_Controller
 
     public function gallery_edit($image_gallery_id)
     {
-        $this->data['title'] = 'Homes';
+		$this->data['title'] = 'Page: Home - Galleries - Edit';
         $this->data['content'] = 'image_gallery/edit_image_gallery';
         $this->data['image_galleries'] = $this->Image_gallery_model->get_image_gallery_by_id($image_gallery_id);
 

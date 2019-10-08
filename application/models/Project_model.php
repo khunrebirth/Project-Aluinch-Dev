@@ -4,9 +4,20 @@ class Project_model extends CI_Model {
 
     public function get_project_all()
     {
-        $query = $this->db->get('projects');
+		$sql = "
+			SELECT  projects.id,
+					projects.title, 
+					projects.description, 
+					projects.created_at, 
+					COUNT(image_projects.id) as counter 
+			FROM projects
+			LEFT JOIN image_projects ON projects.id = image_projects.project_id
+			GROUP BY image_projects.project_id
+        ";
 
-        return $query->num_rows() > 0 ? $query->result() : [];
+		$query = $this->db->query($sql);
+
+		return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_project_by_id($id)
@@ -15,6 +26,13 @@ class Project_model extends CI_Model {
 
         return $query->num_rows() > 0 ? $query->row() : false;
     }
+
+	public function get_image_project_by_project_id($id)
+	{
+		$query = $this->db->where('project_id', $id)->get('image_projects');
+
+		return $query->num_rows() > 0 ? $query->result() : [];
+	}
 
     public function insert_project($data)
     {

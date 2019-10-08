@@ -28,6 +28,7 @@ class Project extends MX_Controller
         $this->load->model('User_model');
         $this->load->model('Project_model');
         $this->load->model('Project_page_model');
+		$this->load->model('Image_project_model');
 
 		/*
 		| -------------------------------------------------------------------------
@@ -72,6 +73,20 @@ class Project extends MX_Controller
 		]);
 
         if ($add_project) {
+
+			$project_id = $add_project;
+
+			$bundle_images = $this->upload_images_multi('img-project', $_FILES['img_multi']);
+
+			if ($bundle_images) {
+				foreach ($bundle_images as $image) {
+					$this->Image_project_model->insert_Image_project([
+						'title' => $image,
+						'project_id' => $project_id
+					]);
+				}
+			}
+
             $this->session->set_flashdata('success', 'Add Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -138,9 +153,116 @@ class Project extends MX_Controller
             ->set_output(json_encode($response));
     }
 
+	/***********************************
+	 * Project Pictures
+	 * ********************************/
+
+	public function list_project_pictures($project_id)
+	{
+		$this->data['title'] = 'List of Image Project';
+		$this->data['content'] = 'image_project/image_project';
+		$this->data['project_pictures'] = $this->Image_project_model->get_image_project_by_project_id($project_id);
+		$this->data['project'] = $this->Project_model->get_project_by_id($project_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function project_pictures_create($project_id)
+	{
+		$this->data['title'] = 'Image Project - Add';
+		$this->data['content'] = 'image_project/add_image_project';
+		$this->data['project'] = $this->Project_model->get_project_by_id($project_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function project_pictures_store($project_id)
+	{
+
+		$bundle_images = $this->upload_images_multi('img-project', $_FILES['img_multi']);
+
+		if ($bundle_images) {
+			foreach ($bundle_images as $image) {
+				$this->Image_project_model->insert_image_project([
+					'title' => $image,
+					'project_id' => $project_id
+				]);
+			}
+		}
+
+		// Set Session To View
+		if ($bundle_images) {
+			$this->session->set_flashdata('success', 'Add Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect('backoffice/page/project/list-project-pictures/' . $project_id);
+	}
+
+	public function project_pictures_edit($project_id, $image_project_id)
+	{
+		$this->data['title'] = 'Edit Image Project';
+		$this->data['content'] = 'image_project/edit_image_project';
+		$this->data['project'] = $this->Project_model->get_project_by_id($project_id);
+		$this->data['image_project'] = $this->Image_project_model->get_image_project_by_id($image_project_id);
+
+		$this->load->view('app', $this->data);
+	}
+
+	public function project_pictures_update($project_id, $image_project_id)
+	{
+		// Get Old data
+		$image_project = $this->Image_project_model->get_image_project_by_id($image_project_id);
+
+		// Handle Image
+		$img = $image_project->img;
+
+		if (isset($_FILES['img']) && $_FILES['img']['name'] != '') {
+			$img = $this->do_upload_img_project('img');
+		}
+
+		// Update Data
+		$update_image_project = $this->Image_project_model->update_image_project_by_id($image_project_id, [
+			'title' => $img,
+			'updated_at' => date('Y-m-d H:i:s')
+		]);
+
+		// Set Session To View
+		if ($update_image_project) {
+			$this->session->set_flashdata('success', 'Update Done');
+		} else {
+			$this->session->set_flashdata('error', 'Something wrong');
+		}
+
+		redirect('backoffice/page/project/list-project-pictures/' . $project_id);
+	}
+
+	public function project_pictures_destroy($image_project_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$delete_product_picture = $this->Image_project_model->delete_image_project_by_id($image_project_id);
+
+		if ($delete_product_picture != false) {
+			$status = 200;
+			$response['success'] = 1;
+		}
+
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	/***********************************
+	 * Content
+	 * ********************************/
+
     public function edit_content($contact_page_id)
     {
-        $this->data['title'] = 'Page: Home - Content';
+        $this->data['title'] = 'Page: Project - Content';
         $this->data['content'] = 'project_page/edit_project_page';
         $this->data['contact_page'] = $this->Project_page_model->get_project_pages_by_id($contact_page_id);
 
@@ -192,4 +314,39 @@ class Project extends MX_Controller
             return $data['upload_data']['file_name'];
         }
     }
+
+	private function upload_images_multi($title, $files)
+	{
+		$config['upload_path'] = './storage/uploads/images/projects';
+		$config['allowed_types'] = 'jpg|gif|png';
+		$config['overwrite'] = 1;
+
+		$this->load->library('upload', $config);
+
+		$images = [];
+
+		foreach ($files['name'] as $key => $image) {
+			$_FILES['images[]']['name']= $files['name'][$key];
+			$_FILES['images[]']['type']= $files['type'][$key];
+			$_FILES['images[]']['tmp_name']= $files['tmp_name'][$key];
+			$_FILES['images[]']['error']= $files['error'][$key];
+			$_FILES['images[]']['size']= $files['size'][$key];
+
+			$fileName = $title .'_'. $image;
+
+			$images[] = $fileName;
+
+			$config['file_name'] = $fileName;
+
+			$this->upload->initialize($config);
+
+			if ($this->upload->do_upload('images[]')) {
+				$this->upload->data();
+			} else {
+				return false;
+			}
+		}
+
+		return $images;
+	}
 }

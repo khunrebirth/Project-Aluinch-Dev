@@ -40,7 +40,7 @@ class Category_product extends MX_Controller
 
     public function index()
     {
-        $this->data['title'] = 'Product Category';
+        $this->data['title'] = 'Page: Product - Category';
         $this->data['content'] = 'category_product/category_product';
         $this->data['group_products'] = $this->Group_product_model->get_group_product_all();
         $this->data['category_products'] = $this->Category_product_model->get_category_product_all();
@@ -52,7 +52,7 @@ class Category_product extends MX_Controller
     {
         $group_product = $this->Group_product_model->get_group_product_by_id($group_product_id);
 
-        $this->data['title'] = 'Manage Item : Product Category';
+        $this->data['title'] = 'Page : Product - Category';
         $this->data['content'] = 'category_product/add_category_product';
         $this->data['group_products'] = $group_product;
         $this->data['group_product_id'] = $group_product->id;

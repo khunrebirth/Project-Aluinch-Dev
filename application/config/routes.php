@@ -202,9 +202,18 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
         // Projects
         $route['backoffice/page/project/projects'] = 'back_end/Project';
         $route['backoffice/page/project/projects/create'] = 'back_end/Project/create';
+		$route['backoffice/page/project/projects/store'] = 'back_end/Project/store';
         $route['backoffice/page/project/projects/edit/(:any)'] = "back_end/Project/edit/$1";
         $route['backoffice/page/project/projects/update/(:any)'] = "back_end/Project/update/$1";
         $route['backoffice/page/project/projects/destroy/(:any)'] = "back_end/Project/destroy/$1";
+
+		// List Project Pictures
+		$route['backoffice/page/project/list-project-pictures/(:any)'] = 'back_end/Project/list_project_pictures/$1';
+		$route['backoffice/page/project/list-project-pictures/create/(:any)'] = 'back_end/Project/project_pictures_create/$1';
+		$route['backoffice/page/project/list-project-pictures/store/(:any)'] = 'back_end/Project/project_pictures_store/$1';
+		$route['backoffice/page/project/list-project-pictures/edit/(:any)/(:any)'] = 'back_end/Project/project_pictures_edit/$1/$2';
+		$route['backoffice/page/project/list-project-pictures/update/(:any)/(:any)'] = 'back_end/Project/project_pictures_update/$1/$2';
+		$route['backoffice/page/project/list-project-pictures/destroy/(:any)'] = 'back_end/Project/project_pictures_destroy/$1';
 
 		/*
 		| -------------------------------------------------------------------------

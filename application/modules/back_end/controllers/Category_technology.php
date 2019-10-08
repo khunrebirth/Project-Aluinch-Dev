@@ -40,7 +40,7 @@ class Category_technology extends MX_Controller
 
     public function index()
     {
-        $this->data['title'] = 'Technology';
+        $this->data['title'] = 'Page: Technology';
         $this->data['content'] = 'category_technology/category_technology';
 
         $this->data['technologies'] = $this->filter_data_category_technology(
@@ -64,7 +64,7 @@ class Category_technology extends MX_Controller
             $this->data['content'] = 'category_technology/edit_category_technology';
         }
 
-        $this->data['title'] = 'Technology';
+        $this->data['title'] = 'Page: Technology - Edit';
         $this->data['technologies'] = $this->Category_technology_model->get_category_technology_by_id($category_technologies);
 
         $this->load->view('app', $this->data);

@@ -242,3 +242,20 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
     */
 
     $route['backoffice/setting'] = 'back_end/setting';
+
+    // Users
+	$route['backoffice/setting/users'] = 'back_end/User';
+	$route['backoffice/setting/users/create'] = 'back_end/User/create';
+	$route['backoffice/setting/users/store'] = 'back_end/User/store';
+	$route['backoffice/setting/users/edit/(:any)'] = "back_end/User/edit/$1";
+	$route['backoffice/setting/users/update/(:any)'] = "back_end/User/update/$1";
+	$route['backoffice/setting/users/destroy/(:any)'] = "back_end/User/destroy/$1";
+
+	/*
+	| -------------------------------------------------------------------------
+	| Home
+	| -------------------------------------------------------------------------
+	*/
+
+	$route['backoffice/setting/profile'] = 'back_end/Profile';
+	$route['backoffice/setting/profile/update/(:any)'] = "back_end/Profile";

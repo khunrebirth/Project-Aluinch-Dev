@@ -102,6 +102,7 @@ class Contact_page extends MX_Controller
 
         redirect('backoffice/page/contact/info/1');
     }
+
     private function do_upload_img_meta_contact($filename)
     {
         $config['upload_path'] = './storage/uploads/images/contacts';

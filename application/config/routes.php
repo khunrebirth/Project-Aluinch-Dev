@@ -214,6 +214,8 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
 		$route['backoffice/page/project/list-project-pictures/edit/(:any)/(:any)'] = 'back_end/Project/project_pictures_edit/$1/$2';
 		$route['backoffice/page/project/list-project-pictures/update/(:any)/(:any)'] = 'back_end/Project/project_pictures_update/$1/$2';
 		$route['backoffice/page/project/list-project-pictures/destroy/(:any)'] = 'back_end/Project/project_pictures_destroy/$1';
+		$route['backoffice/page/project/list-project-pictures/ajax/get/project/sort/show/(:any)'] = 'back_end/Project/ajax_get_project_and_sort_show/$1';
+		$route['backoffice/page/project/list-project-pictures/ajax/get/project/sort/update/(:any)'] = 'back_end/Project/ajax_get_project_and_sort_update/$1';
 
 		/*
 		| -------------------------------------------------------------------------

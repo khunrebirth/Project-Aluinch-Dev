@@ -1,6 +1,7 @@
 <?php
 
-class Image_project_model extends CI_Model {
+class Image_project_model extends CI_Model
+{
 
     public function get_image_project_all()
     {
@@ -18,10 +19,20 @@ class Image_project_model extends CI_Model {
 
     public function get_image_project_by_project_id($id)
     {
-        $query = $this->db->where('project_id', $id)->get('image_projects');
+        $query = $this->db->where('project_id', $id)->order_by('sort', 'asc')->get('image_projects');
 
         return $query->num_rows() > 0 ? $query->result() : false;
     }
+
+    public function get_image_project_and_sort_by_project_id($project_id)
+	{
+		$query = $this->db
+			->where('project_id', $project_id)
+			->order_by('sort', 'asc')
+			->get('image_projects');
+
+		return $query->num_rows() > 0 ? $query->result() : false;
+	}
 
     public function insert_image_project($data)
     {

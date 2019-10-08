@@ -165,6 +165,8 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
 		$route['backoffice/page/product/list-product-pictures/edit/(:any)/(:any)/(:any)/(:any)'] = 'back_end/Product/product_pictures_edit/$1/$2/$3/$4';
 		$route['backoffice/page/product/list-product-pictures/update/(:any)/(:any)/(:any)/(:any)'] = 'back_end/Product/product_pictures_update/$1/$2/$3/$4';
 		$route['backoffice/page/product/list-product-pictures/destroy/(:any)'] = 'back_end/Product/product_pictures_destroy/$1';
+		$route['backoffice/page/product/list-product-pictures/ajax/get/product/sort/show/(:any)'] = 'back_end/Product/ajax_get_product_and_sort_show/$1';
+		$route['backoffice/page/product/list-product-pictures/ajax/get/product/sort/update/(:any)'] = 'back_end/Product/ajax_get_product_and_sort_update/$1';
 
         /*
         | -------------------------------------------------------------------------

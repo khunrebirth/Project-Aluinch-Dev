@@ -16,12 +16,22 @@ class Image_product_model extends CI_Model {
         return $query->num_rows() > 0 ? $query->row() : false;
     }
 
-    public function get_image_product_by_product_id($id)
+    public function get_image_product_by_product_id($product_id)
     {
-        $query = $this->db->where('product_id', $id)->get('image_products');
+		$query = $this->db->where('product_id', $product_id)->order_by('sort', 'asc')->get('image_products');
 
         return $query->num_rows() > 0 ? $query->result() : [];
     }
+
+	public function get_image_product_and_sort_by_product_id($product_id)
+	{
+		$query = $this->db
+			->where('product_id', $product_id)
+			->order_by('sort', 'asc')
+			->get('image_products');
+
+		return $query->num_rows() > 0 ? $query->result() : false;
+	}
 
     public function insert_image_product($data)
     {

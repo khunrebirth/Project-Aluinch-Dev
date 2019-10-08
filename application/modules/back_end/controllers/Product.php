@@ -281,6 +281,68 @@ class Product extends MX_Controller
 			->set_output(json_encode($response));
 	}
 
+	/***********************************
+	 * Sorting (Using Ajax)
+	 * ********************************/
+
+	public function ajax_get_product_and_sort_show($product_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		$image_products = $this->Image_product_model->get_image_product_and_sort_by_product_id($product_id);
+
+		// Set Response
+		if ($image_products != false) {
+			$status = 200;
+			$response['success'] = 1;
+
+			$counter = 1;
+			$html = '<ul id="sortable">';
+			foreach ($image_products as $image_product) {
+				$html .= '<li id="' . $image_product->id . '" data-sort="' . $image_product->sort . '"><span style="padding: 0px 10px;">' . $counter . ' . </span><img width="120px;" src="' . base_url('storage/uploads/images/products/' . $image_product->img) . '"</li>';
+				$counter++;
+			}
+			$html .= '</ul>';
+
+			$response['data'] = $html;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
+	public function ajax_get_product_and_sort_update($product_id)
+	{
+		$status = 500;
+		$response['success'] = 0;
+
+		// Set Response
+		if ($this->input->post()) {
+			$bundle_id = $this->input->post('id');
+			$bundle_sort = $this->input->post('sort');
+			$counter = 1;
+			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+				$this->Image_product_model->update_image_product_by_id($id, [
+					'sort' => $counter
+				]);
+				$counter++;
+			}
+
+			$status = 200;
+			$response['success'] = 1;
+		}
+
+		// Send Response
+		return $this->output
+			->set_status_header($status)
+			->set_content_type('application/json')
+			->set_output(json_encode($response));
+	}
+
 	private function do_upload_img_product($filename)
 	{
 		$config['upload_path'] = './storage/uploads/images/products';

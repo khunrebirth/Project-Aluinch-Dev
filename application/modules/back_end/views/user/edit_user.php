@@ -18,7 +18,7 @@
                             <h4>Edit Project</h4>
                         </div>
                         <div class="card-body">
-							<form action="<?php echo base_url('backoffice/setting/users/update' . $user->id); ?>" method="post">
+							<form action="<?php echo base_url('backoffice/setting/users/update/' . $user->id); ?>" method="post">
 								<div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
 								<hr>
 								<div class="form-group row">

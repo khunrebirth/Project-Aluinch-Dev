@@ -51,7 +51,7 @@ class Profile extends MX_Controller
 	{
 
 		$update_profile = $this->User_model->update_user_by_id($id, [
-			'password' => $this->input->post('password'),
+			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 		if ($update_profile) {

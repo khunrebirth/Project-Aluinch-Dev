@@ -54,7 +54,7 @@ class Dashboard extends MX_Controller
 	{
 		$data = [];
 
-		if (count($logs > 0)) {
+		if (count($logs) > 0) {
 			foreach ($logs as $key => $log) {
 				$data[$key]['id'] = $log->id;
 				$event = $this->Logger_event_model->get_log_events_by_id($log->event_id)->title;

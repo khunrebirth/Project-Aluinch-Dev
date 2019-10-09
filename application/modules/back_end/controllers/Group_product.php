@@ -57,7 +57,8 @@ class Group_product extends MX_Controller
     public function store()
     {
         $add_group_product = $this->Group_product_model->insert_group_product([
-        	'title' => $this->input->post('title')
+        	'title' => $this->input->post('title'),
+            'slug' => slug($this->input->post('title'))
 		]);
 
         if ($add_group_product) {

@@ -58,7 +58,7 @@
 								</thead>
 								<tbody>
 								<?php
-									if (count($logs > 0)) {
+									if (count($logs) > 0) {
 										$counter = 1;
 										foreach ($logs as $log) { ?>
 											<tr>

@@ -85,7 +85,7 @@
                 </div>
                 <ul class="sidebar-menu">
                     <li class="menu-header">General</li>
-                    <li class="">
+                    <li class="<?php if ($this->uri->segment(2) == "dashboard") { echo 'active'; } ?>">
                         <a class="nav-link" href="<?php echo base_url('backoffice/dashboard'); ?>"><i class="fas fa-fire"></i> <span>Dashboard</span></a>
                     </li>
                     <li class="menu-header">Pages</li>

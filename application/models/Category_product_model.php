@@ -37,7 +37,7 @@ class Category_product_model extends CI_Model {
 
         $query = $this->db->get();
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
 	public function get_category_product_and_count_all_by_group_product_id($group_product_id)

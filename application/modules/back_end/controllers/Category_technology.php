@@ -104,6 +104,13 @@ class Category_technology extends MX_Controller
         $update_category_technology = $this->Category_technology_model->update_category_technology_by_id($category_technologies, $data);
 
         if ($update_category_technology) {
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Category Technology',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Edit Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');

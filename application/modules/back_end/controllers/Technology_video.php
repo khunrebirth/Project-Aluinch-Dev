@@ -95,10 +95,6 @@ class Technology_video extends MX_Controller
 
         if ($this->input->post('category_technology_id') == $CASE_FAQ) {
             $add_technology = $this->Faq_technology_model->insert_category_product([
-				'meta_tag_title' => $this->input->post('meta_tag_title'),
-				'meta_tag_description' => $this->input->post('meta_tag_description'),
-				'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
-				'img_og_twitter' => $img_og_twitter,
 				'ask' => $this->input->post('ask'),
 				'ans' => $this->input->post('ans'),
 				'category_technology_id' => $this->input->post('category_technology_id')
@@ -121,6 +117,14 @@ class Technology_video extends MX_Controller
         }
 
         if ($add_technology) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Technology ',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Add Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -164,6 +168,14 @@ class Technology_video extends MX_Controller
 				'ans' => $this->input->post('ans'),
 				'category_technology_id' => $this->input->post('category_technology_id')
 			]);
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Question ',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
         } else {
             $technology_video = $this->Technology_video_model->get_technology_video_by_id($technology_id);
             $img_og_twitter = $technology_video->img_og_twitter;
@@ -187,6 +199,14 @@ class Technology_video extends MX_Controller
 				'category_technology_id' => $this->input->post('category_technology_id'),
 				'updated_at' => date('Y-m-d H:i:s')
 			]);
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Technology ',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
         }
 
         if ($update_technology) {
@@ -208,6 +228,14 @@ class Technology_video extends MX_Controller
         if ($technology != false) {
             $status = 200;
             $response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Technology ',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
+
         }
 
         return $this->output
@@ -226,6 +254,15 @@ class Technology_video extends MX_Controller
         if ($faq_technology != false) {
             $status = 200;
             $response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Question Technology ',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+
         }
 
         return $this->output

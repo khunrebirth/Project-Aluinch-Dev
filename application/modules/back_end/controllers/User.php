@@ -63,7 +63,16 @@ class User extends MX_Controller
 		]);
 
 		if ($add_user) {
-			$this->session->set_flashdata('success', 'Add Done');
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม User',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+
+            $this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
@@ -92,7 +101,16 @@ class User extends MX_Controller
 		]);
 
 		if ($update_user) {
-			$this->session->set_flashdata('success', 'Add Done');
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข User',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+
+            $this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
@@ -111,7 +129,16 @@ class User extends MX_Controller
 		if ($delete_user != false) {
 			$status = 200;
 			$response['success'] = 1;
-		}
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ User',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+
+        }
 
 		// Send Response
 		return $this->output

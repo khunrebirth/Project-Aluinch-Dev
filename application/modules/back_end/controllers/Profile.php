@@ -55,6 +55,15 @@ class Profile extends MX_Controller
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 		if ($update_profile) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Profile',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+
 			$this->session->set_flashdata('success', 'Update Password Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');

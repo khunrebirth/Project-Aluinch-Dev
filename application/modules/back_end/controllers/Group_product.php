@@ -61,6 +61,14 @@ class Group_product extends MX_Controller
 		]);
 
         if ($add_group_product) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Group Product',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 			$this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -88,6 +96,14 @@ class Group_product extends MX_Controller
 		]);
 
         if ($update_group_product) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Group Product',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 			$this->session->set_flashdata('success', 'Edit Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -107,6 +123,14 @@ class Group_product extends MX_Controller
         if ($group_product != false) {
             $status = 200;
             $response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Group Product',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
+
         }
 
         // Send Response

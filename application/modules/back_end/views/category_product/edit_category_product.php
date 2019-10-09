@@ -25,19 +25,19 @@
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">Title</label>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" name="meta_tag_title" >
+										<input type="text" class="form-control" name="meta_tag_title" value="<?php echo $category_product->meta_tag_title ?>" >
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">Description</label>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" name="meta_tag_description" >
+										<input type="text" class="form-control" name="meta_tag_description" value="<?php echo $category_product->meta_tag_description ?>">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">Keywords</label>
 									<div class="col-sm-9">
-										<input type="text" class="form-control" name="meta_tag_keywords">
+										<input type="text" class="form-control" name="meta_tag_keywords" value="<?php echo $category_product->meta_tag_keywords ?>">
 									</div>
 								</div>
                                 <!-- OG & Twitter -->

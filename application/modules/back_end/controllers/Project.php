@@ -87,6 +87,13 @@ class Project extends MX_Controller
 				}
 			}
 
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Project',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 			$this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -125,6 +132,14 @@ class Project extends MX_Controller
 		]);
 
 		if ($update_project) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Project',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 			$this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -144,6 +159,14 @@ class Project extends MX_Controller
 		if ($project != false) {
 			$status = 200;
 			$response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Project',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 		}
 
 		// Send Response
@@ -192,6 +215,14 @@ class Project extends MX_Controller
 
 		// Set Session To View
 		if ($bundle_images) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Image Project',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 			$this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -230,6 +261,14 @@ class Project extends MX_Controller
 
 		// Set Session To View
 		if ($update_image_project) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Image Project',
+                'event' => 'edit',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 			$this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -248,6 +287,14 @@ class Project extends MX_Controller
 		if ($delete_product_picture != false) {
 			$status = 200;
 			$response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Image Project',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 		}
 
 		return $this->output
@@ -288,6 +335,14 @@ class Project extends MX_Controller
 		]);
 
 		if ($update_project_page) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Content Project Page',
+                'event' => 'sort_item',
+                'ip' => $this->input->ip_address(),
+            ]);
+
 			$this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -349,6 +404,13 @@ class Project extends MX_Controller
 
 			$status = 200;
 			$response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'จัดเรียง Image Project',
+                'event' => 'sort_item',
+                'ip' => $this->input->ip_address(),
+            ]);
 		}
 
 		// Send Response

@@ -78,6 +78,13 @@ class Product extends MX_Controller
 				}
 			}
 
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Product',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Add Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -125,6 +132,14 @@ class Product extends MX_Controller
 		]);
 
         if ($update_product) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Product',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Update Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -143,6 +158,13 @@ class Product extends MX_Controller
         if ($product != false) {
             $status = 200;
             $response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Product',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
         }
 
         return $this->output
@@ -215,7 +237,16 @@ class Product extends MX_Controller
 
 		// Set Session To View
 		if ($bundle_images) {
-			$this->session->set_flashdata('success', 'Add Done');
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Image Product',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+
+            $this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
@@ -255,7 +286,16 @@ class Product extends MX_Controller
 
 		// Set Session To View
 		if ($update_image_product) {
-			$this->session->set_flashdata('success', 'Update Done');
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Image Product',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
+
+            $this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
@@ -273,6 +313,13 @@ class Product extends MX_Controller
 		if ($delete_product_picture != false) {
 			$status = 200;
 			$response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Image Product',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
 		}
 
 		return $this->output
@@ -334,6 +381,13 @@ class Product extends MX_Controller
 
 			$status = 200;
 			$response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'จัดเรียง Image Product',
+                'event' => 'sort_item',
+                'ip' => $this->input->ip_address(),
+            ]);
 		}
 
 		// Send Response

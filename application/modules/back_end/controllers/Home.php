@@ -73,6 +73,14 @@ class Home extends MX_Controller
         ]);
 
         if ($add_image_gallery) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Image Gallery Home Page',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Add Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -108,6 +116,14 @@ class Home extends MX_Controller
         ]);
 
         if ($update_image_gallery) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Image Gallery Home Page',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Add Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -126,6 +142,13 @@ class Home extends MX_Controller
         if ($product != false) {
             $status = 200;
             $response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Image Gallery Home Page',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
         }
 
         return $this->output
@@ -231,6 +254,13 @@ class Home extends MX_Controller
 
 			$status = 200;
 			$response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'จัดเรียง Image Gallery Home Page',
+                'event' => 'sort_item',
+                'ip' => $this->input->ip_address(),
+            ]);
 		}
 
 		// Send Response

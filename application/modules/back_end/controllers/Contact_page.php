@@ -66,6 +66,14 @@ class Contact_page extends MX_Controller
 		]);
 
         if ($update_contact_page) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Content Contact Page',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Update Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -95,6 +103,14 @@ class Contact_page extends MX_Controller
 		]);
 
         if ($update_contact_page) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Info Contact Page',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Update Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');

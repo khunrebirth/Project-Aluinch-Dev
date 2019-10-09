@@ -6,7 +6,7 @@ class Logger_model extends CI_Model {
     {
         $query = $this->db->order_by('created_at', 'desc')->get('logs');
 
-        return $query->num_rows() > 0 ? $query->result() : false;
+        return $query->num_rows() > 0 ? $query->result() : [];
     }
 
     public function get_logs_by_id($id)

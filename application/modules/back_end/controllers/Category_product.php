@@ -10,30 +10,30 @@ class Category_product extends MX_Controller
     {
         parent::__construct();
 
-		/*
-		| -------------------------------------------------------------------------
-		| MIDDLEWARE
-		| -------------------------------------------------------------------------
-		*/
+        /*
+        | -------------------------------------------------------------------------
+        | MIDDLEWARE
+        | -------------------------------------------------------------------------
+        */
 
         require_login('backoffice/login');
 
-		/*
-		| -------------------------------------------------------------------------
-		| SET UTILITIES
-		| -------------------------------------------------------------------------
-		*/
+        /*
+        | -------------------------------------------------------------------------
+        | SET UTILITIES
+        | -------------------------------------------------------------------------
+        */
 
         // Model
         $this->load->model('User_model');
         $this->load->model('Group_product_model');
         $this->load->model('Category_product_model');
 
-		/*
-		| -------------------------------------------------------------------------
-		| HANDLE
-		| -------------------------------------------------------------------------
-		*/
+        /*
+        | -------------------------------------------------------------------------
+        | HANDLE
+        | -------------------------------------------------------------------------
+        */
 
         $this->data['user'] = $this->User_model->get_user_by_id($this->session->userdata('user_id'));
     }
@@ -67,8 +67,8 @@ class Category_product extends MX_Controller
         $img_cover_home = '';
         $img_og_twitter = '';
         $file_catalog = '';
-		$file_price = '';
-		$file_cad = '';
+        $file_price = '';
+        $file_cad = '';
 
         if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
             $img_cover = $this->do_upload_img_product('img_cover');
@@ -82,36 +82,44 @@ class Category_product extends MX_Controller
             $img_og_twitter = $this->do_upload_img_product('img_og_twitter');
         }
 
-		if (isset($_FILES['file_catalog']) && $_FILES['file_catalog']['name'] != '') {
-			$file_catalog = $this->do_upload_pdf_product('file_catalog');
-		}
+        if (isset($_FILES['file_catalog']) && $_FILES['file_catalog']['name'] != '') {
+            $file_catalog = $this->do_upload_pdf_product('file_catalog');
+        }
 
-		if (isset($_FILES['file_price']) && $_FILES['file_price']['name'] != '') {
-			$file_price = $this->do_upload_pdf_product('file_price');
-		}
+        if (isset($_FILES['file_price']) && $_FILES['file_price']['name'] != '') {
+            $file_price = $this->do_upload_pdf_product('file_price');
+        }
 
-		if (isset($_FILES['file_cad']) && $_FILES['file_cad']['name'] != '') {
-			$file_cad = $this->do_upload_pdf_product('file_cad');
-		}
+        if (isset($_FILES['file_cad']) && $_FILES['file_cad']['name'] != '') {
+            $file_cad = $this->do_upload_pdf_product('file_cad');
+        }
 
         $add_category_product = $this->Category_product_model->insert_category_product([
-			'meta_tag_title' => $this->input->post('meta_tag_title'),
-			'meta_tag_description' => $this->input->post('meta_tag_description'),
-			'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'meta_tag_title' => $this->input->post('meta_tag_title'),
+            'meta_tag_description' => $this->input->post('meta_tag_description'),
+            'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
             'img_og_twitter' => $img_og_twitter,
-			'title' => $this->input->post('title'),
-			'description' => $this->input->post('description'),
-			'group_product_id' => $this->input->post('group_product_id'),
-			'img_cover' => $img_cover,
-			'img_title_alt' => $this->input->post('img_title_alt'),
-			'img_cover_home' => $img_cover_home,
-			'img_home_title_alt' => $this->input->post('img_home_title_alt'),
-			'file_catalog' => $file_catalog,
-			'file_price' => $file_price,
-			'file_cad' => $file_cad
-		]);
+            'title' => $this->input->post('title'),
+            'description' => $this->input->post('description'),
+            'group_product_id' => $this->input->post('group_product_id'),
+            'img_cover' => $img_cover,
+            'img_title_alt' => $this->input->post('img_title_alt'),
+            'img_cover_home' => $img_cover_home,
+            'img_home_title_alt' => $this->input->post('img_home_title_alt'),
+            'file_catalog' => $file_catalog,
+            'file_price' => $file_price,
+            'file_cad' => $file_cad
+        ]);
 
         if ($add_category_product) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'เพิ่ม Category Product',
+                'event' => 'add',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Add Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -137,8 +145,8 @@ class Category_product extends MX_Controller
 
     public function edit($category_product_id)
     {
-		$category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
-		$group_product = $this->Group_product_model->get_group_product_by_id($category_product->group_product_id);
+        $category_product = $this->Category_product_model->get_category_product_by_id($category_product_id);
+        $group_product = $this->Group_product_model->get_group_product_by_id($category_product->group_product_id);
 
         $this->data['title'] = 'Product Category';
         $this->data['content'] = 'category_product/edit_category_product';
@@ -157,9 +165,9 @@ class Category_product extends MX_Controller
         $img_cover = $category_product->img_cover;
         $img_cover_home = $category_product->img_cover_home;
         $img_og_twitter = $category_product->img_og_twitter;
-		$file_catalog = $category_product->file_catalog;
-		$file_price = $category_product->file_price;
-		$file_cad = $category_product->file_cad;
+        $file_catalog = $category_product->file_catalog;
+        $file_price = $category_product->file_price;
+        $file_cad = $category_product->file_cad;
 
         if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
             $img_cover = $this->do_upload_img_product('img_cover');
@@ -173,37 +181,45 @@ class Category_product extends MX_Controller
             $img_og_twitter = $this->do_upload_img_product('img_og_twitter');
         }
 
-		if (isset($_FILES['file_catalog']) && $_FILES['file_catalog']['name'] != '') {
-			$file_catalog = $this->do_upload_pdf_product('file_catalog');
-		}
+        if (isset($_FILES['file_catalog']) && $_FILES['file_catalog']['name'] != '') {
+            $file_catalog = $this->do_upload_pdf_product('file_catalog');
+        }
 
-		if (isset($_FILES['file_price']) && $_FILES['file_price']['name'] != '') {
-			$file_price = $this->do_upload_pdf_product('file_price');
-		}
+        if (isset($_FILES['file_price']) && $_FILES['file_price']['name'] != '') {
+            $file_price = $this->do_upload_pdf_product('file_price');
+        }
 
-		if (isset($_FILES['file_cad']) && $_FILES['file_cad']['name'] != '') {
-			$file_cad = $this->do_upload_pdf_product('file_cad');
-		}
+        if (isset($_FILES['file_cad']) && $_FILES['file_cad']['name'] != '') {
+            $file_cad = $this->do_upload_pdf_product('file_cad');
+        }
 
         $update_category_product = $this->Category_product_model->update_category_product_by_id($category_product_id, [
-			'meta_tag_title' => $this->input->post('meta_tag_title'),
-			'meta_tag_description' => $this->input->post('meta_tag_description'),
-			'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
+            'meta_tag_title' => $this->input->post('meta_tag_title'),
+            'meta_tag_description' => $this->input->post('meta_tag_description'),
+            'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
             'img_og_twitter' => $img_og_twitter,
-			'title' => $this->input->post('title'),
-			'description' => $this->input->post('description'),
-			'group_product_id' => $this->input->post('group_product_id'),
-			'img_cover' => $img_cover,
-			'img_title_alt' => $this->input->post('img_title_alt'),
-			'img_cover_home' => $img_cover_home,
-			'img_home_title_alt' => $this->input->post('img_home_title_alt'),
-			'file_catalog' => $file_catalog,
-			'file_price' => $file_price,
-			'file_cad' => $file_cad,
-			'updated_at' => date('Y-m-d H:i:s')
-		]);
+            'title' => $this->input->post('title'),
+            'description' => $this->input->post('description'),
+            'group_product_id' => $this->input->post('group_product_id'),
+            'img_cover' => $img_cover,
+            'img_title_alt' => $this->input->post('img_title_alt'),
+            'img_cover_home' => $img_cover_home,
+            'img_home_title_alt' => $this->input->post('img_home_title_alt'),
+            'file_catalog' => $file_catalog,
+            'file_price' => $file_price,
+            'file_cad' => $file_cad,
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
 
         if ($update_category_product) {
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'แก้ไข Category Product',
+                'event' => 'update',
+                'ip' => $this->input->ip_address(),
+            ]);
+
             $this->session->set_flashdata('success', 'Update Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');
@@ -223,6 +239,14 @@ class Category_product extends MX_Controller
         if ($category_product != false) {
             $status = 200;
             $response['success'] = 1;
+
+            logger_store([
+                'user_id' => $this->data['user']->id,
+                'detail' => 'ลบ Category Product',
+                'event' => 'delete',
+                'ip' => $this->input->ip_address(),
+            ]);
+
         }
 
         // Send Response
@@ -251,22 +275,22 @@ class Category_product extends MX_Controller
         }
     }
 
-	public function do_upload_pdf_product($filename)
-	{
-		$config['upload_path'] = './storage/uploads/files/products';
-		$config['allowed_types'] = 'pdf';
-		$config['encrypt_name'] = TRUE;
+    public function do_upload_pdf_product($filename)
+    {
+        $config['upload_path'] = './storage/uploads/files/products';
+        $config['allowed_types'] = 'pdf';
+        $config['encrypt_name'] = TRUE;
 
-		$this->load->library('upload', $config);
+        $this->load->library('upload', $config);
 
-		if (!$this->upload->do_upload($filename)) {
-			$error = array('error' => $this->upload->display_errors());
+        if (!$this->upload->do_upload($filename)) {
+            $error = array('error' => $this->upload->display_errors());
 
-			return false;
-		} else {
-			$data = array('upload_data' => $this->upload->data());
+            return false;
+        } else {
+            $data = array('upload_data' => $this->upload->data());
 
-			return $data['upload_data']['file_name'];
-		}
-	}
+            return $data['upload_data']['file_name'];
+        }
+    }
 }

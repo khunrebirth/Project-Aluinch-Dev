@@ -36,6 +36,13 @@ class Authentication extends MX_Controller
 						'role_id' => $user->role_id
 					]);
 
+					logger_store([
+						'user_id' => $user->id,
+						'detail' => 'เข้าสู่ระบบ Aluinch Backoffice',
+						'event' => 'login',
+						'ip' => $this->input->ip_address(),
+					]);
+
 					redirect('backoffice/dashboard');
 				}
 			}
@@ -48,9 +55,15 @@ class Authentication extends MX_Controller
 
     public function logout()
     {
+		logger_store([
+			'user_id' => $this->session->userdata('user_id'),
+			'detail' => 'ออกจากระบบ Aluinch Backoffice',
+			'event' => 'logout',
+			'ip' => $this->input->ip_address(),
+		]);
+
         $this->session->sess_destroy();
 
         redirect('backoffice/login');
     }
-
 }

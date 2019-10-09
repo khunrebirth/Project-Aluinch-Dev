@@ -33,7 +33,7 @@
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-sm-3 col-form-label">Image Gallery (สามารถเลือกได้มากกว่า 1 รูปภาพ)</label>
+									<label class="col-sm-3 col-form-label">Image Gallery <span style="color: #c0372b;">(แนะนำขนาด 500*267 สามารถเลือกได้มากกว่า 1 รูปภาพ)</span></label>
 									<div class="col-sm-9">
 										<div class="custom-file input-file-w-30">
 											<input type="file" id="img_multi" class="custom-file-input" name="img_multi[]" onchange="previewImageMulti();" multiple>

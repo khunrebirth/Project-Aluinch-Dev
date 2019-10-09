@@ -43,7 +43,6 @@ class Dashboard extends MX_Controller
         $this->data['title'] = 'Dashboard';
 		$this->data['content'] = 'dashboard';
 		$this->data['user_total'] = $this->User_model->get_users_count_total();
-
 		$this->data['logs'] = $this->filter_data_logs($this->Logger_model->get_logs_all());
 		$this->data['log_total'] = $this->Logger_model->get_logs_count_total();
 

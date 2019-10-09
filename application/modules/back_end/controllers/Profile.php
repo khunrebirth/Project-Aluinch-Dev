@@ -63,7 +63,6 @@ class Profile extends MX_Controller
                 'ip' => $this->input->ip_address(),
             ]);
 
-
 			$this->session->set_flashdata('success', 'Update Password Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');

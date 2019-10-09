@@ -131,7 +131,6 @@ class Group_product extends MX_Controller
                 'event' => 'delete',
                 'ip' => $this->input->ip_address(),
             ]);
-
         }
 
         // Send Response

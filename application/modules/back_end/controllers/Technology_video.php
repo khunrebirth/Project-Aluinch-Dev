@@ -261,8 +261,6 @@ class Technology_video extends MX_Controller
                 'event' => 'delete',
                 'ip' => $this->input->ip_address(),
             ]);
-
-
         }
 
         return $this->output

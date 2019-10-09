@@ -71,7 +71,6 @@ class User extends MX_Controller
                 'ip' => $this->input->ip_address(),
             ]);
 
-
             $this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -109,7 +108,6 @@ class User extends MX_Controller
                 'ip' => $this->input->ip_address(),
             ]);
 
-
             $this->session->set_flashdata('success', 'Add Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
@@ -136,8 +134,6 @@ class User extends MX_Controller
                 'event' => 'delete',
                 'ip' => $this->input->ip_address(),
             ]);
-
-
         }
 
 		// Send Response

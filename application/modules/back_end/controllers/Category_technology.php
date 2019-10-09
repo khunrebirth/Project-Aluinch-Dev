@@ -91,14 +91,14 @@ class Category_technology extends MX_Controller
                 'meta_tag_keywords' => $this->input->post('meta_tag_keywords'),
                 'img_og_twitter' => $img_og_twitter,
                 'title' => $this->input->post('title'),
-                'slug' => slug($this->input->post('title')),
+                'slug' => smm_slug($this->input->post('title')),
                 'updated_at' => date('Y-m-d H:i:s')
             ];
 
         } else {
             $data = [
                 'title' => $this->input->post('title'),
-                'slug' => slug($this->input->post('title')),
+                'slug' => smm_slug($this->input->post('title')),
                 'updated_at' => date('Y-m-d H:i:s')
             ];
         }

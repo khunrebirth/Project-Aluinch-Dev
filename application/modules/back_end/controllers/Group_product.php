@@ -58,7 +58,7 @@ class Group_product extends MX_Controller
     {
         $add_group_product = $this->Group_product_model->insert_group_product([
         	'title' => $this->input->post('title'),
-            'slug' => slug($this->input->post('title'))
+            'slug' => smm_slug($this->input->post('title'))
 		]);
 
         if ($add_group_product) {
@@ -93,7 +93,7 @@ class Group_product extends MX_Controller
     {
         $update_group_product = $this->Group_product_model->update_group_product_by_id($id, [
 			'title' => $this->input->post('title'),
-            'slug' => slug($this->input->post('title')),
+            'slug' => smm_slug($this->input->post('title')),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2019 at 09:59 AM
+-- Generation Time: Oct 09, 2019 at 11:16 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -55,7 +55,7 @@ CREATE TABLE `category_products` (
 --
 
 INSERT INTO `category_products` (`id`, `title`, `slug`, `description`, `img_cover_home`, `img_home_title_alt`, `img_cover`, `img_title_alt`, `group_product_id`, `file_catalog`, `file_price`, `file_cad`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'T-SERIES', 't-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.', '02af9a.jpg', '', '0121df.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:29:14', '2019-10-03 06:51:54', NULL),
+(1, 'T-SERIES', 't-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 100 x 20 mm.', '02af9a.jpg', '', '0121df.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:29:14', '2019-10-09 09:07:05', NULL),
 (2, 'F-SERIES', 'f-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ขนาด 45 x 20 mm.', '282986.jpg', '', 'a24779.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:29:14', NULL, NULL),
 (3, 'V-SERIES', 'v-series', 'ระบบอลูมิเนียมวงกบ ช่องแสงติดตาย ปรับขนาดตามผนังตั้งแต่ 90 - 200 mm.', 'c4093f.jpg', '', '471fcb.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:29:46', NULL, NULL),
 (4, 'D-SERIES', 'd-series', 'ระบบอลูมิเนียมประตูบานเปิด บานเลื่อนและบานสวิง หนา 35 mm.', '6d2aff.jpg', '', 'ff80c3.jpg', '', 1, '', '', '', '', '', '', '', '2019-08-14 10:31:56', NULL, NULL),
@@ -105,9 +105,9 @@ CREATE TABLE `category_technologies` (
 --
 
 INSERT INTO `category_technologies` (`id`, `title`, `slug`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'PRESENTATION VDO วีดีโอแนะนำการใช้งาน', 'presentation-vdo-วีดีโอแนะนำการใช้งาน', '', '', '', '', '2019-08-15 02:39:51', '2019-10-09 06:41:21', NULL),
+(1, 'PRESENTATION VDO วีดีโอแนะนำการใช้งาน', 'presentation-vdo-วีดีโอแนะนำการใบ้งาน', '', '', '', '', '2019-08-15 02:39:51', '2019-10-09 09:07:40', NULL),
 (2, 'TIPS AND TRICKS เกร็ดความรู้อลูมิเนียม', 'tips-and-tricks-เกร็ดความรู้อลูมิเนียม', '', '', '', '', '2019-08-15 02:39:51', NULL, NULL),
-(3, 'FAQ คำถามที่พบบอย', 'faq-คำถามที่พบบอย', '', '', '', '', '2019-08-15 02:40:01', '2019-10-04 03:39:50', NULL);
+(3, 'FAQ คำถามที่พบบอย', 'faq-คำถามที่พบบอย', '', '', '', '', '2019-08-15 02:40:01', '2019-10-09 09:08:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -636,7 +636,27 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`id`, `event_id`, `detail`, `user_id`, `ip`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 4, 'แก้ไข Content Home Page', 2, '::1', '2019-10-09 06:21:21', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(2, 4, 'แก้ไข Content Home Page', 2, '::1', '2019-10-09 06:21:21', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(27, 3, 'เพิ่ม Group Product', 2, '::1', '2019-10-09 08:09:40', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(28, 3, 'เพิ่ม Category Product', 2, '::1', '2019-10-09 08:10:11', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(29, 4, 'แก้ไข Group Product', 2, '::1', '2019-10-09 09:05:28', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(30, 4, 'แก้ไข Group Product', 2, '::1', '2019-10-09 09:06:14', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(31, 5, 'ลบ Group Product', 2, '::1', '2019-10-09 09:06:27', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(32, 4, 'แก้ไข Category Product', 2, '::1', '2019-10-09 09:06:48', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(33, 4, 'แก้ไข Category Product', 2, '::1', '2019-10-09 09:07:05', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(34, 4, 'แก้ไข Category Technology', 2, '::1', '2019-10-09 09:07:25', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(35, 4, 'แก้ไข Category Technology', 2, '::1', '2019-10-09 09:07:40', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(36, 4, 'แก้ไข Category Technology', 2, '::1', '2019-10-09 09:08:02', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(37, 4, 'แก้ไข Category Technology', 2, '::1', '2019-10-09 09:08:15', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(38, 4, 'แก้ไข Technology ', 2, '::1', '2019-10-09 09:08:44', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(39, 4, 'แก้ไข Technology ', 2, '::1', '2019-10-09 09:09:02', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(40, 4, 'แก้ไข Technology ', 2, '::1', '2019-10-09 09:09:21', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(41, 4, 'แก้ไข Technology ', 2, '::1', '2019-10-09 09:09:32', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(42, 4, 'แก้ไข Technology ', 2, '::1', '2019-10-09 09:10:55', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(43, 3, 'เพิ่ม Technology ', 2, '::1', '2019-10-09 09:11:17', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(44, 4, 'แก้ไข Technology ', 2, '::1', '2019-10-09 09:12:16', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(45, 4, 'แก้ไข Technology ', 2, '::1', '2019-10-09 09:13:21', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(46, 5, 'ลบ Technology ', 2, '::1', '2019-10-09 09:13:44', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1126,11 +1146,11 @@ CREATE TABLE `technology_videos` (
 --
 
 INSERT INTO `technology_videos` (`id`, `title`, `slug`, `body`, `description`, `src`, `short_src`, `img_cover`, `img_title_alt`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `category_technology_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'ระบบอลูมิเนียมประตูหน้าต่าง  B-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-b-series', '<p><br></p>', 'ระบบอลูมิเนียมประตูหน้าต่างบานเฟี้ยม                                    ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/pZFeraPjm4s\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'pZFeraPjm4s', 'https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-21 08:40:26', '2019-10-03 06:52:24', NULL),
+(1, 'ระบบอลูมิเนียมประตูหน้าต่าง  B-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง--b-series', '<p><br></p>', 'ระบบอลูมิเนียมประตูหน้าต่างบานเฟี้ยม                                    ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/pZFeraPjm4s\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'pZFeraPjm4s', 'https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-21 08:40:26', '2019-10-09 09:10:55', NULL),
 (2, 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม  Aluminium Profile Copy Router', 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม-aluminium-profile-copy-router', '<p>สามารถลดเวลาการทำงานเจาะรูกุญแกได้ 2 เท่า เพราะสามารถเร้าเตอร์ได้ทั้ง 2ฝั่งในเวลาเดียวกัน</p><p><br></p><p>Credit by  :   <span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 0,=\\\"\\\" 0);=\\\"\\\" font-family:=\\\"\\\" arial;=\\\"\\\" font-size:=\\\"\\\" 13px;=\\\"\\\" white-space:=\\\"\\\" pre-wrap;\\\\\\\"=\\\"\\\">  </span><span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span>www.ozgencmachine.com<span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span></p>                        </p>', 'เทคโนโลยียุคใหม่ของการทำงานอลูมิเนียมให้เป็นเรื่องง่าย', '<iframe width=\"100%\" height=\"400\" src=\"https://www.youtube.com/embed/swT-nMNmmz4\" frameborder=\"0\" allowfullscreen></iframe>', 'swT-nMNmmz4', 'https://img.youtube.com/vi/swT-nMNmmz4/mqdefault.jpg', '', '', '', '', '', 2, '2019-08-21 08:41:34', '2019-10-01 09:39:26', NULL),
 (3, 'ระบบอลูมิเนียมประตูหน้าต่าง  X-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-x-series', '', 'ระบบอลูมิเนียมประตู SLIM DESIGN', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hd3MghzSIRs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'hd3MghzSIRs', 'https://img.youtube.com/vi/hd3MghzSIRs/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-22 03:28:20', '2019-10-03 07:04:52', NULL),
 (5, 'ระบบอลูมิเนียมประตูหน้าต่าง  E-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานเลิ่อน                                    ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Qs4bW40XLwk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'Qs4bW40XLwk', 'https://img.youtube.com/vi/Qs4bW40XLwk/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-22 03:32:27', '2019-10-02 10:23:38', NULL),
-(7, 'ระบบอลูมิเนียมประตูหน้าต่าง C-SERIES', '', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานกระทุ้ง                                     ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IqDe4FbX67w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'IqDe4FbX67w', 'https://img.youtube.com/vi/IqDe4FbX67w/mqdefault.jpg', '', '', '', '', '', 1, '2019-10-02 10:25:23', '2019-10-04 03:42:40', NULL);
+(7, 'ระบบอลูมิเนียมประตูหน้าต่าง C-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานกระทุ้ง                                     ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IqDe4FbX67w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'IqDe4FbX67w', 'https://img.youtube.com/vi/IqDe4FbX67w/mqdefault.jpg', '', '', '', '', '', 1, '2019-10-02 10:25:23', '2019-10-09 09:09:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -1289,7 +1309,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category_products`
 --
 ALTER TABLE `category_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `category_technologies`
@@ -1319,7 +1339,7 @@ ALTER TABLE `faq_technologies`
 -- AUTO_INCREMENT for table `group_products`
 --
 ALTER TABLE `group_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `home_page`
@@ -1349,7 +1369,7 @@ ALTER TABLE `image_projects`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `log_events`
@@ -1397,7 +1417,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `technology_videos`
 --
 ALTER TABLE `technology_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`

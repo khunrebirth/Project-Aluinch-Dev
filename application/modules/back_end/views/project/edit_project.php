@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Image Cover</label>
+                                    <label class="col-sm-3 col-form-label">Image Cover <span style="color: #c0372b;">(แนะนำขนาด 400*400)</span></label>
                                     <div class="col-sm-9">
                                         <div class="custom-file input-file-w-30">
                                             <input type="file" class="custom-file-input" name="img_cover"

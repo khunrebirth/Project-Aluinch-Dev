@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 08, 2019 at 11:02 AM
+-- Generation Time: Oct 09, 2019 at 05:06 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -224,7 +224,7 @@ CREATE TABLE `home_page` (
 --
 
 INSERT INTO `home_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '', '', '', '', '2019-10-02 09:06:34', '2019-10-04 03:37:52', NULL);
+(1, 'asd', '', '', '', '2019-10-02 09:06:34', '2019-10-09 05:06:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -611,6 +611,50 @@ INSERT INTO `image_projects` (`id`, `sort`, `title`, `project_id`, `created_at`,
 (24, 12, '5759139cc4eb3.jpg', 3, '2019-08-15 03:43:42', NULL, NULL),
 (25, 1, '5759224837e41.jpg', 4, '2019-08-15 03:44:32', NULL, NULL),
 (26, 2, '575921fde0be8.jpg', 4, '2019-08-15 03:44:32', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `logs`
+--
+
+CREATE TABLE `logs` (
+  `id` int(11) NOT NULL,
+  `event_id` int(11) NOT NULL,
+  `detail` text NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `ip` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `log_event`
+--
+
+CREATE TABLE `log_event` (
+  `id` int(11) NOT NULL,
+  `title` varchar(40) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `log_event`
+--
+
+INSERT INTO `log_event` (`id`, `title`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'login', '2019-10-09 05:02:46', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'logout', '2019-10-09 05:02:46', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'add', '2019-10-09 05:02:58', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 'update', '2019-10-09 05:02:58', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 'delete', '2019-10-09 05:03:02', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 'sort_item', '2019-10-09 05:03:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(7, 'other', '2019-10-09 05:03:19', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1088,7 +1132,7 @@ INSERT INTO `technology_videos` (`id`, `title`, `slug`, `body`, `description`, `
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(40) NOT NULL,
-  `password` varchar(40) NOT NULL,
+  `password` text NOT NULL,
   `role_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -1100,9 +1144,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'spadmin', '1234', 1, '2019-08-14 08:23:55', NULL, NULL),
-(2, 'admin', '1234', 2, '2019-10-08 09:39:07', NULL, NULL),
-(3, 'khun', '1234', 2, '2019-10-08 09:39:14', NULL, NULL);
+(1, 'spadmin', '$2y$10$ZFYrWY4cThYRqh7oilxwae9OQzpX48O3U41wm.xwsHdN78NRHrUU2', 1, '2019-08-14 08:23:55', NULL, NULL),
+(2, 'admin', '$2y$10$KK27JndEgg/gpjsy3t5dEe4dLrO6r1rpLDuo4.1rKfUx2tvCIRlNq', 2, '2019-10-08 09:39:07', '2019-10-09 05:05:42', NULL),
+(3, 'khun', '$2y$10$barSRj6dErpHvkgNNe.V9OzmNmr8gZGszHnTPP58Dbyb07aKfjiMC', 2, '2019-10-08 09:39:14', '2019-10-09 05:05:47', NULL);
 
 --
 -- Indexes for dumped tables
@@ -1166,6 +1210,18 @@ ALTER TABLE `image_products`
 -- Indexes for table `image_projects`
 --
 ALTER TABLE `image_projects`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `logs`
+--
+ALTER TABLE `logs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `log_event`
+--
+ALTER TABLE `log_event`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1270,6 +1326,16 @@ ALTER TABLE `image_products`
 --
 ALTER TABLE `image_projects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `logs`
+--
+ALTER TABLE `logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `log_event`
+--
+ALTER TABLE `log_event`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `pages`
 --

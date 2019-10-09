@@ -26,25 +26,22 @@ class Authentication extends MX_Controller
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        $users = $this->User_model->get_user($username, $password);
+        $users = $this->User_model->get_user($username);
 
         if (count($users) > 0) {
         	foreach ($users as $user) {
-
-        		$isPasswordVerify = password_verify($user->password, password_hash($password, PASSWORD_DEFAULT));
-
-        		if ($isPasswordVerify) {
+        		if (password_verify($password, $user->password)) {
 					$this->session->set_userdata([
 						'user_id' => $user->id,
 						'role_id' => $user->role_id
 					]);
 
 					redirect('backoffice/dashboard');
-				} else {
-					redirect('backoffice/login');
 				}
 			}
-		} else {
+			redirect('backoffice/login');
+		}
+        else {
 			redirect('backoffice/login');
 		}
     }

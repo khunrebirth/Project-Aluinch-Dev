@@ -162,6 +162,14 @@ class Home extends MX_Controller
         ]);
 
         if ($update_home_page) {
+
+			logger_store([
+				'user_id' => $this->data['user']->id,
+				'detail' => 'แก้ไข Content Home Page',
+				'event' => 'update',
+				'ip' => $this->input->ip_address(),
+			]);
+
             $this->session->set_flashdata('success', 'Update Done');
         } else {
             $this->session->set_flashdata('error', 'Something wrong');

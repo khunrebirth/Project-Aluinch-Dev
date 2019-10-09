@@ -51,16 +51,15 @@ class Profile extends MX_Controller
 	{
 
 		$update_profile = $this->User_model->update_user_by_id($id, [
-			'password' => $this->input->post(''),
+			'password' => $this->input->post('password'),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
-
 		if ($update_profile) {
-			$this->session->set_flashdata('success', 'Update Done');
+			$this->session->set_flashdata('success', 'Update Password Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}
 
-		redirect('backoffice/page/project/projects');
+		redirect('backoffice/dashboard');
 	}
 }

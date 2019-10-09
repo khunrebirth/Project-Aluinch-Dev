@@ -4,6 +4,12 @@
 			<div class="section-header">
 				<h1>Dashboard</h1>
 			</div>
+            <?php if ($this->session->flashdata('success')) { ?>
+                <div class="alert alert-success"><?php echo $this->session->flashdata('success'); ?></div>
+            <?php } ?>
+            <?php if ($this->session->flashdata('error')) { ?>
+                <div class="alert alert-danger"><?php echo $this->session->flashdata('error'); ?></div>
+            <?php } ?>
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-12">
 					<div class="card card-statistic-1">
@@ -15,7 +21,7 @@
 								<h4>Total Admin</h4>
 							</div>
 							<div class="card-body">
-								0
+                                0
 							</div>
 						</div>
 					</div>

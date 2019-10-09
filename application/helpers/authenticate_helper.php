@@ -8,6 +8,15 @@ function is_logged_in()
     return isset($user) ? true : false;
 }
 
+function is_superadmin()
+{
+	$CI =& get_instance();
+
+	if ($CI->session->userdata('role_id') != 1) {
+		redirect('backoffice/dashboard');
+	}
+}
+
 function require_login($redirect = '')
 {
     if (!is_logged_in()) {

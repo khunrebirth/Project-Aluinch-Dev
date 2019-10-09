@@ -21,23 +21,32 @@ class Authentication extends MX_Controller
 
 	public function login_process()
     {
-        $this->load->model('user_model');
+        $this->load->model('User_model');
 
         $username = $this->input->post('username');
         $password = $this->input->post('password');
 
-        $user = $this->user_model->get_user($username, $password);
+        $users = $this->User_model->get_user($username, $password);
 
-        if ($user) {
+        if (count($users) > 0) {
+        	foreach ($users as $user) {
 
-            $params = array(
-                'user_id' => $user->id,
-            );
+        		$isPasswordVerify = password_verify($user->password, password_hash($password, PASSWORD_DEFAULT));
 
-            $this->session->set_userdata($params);
+        		if ($isPasswordVerify) {
+					$this->session->set_userdata([
+						'user_id' => $user->id,
+						'role_id' => $user->role_id
+					]);
 
-            redirect('backoffice/dashboard');
-        }
+					redirect('backoffice/dashboard');
+				} else {
+					redirect('backoffice/login');
+				}
+			}
+		} else {
+			redirect('backoffice/login');
+		}
     }
 
     public function logout()

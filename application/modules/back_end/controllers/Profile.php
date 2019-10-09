@@ -26,9 +26,6 @@ class Profile extends MX_Controller
 
 		// Model
 		$this->load->model('User_model');
-		$this->load->model('Project_model');
-		$this->load->model('Project_page_model');
-		$this->load->model('Image_project_model');
 
 		/*
 		| -------------------------------------------------------------------------
@@ -43,33 +40,23 @@ class Profile extends MX_Controller
 
 	public function edit($id)
 	{
-		$this->data['title'] = 'Project';
-		$this->data['content'] = 'project/edit_project';
-		$this->data['projects'] = $this->Project_model->get_project_by_id($id);
+		$this->data['title'] = 'Profile - Edit';
+		$this->data['content'] = 'profile/edit_profile';
+		$this->data['profile'] = $this->User_model->get_user_by_id($id);
 
 		$this->load->view('app', $this->data);
 	}
 
-	public function update($project_id)
+	public function update($id)
 	{
-		$project = $this->Project_model->get_project_by_id($project_id);
-		$img_cover = $project->img_cover;
 
-		if (isset($_FILES['img_cover']) && $_FILES['img_cover']['name'] != '') {
-			$img_cover = $this->do_upload_img_project('img_cover');
-		}
-
-		$update_project = $this->Project_model->update_project_by_id($project_id, [
-			'title' => $this->input->post('title'),
-			'description' => $this->input->post('description'),
-			'img_cover' => $this->input->post('img_cover'),
-			'img_cover' => $img_cover,
-			'img_title_alt' => $this->input->post('img_title_alt'),
+		$update_profile = $this->User_model->update_user_by_id($id, [
+			'password' => $this->input->post(''),
 			'updated_at' => date('Y-m-d H:i:s')
 		]);
 
-		if ($update_project) {
-			$this->session->set_flashdata('success', 'Add Done');
+		if ($update_profile) {
+			$this->session->set_flashdata('success', 'Update Done');
 		} else {
 			$this->session->set_flashdata('error', 'Something wrong');
 		}

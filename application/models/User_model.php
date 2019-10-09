@@ -31,14 +31,13 @@ class User_model extends CI_Model
 		return $this->db->where('id', $id)->delete('users');
 	}
 
-	public function get_user($username, $password)
+	public function get_user($username)
     {
         $user = $this->db
             ->where('username', $username)
-            ->where('password', $password)
             ->get('users');
 
-        return $user->num_rows() > 0 ? $user->row() : false;
+        return $user->num_rows() > 0 ? $user->result() : [];
     }
 
     public function get_user_by_id($id)

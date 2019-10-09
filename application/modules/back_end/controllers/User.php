@@ -17,6 +17,7 @@ class User extends MX_Controller
 		*/
 
 		require_login('backoffice/login');
+		is_superadmin();
 
 		/*
 		| -------------------------------------------------------------------------

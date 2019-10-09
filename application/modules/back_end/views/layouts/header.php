@@ -64,7 +64,7 @@
                         <div class="d-sm-none d-lg-inline-block">Hi, <?php echo $user->username; ?></div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-						<a href="<?php echo base_url('backoffice/setting/profile'); ?>" class="dropdown-item has-icon">
+						<a href="<?php echo base_url('backoffice/setting/profile/edit/' . $user->id); ?>" class="dropdown-item has-icon">
 							<i class="fas fa-cog"></i> Profile
 						</a>
 						<div class="dropdown-divider"></div>
@@ -144,13 +144,12 @@
                             </li>
                         </ul>
 					</li>
+					<?php if ($user->role_id == 1) { ?>
                     <li class="menu-header">Settings</li>
-                    <li>
-                        <a class="nav-link" href="#"><i class="fas fa-ellipsis-h"></i> <span>Settings</span></a>
-                    </li>
 					<li>
 						<a class="nav-link" href="<?php echo base_url('backoffice/setting/users') ?>"><i class="fas fa-user"></i> <span>Users</span></a>
 					</li>
+					<?php } ?>
                 </ul>
                 <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                     <a href="<?php echo base_url('home'); ?>" class="btn btn-primary btn-lg btn-block btn-icon-split">

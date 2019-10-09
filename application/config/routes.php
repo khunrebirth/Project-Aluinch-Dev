@@ -258,4 +258,5 @@ $route['contact/send']['post'] = 'front_end/Contact/send';
 	*/
 
 	$route['backoffice/setting/profile'] = 'back_end/Profile';
+	$route['backoffice/setting/profile/edit/(:any)'] = 'back_end/Profile/edit/$1';
 	$route['backoffice/setting/profile/update/(:any)'] = "back_end/Profile";

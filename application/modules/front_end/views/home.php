@@ -255,8 +255,8 @@
 		<h1>PROJECT REFERENCE</h1>
 		<div class="clearfix"></div>
 		<div class="warp-slide">
-			<div id="arrow-project-l-p1" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
-			<div id="arrow-project-r-p1" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
+			<div id="arrow-project-l-p1" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>" style="height: 20px;"/></div>
+			<div id="arrow-project-r-p1" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>" style="height: 20px;"/></div>
 			<div class="owl-project">
 				<?php foreach ($projects as $project) { ?>
 					<div class="item lb-detail-project" data-id="<?php echo hashids_encrypt($project->id); ?>" data-name="<?php echo $project->title; ?>">

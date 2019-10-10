@@ -58,7 +58,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<ul class="list-item">
 					<?php foreach ($category_technologies as $category_technology) { ?>
 						<li class="<?php if (rawurldecode($this->uri->segment(1)) == 'technology' && rawurldecode($this->uri->segment(2)) == $category_technology['category_technology_slug']) { echo 'active'; } ?>">
@@ -83,7 +83,7 @@
 					<?php } ?>
 				</ul>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-8">
 				<div class="product-main">
 
 					<?php if ($technology_specific_category_slug != 'faq-คำถามที่พบบอย') { ?>

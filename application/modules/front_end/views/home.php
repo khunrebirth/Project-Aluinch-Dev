@@ -2,6 +2,15 @@
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/owl.carousel.css'); ?>">
 <link rel="stylesheet" href="<?php echo base_url('resources/front_end/css/style.css'); ?>">
 
+<style>
+	@media (max-width: 767px) {
+		.icon-line,
+		.icon-fb {
+			height: 36px;
+		}
+	}
+</style>
+
 <div class="ruler-bar"></div>
 <div class="hidden-xs">
 	<div class="nav-page">
@@ -99,9 +108,9 @@
 
 <!-- section3: Products -->
 <div id="section3" data-2000="top:500px;opacity:0;" data-3000="opacity:1; top:-200px;" data-5000="opacity:1; top:-400px;" data-6000="top:-1000px;opacity:1;" data-8000="top:-2800px;">
-	<div class="bg-mobile visible-xs">
-		<div class="text" style="top:45%"></div>
-	</div>
+<!--	<div class="bg-mobile visible-xs">-->
+<!--		<div class="text" style="top:45%"></div>-->
+<!--	</div>-->
 	<div class="bg hidden-xs" data-2000="opacity:1;"></div>
 	<div class="bg2 hidden-xs" data-2000="opacity:1;"></div>
 	<div class="text-main hidden-xs" data-0="opacity:0;" data-4000="opacity:0;" data-4200="opacity:1;"></div>
@@ -171,14 +180,13 @@
 		<div class="clearfix"></div>
 
 		<div class="warp-slide">
-			<div id="arrow-techno-l-p1" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
-			<div id="arrow-techno-r-p1" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
+			<div id="arrow-techno-l-p1" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>" style="height: 20px;" /></div>
+			<div id="arrow-techno-r-p1" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>" style="height: 20px;" /></div>
 			<h2>PRESENTATION VDO วีดีโอแนะนำการใช้งาน</h2>
 			<div class="owl-techno1">
 				<?php foreach ($technologies['vdos'] as $vdo) {?>
 					<div class="item vdo-lightbox" data-val="<?php echo $vdo->short_src; ?>">
 						<img src="<?php echo $vdo->img_cover; ?>" alt="<?php echo $vdo->img_title_alt; ?>"/>
-<!--                            <img src="--><?php //echo base_url('storage/uploads/images/category_technology' . $vdo->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
 						<div class="vdo-box">
 							<h3><?php echo $vdo->title; ?></h3>
 							<p><?php echo $vdo->description; ?></p>
@@ -191,14 +199,13 @@
 		</div>
 
 		<div class="warp-slide">
-			<div id="arrow-techno-l-p2" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>"/></div>
-			<div id="arrow-techno-r-p2" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>"/></div>
+			<div id="arrow-techno-l-p2" class="arrow-left"><img src="<?php echo base_url('storage/images/arrow-left.png'); ?>" style="height: 20px;" /></div>
+			<div id="arrow-techno-r-p2" class="arrow-right"><img src="<?php echo base_url('storage/images/arrow-right.png'); ?>" style="height: 20px;" /></div>
 			<h2>TIPS AND TRICKS เกร็ดความรู้อลูมิเนียม</h2>
 			<div class="owl-techno2">
 				<?php foreach ($technologies['tips'] as $tip) {?>
 					<div class="item vdo-lightbox" data-val="pZFeraPjm4s">
 						<img src="<?php echo $tip->img_cover; ?>" alt="<?php echo $tip->img_title_alt; ?>"/>
-						<!--                            <img src="--><?php //echo base_url('storage/uploads/images/category_technology' . $tip->img_cover); ?><!--" alt="--><?php //echo $vdo->img_title_alt; ?><!--"/>-->
 						<div class="vdo-box">
 							<h3><?php echo $tip->title; ?></h3>
 							<p><?php echo $tip->description; ?></p>
@@ -361,9 +368,9 @@
 				</form>
 				<div class="fb">
 					<a href="http://line.me/ti/p/~ALUMINATION" target="_blank">
-						<img src="<?php echo base_url('storage/images/line-icon.png'); ?>" />
+						<img src="<?php echo base_url('storage/images/line-icon.png'); ?>" class="icon-line"/>
 					</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>" /></a>
+					<a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>" class="icon-fb"/></a>
 				</div>
 				<div class="clearfix"></div>
 				<div class="copy mobile"><span data-toggle="modal" data-target="#sitemap">Sitemap</span> | <span class="term-lb" data-toggle="modal" data-target="#term">Terms and Conditions</span></div>
@@ -403,7 +410,8 @@
 
 			// initialize skrollr if the window width is large enough
 			if ($(window).width() > 768) {
-				skrollr.init();
+				// skrollr.init();
+                skrollr.init({forceHeight: false});
 			} else {
 				skrollr.init().destroy();
 			}

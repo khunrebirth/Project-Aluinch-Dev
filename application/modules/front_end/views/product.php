@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<ul class="list-item">
 					<?php foreach ($list_products as $products) { ?>
 					<li class="product-list <?php if (rawurldecode($this->uri->segment(1)) == 'product' && rawurldecode($this->uri->segment(2)) == $products['group_product_slug']) { echo 'active'; } ?>">
@@ -75,7 +75,7 @@
 					<?php } ?>
 				</ul>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-8">
 				<div class="product-main">
 					<div class="head-item"><?php echo $list_products_specific['group_product_name']; ?></div>
 					<h4><?php echo $list_products_specific['category_product_name'] . ':' . $list_products_specific['category_product_description']; ?></h4>

@@ -145,10 +145,10 @@
                         </ul>
 					</li>
 					<?php if ($user->role_id == 1) { ?>
-                    <li class="menu-header">Settings</li>
-					<li class="<?php if ($this->uri->segment(2) == "setting" && $this->uri->segment(3) == "users") { echo 'active'; } ?>">
-						<a class="nav-link" href="<?php echo base_url('backoffice/setting/users') ?>"><i class="fas fa-user"></i> <span>Users</span></a>
-					</li>
+						<li class="menu-header">Settings</li>
+						<li class="<?php if ($this->uri->segment(2) == "setting" && $this->uri->segment(3) == "users") { echo 'active'; } ?>">
+							<a class="nav-link" href="<?php echo base_url('backoffice/setting/users') ?>"><i class="fas fa-user"></i> <span>Users</span></a>
+						</li>
 					<?php } ?>
                 </ul>
                 <div class="mt-4 mb-4 p-3 hide-sidebar-mini">

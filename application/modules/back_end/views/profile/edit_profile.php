@@ -15,10 +15,10 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Edit Password</h4>
+                            <h4>Change Password</h4>
                         </div>
                         <div class="card-body">
-                            <form action="<?php echo base_url('backoffice/setting/profile/update/'.$profile->id); ?>" method="post">
+                            <form action="<?php echo base_url('backoffice/setting/profile/update/' . $profile->id); ?>" method="post">
                                 <div style="padding-top: 20px;"><h6><i class="fa fa-tag"></i> Information</h6></div>
                                 <hr>
                                 <div class="form-group row">

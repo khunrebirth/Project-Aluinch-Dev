@@ -112,9 +112,11 @@
 						<?php } ?>
 					</ul>
 					<div class="clearfix"></div>
-					<div align="center">
-						<div id="loadmore">Load More</div>
-					</div>
+					<?php if (count($list_products_specific['products']) > 6) { ?>
+						<div align="center">
+							<div id="loadmore">Load More</div>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -183,6 +185,8 @@
 			$(".product-lightbox").addClass("show-black");
 			$(".product-lightbox").addClass("show-black");
 			$("body,html").addClass("overflow-hidden");
+
+            $('#ajax-result').html('');
 
 			$.ajax({
 				type: 'GET',

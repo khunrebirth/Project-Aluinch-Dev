@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.6.6
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 09, 2019 at 11:50 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Host: localhost
+-- Generation Time: Oct 16, 2019 at 04:07 AM
+-- Server version: 5.7.17-log
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -45,7 +43,7 @@ CREATE TABLE `category_products` (
   `meta_tag_description` text NOT NULL,
   `meta_tag_keywords` text NOT NULL,
   `img_og_twitter` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -95,7 +93,7 @@ CREATE TABLE `category_technologies` (
   `meta_tag_description` text NOT NULL,
   `meta_tag_keywords` text NOT NULL,
   `img_og_twitter` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -122,7 +120,7 @@ CREATE TABLE `contacts` (
   `phone` int(11) NOT NULL,
   `company` text CHARACTER SET utf8 NOT NULL,
   `message` text CHARACTER SET utf8 NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -143,7 +141,7 @@ CREATE TABLE `contact_page` (
   `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
   `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
   `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -153,7 +151,7 @@ CREATE TABLE `contact_page` (
 --
 
 INSERT INTO `contact_page` (`id`, `address`, `email`, `tel`, `web`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '<p>Alumination Ltd.\r\n</p><p>Head Office : 1369 Room No. 7, </p><p>Chan road, Thungwatdon, </p><p>Sathorn, Bangkok 10120\r\n</p><p>Fax : 02 286 3669</p>', 'info@aluinch.com', '02 286 3666', 'www.aluinch.com', '', '', '', '', '2019-09-26 07:54:28', '2019-10-09 06:45:36', NULL);
+(1, '<p>Alumination Ltd.\r\n</p><p>Head Office : 1369 Room No. 7, </p><p>Chan road, Thungwatdon, </p><p>Sathorn, Bangkok 10120\r\n</p><p>Fax : 02 286 3669</p>', 'info@aluinch.com', '02 286 3666', 'www.aluinch.com', 'ติดต่อ | aluinch.com', '', '', '', '2019-09-26 07:54:28', '2019-10-15 10:39:28', NULL);
 
 -- --------------------------------------------------------
 
@@ -166,7 +164,7 @@ CREATE TABLE `faq_technologies` (
   `ask` text NOT NULL,
   `ans` text NOT NULL,
   `category_technology_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -190,7 +188,7 @@ CREATE TABLE `group_products` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
   `slug` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -216,7 +214,7 @@ CREATE TABLE `home_page` (
   `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
   `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
   `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -226,7 +224,7 @@ CREATE TABLE `home_page` (
 --
 
 INSERT INTO `home_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'asd', '', '', '', '2019-10-02 09:06:34', '2019-10-09 06:21:21', NULL);
+(1, 'หน้าแรก | aluinch.com', '', '', '', '2019-10-02 09:06:34', '2019-10-15 10:39:03', NULL);
 
 -- --------------------------------------------------------
 
@@ -239,7 +237,7 @@ CREATE TABLE `image_galleries` (
   `sort` int(11) NOT NULL,
   `title` text CHARACTER SET utf8 NOT NULL,
   `img_title_alt` text CHARACTER SET utf8 NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -267,7 +265,7 @@ CREATE TABLE `image_products` (
   `img` text COLLATE utf8_unicode_ci NOT NULL,
   `img_title_alt` text CHARACTER SET utf8 NOT NULL,
   `product_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -577,7 +575,7 @@ CREATE TABLE `image_projects` (
   `sort` int(11) NOT NULL,
   `title` text NOT NULL,
   `project_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -626,7 +624,7 @@ CREATE TABLE `logs` (
   `detail` text NOT NULL,
   `user_id` int(11) NOT NULL,
   `ip` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -640,7 +638,7 @@ CREATE TABLE `logs` (
 CREATE TABLE `log_events` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -667,7 +665,7 @@ INSERT INTO `log_events` (`id`, `title`, `created_at`, `updated_at`, `deleted_at
 CREATE TABLE `pages` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -693,7 +691,7 @@ CREATE TABLE `portfolios` (
   `id` int(11) NOT NULL,
   `img` text NOT NULL,
   `img_title_alt` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -723,7 +721,7 @@ CREATE TABLE `products` (
   `detail` text NOT NULL,
   `group_product_id` int(11) NOT NULL,
   `category_product_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1027,7 +1025,7 @@ CREATE TABLE `projects` (
   `description` text NOT NULL,
   `img_cover` text NOT NULL,
   `img_title_alt` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1054,7 +1052,7 @@ CREATE TABLE `project_page` (
   `meta_tag_description` text CHARACTER SET utf8 NOT NULL,
   `meta_tag_keywords` text CHARACTER SET utf8 NOT NULL,
   `img_og_twitter` text CHARACTER SET utf8 NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -1064,7 +1062,7 @@ CREATE TABLE `project_page` (
 --
 
 INSERT INTO `project_page` (`id`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '', '', '', '', '2019-10-02 09:16:29', '2019-10-04 03:43:15', NULL);
+(1, 'โปรเจค | aluinch.com', '', '', '', '2019-10-02 09:16:29', '2019-10-15 10:40:40', NULL);
 
 -- --------------------------------------------------------
 
@@ -1075,7 +1073,7 @@ INSERT INTO `project_page` (`id`, `meta_tag_title`, `meta_tag_description`, `met
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `title` varchar(40) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1109,7 +1107,7 @@ CREATE TABLE `technology_videos` (
   `meta_tag_keywords` text NOT NULL,
   `img_og_twitter` text NOT NULL,
   `category_technology_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1119,11 +1117,11 @@ CREATE TABLE `technology_videos` (
 --
 
 INSERT INTO `technology_videos` (`id`, `title`, `slug`, `body`, `description`, `src`, `short_src`, `img_cover`, `img_title_alt`, `meta_tag_title`, `meta_tag_description`, `meta_tag_keywords`, `img_og_twitter`, `category_technology_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'ระบบอลูมิเนียมประตูหน้าต่าง  B-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง--b-series', '<p><br></p>', 'ระบบอลูมิเนียมประตูหน้าต่างบานเฟี้ยม                                    ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/pZFeraPjm4s\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'pZFeraPjm4s', 'https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-21 08:40:26', '2019-10-09 09:10:55', NULL),
+(1, 'ระบบอลูมิเนียมประตูหน้าต่าง  B-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง--b-series', '<p><br></p>', 'ระบบอลูมิเนียมประตูหน้าต่างบานเฟี้ยม                                    ', '<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/pZFeraPjm4s\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'pZFeraPjm4s', 'https://img.youtube.com/vi/pZFeraPjm4s/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-21 08:40:26', '2019-10-09 09:10:55', NULL),
 (2, 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม  Aluminium Profile Copy Router', 'เครื่องเร้าเตอร์รูกุญแจบานประตูอลูมิเนียม-aluminium-profile-copy-router', '<p>สามารถลดเวลาการทำงานเจาะรูกุญแกได้ 2 เท่า เพราะสามารถเร้าเตอร์ได้ทั้ง 2ฝั่งในเวลาเดียวกัน</p><p><br></p><p>Credit by  :   <span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 0,=\\\"\\\" 0);=\\\"\\\" font-family:=\\\"\\\" arial;=\\\"\\\" font-size:=\\\"\\\" 13px;=\\\"\\\" white-space:=\\\"\\\" pre-wrap;\\\\\\\"=\\\"\\\">  </span><span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span>www.ozgencmachine.com<span style=\\\"\\\\\"color:\\\" rgb(0,=\\\"\\\" 102,=\\\"\\\" 33);=\\\"\\\" font-family:=\\\"\\\" arial,=\\\"\\\" sans-serif;=\\\"\\\" font-size:=\\\"\\\" 14px;=\\\"\\\" white-space:=\\\"\\\" nowrap;\\\\\\\"=\\\"\\\"><br></span></p>                        </p>', 'เทคโนโลยียุคใหม่ของการทำงานอลูมิเนียมให้เป็นเรื่องง่าย', '<iframe width=\"100%\" height=\"400\" src=\"https://www.youtube.com/embed/swT-nMNmmz4\" frameborder=\"0\" allowfullscreen></iframe>', 'swT-nMNmmz4', 'https://img.youtube.com/vi/swT-nMNmmz4/mqdefault.jpg', '', '', '', '', '', 2, '2019-08-21 08:41:34', '2019-10-01 09:39:26', NULL),
-(3, 'ระบบอลูมิเนียมประตูหน้าต่าง  X-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-x-series', '', 'ระบบอลูมิเนียมประตู SLIM DESIGN', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hd3MghzSIRs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'hd3MghzSIRs', 'https://img.youtube.com/vi/hd3MghzSIRs/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-22 03:28:20', '2019-10-03 07:04:52', NULL),
-(5, 'ระบบอลูมิเนียมประตูหน้าต่าง  E-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานเลิ่อน                                    ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Qs4bW40XLwk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'Qs4bW40XLwk', 'https://img.youtube.com/vi/Qs4bW40XLwk/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-22 03:32:27', '2019-10-02 10:23:38', NULL),
-(7, 'ระบบอลูมิเนียมประตูหน้าต่าง C-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานกระทุ้ง                                     ', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IqDe4FbX67w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'IqDe4FbX67w', 'https://img.youtube.com/vi/IqDe4FbX67w/mqdefault.jpg', '', '', '', '', '', 1, '2019-10-02 10:25:23', '2019-10-09 09:09:32', NULL);
+(3, 'ระบบอลูมิเนียมประตูหน้าต่าง  X-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-x-series', '', 'ระบบอลูมิเนียมประตู SLIM DESIGN', '<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/hd3MghzSIRs\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'hd3MghzSIRs', 'https://img.youtube.com/vi/hd3MghzSIRs/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-22 03:28:20', '2019-10-03 07:04:52', NULL),
+(5, 'ระบบอลูมิเนียมประตูหน้าต่าง  E-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานเลิ่อน                                    ', '<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/Qs4bW40XLwk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'Qs4bW40XLwk', 'https://img.youtube.com/vi/Qs4bW40XLwk/mqdefault.jpg', '', '', '', '', '', 1, '2019-08-22 03:32:27', '2019-10-02 10:23:38', NULL),
+(7, 'ระบบอลูมิเนียมประตูหน้าต่าง C-SERIES', 'ระบบอลูมิเนียมประตูหน้าต่าง-c-series', '', 'ระบบอลูมิเนียมประตูหน้าต่างบานกระทุ้ง                                     ', '<iframe width=\"100%\" height=\"315\" src=\"https://www.youtube.com/embed/IqDe4FbX67w\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 'IqDe4FbX67w', 'https://img.youtube.com/vi/IqDe4FbX67w/mqdefault.jpg', '', '', '', '', '', 1, '2019-10-02 10:25:23', '2019-10-09 09:09:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -1136,7 +1134,7 @@ CREATE TABLE `users` (
   `username` varchar(40) NOT NULL,
   `password` text NOT NULL,
   `role_id` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1282,123 +1280,102 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category_products`
 --
 ALTER TABLE `category_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `category_technologies`
 --
 ALTER TABLE `category_technologies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `contact_page`
 --
 ALTER TABLE `contact_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `faq_technologies`
 --
 ALTER TABLE `faq_technologies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `group_products`
 --
 ALTER TABLE `group_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `home_page`
 --
 ALTER TABLE `home_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `image_galleries`
 --
 ALTER TABLE `image_galleries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `image_products`
 --
 ALTER TABLE `image_products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=289;
-
 --
 -- AUTO_INCREMENT for table `image_projects`
 --
 ALTER TABLE `image_projects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `log_events`
 --
 ALTER TABLE `log_events`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=288;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=282;
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `project_page`
 --
 ALTER TABLE `project_page`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `technology_videos`
 --
 ALTER TABLE `technology_videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-COMMIT;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

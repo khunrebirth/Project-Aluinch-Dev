@@ -85,13 +85,16 @@
 					<div class="list-pdf">
 						<ul>
 							<li>
-								<div><a onClick="ga('send', 'event', 'Downloads', 'Click', 'Catalog', '100');" href="#" target="_blank">Download Catalog</a></div>
+<!--								<div><a onClick="ga('send', 'event', 'Downloads', 'Click', 'Catalog', '100');" href="#" target="_blank">Download Catalog</a></div>-->
+								<div><a href="<?php echo base_url('stroage/uploads/files/products/' . $list_products_specific['category_product_file_catalog']); ?>" target="_blank">Download Catalog</a></div>
 							</li>
 							<li>
-								<div><a href="#" target="_blank">Download Price</a></div>
+<!--								<div><a href="#" target="_blank">Download Price</a></div>-->
+								<div><a href="<?php echo base_url('stroage/uploads/files/products/' . $list_products_specific['category_product_file_price']); ?>" target="_blank">Download Price</a></div>
 							</li>
 							<li>
-								<div id="cad-form">Download Cad</div>
+<!--								<div id="cad-form">Download Cad</div>-->
+								<div><a id="cad-form" href="<?php echo base_url('stroage/uploads/files/products/' . $list_products_specific['category_product_file_cad']); ?>" target="_blank">Download Cad</a></div>
 							</li>
 						</ul>
 					</div>
@@ -99,11 +102,12 @@
 					<ul id="list-loadmore" class="listing">
 						<?php foreach ($list_products_specific['products'] as $product) { ?>
 							<li class="lb-detail" data-code="<?php echo hashids_encrypt($product['id']) . '-code'; ?>" data-val="<?php echo hashids_encrypt($product['id']); ?>">
-<!--								<img src="--><?php //echo base_url('storage/uploads/images/products/' . $product['images'][0]['img']); ?><!--" class="img-responsive img-center" alt="--><?php //echo $product['images'][0]['img_title_alt']; ?><!--"/>-->
-								<img src="<?php echo base_url('storage/uploads/images/products/' . $product['images'][0]['img']); ?>" class="img-responsive img-center" alt=""/>
+								<div style="display:table-cell; vertical-align:middle; text-align:center; height: 210px;">
+									<img src="<?php echo base_url('storage/uploads/images/products/' . $product['images'][0]['img']); ?>" class="img-responsive img-center" alt="" style="max-height: 210px;"/>
+								</div>
 								<div class="clearfix"></div>
-								<div class="box-topic"><?php echo $product['title']; ?></div>
-								<div class="box-des"><?php echo $product['description_en'] . ' | ' . $product['description_th']; ?></div>
+								<div class="box-topic" style="width: 100%; text-align: center;"><?php echo $product['title']; ?></div>
+								<div class="box-des" style="width: 100%; text-align: center; font-size: 11px;"><?php echo substr($product['description_en'], 0, 16) . '..' . ' | ' . mb_substr($product['description_th'], 0, 16) . '..'; ?></div>
 								<div class="clearfix"></div>
 								<div class="viewdetail">
 									VIEW DETAIL <div class="icon"><img src="<?php echo base_url('storage/images/product/iconview.png'); ?>"/></div>
@@ -192,6 +196,16 @@
 				type: 'GET',
 				url: urlGetProduct + '/' + $id,
 				success: function (res) {
+
+				    // Check Display
+				    if (res.count > 1) {
+				        $('#arrow-product-left').css('display', '')
+                        $('#arrow-product-right').css('display', '')
+					} else {
+                        $('#arrow-product-left').css('display', 'none')
+                        $('#arrow-product-right').css('display', 'none')
+					}
+
 					$('#ajax-result').html(res.data);
 				},
 				error: function (data) {

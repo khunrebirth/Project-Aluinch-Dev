@@ -130,6 +130,7 @@ class Product extends MX_Controller
 			$response['success'] = 1;
 
 			$product_images = $this->Image_product_model->get_image_product_by_product_id($product->id);
+			$response['count'] = count($product_images);
 
 			$html_template = '
                 <div class="warp-slide-product">
@@ -232,6 +233,10 @@ class Product extends MX_Controller
 		$data['category_product_description'] = $category_product->description;
 		$data['category_product_img_cover'] = $category_product->img_cover;
 		$data['category_product_img_title_alt'] = $category_product->img_title_alt;
+		$data['category_product_file_catalog'] = $category_product->file_catalog;
+		$data['category_product_file_price'] = $category_product->file_price;
+		$data['category_product_file_cad'] = $category_product->file_cad;
+
 		$data['products'] = [];
 
 		if (count($products) > 0) {

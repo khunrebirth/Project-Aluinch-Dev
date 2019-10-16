@@ -784,7 +784,8 @@ h1 {
         color: #000;
         font-size: 14px;
         margin: 0;
-        padding-bottom: 10px
+        padding-bottom: 10px;
+		line-height: 1.4;
     }
 
     #section3 .product-box > p {
@@ -938,7 +939,7 @@ h1 {
     }
 
     #section4 .vdo-box {
-        background: #fff;
+        background: #eff0f0;
         padding: 20px
     }
 
@@ -947,7 +948,8 @@ h1 {
         color: #000;
         font-size: 14px;
         margin: 0;
-        padding-bottom: 10px
+        padding-bottom: 10px;
+		line-height: 1.4;
     }
 
     #section4 .vdo-box > p {
@@ -1947,7 +1949,8 @@ h1 {
         color: #000;
         font-size: 14px;
         margin: 0;
-        padding-bottom: 10px
+        padding-bottom: 10px;
+		line-height: 1.4;
     }
 
     #section3 .product-box > p {
@@ -2095,7 +2098,7 @@ h1 {
     }
 
     #section4 .vdo-box {
-        background: #fff;
+        background: #eff0f0;
         padding: 20px
     }
 
@@ -2104,7 +2107,8 @@ h1 {
         color: #000;
         font-size: 14px;
         margin: 0;
-        padding-bottom: 10px
+        padding-bottom: 10px;
+		line-height: 1.4;
     }
 
     #section4 .vdo-box > p {

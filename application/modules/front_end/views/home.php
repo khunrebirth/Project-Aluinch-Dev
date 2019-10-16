@@ -144,7 +144,7 @@
 							<img src="<?php echo base_url('storage/uploads/images/products/' . $product->img_cover_home) ?>" class="img-responsive" alt="<?php echo $product->img_title_alt; ?>"/>
 							<div class="product-box">
 								<h3><?php echo $product->title; ?></h3>
-								<p><?php echo $product->description; ?></p>
+								<p style="<?php if ($product->id == 16) { echo 'letter-spacing: -0.3px;'; } ?>"><?php echo $product->description; ?></p>
 							</div>
 						</a>
 					</div>

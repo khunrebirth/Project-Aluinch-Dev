@@ -2818,4 +2818,22 @@ h1 {
     }
 }
 
+.float-none {
+    float: none !important;
+}
+@media (max-width: 767px) {
+    .icon-line,
+    .icon-fb {
+        height: 36px;
+    }
+}
+
+a[href^="tel"] ,a[href*="tel"] {
+    pointer-events: none;
+}
+@media (max-width: 767px) {
+    a[href^="tel"] ,a[href*="tel"] {
+        pointer-events: auto;
+    }
+}
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

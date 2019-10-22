@@ -1,3 +1,10 @@
+<style>
+	#maps {
+		height: 500px;
+		width:100%;
+		margin-top: 50px;
+	}
+</style>
 <!-- Main Content -->
 <div id="section1">
 	<div class="warp-slide">
@@ -164,6 +171,9 @@
 			<div class="col-md-12">
 				<div class="text-contact"> please file my place location company</div>
 			</div>
+			<div class="col-md-12">
+				<div id="maps"></div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -175,3 +185,25 @@
 <?php include 'layouts/model_sitemap.php'; ?>
 
 <?php include 'layouts/model_map.php'; ?>
+
+
+<script>
+	var lat_val = 13.7074107;
+	var lng_val = 100.5263193;
+	function initMap() {
+		var mapOptions = {
+			center: {lat: lat_val , lng: lng_val },
+			zoom: 18,
+		}
+		var maps = new google.maps.Map(document.getElementById("maps"),mapOptions);
+		var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(lat_val, lng_val),
+			map: maps,
+		});
+
+	}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcYJDYDVRury6gBY_lrn3kd2yerAA8jnc&callback=initMap"
+async defer></script>
+
+

@@ -348,11 +348,16 @@
 					</div>
 				</div>
 				<div class="clearfix"></div>
-				<div class="copy desktop">
+				<div class="copy desktop float-none">
 					Copyright © 2015 www.aluinch.com All Rights Reserved. Site by <a href="http://www.polardevgroup.com" target="_blank">Polardev</a>
 				</div>
 				<div class="copy-line desktop"></div>
-				<div class="partner desktop">partnership by <img src="<?php echo base_url('storage/images/partner-logo.jpg'); ?>" width="100"/> Company</div>
+				<div class="list-social">
+					<a href="http://line.me/ti/p/~ALUMINATION" target="_blank">
+						<img src="<?php echo base_url('storage/images/line-icon.png'); ?>" class="icon-line"/>
+					</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>" class="icon-fb"/></a>
+				</div>
 			</div>
 
 			<!-- contact -->
@@ -366,12 +371,6 @@
 					<div style="padding-bottom: 20px;" class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
 					<input type="submit" value="Send Message" style="margin-top: 0px;" />
 				</form>
-				<div class="fb">
-					<a href="http://line.me/ti/p/~ALUMINATION" target="_blank">
-						<img src="<?php echo base_url('storage/images/line-icon.png'); ?>" class="icon-line"/>
-					</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="https://www.facebook.com/ALUINCH/" target="_blank"><img src="<?php echo base_url('storage/images/fb2.png'); ?>" class="icon-fb"/></a>
-				</div>
 				<div class="clearfix"></div>
 				<div class="copy mobile"><span data-toggle="modal" data-target="#sitemap">Sitemap</span> | <span class="term-lb" data-toggle="modal" data-target="#term">Terms and Conditions</span></div>
 				<div class="copy mobile">Copyright © 2015 www.aluinch.com All Rights Reserved. SEO maintained by iSEO.in.th</div>

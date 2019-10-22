@@ -1,6 +1,21 @@
 <!-- Push Custom Style -->
 <style>
 	body { overflow-x: hidden; }
+	@media (max-width: 600px) {
+		.list-pdf {
+			width: 100%;
+			position: relative;
+			display: block;
+			float: none;
+			left: 0 !important;
+			right: 0 !important;
+		}
+		.list-pdf ul {
+			left: 0 !important;
+			padding: 0 15px !important;
+			width: 100% !important;
+		}
+	}
 </style>
 
 <!-- Main Content -->
@@ -85,15 +100,15 @@
 					<div class="list-pdf">
 						<ul>
 							<li>
-<!--								<div><a onClick="ga('send', 'event', 'Downloads', 'Click', 'Catalog', '100');" href="#" target="_blank">Download Catalog</a></div>-->
+								<!--<div><a onClick="ga('send', 'event', 'Downloads', 'Click', 'Catalog', '100');" href="#" target="_blank">Download Catalog</a></div>-->
 								<div><a href="<?php echo base_url('stroage/uploads/files/products/' . $list_products_specific['category_product_file_catalog']); ?>" target="_blank">Download Catalog</a></div>
 							</li>
 							<li>
-<!--								<div><a href="#" target="_blank">Download Price</a></div>-->
+								<!--<div><a href="#" target="_blank">Download Price</a></div>-->
 								<div><a href="<?php echo base_url('stroage/uploads/files/products/' . $list_products_specific['category_product_file_price']); ?>" target="_blank">Download Price</a></div>
 							</li>
 							<li>
-<!--								<div id="cad-form">Download Cad</div>-->
+								<!--<div id="cad-form">Download Cad</div>-->
 								<div><a id="cad-form" href="<?php echo base_url('stroage/uploads/files/products/' . $list_products_specific['category_product_file_cad']); ?>" target="_blank">Download Cad</a></div>
 							</li>
 						</ul>

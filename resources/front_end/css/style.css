@@ -612,7 +612,7 @@ h1 {
 		margin-top: 0;
 		text-align: center;
 		background: #fff;
-		padding: 40px 20px 50px 20px
+		padding: 40px 20px 30px 20px
 	}
 
 	#section2 .port-main > .warp-slide .main-catlist {
@@ -753,7 +753,7 @@ h1 {
 		background: #fff;
 		position: relative;
 		top: auto;
-		padding: 40px 10px
+		padding: 0 10px 40px;
 	}
 
 	#section3 .bg-mobile {
@@ -771,7 +771,8 @@ h1 {
 		font-size: 14px;
 		font-size: 1.4rem;
 		font-weight: 700;
-		color: #000
+        color: #000;
+        margin-top: 0;
 	}
 
 	#section3 .product-box {
@@ -874,7 +875,8 @@ h1 {
 		font-size: 14px;
 		font-size: 1.4rem;
 		font-weight: 700;
-		color: #000
+        color: #000;
+        margin-top: 10px;
 	}
 
 	#section4 > .text-main {
@@ -900,8 +902,8 @@ h1 {
 	#section4 .warp-slide {
 		width: 100%;
 		position: relative;
-		margin: 50px auto 0 auto;
-		padding: 20px 20px
+		margin: 0 auto 0 auto;
+		padding: 20px 20px 0;
 	}
 
 	#section4 .arrow-left {
@@ -1071,7 +1073,7 @@ h1 {
 	#section5 .warp-slide {
 		width: 100%;
 		position: relative;
-		margin: 50px auto 0 auto;
+		margin: 20px auto 0 auto;
 		padding: 20px 60px
 	}
 
@@ -1313,17 +1315,20 @@ h1 {
 
 	#section6 .copy {
 		font-size: 12px;
-		padding: 50px 0 20px 0;
-		width: 50%;
+		padding: 20px 0 0px 0;
+		width: 100%;
 		float: left
-	}
+    }
+    #section6 .partner {
+		padding: 20px 0 0 0;
+    }
 
 	.contact-clear {
 		display: none
 	}
 
 	.see-more {
-		margin: 30px auto !important
+		margin: 20px auto !important
 	}
 
 	.bg, .bg2, #section2 .warp, .text-main {
@@ -1356,7 +1361,7 @@ h1 {
 		padding-bottom: 10px;
 		transition: all .5s ease;
 		-webkit-transition: all .5s ease;
-		background: rgba(120, 120, 121, .9)
+		background: rgba(120, 120, 121, 1)
 	}
 
 	header .logo {
@@ -1465,7 +1470,7 @@ h1 {
 	}
 
 	.stuck {
-		background: rgba(120, 120, 121, .9);
+		background: rgba(120, 120, 121, 1);
 		padding-top: 10px;
 		position: fixed;
 		top: 0

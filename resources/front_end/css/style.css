@@ -1248,7 +1248,9 @@ h1 {
     }
 
     #section6 .box-contact > .head {
-        letter-spacing: 1px
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        display: block;
     }
 
     #section6 .box-contact .map {
@@ -2344,7 +2346,7 @@ h1 {
         width: 40%;
         padding-top: 20px;
         font-size: 12px;
-        padding-left: 40px
+        padding-left: 15px
     }
 
     #section6 > .bg {
@@ -2418,7 +2420,9 @@ h1 {
     }
 
     #section6 .media-body {
-        padding-left: 10px
+        /* padding-left: 10px */
+        width: 100%;
+        word-break: break-word;
     }
 
     #section6 .box-contact a {

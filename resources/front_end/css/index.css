@@ -935,7 +935,8 @@ h1 {
         width: 1000px;
         position: relative;
         margin: 0 auto;
-        padding-top: 250px
+        padding-top: 250px;
+        display: -webkit-box;
     }
 
     #contact .warp-slide {
@@ -1052,7 +1053,25 @@ h1 {
         display: none
     }
 }
-
+@media (max-width: 1200px) {
+    
+    #contact > .bg-orange {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: rgba(241, 94, 34, .9);
+    }
+}
+@media (max-width: 768px) {
+    #contact > .bg-orange {
+        position: absolute;
+    }
+}
+@media (max-width: 389px) {
+    #contact > .bg-orange {
+        height: auto;
+    }
+}
 @media (min-width: 1200px) and (max-height: 800px) {
     #contact .warp {
         padding-top: 200px

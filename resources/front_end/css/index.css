@@ -1,1369 +1,1376 @@
 /* Portrait and Landscape */
 .yellow {
-    color: #ff0
+	color: #ff0
 }
 
 .orange {
-    color: #f15e22
+	color: #f15e22
 }
 
 .orange2 {
-    color: #ffc807
+	color: #ffc807
 }
 
 .white {
-    color: #fff
+	color: #fff
 }
 
 .gray {
-    color: #a1a1a1
+	color: #a1a1a1
 }
 
 #section1 .slogan-head {
-    position: absolute;
-    z-index: 5;
-    /*width: 100%;*/
-    top: 220px;
-    text-align: center;
-    padding: 0 50px;
-    color: #fff
+	position: absolute;
+	z-index: 5;
+	/*width: 100%;*/
+	top: 220px;
+	text-align: center;
+	padding: 0 50px;
+	color: #fff
 }
 
 ul li {
-    list-style: none
+	list-style: none
 }
 
 button:focus, li:focus, :focus {
-    outline: 0 !important
+	outline: 0 !important
 }
 
 a {
-    text-decoration: none !important
+	text-decoration: none !important
 }
 
 a:hover {
-    text-decoration: none
+	text-decoration: none
 }
 
 .img-center {
-    margin: 0 auto
+	margin: 0 auto
 }
 
 .head-section {
-    padding-bottom: 50px
+	padding-bottom: 50px
 }
 
 div {
-    -webkit-overflow-scrolling: touch
+	-webkit-overflow-scrolling: touch
 }
 
 @font-face {
-    font-family: 'superstorebold';
-    src: url('superstore_font/Superstore-Bold-webfont.eot');
-    src: url('superstore_font/Superstore-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('superstore_font/Superstore-Bold-webfont.woff2') format('woff2'), url('superstore_font/Superstore-Bold-webfont.woff') format('woff'), url('superstore_font/Superstore-Bold-webfont.ttf') format('truetype'), url('superstore_font/Superstore-Bold-webfont.svg#superstorebold') format('svg');
-    font-weight: 400;
-    font-style: normal
+	font-family: 'superstorebold';
+	src: url('superstore_font/Superstore-Bold-webfont.eot');
+	src: url('superstore_font/Superstore-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('superstore_font/Superstore-Bold-webfont.woff2') format('woff2'), url('superstore_font/Superstore-Bold-webfont.woff') format('woff'), url('superstore_font/Superstore-Bold-webfont.ttf') format('truetype'), url('superstore_font/Superstore-Bold-webfont.svg#superstorebold') format('svg');
+	font-weight: 400;
+	font-style: normal
 }
 
 @font-face {
-    font-family: 'superstoreregular';
-    src: url('superstore_font/Superstore-Regular-webfont.eot');
-    src: url('superstore_font/Superstore-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('superstore_font/Superstore-Regular-webfont.woff2') format('woff2'), url('superstore_font/Superstore-Regular-webfont.woff') format('woff'), url('superstore_font/Superstore-Regular-webfont.ttf') format('truetype'), url('superstore_font/Superstore-Regular-webfont.svg#superstoreregular') format('svg');
-    font-weight: 400;
-    font-style: normal
+	font-family: 'superstoreregular';
+	src: url('superstore_font/Superstore-Regular-webfont.eot');
+	src: url('superstore_font/Superstore-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('superstore_font/Superstore-Regular-webfont.woff2') format('woff2'), url('superstore_font/Superstore-Regular-webfont.woff') format('woff'), url('superstore_font/Superstore-Regular-webfont.ttf') format('truetype'), url('superstore_font/Superstore-Regular-webfont.svg#superstoreregular') format('svg');
+	font-weight: 400;
+	font-style: normal
 }
 
 html {
-    font-size: 62.5%
+	font-size: 62.5%
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #656463;
-    font-size: 1.4rem;
-    color: #535050;
-    background: #000
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #656463;
+	font-size: 1.4rem;
+	color: #535050;
+	background: #000
 }
 
 .mobile-nav {
-    display: none
+	display: none
 }
 
 h1 {
-    color: #f15e22;
-    font-size: 24px;
-    font-size: 2.4rem;
-    font-weight: 700;
-    text-align: center
+	color: #f15e22;
+	font-size: 24px;
+	font-size: 2.4rem;
+	font-weight: 700;
+	text-align: center
 }
 
 .line-head {
-    width: 65px;
-    height: 1px;
-    background: #a1a1a1;
-    margin-bottom: 10px;
-    clear: both;
-    margin: 0 auto
+	width: 65px;
+	height: 1px;
+	background: #a1a1a1;
+	margin-bottom: 10px;
+	clear: both;
+	margin: 0 auto
 }
 
 .show_height {
-    position: fixed;
-    top: 200px;
-    left: 200px;
-    z-index: 999;
-    color: red
+	position: fixed;
+	top: 200px;
+	left: 200px;
+	z-index: 999;
+	color: red
 }
 
 .see-more {
-    transition: all .5s ease
+	transition: all .5s ease
 }
 
 .see-more:hover {
-    background: #f15e22
+	background: #f15e22
 }
 
 .see-more a:hover {
-    color: #fff !important
+	color: #fff !important
 }
 
 ::-webkit-input-placeholder {
-    color: #fff
+	color: #fff
 }
 
 :-moz-placeholder {
-    color: #fff
+	color: #fff
 }
 
 ::-moz-placeholder {
-    color: #fff
+	color: #fff
 }
 
 :-ms-input-placeholder {
-    color: #fff
+	color: #fff
 }
 
 .ruler-bar {
-    height: 19000px;
-    width: 87px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    background: url('../images/dash-page.png')
+	height: 19000px;
+	width: 87px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 10;
+	background: url('../images/dash-page.png')
 }
 
 .nav-page {
-    width: 30px;
-    height: 160px;
-    position: fixed;
-    top: 50%;
-    margin-top: -80px;
-    right: 100px;
-    z-index: 6
+	width: 30px;
+	height: 160px;
+	position: fixed;
+	top: 50%;
+	margin-top: -80px;
+	right: 100px;
+	z-index: 6
 }
 
 .nav-page ul {
-    width: 100%;
-    background: #242424;
-    position: absolute;
-    height: 100%;
-    border-radius: 5px;
-    padding: 0;
-    padding-left: 10px;
-    margin: 0;
-    padding-top: 10px
+	width: 100%;
+	background: #242424;
+	position: absolute;
+	height: 100%;
+	border-radius: 5px;
+	padding: 0;
+	padding-left: 10px;
+	margin: 0;
+	padding-top: 10px
 }
 
 .nav-page ul li {
-    width: 20px;
-    height: 10px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    color: #fff;
-    position: relative;
-    transition: .5s all ease;
-    padding: 5px 0
+	width: 20px;
+	height: 10px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	color: #fff;
+	position: relative;
+	transition: .5s all ease;
+	padding: 5px 0
 }
 
 .nav-page ul li:hover {
-    background: #242424
+	background: #242424
 }
 
 .nav-page ul li:hover > .dot, .nav-page ul li.active > .dot {
-    background: #f15e22;
-    position: absolute;
-    left: -190px;
-    transition: all 1s ease;
-    z-index: 1
+	background: #f15e22;
+	position: absolute;
+	left: -190px;
+	transition: all 1s ease;
+	z-index: 1
 }
 
 .nav-page ul li > .dot {
-    width: 10px;
-    height: 10px;
-    background: #b4b4b5;
-    border-radius: 10px
+	width: 10px;
+	height: 10px;
+	background: #b4b4b5;
+	border-radius: 10px
 }
 
 .nav-page ul li > .menu {
-    position: absolute;
-    left: -200px;
-    opacity: 0;
-    top: -5px;
-    width: 200px;
-    background: #242424;
-    transition: all 1s ease;
-    padding: 5px 0 5px 30px;
-    border-radius: 5px
+	position: absolute;
+	left: -200px;
+	opacity: 0;
+	top: -5px;
+	width: 200px;
+	background: #242424;
+	transition: all 1s ease;
+	padding: 5px 0 5px 30px;
+	border-radius: 5px
 }
 
 .nav-page ul li:hover > .menu, .nav-page ul li.active > .menu {
-    opacity: 1
+	opacity: 1
 }
 
 @media (max-width: 768px) {
-    #section1 .slogan-head {
-        top: 110px
-    }
+	#section1 .slogan-head {
+		top: 110px
+	}
 
-    .graphic, .nav-page {
-        display: none
-    }
+	.graphic, .nav-page {
+		display: none
+	}
 
-    body {
-        height: auto
-    }
+	body {
+		height: auto
+	}
 
-    .black {
-        display: none
-    }
+	.black {
+		display: none
+	}
 
-    .mobile-nav {
-        display: block;
-        position: absolute;
-        cursor: pointer;
-        z-index: 1;
-        right: 20px;
-        top: 10px;
-        font-size: 24px;
-        color: #f15e22
-    }
+	.mobile-nav {
+		display: block;
+		position: absolute;
+		cursor: pointer;
+		z-index: 1;
+		right: 20px;
+		top: 10px;
+		font-size: 24px;
+		color: #f15e22
+	}
 
-    .nav-page, .ruler-bar {
-        display: none
-    }
+	.nav-page, .ruler-bar {
+		display: none
+	}
 
-    .bg-mobile {
-        position: relative;
-        display: block !important
-    }
+	.bg-mobile {
+		position: relative;
+		display: block !important
+	}
 
-    .bg-mobile > .text {
-        position: absolute;
-        top: 45%;
-        width: 100%;
-        padding: 0 20px;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 700;
-        color: #fff
-    }
+	.bg-mobile > .text {
+		position: absolute;
+		top: 45%;
+		width: 100%;
+		padding: 0 20px;
+		text-align: center;
+		font-size: 20px;
+		font-weight: 700;
+		color: #fff
+	}
 
-    #section1 {
-        position: relative;
-        width: 100%;
-        height: 300px
-    }
+	#section1 {
+		position: relative;
+		width: 100%;
+		height: 300px
+	}
 
-    #section1 > .warp-slide {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1
-    }
+	#section1 > .warp-slide {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: -1
+	}
 
-    #section1 .slogan {
-        float: right;
-        padding-top: 0;
-        color: #fff;
-        text-align: center
-    }
+	#section1 .slogan {
+		float: right;
+		padding-top: 0;
+		color: #fff;
+		text-align: center
+	}
 
-    #section1 .slogan img {
-        width: 80%;
-        margin: 0 auto
-    }
+	#section1 .slogan img {
+		width: 80%;
+		margin: 0 auto
+	}
 
-    #contact {
-        position: relative;
-        width: 100%;
-        height: auto;
-        min-height: 1225px;
-        z-index: 1
-    }
+	#contact {
+		position: relative;
+		width: 100%;
+		height: auto;
+		min-height: 1225px;
+		z-index: 1
+	}
 
-    #contact .copy-line {
-        width: 100%;
-        height: 1px;
-        background: #f39670;
-        margin: 0 0 20px 0;
-        float: left
-    }
+	#contact .copy-line {
+		width: 100%;
+		height: 1px;
+		background: #f39670;
+		margin: 0 0 20px 0;
+		float: left
+	}
 
-    #contact .list-contact {
-        float: left;
-        width: 100%;
-        padding-top: 20px;
-        font-size: 12px
-    }
+	#contact .list-contact {
+		float: left;
+		width: 100%;
+		padding-top: 20px;
+		font-size: 12px
+	}
 
-    #contact .list-contact2 {
-        float: left;
-        width: 100%;
-        padding-top: 0;
-        font-size: 12px;
-        padding-left: 0
-    }
+	#contact .list-contact2 {
+		float: left;
+		width: 100%;
+		padding-top: 0;
+		font-size: 12px;
+		padding-left: 0
+	}
 
-    #contact .main-box-head {
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 2
-    }
+	#contact .main-box-head {
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 2
+	}
 
-    #contact .box-header {
-        width: 210px;
-        height: 210px;
-        background: #a43c11;
-        color: #fff;
-        font-weight: 700;
-        position: absolute;
-        top: -50px;
-        left: 50%;
-        margin-left: -105px;
-        font-size: 24px;
-        padding: 20px;
-        z-index: 10;
-        padding-top: 130px
-    }
+	#contact .box-header {
+		width: 210px;
+		height: 210px;
+		background: #a43c11;
+		color: #fff;
+		font-weight: 700;
+		position: absolute;
+		top: -50px;
+		left: 50%;
+		margin-left: -105px;
+		font-size: 24px;
+		padding: 20px;
+		z-index: 10;
+		padding-top: 130px
+	}
 
-    #contact > .graphic {
-        display: none
-    }
+	#contact > .graphic {
+		display: none
+	}
 
-    #contact > .bg {
-        width: 100%;
-        min-height: 1050px;
-        background: url('http://localhost/aluinch-dev/storage/images/bg-contact.jpg') center center;
-        z-index: 1;
-        position: relative;
-        background-size: no-repeat;
-        background-attachment: scroll;
-        left: 0;
-        top: 0
-    }
+	#contact > .bg {
+		width: 100%;
+		min-height: 1050px;
+		background: url('http://localhost/aluinch-dev/storage/images/bg-contact.jpg') center center;
+		z-index: 1;
+		position: relative;
+		background-size: no-repeat;
+		background-attachment: scroll;
+		left: 0;
+		top: 0
+	}
 
-    #contact > .bg-orange {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgba(241, 94, 34, .9);
-        left: 0;
-        top: 0;
-        z-index: 1
-    }
+	#contact > .bg-orange {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: rgba(241, 94, 34, .9);
+		left: 0;
+		top: 0;
+		z-index: 1
+	}
 
-    #contact h2 {
-        font-size: 14px;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #000
-    }
+	#contact h2 {
+		font-size: 14px;
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: #000
+	}
 
-    #contact > .text-main {
-        width: 616px;
-        height: 112px;
-        position: absolute;
-        left: 50%;
-        top: 60%;
-        margin-left: -308px;
-        margin-top: -66px;
-        z-index: 1
-    }
+	#contact > .text-main {
+		width: 616px;
+		height: 112px;
+		position: absolute;
+		left: 50%;
+		top: 60%;
+		margin-left: -308px;
+		margin-top: -66px;
+		z-index: 1
+	}
 
-    #contact .warp {
-        width: 100%;
-        position: relative;
-        margin: 0 auto;
-        padding-top: 0;
-        padding: 40px 10px
-    }
+	#contact .warp {
+		width: 100%;
+		position: relative;
+		margin: 0 auto;
+		padding-top: 0;
+		padding: 40px 10px
+	}
 
-    #contact .warp-slide {
-        width: 100%;
-        position: relative;
-        margin: 50px auto 0 auto;
-        padding: 0 60px
-    }
+	#contact .warp-slide {
+		width: 100%;
+		position: relative;
+		margin: 50px auto 0 auto;
+		padding: 0 60px
+	}
 
-    #contact h1 {
-        color: #fff
-    }
+	#contact h1 {
+		color: #fff
+	}
 
-    #contact .line-head {
-        background: #fff
-    }
+	#contact .line-head {
+		background: #fff
+	}
 
-    #contact .box-contact {
-        width: 100%;
-        float: left;
-        padding: 180px 20px 0 20px;
-        color: #fff;
-        position: relative
-    }
+	#contact .box-contact {
+		width: 100%;
+		float: left;
+		padding: 180px 20px 0 20px;
+		color: #fff;
+		position: relative
+	}
 
-    #contact .form-contact {
-        padding-top: 40px
-    }
+	#contact .form-contact {
+		padding-top: 40px
+	}
 
-    #contact .media-body {
-        padding-left: 10px
-    }
+	#contact .media-body {
+		padding-left: 10px
+	}
 
-    #contact .box-contact a {
-        color: #ff0
-    }
+	#contact .box-contact a {
+		color: #ff0
+	}
 
-    #contact .box-contact > .head {
-        letter-spacing: 2px;
-        font-size: 18px;
-        padding-top: 100px
-    }
+	#contact .box-contact > .head {
+		letter-spacing: 2px;
+		font-size: 18px;
+		padding-top: 100px
+	}
 
-    #contact .box-contact .map {
-        cursor: pointer
-    }
+	#contact .box-contact .map {
+		cursor: pointer
+	}
 
-    #contact input[type=text] {
-        width: 48%;
-        margin-right: 2%;
-        float: left;
-        margin-bottom: 10px;
-        border: 1px solid #fff;
-        padding: 5px 10px;
-        background: transparent;
-        color: #fff
-    }
+	#contact input[type=text] {
+		width: 48%;
+		margin-right: 2%;
+		float: left;
+		margin-bottom: 10px;
+		border: 1px solid #fff;
+		padding: 5px 10px;
+		background: transparent;
+		color: #fff
+	}
 
-    #contact textarea {
-        background: transparent;
-        color: #fff;
-        border: 1px solid #fff;
-        margin-bottom: 10px;
-        width: 98%;
-        margin-right: 2%;
-        height: 100px;
-        padding: 5px 10px
-    }
+	#contact textarea {
+		background: transparent;
+		color: #fff;
+		border: 1px solid #fff;
+		margin-bottom: 10px;
+		width: 98%;
+		margin-right: 2%;
+		height: 100px;
+		padding: 5px 10px
+	}
 
-    #contact .media {
-        margin-bottom: 20px
-    }
+	#contact .media {
+		margin-bottom: 20px
+	}
 
-    #contact input[type=submit] {
-        background: #fefbfb;
-        float: left;
-        padding: 7px 10px;
-        color: #333;
-        text-align: center;
-        cursor: pointer;
-        border: 0;
-        font-weight: 700;
-        margin-top: 20px
-    }
+	#contact input[type=submit] {
+		background: #fefbfb;
+		float: left;
+		padding: 7px 10px;
+		color: #333;
+		text-align: center;
+		cursor: pointer;
+		border: 0;
+		font-weight: 700;
+		margin-top: 20px
+	}
 
-    #contact .fb {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        float: right;
-        padding-top: 10px
-    }
+	#contact .fb {
+		position: relative;
+		right: auto;
+		bottom: auto;
+		float: right;
+		padding-top: 10px
+	}
 
-    .map-google {
-        width: 100%;
-        height: 400px;
-        position: relative;
-        bottom: auto;
-        z-index: 1
-    }
+	.map-google {
+		width: 100%;
+		height: 400px;
+		position: relative;
+		bottom: auto;
+		z-index: 1
+	}
 
-    #contact .copy {
-        font-size: 11px;
-        padding: 50px 0;
-        width: 50%;
-        float: left
-    }
+	#contact .copy {
+		font-size: 11px;
+		padding: 50px 0;
+		width: 50%;
+		float: left
+	}
 
-    .contact-clear {
-        display: none
-    }
+	.contact-clear {
+		display: none
+	}
 
-    .see-more {
-        margin: 30px auto !important
-    }
+	.see-more {
+		margin: 30px auto !important
+	}
 
-    .bg, .bg2, #section2 .warp, .text-main {
-        display: none
-    }
+	.bg, .bg2, #section2 .warp, .text-main {
+		display: none
+	}
 
-    .desktop {
-        display: none
-    }
+	.desktop {
+		display: none
+	}
 
-    .mobile, #contact .bg {
-        display: block
-    }
+	.mobile, #contact .bg {
+		display: block
+	}
 }
 
 @media (max-width: 767px) {
-    header {
-        position: fixed;
-        width: 100%;
-        z-index: 10;
-        top: 0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        transition: all .5s ease;
-        -webkit-transition: all .5s ease;
-        background: rgba(120, 120, 121, .9)
-    }
+	header {
+		position: fixed;
+		width: 100%;
+		z-index: 10;
+		top: 0;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		transition: all .5s ease;
+		-webkit-transition: all .5s ease;
+		background: rgba(120, 120, 121, .9)
+	}
 
-    header .logo {
-        float: none;
-        cursor: pointer;
-        width: 200px;
-        margin: 0 auto
-    }
+	header .logo {
+		float: none;
+		cursor: pointer;
+		width: 200px;
+		margin: 0 auto
+	}
 
-    header .navigation {
-        width: 100%;
-        position: relative
-    }
+	header .navigation {
+		width: 100%;
+		position: relative
+	}
 
-    #navi {
-        position: relative
-    }
+	#navi {
+		position: relative
+	}
 
-    header .navigation ul {
-        width: 100%;
-        float: none;
-        padding: 5px 0 5px 0;
-        position: relative;
-        margin-bottom: 0
-    }
+	header .navigation ul {
+		width: 100%;
+		float: none;
+		padding: 5px 0 5px 0;
+		position: relative;
+		margin-bottom: 0
+	}
 
-    header .navigation ul li {
-        float: none;
-        margin: 10px auto 0 auto;
-        width: 200px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        border: 2px solid transparent;
-        clear: both;
-        text-align: center;
-        display: none
-    }
+	header .navigation ul li {
+		float: none;
+		margin: 10px auto 0 auto;
+		width: 200px;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		border: 2px solid transparent;
+		clear: both;
+		text-align: center;
+		display: none
+	}
 
-    header .navigation ul li.mobile {
-        display: block
-    }
+	header .navigation ul li.mobile {
+		display: block
+	}
 
-    header .navigation ul li.project {
-        width: 250px
-    }
+	header .navigation ul li.project {
+		width: 250px
+	}
 
-    header .navigation ul li > div {
-        text-align: center
-    }
+	header .navigation ul li > div {
+		text-align: center
+	}
 
-    header .navigation ul li > div > a {
-        color: #fff;
-        padding: 8px 20px;
-        display: block
-    }
+	header .navigation ul li > div > a {
+		color: #fff;
+		padding: 8px 20px;
+		display: block
+	}
 
-    header .navigation ul li:last-child > div > a {
-        color: #f15e22;
-        font-weight: 700
-    }
+	header .navigation ul li:last-child > div > a {
+		color: #f15e22;
+		font-weight: 700
+	}
 
-    header .hotline {
-        font-weight: 700;
-        float: left;
-        padding-top: 14px
-    }
+	header .hotline {
+		font-weight: 700;
+		float: left;
+		padding-top: 14px
+	}
 
-    header .hotline > a {
-        color: #fc8f05;
-        display: none
-    }
+	header .hotline > a {
+		color: #fc8f05;
+		display: none
+	}
 
-    header .hotline > a:hover {
-        color: #fff
-    }
+	header .hotline > a:hover {
+		color: #fff
+	}
 
-    header .fb {
-        float: right;
-        border-left: 1px solid #808080;
-        padding-left: 10px;
-        margin-top: 10px;
-        display: none
-    }
+	header .fb {
+		float: right;
+		border-left: 1px solid #808080;
+		padding-left: 10px;
+		margin-top: 10px;
+		display: none
+	}
 
-    header .fb:hover {
-        opacity: .9
-    }
+	header .fb:hover {
+		opacity: .9
+	}
 
-    header .navigation ul li.active, header .navigation ul li:hover {
-        border: 2px solid #f15e22;
-        -webkit-transform: skewx(-30deg);
-        -moz-transform: skewx(-30deg);
-        -ms-transform: skewx(-30deg);
-        -o-transform: skewx(-30deg);
-        transform: skewx(-30deg)
-    }
+	header .navigation ul li.active, header .navigation ul li:hover {
+		border: 2px solid #f15e22;
+		-webkit-transform: skewx(-30deg);
+		-moz-transform: skewx(-30deg);
+		-ms-transform: skewx(-30deg);
+		-o-transform: skewx(-30deg);
+		transform: skewx(-30deg)
+	}
 
-    header .navigation ul li.active > div, header .navigation ul li:hover > div {
-        -webkit-transform: skewx(30deg);
-        -moz-transform: skewx(30deg);
-        -ms-transform: skewx(30deg);
-        -o-transform: skewx(30deg);
-        transform: skewx(30deg)
-    }
+	header .navigation ul li.active > div, header .navigation ul li:hover > div {
+		-webkit-transform: skewx(30deg);
+		-moz-transform: skewx(30deg);
+		-ms-transform: skewx(30deg);
+		-o-transform: skewx(30deg);
+		transform: skewx(30deg)
+	}
 
-    .stuck {
-        background: rgba(120, 120, 121, .9);
-        padding-top: 10px;
-        position: fixed;
-        top: 0
-    }
+	.stuck {
+		background: rgba(120, 120, 121, .9);
+		padding-top: 10px;
+		position: fixed;
+		top: 0
+	}
 
-    header .navbar-collapse {
-        -webkit-box-shadow: none
-    }
+	header .navbar-collapse {
+		-webkit-box-shadow: none
+	}
 
-    header .navbar-collapse {
-        box-shadow: none
-    }
+	header .navbar-collapse {
+		box-shadow: none
+	}
 
-    header .hot-bar {
-        display: none
-    }
+	header .hot-bar {
+		display: none
+	}
 }
 
 @media (max-width: 500px) {
-    .bg-mobile > .text {
-        font-size: 16px
-    }
+	.bg-mobile > .text {
+		font-size: 16px
+	}
 
-    #section1 {
-        position: relative;
-        width: 100%;
-        height: 400px
-    }
+	#section1 {
+		position: relative;
+		width: 100%;
+		height: 400px
+	}
 }
 
 @media (min-width: 769px) {
-    body {
-        height: auto
-    }
+	body {
+		height: auto
+	}
 
-    .black {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        z-index: 1
-    }
+	.black {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		z-index: 1
+	}
 
-    header {
-        position: fixed;
-        width: 100%;
-        z-index: 10;
-        top: 90px;
-        padding-top: 10px;
-        transition: all .5s ease;
-        -webkit-transition: all .5s ease
-    }
+	header {
+		position: fixed;
+		width: 100%;
+		z-index: 10;
+		top: 90px;
+		padding-top: 10px;
+		transition: all .5s ease;
+		-webkit-transition: all .5s ease
+	}
 
-    header .logo {
-        float: left;
-        cursor: pointer;
-        width: 200px
-    }
+	header .logo {
+		float: left;
+		cursor: pointer;
+		width: 200px
+	}
 
-    header .navigation {
-        float: left;
-        width: 100%;
-        position: relative;
-        display: block
-    }
+	header .navigation {
+		float: left;
+		width: 100%;
+		position: relative;
+		display: block
+	}
 
-    header .navigation ul {
-        width: auto;
-        float: left;
-        padding: 5px 20px 5px 80px
-    }
+	header .navigation ul {
+		width: auto;
+		float: left;
+		padding: 5px 20px 5px 80px
+	}
 
-    header .navigation ul li {
-        float: left;
-        width: auto;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        border: 2px solid transparent
-    }
+	header .navigation ul li {
+		float: left;
+		width: auto;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		border: 2px solid transparent
+	}
 
-    header .navigation ul li > div > a {
-        color: #fff;
-        padding: 8px 20px;
-        display: block
-    }
+	header .navigation ul li > div > a {
+		color: #fff;
+		padding: 8px 20px;
+		display: block
+	}
 
-    header .hotline {
-        font-weight: 700;
-        float: left;
-        padding-top: 14px
-    }
+	header .hotline {
+		font-weight: 700;
+		float: left;
+		padding-top: 14px
+	}
 
-    header .hotline > a {
-        color: #fc8f05
-    }
+	header .hotline > a {
+		color: #fc8f05
+	}
 
-    header .hotline > a:hover {
-        color: #fff
-    }
+	header .hotline > a:hover {
+		color: #fff
+	}
 
-    header .fb {
-        float: right;
-        border-left: 1px solid #808080;
-        padding-left: 10px;
-        margin-top: 10px
-    }
+	header .fb {
+		float: right;
+		border-left: 1px solid #808080;
+		padding-left: 10px;
+		margin-top: 10px
+	}
 
-    header .fb:hover {
-        opacity: .9
-    }
+	header .fb:hover {
+		opacity: .9
+	}
 
-    header .navbar-collapse {
-        padding-left: 0;
-        padding-right: 0
-    }
+	header .navbar-collapse {
+		padding-left: 0;
+		padding-right: 0
+	}
 
-    header .hot-bar {
-        position: absolute;
-        width: 150px;
-        right: 0;
-        top: 0
-    }
+	header .hot-bar {
+		position: absolute;
+		width: 150px;
+		right: 0;
+		top: 0
+	}
 
-    header .navigation ul li.active, header .navigation ul li:hover {
-        border: 2px solid #f15e22;
-        -webkit-transform: skewx(-30deg);
-        -moz-transform: skewx(-30deg);
-        -ms-transform: skewx(-30deg);
-        -o-transform: skewx(-30deg);
-        transform: skewx(-30deg)
-    }
+	header .navigation ul li.active, header .navigation ul li:hover {
+		border: 2px solid #f15e22;
+		-webkit-transform: skewx(-30deg);
+		-moz-transform: skewx(-30deg);
+		-ms-transform: skewx(-30deg);
+		-o-transform: skewx(-30deg);
+		transform: skewx(-30deg)
+	}
 
-    header .navigation ul li.active > div, header .navigation ul li:hover > div {
-        -webkit-transform: skewx(30deg);
-        -moz-transform: skewx(30deg);
-        -ms-transform: skewx(30deg);
-        -o-transform: skewx(30deg);
-        transform: skewx(30deg)
-    }
+	header .navigation ul li.active > div, header .navigation ul li:hover > div {
+		-webkit-transform: skewx(30deg);
+		-moz-transform: skewx(30deg);
+		-ms-transform: skewx(30deg);
+		-o-transform: skewx(30deg);
+		transform: skewx(30deg)
+	}
 
-    .stuck {
-        background: rgba(120, 120, 121, .9);
-        padding-top: 10px;
-        position: fixed;
-        top: 0
-    }
+	.stuck {
+		background: rgba(120, 120, 121, .9);
+		padding-top: 10px;
+		position: fixed;
+		top: 0
+	}
 
-    #section1 {
-        position: relative;
-        width: 100%;
-        height: 650px
-    }
+	#section1 {
+		position: relative;
+		width: 100%;
+		height: 650px
+	}
 
-    #section1 > .warp-slide {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0
-    }
+	#section1 > .warp-slide {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0
+	}
 
-    #section1 .slogan {
-        position: absolute;
-        z-index: 5;
-        width: 50%;
-        top: 120px;
-        right: 32%;
-        color: #fff;
-        text-align: center
-    }
+	#section1 .slogan {
+		position: absolute;
+		z-index: 5;
+		width: 50%;
+		top: 120px;
+		right: 32%;
+		color: #fff;
+		text-align: center
+	}
 
-    #section1 .slogan-text {
-        float: right
-    }
+	#section1 .slogan-text {
+		float: right
+	}
 
-    #contact {
-        position: relative;
-        width: 100%;
-        min-height: 800px;
-        font-size: 12px
-    }
+	#contact {
+		position: relative;
+		width: 100%;
+		min-height: 800px;
+		font-size: 12px
+	}
 
-    #contact .partner {
-        text-transform: uppercase;
-        float: left;
-        width: 100%
-    }
+	#contact .partner {
+		text-transform: uppercase;
+		float: left;
+		width: 100%
+	}
 
-    #contact .copy-line {
-        width: 100%;
-        height: 1px;
-        background: #f39670;
-        margin: 0 0 20px 0;
-        float: left
-    }
+	#contact .copy-line {
+		width: 100%;
+		height: 1px;
+		background: #f39670;
+		margin: 0 0 20px 0;
+		float: left
+	}
 
-    #contact .list-contact {
-        float: left;
-        width: 60%;
-        padding-top: 20px;
-        font-size: 12px
-    }
+	#contact .list-contact {
+		float: left;
+		width: 60%;
+		padding-top: 20px;
+		font-size: 12px
+	}
 
-    #contact .list-contact2 {
-        float: left;
-        width: 40%;
-        padding-top: 20px;
-        font-size: 12px;
-        padding-left: 40px
-    }
+	#contact .list-contact2 {
+		float: left;
+		width: 40%;
+		padding-top: 20px;
+		font-size: 12px;
+		padding-left: 40px
+	}
 
-    #contact > .main-box-head {
-        width: 100%;
-        z-index: 2;
-        position: absolute;
-        left: 0;
-        top: 0
-    }
+	#contact > .main-box-head {
+		width: 100%;
+		z-index: 2;
+		position: absolute;
+		left: 0;
+		top: 0
+	}
 
-    #contact .box-header {
-        width: 210px;
-        height: 210px;
-        background: #a43c11;
-        color: #fff;
-        font-weight: 700;
-        position: absolute;
-        top: -30px;
-        left: 20px;
-        font-size: 24px;
-        padding: 20px;
-        z-index: 10;
-        padding-top: 130px
-    }
+	#contact .box-header {
+		width: 210px;
+		height: 210px;
+		background: #a43c11;
+		color: #fff;
+		font-weight: 700;
+		position: absolute;
+		top: -30px;
+		left: 20px;
+		font-size: 24px;
+		padding: 20px;
+		z-index: 10;
+		padding-top: 130px
+	}
 
-    #contact > .graphic {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2
-    }
+	#contact > .graphic {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2
+	}
 
-    #contact > .bg {
-        width: 100%;
-        min-height: 800px;
-        background: url('http://localhost/aluinch-dev/storage/images/bg-contact.jpg') center center;
-        z-index: 1;
-        position: absolute;
-        background-size: cover;
-        left: 0;
-        top: 0
-    }
+	#contact > .bg {
+		width: 100%;
+		min-height: 800px;
+		background: url('http://localhost/aluinch-dev/storage/images/bg-contact.jpg') center center;
+		z-index: 1;
+		position: absolute;
+		background-size: cover;
+		left: 0;
+		top: 0
+	}
 
-    #contact > .bg-orange {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgba(241, 94, 34, .9);
-        left: 0;
-        top: 0;
-        z-index: 1
-    }
+	#contact > .bg-orange {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background: rgba(241, 94, 34, .9);
+		left: 0;
+		top: 0;
+		z-index: 1
+	}
 
-    #contact h2 {
-        font-size: 14px;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #000
-    }
+	#contact h2 {
+		font-size: 14px;
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: #000
+	}
 
-    #contact > .text-main {
-        width: 616px;
-        height: 112px;
-        position: absolute;
-        left: 50%;
-        top: 60%;
-        margin-left: -308px;
-        margin-top: -66px;
-        z-index: 1
-    }
+	#contact > .text-main {
+		width: 616px;
+		height: 112px;
+		position: absolute;
+		left: 50%;
+		top: 60%;
+		margin-left: -308px;
+		margin-top: -66px;
+		z-index: 1
+	}
 
-    #contact .warp {
-        width: 1000px;
-        position: relative;
-        margin: 0 auto;
-        padding-top: 250px;
-        display: -webkit-box;
-    }
+	#contact .warp {
+		width: 1000px;
+		position: relative;
+		margin: 0 auto;
+		padding-top: 250px;
+		display: -webkit-box;
+	}
 
-    #contact .warp-slide {
-        width: 1000px;
-        position: relative;
-        margin: 50px auto 0 auto;
-        padding: 0 60px
-    }
+	#contact .warp-slide {
+		width: 1000px;
+		position: relative;
+		margin: 50px auto 0 auto;
+		padding: 0 60px
+	}
 
-    #contact h1 {
-        color: #fff
-    }
+	#contact h1 {
+		color: #fff
+	}
 
-    #contact .line-head {
-        background: #fff
-    }
+	#contact .line-head {
+		background: #fff
+	}
 
-    #contact .box-contact {
-        width: 50%;
-        float: left;
-        padding: 50px 30px 50px 30px;
-        color: #fff;
-        position: relative
-    }
+	#contact .box-contact {
+		width: 50%;
+		float: left;
+		padding: 50px 30px 50px 30px;
+		color: #fff;
+		position: relative
+	}
 
-    #contact .media-body {
-        padding-left: 10px
-    }
+	#contact .media-body {
+		padding-left: 10px
+	}
 
-    #contact .box-contact a {
-        color: #ff0
-    }
+	#contact .box-contact a {
+		color: #ff0
+	}
 
-    #contact .box-contact > .head {
-        letter-spacing: 2px;
-        font-size: 18px
-    }
+	#contact .box-contact > .head {
+		letter-spacing: 2px;
+		font-size: 18px
+	}
 
-    #contact .box-contact .map {
-        cursor: pointer
-    }
+	#contact .box-contact .map {
+		cursor: pointer
+	}
 
-    #contact input[type=text] {
-        width: 48%;
-        margin-right: 2%;
-        float: left;
-        margin-bottom: 10px;
-        border: 1px solid #fff;
-        padding: 5px 10px;
-        background: transparent;
-        color: #fff
-    }
+	#contact input[type=text] {
+		width: 48%;
+		margin-right: 2%;
+		float: left;
+		margin-bottom: 10px;
+		border: 1px solid #fff;
+		padding: 5px 10px;
+		background: transparent;
+		color: #fff
+	}
 
-    #contact textarea {
-        background: transparent;
-        color: #fff;
-        border: 1px solid #fff;
-        margin-bottom: 10px;
-        width: 98%;
-        margin-right: 2%;
-        height: 100px;
-        padding: 5px 10px
-    }
+	#contact textarea {
+		background: transparent;
+		color: #fff;
+		border: 1px solid #fff;
+		margin-bottom: 10px;
+		width: 98%;
+		margin-right: 2%;
+		height: 100px;
+		padding: 5px 10px
+	}
 
-    #contact .media {
-        margin-bottom: 20px
-    }
+	#contact .media {
+		margin-bottom: 20px
+	}
 
-    #contact input[type=submit] {
-        background: #fefbfb;
-        padding: 7px 10px;
-        color: #333;
-        text-align: center;
-        cursor: pointer;
-        border: 0;
-        font-weight: 700;
-        margin-top: 100px
-    }
+	#contact input[type=submit] {
+		background: #fefbfb;
+		padding: 7px 10px;
+		color: #333;
+		text-align: center;
+		cursor: pointer;
+		border: 0;
+		font-weight: 700;
+		margin-top: 100px
+	}
 
-    #contact .fb {
-        position: absolute;
-        right: 50px;
-        bottom: 30px
-    }
+	#contact .fb {
+		position: absolute;
+		right: 50px;
+		bottom: 30px
+	}
 
-    #contact .box-contact-1 {
-        padding-right: 0
-    }
+	#contact .box-contact-1 {
+		padding-right: 0
+	}
 
-    .map-google {
-        width: 100%;
-        height: 500px;
-        position: absolute;
-        bottom: -500px;
-        z-index: 1
-    }
+	.map-google {
+		width: 100%;
+		height: 500px;
+		position: absolute;
+		bottom: -500px;
+		z-index: 1
+	}
 
-    #contact .copy {
-        font-size: 12px;
-        padding: 50px 0 20px 0;
-        width: 100%;
-        float: left
-    }
+	#contact .copy {
+		font-size: 12px;
+		padding: 50px 0 20px 0;
+		width: 100%;
+		float: left
+	}
 
-    .contact-clear {
-        display: none
-    }
+	.contact-clear {
+		display: none
+	}
 
-    .desktop {
-        display: block
-    }
+	.desktop {
+		display: block
+	}
 
-    .mobile {
-        display: none
-    }
+	.mobile {
+		display: none
+	}
 }
+
 @media (max-width: 1200px) {
-    
-    #contact > .bg-orange {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        background: rgba(241, 94, 34, .9);
-    }
+
+	#contact > .bg-orange {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		background: rgba(241, 94, 34, .9);
+	}
 }
+
 @media (max-width: 768px) {
-    #contact > .bg-orange {
-        position: absolute;
-    }
+	#contact > .bg-orange {
+		position: absolute;
+	}
 }
+
 @media (max-width: 389px) {
-    #contact > .bg-orange {
-        height: auto;
-    }
+	#contact > .bg-orange {
+		height: auto;
+	}
 }
+
 @media (min-width: 1200px) and (max-height: 800px) {
-    #contact .warp {
-        padding-top: 200px
-    }
+	#contact .warp {
+		padding-top: 200px
+	}
 
-    .map-google {
-        bottom: -500px
-    }
+	.map-google {
+		bottom: -500px
+	}
 
-    #contact .copy {
-        font-size: 11px;
-        padding: 20px 0;
-        width: 50%
-    }
+	#contact .copy {
+		font-size: 11px;
+		padding: 20px 0;
+		width: 50%
+	}
 
-    #contact input[type=submit] {
-        margin-top: 50px
-    }
+	#contact input[type=submit] {
+		margin-top: 50px
+	}
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
-    header .logo {
-        float: none;
-        cursor: pointer;
-        width: 200px;
-        margin: 0 auto
-    }
+	header .logo {
+		float: none;
+		cursor: pointer;
+		width: 200px;
+		margin: 0 auto
+	}
 
-    #contact input[type=submit] {
-        margin-top: 20px
-    }
+	#contact input[type=submit] {
+		margin-top: 20px
+	}
 
-    #contact .copy {
-        width: 50%;
-        float: left;
-        padding: 10px 0
-    }
+	#contact .copy {
+		width: 50%;
+		float: left;
+		padding: 10px 0
+	}
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
-    .nav-page, .ruler-bar {
-        display: none
-    }
+	.nav-page, .ruler-bar {
+		display: none
+	}
 
-    header .logo {
-        float: none;
-        cursor: pointer;
-        width: 200px;
-        margin: 0 auto
-    }
+	header .logo {
+		float: none;
+		cursor: pointer;
+		width: 200px;
+		margin: 0 auto
+	}
 
-    header .navigation ul {
-        width: auto;
-        float: left;
-        padding: 5px 0 5px 0
-    }
+	header .navigation ul {
+		width: auto;
+		float: left;
+		padding: 5px 0 5px 0
+	}
 
-    #contact {
-        min-height: 900px
-    }
+	#contact {
+		min-height: 900px
+	}
 
-    #contact .list-contact {
-        float: left;
-        width: 100%;
-        padding-top: 20px;
-        font-size: 12px
-    }
+	#contact .list-contact {
+		float: left;
+		width: 100%;
+		padding-top: 20px;
+		font-size: 12px
+	}
 
-    #contact .list-contact2 {
-        float: left;
-        width: 100%;
-        padding-top: 20px;
-        font-size: 12px;
-        padding-left: 0
-    }
+	#contact .list-contact2 {
+		float: left;
+		width: 100%;
+		padding-top: 20px;
+		font-size: 12px;
+		padding-left: 0
+	}
 
-    #contact .media {
-        width: 100%;
-        clear: both
-    }
+	#contact .media {
+		width: 100%;
+		clear: both
+	}
 
-    #contact .warp {
-        width: 768px;
-        position: relative;
-        margin: 0 auto;
-        padding-top: 250px
-    }
+	#contact .warp {
+		width: 768px;
+		position: relative;
+		margin: 0 auto;
+		padding-top: 250px
+	}
 
-    #contact .warp-slide {
-        width: 768px;
-        position: relative;
-        margin: 50px auto 0 auto;
-        padding: 0 60px;
-        background: #fff
-    }
+	#contact .warp-slide {
+		width: 768px;
+		position: relative;
+		margin: 50px auto 0 auto;
+		padding: 0 60px;
+		background: #fff
+	}
 
-    #contact .box-contact {
-        width: 50%;
-        float: left;
-        padding: 20px;
-        color: #fff;
-        position: relative
-    }
+	#contact .box-contact {
+		width: 50%;
+		float: left;
+		padding: 20px;
+		color: #fff;
+		position: relative
+	}
 
-    #contact .box-c {
-        width: 50% !important;
-        float: left !important;
-        position: relative
-    }
+	#contact .box-c {
+		width: 50% !important;
+		float: left !important;
+		position: relative
+	}
 
-    #contact .clear {
-        clear: both
-    }
+	#contact .clear {
+		clear: both
+	}
 
-    #contact .copy {
-        width: 100%;
-        float: left;
-        padding: 20px 0;
-        padding-left: 10px
-    }
+	#contact .copy {
+		width: 100%;
+		float: left;
+		padding: 20px 0;
+		padding-left: 10px
+	}
 
-    #contact .partner {
-        padding-left: 10px
-    }
+	#contact .partner {
+		padding-left: 10px
+	}
 
-    #contact .copy-line {
-        margin-left: 10px
-    }
+	#contact .copy-line {
+		margin-left: 10px
+	}
 
-    .contact-clear {
-        display: block;
-        clear: both
-    }
+	.contact-clear {
+		display: block;
+		clear: both
+	}
 
-    #contact input[type=submit] {
-        margin-top: 40px
-    }
+	#contact input[type=submit] {
+		margin-top: 40px
+	}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    header {
-        position: fixed;
-        width: 100%;
-        z-index: 10;
-        top: 0;
-        padding-top: 10px;
-        transition: all .5s ease;
-        -webkit-transition: all .5s ease
-    }
+	header {
+		position: fixed;
+		width: 100%;
+		z-index: 10;
+		top: 0;
+		padding-top: 10px;
+		transition: all .5s ease;
+		-webkit-transition: all .5s ease
+	}
 
-    header .navigation {
-        float: left;
-        width: 100%;
-        position: relative;
-        display: block
-    }
+	header .navigation {
+		float: left;
+		width: 100%;
+		position: relative;
+		display: block
+	}
 
-    header .navigation ul {
-        width: 100%;
-        float: left;
-        padding: 5px 20px 5px 0
-    }
+	header .navigation ul {
+		width: 100%;
+		float: left;
+		padding: 5px 20px 5px 0
+	}
 
-    header .navigation ul li {
-        float: left;
-        width: auto;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        border: 2px solid transparent;
-        display: none
-    }
+	header .navigation ul li {
+		float: left;
+		width: auto;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		border: 2px solid transparent;
+		display: none
+	}
 
-    header .navigation ul li.mobile {
-        display: block
-    }
+	header .navigation ul li.mobile {
+		display: block
+	}
 
-    header .navigation ul li.mobile:last-child {
-        display: none
-    }
+	header .navigation ul li.mobile:last-child {
+		display: none
+	}
 
-    header .navigation ul li > div > a {
-        color: #fff;
-        padding: 8px 20px;
-        display: block
-    }
+	header .navigation ul li > div > a {
+		color: #fff;
+		padding: 8px 20px;
+		display: block
+	}
 
-    header .hotline {
-        font-weight: 700;
-        float: left;
-        padding-top: 14px
-    }
+	header .hotline {
+		font-weight: 700;
+		float: left;
+		padding-top: 14px
+	}
 
-    header .hotline > a {
-        color: #fc8f05
-    }
+	header .hotline > a {
+		color: #fc8f05
+	}
 
-    header .hotline > a:hover {
-        color: #fff
-    }
+	header .hotline > a:hover {
+		color: #fff
+	}
 
-    header .fb {
-        float: right;
-        border-left: 1px solid #808080;
-        padding-left: 10px;
-        margin-top: 10px
-    }
+	header .fb {
+		float: right;
+		border-left: 1px solid #808080;
+		padding-left: 10px;
+		margin-top: 10px
+	}
 
-    header .fb:hover {
-        opacity: .9
-    }
+	header .fb:hover {
+		opacity: .9
+	}
 
-    header .navbar-collapse {
-        padding-left: 0;
-        padding-right: 0
-    }
+	header .navbar-collapse {
+		padding-left: 0;
+		padding-right: 0
+	}
 
-    header .hot-bar {
-        position: absolute;
-        width: 150px;
-        right: 0;
-        top: 0
-    }
+	header .hot-bar {
+		position: absolute;
+		width: 150px;
+		right: 0;
+		top: 0
+	}
 
-    header .navigation ul li.active, header .navigation ul li:hover {
-        border: 2px solid #f15e22;
-        -webkit-transform: skewx(-30deg);
-        -moz-transform: skewx(-30deg);
-        -ms-transform: skewx(-30deg);
-        -o-transform: skewx(-30deg);
-        transform: skewx(-30deg)
-    }
+	header .navigation ul li.active, header .navigation ul li:hover {
+		border: 2px solid #f15e22;
+		-webkit-transform: skewx(-30deg);
+		-moz-transform: skewx(-30deg);
+		-ms-transform: skewx(-30deg);
+		-o-transform: skewx(-30deg);
+		transform: skewx(-30deg)
+	}
 
-    header .navigation ul li.active > div, header .navigation ul li:hover > div {
-        -webkit-transform: skewx(30deg);
-        -moz-transform: skewx(30deg);
-        -ms-transform: skewx(30deg);
-        -o-transform: skewx(30deg);
-        transform: skewx(30deg)
-    }
+	header .navigation ul li.active > div, header .navigation ul li:hover > div {
+		-webkit-transform: skewx(30deg);
+		-moz-transform: skewx(30deg);
+		-ms-transform: skewx(30deg);
+		-o-transform: skewx(30deg);
+		transform: skewx(30deg)
+	}
 
-    .stuck {
-        background: rgba(120, 120, 121, .9);
-        padding-top: 10px;
-        position: fixed;
-        top: 0
-    }
+	.stuck {
+		background: rgba(120, 120, 121, .9);
+		padding-top: 10px;
+		position: fixed;
+		top: 0
+	}
 
-    header .logo {
-        float: none;
-        cursor: pointer;
-        width: 200px;
-        margin: 0 auto
-    }
+	header .logo {
+		float: none;
+		cursor: pointer;
+		width: 200px;
+		margin: 0 auto
+	}
 
-    .mobile-nav {
-        display: none
-    }
+	.mobile-nav {
+		display: none
+	}
 }
 
 @media (min-width: 1400px) {
-    .main-section .text-box {
-        padding-top: 100px
-    }
+	.main-section .text-box {
+		padding-top: 100px
+	}
 }
 
 @media print {
-    section, div {
-        display: none
-    }
+	section, div {
+		display: none
+	}
 
-    .print {
-        display: block
-    }
+	.print {
+		display: block
+	}
 }
 
 .float-none {
-    float: none !important;
-}
-@media (max-width: 767px) {
-    .icon-line,
-    .icon-fb {
-        height: 36px;
-    }
+	float: none !important;
 }
 
-a[href^="tel"] ,a[href*="tel"] {
-    pointer-events: none;
-}
 @media (max-width: 767px) {
-    a[href^="tel"] ,a[href*="tel"] {
-        pointer-events: auto;
-    }
+	.icon-line,
+	.icon-fb {
+		height: 36px;
+	}
 }
+
+a[href^="tel"], a[href*="tel"] {
+	pointer-events: none;
+}
+
+@media (max-width: 767px) {
+	a[href^="tel"], a[href*="tel"] {
+		pointer-events: auto;
+	}
+}
+
 /* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

@@ -771,8 +771,8 @@ h1 {
 		font-size: 14px;
 		font-size: 1.4rem;
 		font-weight: 700;
-        color: #000;
-        margin-top: 0;
+		color: #000;
+		margin-top: 0;
 	}
 
 	#section3 .product-box {
@@ -875,8 +875,8 @@ h1 {
 		font-size: 14px;
 		font-size: 1.4rem;
 		font-weight: 700;
-        color: #000;
-        margin-top: 10px;
+		color: #000;
+		margin-top: 10px;
 	}
 
 	#section4 > .text-main {
@@ -1318,10 +1318,11 @@ h1 {
 		padding: 20px 0 0px 0;
 		width: 100%;
 		float: left
-    }
-    #section6 .partner {
+	}
+
+	#section6 .partner {
 		padding: 20px 0 0 0;
-    }
+	}
 
 	.contact-clear {
 		display: none

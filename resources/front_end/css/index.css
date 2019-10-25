@@ -540,7 +540,7 @@ h1 {
 		padding-bottom: 10px;
 		transition: all .5s ease;
 		-webkit-transition: all .5s ease;
-		background: rgba(120, 120, 121, .9)
+		background: rgba(120, 120, 121, 1)
 	}
 
 	header .logo {

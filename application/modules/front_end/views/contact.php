@@ -128,7 +128,7 @@
 						</div>
 						<div class="clearfix"></div>
 						<div class="line" style="margin-top:10px;"></div>
-						<div class="contact-detail">Copyright © 2018 www.aluinch.com All Rights Reserved. SEO maintained by <a href="https://www.iseo.in.th" target="_blank" style="color:#f15e22;">iSEO.in.th</a>
+						<div class="contact-detail">Copyright © 2020 www.aluinch.com All Rights Reserved. SEO maintained by <a href="https://www.iseo.in.th" target="_blank" style="color:#f15e22;">iSEO.in.th</a>
 						</div>
 						<div class="contact-detail">
 							<a href="javascript:void(0)" data-toggle="modal" data-target="#sitemap">Sitemap</a>
@@ -139,9 +139,7 @@
 						<br/>
 						<br/>
 						<div class="partner-main">
-							<div class="pull-left">
-								PARTNERSHIP BY <img src="<?php echo base_url('storage/images/partner-logo.jpg'); ?>" width="100"/> COMPANY
-							</div>
+							<div class="pull-left"></div>
 							<div class="pull-right">
 								<div class="pull-right">
 									<a href="https://www.facebook.com/ALUINCH/?fref=ts" target="_blank">

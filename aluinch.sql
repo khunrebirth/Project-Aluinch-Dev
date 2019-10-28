@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 16, 2019 at 04:07 AM
+-- Generation Time: Oct 28, 2019 at 10:14 AM
 -- Server version: 5.7.17-log
 -- PHP Version: 5.6.30
 
@@ -691,9 +691,9 @@ CREATE TABLE `portfolios` (
   `id` int(11) NOT NULL,
   `img` text NOT NULL,
   `img_title_alt` text NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `deleted_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1330,7 +1330,7 @@ ALTER TABLE `image_projects`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `log_events`
 --

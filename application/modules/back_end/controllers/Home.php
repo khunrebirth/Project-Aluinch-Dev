@@ -242,13 +242,18 @@ class Home extends MX_Controller
 
 		// Set Response
 		if ($this->input->post()) {
+
 			$bundle_id = $this->input->post('id');
 			$bundle_sort = $this->input->post('sort');
+
 			$counter = 1;
 			foreach (array_combine($bundle_id, $bundle_sort) as $id => $sort) {
+
 				$this->Image_gallery_model->update_image_gallery_by_id($id, [
-					'sort' => $counter
+					'sort' => $counter,
+					'updated_at' => date('Y-m-d H:i:s')
 				]);
+
 				$counter++;
 			}
 

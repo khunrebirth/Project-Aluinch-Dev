@@ -4,18 +4,24 @@ class Project_model extends CI_Model {
 
     public function get_project_all()
     {
+//		$sql = "
+//			SELECT  projects.id,
+//					projects.title,
+//					projects.description,
+//					projects.created_at,
+//					projects.img_cover,
+//					projects.img_title_alt,
+//					COUNT(image_projects.id) as counter
+//			FROM projects
+//			LEFT JOIN image_projects ON projects.id = image_projects.project_id
+//			GROUP BY image_projects.project_id
+//        ";
+
 		$sql = "
-			SELECT  projects.id,
-					projects.title, 
-					projects.description, 
-					projects.created_at,
-					projects.img_cover,
-					projects.img_title_alt,
-					COUNT(image_projects.id) as counter 
+			SELECT *,
+			(SELECT COUNT(*) FROM image_projects WHERE projects.id = image_projects.project_id) as counter
 			FROM projects
-			LEFT JOIN image_projects ON projects.id = image_projects.project_id
-			GROUP BY image_projects.project_id
-        ";
+		";
 
 		$query = $this->db->query($sql);
 

@@ -12,16 +12,22 @@ class Group_product_model extends CI_Model
 
 	public function get_group_product_and_count_all()
 	{
+//		$sql = "
+//			SELECT  group_products.id,
+//					group_products.title,
+//					group_products.slug,
+//					group_products.created_at,
+//					COUNT(category_products.id) AS counter
+//			FROM group_products
+//			LEFT JOIN category_products ON group_products.id = category_products.group_product_id
+//			GROUP BY group_products.id
+//        ";
+
 		$sql = "
-			SELECT  group_products.id, 
-					group_products.title, 
-					group_products.slug, 
-					group_products.created_at, 
-					COUNT(category_products.id) AS counter
+			SELECT *,
+			(SELECT COUNT(*) FROM category_products WHERE group_products.id = category_products.group_product_id) as counter
 			FROM group_products
-			LEFT JOIN category_products ON group_products.id = category_products.group_product_id
-			GROUP BY group_products.id
-        ";
+		";
 
 		$query = $this->db->query($sql);
 

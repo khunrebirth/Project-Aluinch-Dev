@@ -366,7 +366,7 @@
 					<input type="text" name="name" placeholder="Name:" required />
 					<input type="text" name="email" placeholder="Email:" required />
 					<input type="text" name="company" placeholder="Company:" />
-					<input type="text" name="tel" placeholder="Phone:" />
+					<input type="text" name="phone" placeholder="Phone:" />
 					<textarea name="detail" placeholder="Message:" required ></textarea>
 					<div style="padding-bottom: 20px;" class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div>
 					<input type="submit" value="Send Message" style="margin-top: 0px;" />

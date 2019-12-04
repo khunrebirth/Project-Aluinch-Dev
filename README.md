@@ -1,5 +1,5 @@
 # Aluinch
-- 
+- https://aluinch.com
 
 ## What's New
 -
@@ -14,5 +14,5 @@
 ## Installation:
 -
      
-## Note:
--
+## Note: 4/12/2562
+- Version ล่าสุดอยู่บน Server 
